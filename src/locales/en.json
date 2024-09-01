@@ -1,0 +1,34 @@
+{
+  "gameTitle": "Barrage",
+  "home": {
+    "title": "Barrage Solo Helper",
+    "play1": "Play <a href='https://boardgamegeek.com/boardgame/400314/barrage' target='_blank' rel='noopener'><b>Barrage</b></a> against Automa, the artificial opponent.",
+    "play2": "This application replaces the Automa card deck, counts the victory points and guides you through the Automa ruleset.",
+    "feedback": "Discussion and Feedback:"
+  },
+  "notfound": {
+    "title": "Not Found"
+  },
+  "action": {
+    "playGame": "Play Game",
+    "startGame": "Start Game",
+    "next": "Next",
+    "nextRound": "Next Round",
+    "abortGame": "Abort Game",
+    "abortGameConfirm": "Aborting the running game - are you sure?",
+    "endGame": "End Game",
+    "endGameConfirm": "End this game and return to home screen - are you sure?",
+    "cancel": "Cancel",
+    "backToHome": "Back to Home",
+    "back": "Back",
+    "close": "Close",
+    "ok": "OK"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Refresh Application",
+    "notice": "The application was updated - do you want to refresh to use the latest version?"
+  }
+}
