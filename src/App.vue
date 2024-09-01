@@ -26,18 +26,14 @@
 
   <ModalDialog id="creditsModal" :title="t('footer.credits')">
     <template #body>
-      <h4><a href="https://boardgamegeek.com/boardgame/400314/barrage" target="_blank" rel="noopener">{{t('gameTitle')}}</a></h4>
+      <h4><a href="https://boardgamegeek.com/boardgame/251247/barrage" target="_blank" rel="noopener">{{t('gameTitle')}}</a></h4>
       <dl>
         <dt>Game design</dt>
-        <dd>Connie Vogelmann</dd>
+        <dd>Tommaso Battista, Simone Luciani</dd>
         <dt>Artist</dt>
-        <dd>Kwanchai Moriya</dd>
-        <dt>Solo Mode Design</dt>
-        <dd>
-          Automa Factory: David Studley and Lines J. Hutter with Morten Monrad Pedersen
-        </dd>
+        <dd>Mauro Alocci, Antonio De Luca, Roman Roland Kuteynikov</dd>
         <dt>Publisher</dt>
-        <dd><a href="https://stonemaiergames.com/" target="_blank" rel="noopener">Stonemaier Games</a></dd>
+        <dd><a href="https://www.craniocreations.it/en" target="_blank" rel="noopener">Cranio Creations</a>.</dd>
       </dl>
       <h4 class="border-top pt-3">{{appTitle}}</h4>
       <dl>
