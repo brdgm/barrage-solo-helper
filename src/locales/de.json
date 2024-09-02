@@ -30,13 +30,47 @@
     }
   },
   "setupBot": {
-    "title": "Automa-Aufbau"
+    "title": "Automa-Aufbau",
+    "corporation": {
+      "title": "Unternehmen"
+    },
+    "executiveOfficer": {
+      "title": "Chefingenieur"
+    },
+    "setup": {
+      "title": "Aufbau",
+      "playerPieces": "Bereite Automa mit dem gewählten Unternehmensplan und allem Spielmaterial vor.",
+      "noExecutiveOfficer": "Automa erhält keinen Chefingenieur.",
+      "noStartingContract": "Automa erhält keinen Startvertrag.",
+      "victoryPoints": "Automa beginnt das Spiel mit 16 SP.",
+      "playerOrder": "Initiale Spielerreihenfolge:"
+    }
   },
   "difficultyLevel": {
     "1": "Einfach - \"Schwachstrom\"",
     "2": "Normal",
     "3": "Schwer - \"Starkstrom\"",
     "4": "Sehr schwer - \"Hochspannung\""
+  },
+  "corporation": {
+    "usa": "USA",
+    "germany": "Deutschland",
+    "italy": "Italien",
+    "france": "Frankreich",
+    "netherlands": "Die Niederlande"
+  },
+  "executiveOfficer": {
+    "wilhelm-adler": "Wilhelm Adler",
+    "graziano-del-monte": "Graziano del Monte",
+    "viktor-fiesler": "Viktor Fiesler",
+    "jill-mcdowell": "Jill McDowell",
+    "solomon-p-jordan": "Solomon P. Jordan",
+    "anton-krylov": "Anton Krylov",
+    "mahiri-sekibo": "Mahiri Sekibo",
+    "simone-luciani": "Simone Luciani",
+    "tommaso-battista": "Tommaso Battista",
+    "leslie-spencer": "Leslie Spencer",
+    "margot-fouche": "Margot Fouché"
   },
   "notfound": {
     "title": "Nicht Gefunden"

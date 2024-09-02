@@ -8,12 +8,20 @@ import Expansion from '@/services/enum/Expansion'
  */
 export default function isExecutiveOfficerAvailable(executiveOfficer : ExecutiveOfficer, expansions: Expansion[]) : boolean {
   switch (executiveOfficer) {
+    case ExecutiveOfficer.WILHELM_ADLER:
+    case ExecutiveOfficer.GRAZIANO_DEL_MONTE:
+    case ExecutiveOfficer.VIKTOR_FIESLER:
+    case ExecutiveOfficer.JILL_MCDOWELL:
+    case ExecutiveOfficer.SOLOMON_P_JORDAN:
+    case ExecutiveOfficer.ANTON_KRYLOV:
+    case ExecutiveOfficer.MAHIRI_SEKIBO:
+      return true
     case ExecutiveOfficer.LESLIE_SPENCER:
     case ExecutiveOfficer.MARGOT_FOUCHE:
     case ExecutiveOfficer.SIMONE_LUCIANI:
     case ExecutiveOfficer.TOMMASO_BATTISTA:
       return expansions.includes(Expansion.LEEGHWATER_PROJECT)
     default:
-      return true
+      return false
   }
 }

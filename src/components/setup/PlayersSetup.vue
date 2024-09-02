@@ -13,10 +13,10 @@
   </div>  
   <div class="row mt-3" v-for="botColorIndex in botCount" :key="botColorIndex+playerColors[playerCount+botColorIndex-1]">
     <div class="col-5 col-lg-3">
-      <label for="playerCount" class="form-label">{{t('setup.players.botColor', {index:botColorIndex}, botCount)}}</label>
+      <label class="form-label">{{t('setup.players.botColor', {index:botColorIndex}, botCount)}}</label>
     </div>
     <div class="col-5 col-lg-3">
-      <PlayerColorPicker :model-value="playerColors[playerCount+botColorIndex-1]" @update:model-value="color => playerColorChanged(playerCount+botColorIndex-1, color)"/>
+      <PlayerColorPicker :model-value="playerColors[botColorIndex-1]" @update:model-value="color => playerColorChanged(playerCount+botColorIndex-1, color)"/>
     </div>
   </div>  
 
@@ -32,10 +32,10 @@
   </div>  
   <div class="row mt-3" v-for="playerColorIndex in playerCount" :key="playerColorIndex+playerColors[playerColorIndex-1]">
     <div class="col-5 col-lg-3">
-      <label for="playerCount" class="form-label">{{t('setup.players.playerColor', {index:playerColorIndex}, playerCount)}}</label>
+      <label class="form-label">{{t('setup.players.playerColor', {index:playerColorIndex}, playerCount)}}</label>
     </div>
     <div class="col-5 col-lg-3">
-      <PlayerColorPicker :model-value="playerColors[playerColorIndex-1]" @update:model-value="color => playerColorChanged(playerColorIndex-1, color)"/>
+      <PlayerColorPicker :model-value="playerColors[botCount+playerColorIndex-1]" @update:model-value="color => playerColorChanged(playerColorIndex-1, color)"/>
     </div>
   </div>  
 
@@ -59,9 +59,9 @@ export default defineComponent({
     const state = useStateStore()
     const expansions = state.setup.expansions
 
-    const playerCount = ref(state.setup.playerSetup?.playerCount || 1)
     const botCount = ref(state.setup.playerSetup?.botCount || 1)
-    const playerColors = ref(state.setup.playerSetup?.playerColors || [PlayerColor.BLACK, PlayerColor.WHITE, PlayerColor.TURQUOISE, PlayerColor.RED])
+    const playerCount = ref(state.setup.playerSetup?.playerCount || 1)
+    const playerColors = ref(state.setup.playerSetup?.playerColors || [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED])
 
     watch(
       () => state.setup.expansions,

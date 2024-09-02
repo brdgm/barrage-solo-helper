@@ -8,9 +8,14 @@ import Expansion from '@/services/enum/Expansion'
  */
 export default function isCorporationAvailable(corporation : Corporation, expansions: Expansion[]) : boolean {
   switch (corporation) {
+    case Corporation.USA:
+    case Corporation.GERMANY:
+    case Corporation.ITALY:
+    case Corporation.FRANCE:
+      return true
     case Corporation.NETHERLANDS:
       return expansions.includes(Expansion.LEEGHWATER_PROJECT)
     default:
-      return true
+      return false
   }
 }

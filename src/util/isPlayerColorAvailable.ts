@@ -8,12 +8,17 @@ import PlayerColor from '@/services/enum/PlayerColor'
  */
 export default function isPlayerColorAvailable(color : PlayerColor, expansions: Expansion[]) : boolean {
   switch (color) {
+    case PlayerColor.WHITE:
+    case PlayerColor.BLACK:
+    case PlayerColor.TURQUOISE:
+    case PlayerColor.RED:
+      return true
     case PlayerColor.ORANGE:
       return expansions.includes(Expansion.LEEGHWATER_PROJECT)
     case PlayerColor.PINK:
     case PlayerColor.YELLOW:
       return expansions.includes(Expansion.FAR_COMPANIES)
     default:
-      return true
+      return false
   }
 }

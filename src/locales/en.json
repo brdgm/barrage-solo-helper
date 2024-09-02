@@ -6,6 +6,7 @@
     "play2": "This application replaces the Automa card deck, counts the victory points and guides you through the Automa ruleset.",
     "feedback": "Discussion and Feedback:"
   },
+  "bot": "Automa | Automa {bot}",
   "setup": {
     "title": "Setup Game",
     "expansions": {
@@ -25,18 +26,51 @@
     "difficultyLevel": {
       "title": "Difficulty Level",
       "easy": "Easy",
-      "hard": "Hard",
-      "bot": "Automa {bot}"
+      "hard": "Hard"
     }
   },
   "setupBot": {
-    "title": "Setup Automa"
+    "title": "Setup Automa",
+    "corporation": {
+      "title": "Corporation"
+    },
+    "executiveOfficer": {
+      "title": "Executive Officer"
+    },
+    "setup": {
+      "title": "Setup",
+      "playerPieces": "Setup Automa with the chosen company board and all game components.",
+      "noExecutiveOfficer": "Do not assign executive officers to Automa.",
+      "noStartingContract": "Do not assign starting contracts to Automa.",
+      "victoryPoints": "Automa begins the game with 16 Victory Points.",
+      "playerOrder": "Initial player order:"
+    }
   },
   "difficultyLevel": {
     "1": "Easy - \"Low Voltage\"",
     "2": "Normal",
     "3": "Hard - \"High Voltage\"",
     "4": "Very Hard - \"Overpowered\""
+  },
+  "corporation": {
+    "usa": "USA",
+    "germany": "Germany",
+    "italy": "Italy",
+    "france": "France",
+    "netherlands": "The Netherlands"
+  },
+  "executiveOfficer": {
+    "wilhelm-adler": "Wilhelm Adler",
+    "graziano-del-monte": "Graziano del Monte",
+    "viktor-fiesler": "Viktor Fiesler",
+    "jill-mcdowell": "Jill McDowell",
+    "solomon-p-jordan": "Solomon P. Jordan",
+    "anton-krylov": "Anton Krylov",
+    "mahiri-sekibo": "Mahiri Sekibo",
+    "simone-luciani": "Simone Luciani",
+    "tommaso-battista": "Tommaso Battista",
+    "leslie-spencer": "Leslie Spencer",
+    "margot-fouche": "Margot Fouché"
   },
   "notfound": {
     "title": "Not Found"

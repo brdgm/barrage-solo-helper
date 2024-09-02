@@ -17,11 +17,11 @@ export const useStateStore = defineStore(`${name}.state`, {
         playerSetup: {
           playerCount: 1,
           botCount: 1,
-          playerColors: [PlayerColor.BLACK, PlayerColor.WHITE, PlayerColor.TURQUOISE, PlayerColor.RED],
-          botCorporations: [],
-          botExecutiveOfficers: []
+          playerColors: [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED]
         },
-        difficultyLevels: [DifficultyLevel.NORMAL]
+        difficultyLevels: [DifficultyLevel.NORMAL],
+        botCorporations: [],
+        botExecutiveOfficers: []
       },
       turns: []
     } as State
@@ -52,6 +52,8 @@ export interface Setup {
   expansions: Expansion[]
   playerSetup: PlayerSetup
   difficultyLevels: DifficultyLevel[] 
+  botCorporations: Corporation[]
+  botExecutiveOfficers: ExecutiveOfficer[]
   initialCardDeck?: CardDeckPersistence
   debugMode?: boolean
 }
@@ -59,8 +61,6 @@ export interface PlayerSetup {
   playerCount: number
   botCount: number
   playerColors: PlayerColor[]
-  botCorporations: Corporation[]
-  botExecutiveOfficers: ExecutiveOfficer[]
 }
 
 export interface Turn {
