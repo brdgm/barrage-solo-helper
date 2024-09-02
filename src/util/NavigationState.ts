@@ -17,13 +17,11 @@ export default class NavigationState {
     if (bot) {
       this.cardDeck = CardDeck.fromPersistence(bot.cardDeck)
     }
+    else if (state.setup.initialCardDeck) {
+      this.cardDeck = CardDeck.fromPersistence(state.setup.initialCardDeck)
+    }
     else {
-      if (state.setup.initialCardDeck) {
-        this.cardDeck = CardDeck.fromPersistence(state.setup.initialCardDeck)
-      }
-      else {
-        this.cardDeck = CardDeck.new()
-      }
+      this.cardDeck = CardDeck.new()
     }
   }
 

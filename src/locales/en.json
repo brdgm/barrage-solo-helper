@@ -6,6 +6,35 @@
     "play2": "This application replaces the Automa card deck, counts the victory points and guides you through the Automa ruleset.",
     "feedback": "Discussion and Feedback:"
   },
+  "setup": {
+    "title": "Setup Game",
+    "expansions": {
+      "title": "Expansions",
+      "leeghwater-project": "The Leeghwater Project",
+      "far-companies": "Far Companies"
+    },
+    "players": {
+      "title": "Player",
+      "playerCount": "Human Players",
+      "playerCountItem": "{count} Player | {count} Players",
+      "playerColor": "Player Color | Player {index} Color",
+      "botCount": "Automa",
+      "botCountItem": "{count} Automa | {count} Automas",
+      "botColor": "Automa Color | Automa {index} Color"
+    },
+    "difficultyLevel": {
+      "title": "Difficulty Level",
+      "easy": "Easy",
+      "hard": "Hard",
+      "bot": "Automa {bot}"
+    }
+  },
+  "difficultyLevel": {
+    "1": "Easy - \"Low Voltage\"",
+    "2": "Normal",
+    "3": "Hard - \"High Voltage\"",
+    "4": "Very Hard - \"Overpowered\""
+  },
   "notfound": {
     "title": "Not Found"
   },

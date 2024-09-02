@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
 import { name } from '@/../package.json'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
-import Tile from '@/services/enum/Tile'
+import PlayerColor from '@/services/enum/PlayerColor'
+import Expansion from '@/services/enum/Expansion'
+import toggleArrayItem from '@brdgm/brdgm-commons/src/util/array/toggleArrayItem'
 
 export const useStateStore = defineStore(`${name}.state`, {
   state: () => {
@@ -9,7 +11,13 @@ export const useStateStore = defineStore(`${name}.state`, {
       language: 'en',
       baseFontSize: 1.0,
       setup: {
-        difficultyLevel: DifficultyLevel.NORMAL_2
+        expansions: [],
+        playerSetup: {
+          playerCount: 1,
+          botCount: 1,
+          playerColors: [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED]
+        },
+        difficultyLevels: [DifficultyLevel.NORMAL]
       },
       turns: []
     } as State
@@ -18,6 +26,9 @@ export const useStateStore = defineStore(`${name}.state`, {
     resetGame() {
       this.setup.initialCardDeck = undefined
       this.turns = []
+    },
+    setupToggleExpansion(expansion: Expansion) {
+      toggleArrayItem(this.setup.expansions, expansion)
     },
     storeTurn(turn : Turn) {
       this.turns = this.turns.filter(item => item.turn < turn.turn)
@@ -34,9 +45,16 @@ export interface State {
   turns: Turn[]
 }
 export interface Setup {
-  difficultyLevel: DifficultyLevel
+  expansions: Expansion[]
+  playerSetup: PlayerSetup
+  difficultyLevels: DifficultyLevel[] 
   initialCardDeck?: CardDeckPersistence
   debugMode?: boolean
+}
+export interface PlayerSetup {
+  playerCount: number
+  botCount: number
+  playerColors: PlayerColor[]
 }
 
 export interface Turn {
@@ -46,12 +64,6 @@ export interface Turn {
 
 export interface BotPersistence {
   cardDeck: CardDeckPersistence
-  tiles: TilePersistence[]
-  victoryPoints: number
-}
-export interface TilePersistence {
-  tile: Tile
-  count: number
 }
 export interface CardDeckPersistence {
   pile: number[]

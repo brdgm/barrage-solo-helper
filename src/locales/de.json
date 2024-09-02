@@ -6,6 +6,35 @@
     "play2": "Diese Applikation ersetzt das Automa-Kartendeck, zählt die Siegpunkte und führt dich durch das Automa-Regelwerk.",
     "feedback": "Discussion and Feedback:"
   },
+  "setup": {
+    "title": "Spielaufbau",
+    "expansions": {
+      "title": "Erweiterungen",
+      "leeghwater-project": "Das Leeghwater-Projekt",
+      "far-companies": "Far Companies"
+    },
+    "players": {
+      "title": "Spieler",
+      "playerCount": "Menschliche Spieler",
+      "playerCountItem": "{count} Spieler",
+      "playerColor": "Spieler-Farbe | Spieler {index} Farbe",
+      "botCount": "Automa",
+      "botCountItem": "{count} Automa | {count} Automas",
+      "botColor": "Automa-Farbe | Automa {index} Farbe"
+    },
+    "difficultyLevel": {
+      "title": "Schwierigkeitsgrad",
+      "easy": "Leicht",
+      "hard": "Schwer",
+      "bot": "Automa {bot}"
+    }
+  },
+  "difficultyLevel": {
+    "1": "Einfach - \"Schwachstrom\"",
+    "2": "Normal",
+    "3": "Schwer - \"Starkstrom\"",
+    "4": "Sehr schwer - \"Hochspannung\""
+  },
   "notfound": {
     "title": "Nicht Gefunden"
   },
