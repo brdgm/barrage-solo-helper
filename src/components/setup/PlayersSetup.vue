@@ -42,11 +42,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import PlayerColorPicker from './PlayerColorPicker.vue'
 import PlayerColor from '@/services/enum/PlayerColor'
+import isPlayerColorAvailable from '@/util/isPlayerColorAvailable'
 
 export default defineComponent({
   name: 'PlayersSetup',
@@ -56,10 +57,25 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     const state = useStateStore()
+    const expansions = state.setup.expansions
 
     const playerCount = ref(state.setup.playerSetup?.playerCount || 1)
     const botCount = ref(state.setup.playerSetup?.botCount || 1)
     const playerColors = ref(state.setup.playerSetup?.playerColors || [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED])
+
+    watch(
+      () => state.setup.expansions,
+      () => {
+        // available player colors depend on expansion selection - fallback to available color if expansion selection changes
+        for (let i=0; i<playerColors.value.length; i++) {
+          if (!isPlayerColorAvailable(playerColors.value[i], expansions)) {
+            const firstAvailableColor = Object.values(PlayerColor).find(color => !playerColors.value.includes(color) && isPlayerColorAvailable(color, expansions))
+            playerColors.value[i] = firstAvailableColor || PlayerColor.WHITE
+          }
+        }
+      },
+      { deep: true}
+    )
 
     return { t, state, playerCount, botCount, playerColors }
   },

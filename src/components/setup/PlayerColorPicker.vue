@@ -9,6 +9,8 @@
 import PlayerColor from '@/services/enum/PlayerColor'
 import { defineComponent } from 'vue'
 import getPlayerColorCode from '@/util/getPlayerColorCode'
+import { useStateStore } from '@/store/state'
+import isPlayerColorAvailable from '@/util/isPlayerColorAvailable'
 
 export default defineComponent({
   name: 'PlayerColorPicker',
@@ -19,10 +21,20 @@ export default defineComponent({
       required: true
     }
   },
+  setup() {
+    const state = useStateStore()
+    const expansions = state.setup.expansions
+    return { state, expansions }
+  },
   data() {
     return {
-      playerColors: Object.values(PlayerColor),
       selectedColor: this.modelValue
+    }
+  },
+  computed: {
+    playerColors() : PlayerColor[] {
+      return Object.values(PlayerColor)
+          .filter(color => isPlayerColorAvailable(color, this.expansions))
     }
   },
   methods: {
