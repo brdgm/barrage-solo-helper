@@ -29,6 +29,9 @@
       "bot": "Automa {bot}"
     }
   },
+  "setupBot": {
+    "title": "Automa-Aufbau"
+  },
   "difficultyLevel": {
     "1": "Einfach - \"Schwachstrom\"",
     "2": "Normal",

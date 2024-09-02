@@ -3,25 +3,6 @@
 
   <div class="row mt-3">
     <div class="col-5 col-lg-3">
-      <label for="playerCount" class="form-label">{{t('setup.players.playerCount')}}</label>
-    </div>
-    <div class="col-6 col-sm-5 col-lg-3">
-      <select class="form-select" id="playerCount" v-model="playerCount">
-        <option v-for="i in maxPlayerCount" :key="i" :value="i">{{t('setup.players.playerCountItem', {count:i}, i)}}</option>
-      </select>
-    </div>
-  </div>  
-  <div class="row mt-3" v-for="playerColorIndex in playerCount" :key="playerColorIndex+playerColors[playerColorIndex-1]">
-    <div class="col-5 col-lg-3">
-      <label for="playerCount" class="form-label">{{t('setup.players.playerColor', {index:playerColorIndex}, playerCount)}}</label>
-    </div>
-    <div class="col-5 col-lg-3">
-      <PlayerColorPicker :model-value="playerColors[playerColorIndex-1]" @update:model-value="color => playerColorChanged(playerColorIndex-1, color)"/>
-    </div>
-  </div>  
-
-  <div class="row mt-3">
-    <div class="col-5 col-lg-3">
       <label for="botCount" class="form-label">{{t('setup.players.botCount')}}</label>
     </div>
     <div class="col-6 col-sm-5 col-lg-3">
@@ -36,6 +17,25 @@
     </div>
     <div class="col-5 col-lg-3">
       <PlayerColorPicker :model-value="playerColors[playerCount+botColorIndex-1]" @update:model-value="color => playerColorChanged(playerCount+botColorIndex-1, color)"/>
+    </div>
+  </div>  
+
+  <div class="row mt-3">
+    <div class="col-5 col-lg-3">
+      <label for="playerCount" class="form-label">{{t('setup.players.playerCount')}}</label>
+    </div>
+    <div class="col-6 col-sm-5 col-lg-3">
+      <select class="form-select" id="playerCount" v-model="playerCount">
+        <option v-for="i in maxPlayerCount" :key="i" :value="i">{{t('setup.players.playerCountItem', {count:i}, i)}}</option>
+      </select>
+    </div>
+  </div>  
+  <div class="row mt-3" v-for="playerColorIndex in playerCount" :key="playerColorIndex+playerColors[playerColorIndex-1]">
+    <div class="col-5 col-lg-3">
+      <label for="playerCount" class="form-label">{{t('setup.players.playerColor', {index:playerColorIndex}, playerCount)}}</label>
+    </div>
+    <div class="col-5 col-lg-3">
+      <PlayerColorPicker :model-value="playerColors[playerColorIndex-1]" @update:model-value="color => playerColorChanged(playerColorIndex-1, color)"/>
     </div>
   </div>  
 
@@ -61,7 +61,7 @@ export default defineComponent({
 
     const playerCount = ref(state.setup.playerSetup?.playerCount || 1)
     const botCount = ref(state.setup.playerSetup?.botCount || 1)
-    const playerColors = ref(state.setup.playerSetup?.playerColors || [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED])
+    const playerColors = ref(state.setup.playerSetup?.playerColors || [PlayerColor.BLACK, PlayerColor.WHITE, PlayerColor.TURQUOISE, PlayerColor.RED])
 
     watch(
       () => state.setup.expansions,

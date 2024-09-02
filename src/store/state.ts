@@ -4,6 +4,8 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import PlayerColor from '@/services/enum/PlayerColor'
 import Expansion from '@/services/enum/Expansion'
 import toggleArrayItem from '@brdgm/brdgm-commons/src/util/array/toggleArrayItem'
+import Corporation from '@/services/enum/Corporation'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 
 export const useStateStore = defineStore(`${name}.state`, {
   state: () => {
@@ -15,7 +17,9 @@ export const useStateStore = defineStore(`${name}.state`, {
         playerSetup: {
           playerCount: 1,
           botCount: 1,
-          playerColors: [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED]
+          playerColors: [PlayerColor.BLACK, PlayerColor.WHITE, PlayerColor.TURQUOISE, PlayerColor.RED],
+          botCorporations: [],
+          botExecutiveOfficers: []
         },
         difficultyLevels: [DifficultyLevel.NORMAL]
       },
@@ -55,6 +59,8 @@ export interface PlayerSetup {
   playerCount: number
   botCount: number
   playerColors: PlayerColor[]
+  botCorporations: Corporation[]
+  botExecutiveOfficers: ExecutiveOfficer[]
 }
 
 export interface Turn {

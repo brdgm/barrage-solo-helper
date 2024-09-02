@@ -29,6 +29,9 @@
       "bot": "Automa {bot}"
     }
   },
+  "setupBot": {
+    "title": "Setup Automa"
+  },
   "difficultyLevel": {
     "1": "Easy - \"Low Voltage\"",
     "2": "Normal",
