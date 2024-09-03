@@ -30,13 +30,13 @@ export default abstract class AbstractNavigationState {
     const previousTurns = getPreviousTurns({state, round:this.round, turn:this.turn, player, bot})
 
     const result : BotInfo[] = []
-    for (let bot=1; bot<=this.botCount; bot++) {
-      const playerColor = this.playerColors[bot-1] || PlayerColor.BLACK
+    for (let botNo=1; botNo<=this.botCount; botNo++) {
+      const playerColor = this.playerColors[botNo-1] || PlayerColor.BLACK
       // count remaining workers
       const workerCount = Math.max(0, 12 - previousTurns
-          .filter(turn => turn.bot == bot)
+          .filter(turn => turn.bot == botNo)
           .reduce((sum, turn) => sum + (turn.workerCount ?? 0), 0))
-      result.push({bot, playerColor, workerCount})
+      result.push({bot:botNo, playerColor, workerCount})
     }
     return result
   }
