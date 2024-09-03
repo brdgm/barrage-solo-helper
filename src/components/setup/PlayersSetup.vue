@@ -11,12 +11,12 @@
       </select>
     </div>
   </div>  
-  <div class="row mt-3" v-for="botColorIndex in botCount" :key="botColorIndex+playerColors[playerCount+botColorIndex-1]">
+  <div class="row mt-3" v-for="botColorIndex in botCount" :key="botColorIndex+playerColors[botColorIndex-1]">
     <div class="col-5 col-lg-3">
       <label class="form-label">{{t('setup.players.botColor', {index:botColorIndex}, botCount)}}</label>
     </div>
     <div class="col-5 col-lg-3">
-      <PlayerColorPicker :model-value="playerColors[botColorIndex-1]" @update:model-value="color => playerColorChanged(playerCount+botColorIndex-1, color)"/>
+      <PlayerColorPicker :model-value="playerColors[botColorIndex-1]" @update:model-value="color => playerColorChanged(botColorIndex-1, color)"/>
     </div>
   </div>  
 
@@ -30,12 +30,12 @@
       </select>
     </div>
   </div>  
-  <div class="row mt-3" v-for="playerColorIndex in playerCount" :key="playerColorIndex+playerColors[playerColorIndex-1]">
+  <div class="row mt-3" v-for="playerColorIndex in playerCount" :key="playerColorIndex+playerColors[botCount+playerColorIndex-1]">
     <div class="col-5 col-lg-3">
       <label class="form-label">{{t('setup.players.playerColor', {index:playerColorIndex}, playerCount)}}</label>
     </div>
     <div class="col-5 col-lg-3">
-      <PlayerColorPicker :model-value="playerColors[botCount+playerColorIndex-1]" @update:model-value="color => playerColorChanged(playerColorIndex-1, color)"/>
+      <PlayerColorPicker :model-value="playerColors[botCount+playerColorIndex-1]" @update:model-value="color => playerColorChanged(botCount+playerColorIndex-1, color)"/>
     </div>
   </div>  
 
