@@ -83,13 +83,17 @@ export interface PlayerOrder {
 export interface Turn {
   round: number
   turn: number
-  bot?: BotPersistence
+  player?: number
+  bot?: number
+  botData?: BotPersistence
+  passed?: boolean
 }
 
 export interface BotPersistence {
   cardDeck: CardDeckPersistence
+  remainingWorkers: number
 }
 export interface CardDeckPersistence {
-  pile: number[]
-  discard: number[]
+  pile: string[]
+  discard: string[]
 }

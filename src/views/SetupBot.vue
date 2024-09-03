@@ -42,6 +42,7 @@ import isExecutiveOfficerAvailable from '@/util/isExecutiveOfficerAvailable'
 import Corporation from '@/services/enum/Corporation'
 import PlayerColorDisplay from '@/components/structure/PlayerColorDisplay.vue'
 import CardDeck from '@/services/CardDeck'
+import RouteCalculator from '@/services/RouteCalculator'
 
 export default defineComponent({
   name: 'SetupBot',
@@ -123,7 +124,9 @@ export default defineComponent({
         playerOrder,
         turns: []
       })
-      this.$router.push('/round/1/turn/1')
+      // start first turn
+      const routeCalculator = new RouteCalculator({round:1})
+      this.$router.push(routeCalculator.getFirstTurnRouteTo(this.state))
     }
   }
 })
