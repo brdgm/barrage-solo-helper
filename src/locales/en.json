@@ -93,13 +93,13 @@
   },
   "actionItem": {
     "production": "Production",
-    "waterManagement": "Water Management",
-    "contractOffice": "Contract Office",
+    "water-management": "Water Management",
+    "contract-office": "Contract Office",
     "construction": "Construction",
     "workshop": "Workshop",
-    "machineryShop": "Machinery Shop",
-    "patentOffice": "Patent Office",
-    "externalWork": "External Work",
+    "machinery-shop": "Machinery Shop",
+    "patent-office": "Patent Office",
+    "external-work": "External Work",
     "bank": "Bank"
   },
   "rules": {
@@ -113,10 +113,10 @@
         "fulfillContract": "Then, <b>the Automa will immediately fulfill the higher value Contract available</b> in the Contract Office, not only among those checked as a condition <i>(in case of tie, the contract on the right space)</i> and receive the corresponding reward. The fulfilled Contract is removed and replaced by a new one. The Automa can fulfill National Contracts like a human player <i>(in case of tie, the rightmost one)</i>.",
         "multipleOptions": "If there are multiple options to fulfill the contract with the same highest value, Automa uses water from a neutral dam first. If there are still multiple options, use the number for column „Conduit“ of the criteria tile <i>(TODO: link)</i>."
       },
-      "waterManagement": {
+      "water-management": {
         
       },
-      "contractOffice": {
+      "contract-office": {
         
       },
       "construction": {
@@ -125,13 +125,13 @@
       "workshop": {
         
       },
-      "machineryShop": {
+      "machinery-shop": {
         
       },
-      "patentOffice": {
+      "patent-office": {
         
       },
-      "externalWork": {
+      "external-work": {
         
       },
       "bank": {

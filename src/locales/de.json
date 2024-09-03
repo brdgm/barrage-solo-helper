@@ -94,13 +94,13 @@
   },
   "actionItem": {
     "production": "Energieproduktion",
-    "waterManagement": "Wassermanagement",
-    "contractOffice": "Notariat",
+    "water-management": "Wassermanagement",
+    "contract-office": "Notariat",
     "construction": "Bauaktion",
     "workshop": "Werkstatt",
-    "machineryShop": "Maschinenausstellung",
-    "patentOffice": "Patentamt",
-    "externalWork": "Auftragsarbeit",
+    "machinery-shop": "Maschinenausstellung",
+    "patent-office": "Patentamt",
+    "external-work": "Auftragsarbeit",
     "bank": "Bank"
   },
   "rules": {
@@ -114,10 +114,10 @@
         "fulfillContract": "Danach <b>erfüllt der Automa den im Notariat offen ausliegenden Vertrag mit dem höchsten Wert</b>, den er mit seiner Produktion erfüllen kann. Das kann auch ein Vertrag einer anderen Farbe sein als auf dem Automaplättchen angegeben <i>(auch ein staatlicher Vertrag)</i>. Wenn es mehrere Verträge mit dem höchsten Wert gibt, wählt er den weiter rechts liegenden. Der Automa erhält die Belohnung des Vertrags, danach wird der Vertrag neben seinem Unternehmensplan abgelegt und durch ein neues Plättchen ersetzt <i>(außer bei einem staatlichen Vertrag)</i>.",
         "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand der in der Spalte „Rohrwerk“ auf dem Kriterienplättchen abgebildeten Nummer, mit welchem Rohrwerk der Automa produziert <i>(TODO: link)</i>."
       },
-      "waterManagement": {
+      "water-management": {
         
       },
-      "contractOffice": {
+      "contract-office": {
         
       },
       "construction": {
@@ -126,13 +126,13 @@
       "workshop": {
         
       },
-      "machineryShop": {
+      "machinery-shop": {
         
       },
-      "patentOffice": {
+      "patent-office": {
         
       },
-      "externalWork": {
+      "external-work": {
         
       },
       "bank": {

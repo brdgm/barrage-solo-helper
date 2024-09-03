@@ -59,6 +59,7 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-position: right 5px top 5px;
   background-size: 1.5rem;
+  min-width: 200px;
   .actionTitle {
     font-weight: 500;
     margin-bottom: 0.5rem;
