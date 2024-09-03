@@ -90,6 +90,54 @@
     "leslie-spencer": "Leslie Spencer",
     "margot-fouche": "Margot Fouché"
   },
+  "actionItem": {
+    "production": "Energieproduktion",
+    "waterManagement": "Wassermanagement",
+    "contractOffice": "Notariat",
+    "construction": "Bauaktion",
+    "workshop": "Werkstatt",
+    "machineryShop": "Maschinenausstellung",
+    "patentOffice": "Patentamt",
+    "externalWork": "Auftragsarbeit",
+    "bank": "Bank"
+  },
+  "rules": {
+    "actionItem": {
+      "production": {
+        "intro": "<b><i>Der Automa produziert, falls die folgenden Bedingungen alle erfüllt sind, dort Energie, wo er den höchsten Ertrag erzielt:</i></b>",
+        "productionSystemReady": "<b>Vollständiges System:</b> Es gibt mindestens 1 Kombination aus Bauteilen (<i>Staumauer mit min. 1 Wassereinheit, Rohrwerk, Turbinenhaus</i>), mit der der Automa produzieren könnte.",
+        "energyTrack": "<b>Energieleiste:</b> Der Automa ist nicht Erster auf der Energieleiste und/oder hat noch nicht genug Energie produziert, um den vollen Bonus bei der Wertung des aktuellen Bonusplättchens zu bekommen. <i>(Diese Bedingung ist also nur nicht erfüllt, wenn er Erster ist und bereits den vollen Bonus bekäme.)</i>",
+        "contractRequirement": "<b>Erfüllbarer Vertrag:</b> Die maximale Energie, die der Automa produzieren könnte <i>(inkl. Bonus oder Malus)</i> reicht aus, um mindestens 1 im Notariat offen ausliegenden Vertrag der abgebildeten Farbe zu erfüllen.",
+        "produceEnergy": "<b>Der Automa produziert mit der Kombination von Bauteilen, mit der er den höchsten Energieertrag erzielt</b>. Addiere bzw. subtrahiere ggf. noch den angegebenen <b>Bonus oder Malus</b>, sowie den Bonus seiner gebauten Turbinenhäuser. Bewege die Wassereinheiten und den Energiemarker wie üblich.",
+        "fulfillContract": "Danach <b>erfüllt der Automa den im Notariat offen ausliegenden Vertrag mit dem höchsten Wert</b>, den er mit seiner Produktion erfüllen kann. Das kann auch ein Vertrag einer anderen Farbe sein als auf dem Automaplättchen angegeben <i>(auch ein staatlicher Vertrag)</i>. Wenn es mehrere Verträge mit dem höchsten Wert gibt, wählt er den weiter rechts liegenden. Der Automa erhält die Belohnung des Vertrags, danach wird der Vertrag neben seinem Unternehmensplan abgelegt und durch ein neues Plättchen ersetzt <i>(außer bei einem staatlichen Vertrag)</i>.",
+        "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand der in der Spalte „Rohrwerk“ auf dem Kriterienplättchen abgebildeten Nummer, mit welchem Rohrwerk der Automa produziert <i>(TODO: link)</i>."
+      },
+      "waterManagement": {
+        
+      },
+      "contractOffice": {
+        
+      },
+      "construction": {
+        
+      },
+      "workshop": {
+        
+      },
+      "machineryShop": {
+        
+      },
+      "patentOffice": {
+        
+      },
+      "externalWork": {
+        
+      },
+      "bank": {
+        
+      }
+    }
+  },
   "notfound": {
     "title": "Nicht Gefunden"
   },

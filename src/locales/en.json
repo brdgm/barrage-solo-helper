@@ -89,6 +89,54 @@
     "leslie-spencer": "Leslie Spencer",
     "margot-fouche": "Margot Fouché"
   },
+  "actionItem": {
+    "production": "Production",
+    "waterManagement": "Water Management",
+    "contractOffice": "Contract Office",
+    "construction": "Construction",
+    "workshop": "Workshop",
+    "machineryShop": "Machinery Shop",
+    "patentOffice": "Patent Office",
+    "externalWork": "External Work",
+    "bank": "Bank"
+  },
+  "rules": {
+    "actionItem": {
+      "production": {
+        "intro": "<b><i>The Automa will produce Energy using its best available production system, only if the following conditions are all satisfied:</i></b>",
+        "productionSystemReady": "<b>Production System Ready</b> - There is at least one structure connection <i>(i.e. Dam containing at least 1 Water Drop + Conduit + Powerhouse)</i> which allows Automa to produce.",
+        "energyTrack": "<b>Energy Track</b> - Automa is not yet in the current round numbered section which allows it to get the Full Reward from the Bonus tile OR Automa is not currently the first player on the Energy Track <i>(at least one of the two conditions)</i>.",
+        "contractRequirement": "<b>Contract Requirement</b> - The maximum potential energy producible <i>(including the production bonus/malus indicated)</i> is equal or greater than the energy requirement of at least one available Contract of the indicated type.",
+        "produceEnergy": "<b>The Automa will produce Energy using the best production system available</b> <i>(i.e. the one producing the higher amount of Energy)</i> <b>and applying the indicated bonus/malus </b> <i>(and eventually the bonus activated on the Company board)</i>. Move the Water Drops and update the Energy Track as usual.",
+        "fulfillContract": "Then, <b>the Automa will immediately fulfill the higher value Contract available</b> in the Contract Office, not only among those checked as a condition <i>(in case of tie, the contract on the right space)</i> and receive the corresponding reward. The fulfilled Contract is removed and replaced by a new one. The Automa can fulfill National Contracts like a human player <i>(in case of tie, the rightmost one)</i>.",
+        "multipleOptions": "If there are multiple options to fulfill the contract with the same highest value, Automa uses water from a neutral dam first. If there are still multiple options, use the number for column „Conduit“ of the criteria tile <i>(TODO: link)</i>."
+      },
+      "waterManagement": {
+        
+      },
+      "contractOffice": {
+        
+      },
+      "construction": {
+        
+      },
+      "workshop": {
+        
+      },
+      "machineryShop": {
+        
+      },
+      "patentOffice": {
+        
+      },
+      "externalWork": {
+        
+      },
+      "bank": {
+        
+      }
+    }
+  },
   "notfound": {
     "title": "Not Found"
   },

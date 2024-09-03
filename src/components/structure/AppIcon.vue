@@ -18,7 +18,7 @@ export default defineComponent({
     },
     extension: {
       type: String,
-      default: 'svg'
+      default: 'png'
     }
   },
   computed: {

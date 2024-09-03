@@ -6,6 +6,7 @@ import CardDeck from '@/services/CardDeck'
 import getPreviousTurns from './getPreviousTurns'
 import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
 import BotActions from '@/services/BotActions'
+import { ActionItem } from '@/services/Card'
 
 export default class BotNavigationState extends AbstractNavigationState {
 
@@ -15,6 +16,7 @@ export default class BotNavigationState extends AbstractNavigationState {
   readonly workerCount : number
   readonly cardDeck : CardDeck
   readonly botActions : BotActions
+  readonly actionItem? : ActionItem
 
   constructor(route : RouteLocation, state : State) {
     super(route, state)
@@ -27,6 +29,7 @@ export default class BotNavigationState extends AbstractNavigationState {
     // draw next card for bot
     const actionCard = this.cardDeck.draw()
     this.botActions = new BotActions(actionCard, state)
+    this.actionItem = this.botActions.get(this.action)
   }
 
   getCardDeck(state : State) : CardDeck {

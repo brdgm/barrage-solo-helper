@@ -6,7 +6,11 @@
     {{t('turnBot.title',{bot:bot},botCount)}}
   </h1>
 
-  <p v-for="(action,index) of navigationState.botActions.items" :key="index">{{ action }}</p>
+  <BotAction v-if="navigationState.actionItem && navigationState.cardDeck.criteriaCard"
+      :is="`action-${navigationState.actionItem.action}`"
+      :actionItem="navigationState.actionItem"
+      :criteriaCard="navigationState.cardDeck.criteriaCard"
+      :navigationState="navigationState"/>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
     {{t('action.next')}}
@@ -28,6 +32,7 @@ import RouteCalculator from '@/services/RouteCalculator'
 import BotNavigationState from '@/util/BotNavigationState'
 import SideBar from '@/components/turn/SideBar.vue'
 import DebugInfo from '@/components/turn/DebugInfo.vue'
+import BotAction from '@/components/turn/BotAction.vue'
 
 export default defineComponent({
   name: 'TurnBot',
@@ -35,7 +40,8 @@ export default defineComponent({
     FooterButtons,
     PlayerColorIcon,
     SideBar,
-    DebugInfo
+    DebugInfo,
+    BotAction
   },
   setup() {
     const { t } = useI18n()
@@ -59,7 +65,7 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      const workerUsed = 2
+      const workerUsed = this.navigationState.actionItem?.workerCount ?? 0
       const workerLeft = this.navigationState.workerCount - workerUsed
       const passed = workerLeft <= 0 ? true : undefined
       this.state.storeTurn({
