@@ -3,7 +3,7 @@
   "home": {
     "title": "Barrage Solo Helper",
     "play1": "Play <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Barrage</b></a> against Automa, the artificial opponent.",
-    "play2": "This application replaces the Automa card deck, counts the victory points and guides you through the Automa ruleset.",
+    "play2": "This application replaces the Automa card deck and guides you through the game and Automa ruleset.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
@@ -47,7 +47,12 @@
     "validCorporationExecutiveOfficer": "Please select a corporation and executive officer for Automa."
   },
   "turnPlayer": {
-    "title": "Player | Player {player}"
+    "title": "Player | Player {player}",
+    "takeTurn": "Take your turn.",
+    "pass":{
+      "title": "Pass",
+      "confirm": "Pass and drop out of the action phase?"
+    }
   },
   "turnBot": {
     "title": "Automa | Automa {bot}"
@@ -94,7 +99,8 @@
     "backToHome": "Back to Home",
     "back": "Back",
     "close": "Close",
-    "ok": "OK"
+    "ok": "OK",
+    "pass": "Pass"
   },
   "footer": {
     "credits": "Credits"

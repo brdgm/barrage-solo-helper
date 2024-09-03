@@ -4,7 +4,7 @@
     {{t('turnPlayer.title',{player:player},playerCount)}}
   </h1>
 
-  <p v-html="t('turnPlayer.makeTurn')" class="mt-4 mb-4"></p>
+  <p v-html="t('turnPlayer.takeTurn')" class="mt-4 mb-4"></p>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
     {{t('action.next')}}
@@ -17,12 +17,7 @@
 
   <ModalDialog id="modalPassInfo" :title="t('turnPlayer.pass.title')">
     <template #body>
-      <ul>
-        <li v-html="t('turnPlayer.pass.step1')"></li>
-        <li v-html="t('turnPlayer.pass.step2')"></li>
-        <li v-html="t('turnPlayer.pass.step3')"></li>
-        <li v-html="t('turnPlayer.pass.step4')"></li>
-      </ul>
+      <p v-html="t('turnPlayer.pass.confirm')"></p>
     </template>
     <template #footer>
       <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="pass()">{{t('action.pass')}}</button>
