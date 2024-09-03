@@ -1,4 +1,6 @@
 <template>
+  <SideBar :navigationState="navigationState"/>
+
   <h1>
     <PlayerColorIcon :playerColor="playerColor" class="playerColorIcon"/>
     {{t('turnBot.title',{bot:bot},botCount)}}
@@ -22,12 +24,14 @@ import { useRoute } from 'vue-router'
 import PlayerColorIcon from '@/components/structure/PlayerColorIcon.vue'
 import RouteCalculator from '@/services/RouteCalculator'
 import BotNavigationState from '@/util/BotNavigationState'
+import SideBar from '@/components/turn/SideBar.vue'
 
 export default defineComponent({
   name: 'TurnBot',
   components: {
     FooterButtons,
-    PlayerColorIcon
+    PlayerColorIcon,
+    SideBar
   },
   setup() {
     const { t } = useI18n()

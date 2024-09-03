@@ -58,6 +58,10 @@
   "turnBot": {
     "title": "Automa | Automa {bot}"
   },
+  "sideBar": {
+    "round": "Runde {round}",
+    "turn": "Zug {turn}"
+  },
   "difficultyLevel": {
     "1": "Einfach - \"Schwachstrom\"",
     "2": "Normal",

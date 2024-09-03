@@ -43,7 +43,7 @@ export const useStateStore = defineStore(`${name}.state`, {
       if (!round) {
         throw new Error(`Round ${turn.round} not found.`)
       }
-      round.turns = round.turns.filter(item => item.turn < turn.turn)
+      round.turns = round.turns.filter(item => (item.turn < turn.turn) || (item.player != turn.player && item.bot != turn.bot))
       round.turns.push(turn)
     }
   },
@@ -85,13 +85,9 @@ export interface Turn {
   turn: number
   player?: number
   bot?: number
-  botData?: BotPersistence
+  cardDeck?: CardDeckPersistence
+  workerCount?: number
   passed?: boolean
-}
-
-export interface BotPersistence {
-  cardDeck: CardDeckPersistence
-  remainingWorkers: number
 }
 export interface CardDeckPersistence {
   pile: string[]

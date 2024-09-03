@@ -1,4 +1,6 @@
 <template>
+  <SideBar :navigationState="navigationState"/>
+
   <h1>
     <PlayerColorIcon :playerColor="playerColor" class="playerColorIcon"/>
     {{t('turnPlayer.title',{player:player},playerCount)}}
@@ -37,13 +39,15 @@ import RouteCalculator from '@/services/RouteCalculator'
 import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
 import PlayerNavigationState from '@/util/PlayerNavigationState'
 import PlayerColorIcon from '@/components/structure/PlayerColorIcon.vue'
+import SideBar from '@/components/turn/SideBar.vue'
 
 export default defineComponent({
   name: 'TurnPlayer',
   components: {
     FooterButtons,
     ModalDialog,
-    PlayerColorIcon
+    PlayerColorIcon,
+    SideBar
   },
   setup() {
     const { t } = useI18n()
