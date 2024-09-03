@@ -18,7 +18,6 @@ import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import DifficultyLevel from '@/components/setup/DifficultyLevel.vue'
-import CardDeck from '@/services/CardDeck'
 import ExpansionsSetup from '@/components/setup/ExpansionsSetup.vue'
 import PlayersSetup from '@/components/setup/PlayersSetup.vue'
 
@@ -38,11 +37,6 @@ export default defineComponent({
   },
   methods: {
     setupBot() : void {
-      this.state.resetGame()
-
-      const cardDeck = CardDeck.new()
-      this.state.setup.initialCardDeck = cardDeck.toPersistence()
-
       this.$router.push('/setupBot')
     }
   }

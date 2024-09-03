@@ -30,7 +30,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStateStore } from '@/store/state'
+import { useStateStore, PlayerOrder } from '@/store/state'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import BotCorporation from '@/components/setup/BotCorporation.vue'
 import BotExecutiveOfficer from '@/components/setup/BotExecutiveOfficer.vue'
@@ -41,6 +41,7 @@ import Expansion from '@/services/enum/Expansion'
 import isExecutiveOfficerAvailable from '@/util/isExecutiveOfficerAvailable'
 import Corporation from '@/services/enum/Corporation'
 import PlayerColorDisplay from '@/components/structure/PlayerColorDisplay.vue'
+import CardDeck from '@/services/CardDeck'
 
 export default defineComponent({
   name: 'SetupBot',
@@ -105,7 +106,24 @@ export default defineComponent({
   },
   methods: {
     startGame() : void {
-      this.$router.push('/turn/1/bot')
+      this.state.resetGame()
+      // prepare initial card deck
+      this.state.setup.initialCardDeck = CardDeck.new().toPersistence()
+      // prepare first round with initial player order
+      const { playerCount, botCount } = this.state.setup.playerSetup
+      const playerOrder : PlayerOrder[] = []
+      for (let botIndex = 0; botIndex<botCount; botIndex++) {
+        playerOrder.push({ bot: botIndex+1 })
+      }
+      for (let playerIndex = 0; playerIndex<playerCount; playerIndex++) {
+        playerOrder.push({ player: playerIndex+1 })
+      }
+      this.state.storeRound({
+        round: 1,
+        playerOrder,
+        turns: []
+      })
+      this.$router.push('/round/1/turn/1')
     }
   }
 })

@@ -23,20 +23,28 @@ export const useStateStore = defineStore(`${name}.state`, {
         botCorporations: [],
         botExecutiveOfficers: []
       },
-      turns: []
+      rounds: []
     } as State
   },
   actions: {
     resetGame() {
       this.setup.initialCardDeck = undefined
-      this.turns = []
+      this.rounds = []
     },
     setupToggleExpansion(expansion: Expansion) {
       toggleArrayItem(this.setup.expansions, expansion)
     },
+    storeRound(round : Round) {
+      this.rounds = this.rounds.filter(item => item.round < round.round)
+      this.rounds.push(round)
+    },
     storeTurn(turn : Turn) {
-      this.turns = this.turns.filter(item => item.turn < turn.turn)
-      this.turns.push(turn)
+      const round = this.rounds.find(item => item.round == turn.round)
+      if (!round) {
+        throw new Error(`Round ${turn.round} not found.`)
+      }
+      round.turns = round.turns.filter(item => item.turn < turn.turn)
+      round.turns.push(turn)
     }
   },
   persist: true
@@ -46,7 +54,7 @@ export interface State {
   language: string,
   baseFontSize: number,
   setup: Setup,
-  turns: Turn[]
+  rounds: Round[]
 }
 export interface Setup {
   expansions: Expansion[]
@@ -63,7 +71,17 @@ export interface PlayerSetup {
   playerColors: PlayerColor[]
 }
 
+export interface Round {
+  round: number
+  playerOrder: PlayerOrder[]
+  turns: Turn[]
+}
+export interface PlayerOrder {
+  player?: number
+  bot?: number
+}
 export interface Turn {
+  round: number
   turn: number
   bot?: BotPersistence
 }
