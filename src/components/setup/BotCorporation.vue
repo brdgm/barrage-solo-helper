@@ -3,7 +3,7 @@
 
   <div class="row mt-3" v-for="bot in botCount" :key="bot">
     <div class="col-5 col-lg-3">
-      <label :for="`botCorporation${bot}`" class="form-label">{{t('bot', {bot}, botCount)}}</label>
+      <label :for="`botCorporation${bot}`" class="form-label">{{t('turnBot.title', {bot}, botCount)}}</label>
     </div>
     <div class="col-5 col-lg-3">
       <select class="form-select" :id="`botCorporation${bot}`" v-model="state.setup.botCorporations[bot-1]">

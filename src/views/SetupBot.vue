@@ -13,7 +13,7 @@
       <li v-html="t('setupBot.setup.victoryPoints')"></li>
       <li>
         <span v-html="t('setupBot.setup.playerOrder')"></span><br/>
-        <PlayerColorDisplay v-for="playerColor in playerColors" :key="playerColor" :playerColor="playerColor"/>
+        <PlayerColorIcon v-for="playerColor in playerColors" :key="playerColor" :playerColor="playerColor"/>
       </li>
     </ol>
   </div>
@@ -40,7 +40,7 @@ import isCorporationAvailable from '@/util/isCorporationAvailable'
 import Expansion from '@/services/enum/Expansion'
 import isExecutiveOfficerAvailable from '@/util/isExecutiveOfficerAvailable'
 import Corporation from '@/services/enum/Corporation'
-import PlayerColorDisplay from '@/components/structure/PlayerColorDisplay.vue'
+import PlayerColorIcon from '@/components/structure/PlayerColorIcon.vue'
 import CardDeck from '@/services/CardDeck'
 import RouteCalculator from '@/services/RouteCalculator'
 
@@ -49,7 +49,7 @@ export default defineComponent({
   components: {
     FooterButtons,
     BotCorporation,
-    PlayerColorDisplay,
+    PlayerColorIcon,
     BotExecutiveOfficer
   },
   setup() {

@@ -1,6 +1,6 @@
 <template>
   <svg width="1.5rem" height="1.5rem" class="color">
-    <rect width="1.5rem" height="1.5rem" :style="`fill:${getColorCode(playerColor)};'`"/>
+    <rect width="100%" height="100%" :style="`fill:${getColorCode(playerColor)};'`"/>
   </svg>
 </template>
 

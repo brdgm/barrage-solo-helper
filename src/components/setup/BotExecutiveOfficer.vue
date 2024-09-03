@@ -4,7 +4,7 @@
   <template v-for="bot in botCount" :key="bot">
     <div class="row mt-3" v-if="isVeryHardDifficulty(bot)">
       <div class="col-5 col-lg-3">
-        <label :for="`botExecutiveOfficer${bot}`" class="form-label">{{t('bot', {bot}, botCount)}}</label>
+        <label :for="`botExecutiveOfficer${bot}`" class="form-label">{{t('turnBot.title', {bot}, botCount)}}</label>
       </div>
       <div class="col-5 col-lg-3">
         <select class="form-select" :id="`botExecutiveOfficer${bot}`" v-model="state.setup.botExecutiveOfficers[bot-1]">

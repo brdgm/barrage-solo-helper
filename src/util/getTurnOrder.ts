@@ -9,7 +9,7 @@ import { State } from "@/store/state"
 export default function getTurnOrder(state: State, currentRound: number, currentTurn: number) : TurnOrder[] {
   const round = state.rounds.find(item => item.round==currentRound)
   if (!round) {
-    throw new Error(`Round ${currentRound} not found.`)
+    return []
   }
   const { playerOrder, turns } = round
   const steps : TurnOrder[] = []

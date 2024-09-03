@@ -47,6 +47,12 @@
     },
     "validCorporationExecutiveOfficer": "Bitte wähle ein Unternehmen und Chefingenieur für Automa."
   },
+  "turnPlayer": {
+    "title": "Spieler | Spieler {player}"
+  },
+  "turnBot": {
+    "title": "Automa | Automa {bot}"
+  },
   "difficultyLevel": {
     "1": "Einfach - \"Schwachstrom\"",
     "2": "Normal",

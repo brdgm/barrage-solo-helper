@@ -6,7 +6,6 @@
     "play2": "This application replaces the Automa card deck, counts the victory points and guides you through the Automa ruleset.",
     "feedback": "Discussion and Feedback:"
   },
-  "bot": "Automa | Automa {bot}",
   "setup": {
     "title": "Setup Game",
     "expansions": {
@@ -46,6 +45,12 @@
       "playerOrder": "Initial player order:"
     },
     "validCorporationExecutiveOfficer": "Please select a corporation and executive officer for Automa."
+  },
+  "turnPlayer": {
+    "title": "Player | Player {player}"
+  },
+  "turnBot": {
+    "title": "Automa | Automa {bot}"
   },
   "difficultyLevel": {
     "1": "Easy - \"Low Voltage\"",
