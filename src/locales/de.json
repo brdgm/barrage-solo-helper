@@ -56,7 +56,9 @@
     }
   },
   "turnBot": {
-    "title": "Automa | Automa {bot}"
+    "title": "Automa | Automa {bot}",
+    "done": "Arbeiter platziert",
+    "notPossible": "Nicht möglich"
   },
   "sideBar": {
     "round": "Runde {round}",

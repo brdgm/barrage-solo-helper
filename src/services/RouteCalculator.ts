@@ -8,12 +8,14 @@ export default class RouteCalculator {
 
   readonly round : number
   readonly turn : number
+  readonly action? : number
   readonly player? : number
   readonly bot? : number
 
-  constructor(params:{round: number, turn?: number, player?: number, bot?: number}) {
+  constructor(params:{round: number, turn?: number, action?: number, player?: number, bot?: number}) {
     this.round = params.round
     this.turn = params.turn ?? MAX_TURN  // when called in EndOfRound/EndOfGame context
+    this.action = params.action
     this.player = params.player
     this.bot = params.bot
   }
@@ -42,10 +44,20 @@ export default class RouteCalculator {
   }
 
   /**
+   * Get route to next action ins same bot turn.
+   */
+  public getNextActionRouteTo() : string {
+    return RouteCalculator.routeTo({round:this.round, turn:this.turn, action:(this.action ?? 0) + 1, bot:this.bot})
+  }
+
+  /**
    * Get route to previous step in round.
    * If this is the first turn in round, returns route to end of previous round (or empty route in first round).
    */
   public getBackRouteTo(state: State) : string {
+    if (this.bot && this.action && this.action > 0) {
+      return RouteCalculator.routeTo({round:this.round, turn:this.turn, action:(this.action ?? 0) - 1, bot:this.bot})
+    }
     const steps = getTurnOrder(state, this.round, this.turn)
     const currentStepIndex = steps.findIndex(item => item.round==this.round && item.turn==this.turn
         && item.player==this.player && item.bot==this.bot)
@@ -91,7 +103,12 @@ export default class RouteCalculator {
    */
   private static routeTo(step: Step) : string {
     if (step.bot) {
-      return `/round/${step.round}/turn/${step.turn}/bot/${step.bot}`
+      if (step.action && step.action > 0) {
+        return `/round/${step.round}/turn/${step.turn}/bot/${step.bot}/action/${step.action}`
+      }
+      else {
+        return `/round/${step.round}/turn/${step.turn}/bot/${step.bot}`
+      }
     }
     else {
       return `/round/${step.round}/turn/${step.turn}/player/${step.player}`
@@ -103,6 +120,7 @@ export default class RouteCalculator {
 interface Step {
   readonly round?: number
   readonly turn?: number
+  readonly action?: number
   readonly player?: number
   readonly bot?: number
 }

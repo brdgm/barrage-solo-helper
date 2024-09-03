@@ -55,7 +55,9 @@
     }
   },
   "turnBot": {
-    "title": "Automa | Automa {bot}"
+    "title": "Automa | Automa {bot}",
+    "done": "Engineer placed | Engineers placed",
+    "notPossible": "Not possible"
   },
   "sideBar": {
     "round": "Round {round}",

@@ -12,8 +12,11 @@
       :criteriaCard="navigationState.cardDeck.criteriaCard"
       :navigationState="navigationState"/>
 
-  <button class="btn btn-primary btn-lg mt-4" @click="next()">
-    {{t('action.next')}}
+  <button class="btn btn-success btn-lg mt-4" @click="next()">
+    {{t('turnBot.done', navigationState.actionItem?.workerCount ?? 0)}}
+  </button>
+  <button class="btn btn-danger btn-lg mt-4 ms-2" @click="notPossible()" v-if="!isBankAction">
+    {{t('turnBot.notPossible')}}
   </button>
 
   <DebugInfo :navigationState="navigationState"/>
@@ -33,6 +36,7 @@ import BotNavigationState from '@/util/BotNavigationState'
 import SideBar from '@/components/turn/SideBar.vue'
 import DebugInfo from '@/components/turn/DebugInfo.vue'
 import BotAction from '@/components/turn/BotAction.vue'
+import Action from '@/services/enum/Action'
 
 export default defineComponent({
   name: 'TurnBot',
@@ -52,15 +56,19 @@ export default defineComponent({
     const botCount = navigationState.botCount
     const round = navigationState.round
     const turn = navigationState.turn
+    const action = navigationState.action
     const bot = navigationState.bot
     const playerColor = navigationState.playerColor
-    const routeCalculator = new RouteCalculator({round:round, turn:turn, bot:bot})
+    const routeCalculator = new RouteCalculator({round:round, turn:turn, action:action, bot:bot})
 
     return { t, state, botCount, round, turn, bot, playerColor, routeCalculator, navigationState }
   },
   computed: {
     backButtonRouteTo() : string {
       return this.routeCalculator.getBackRouteTo(this.state)
+    },
+    isBankAction() : boolean {
+      return this.navigationState.actionItem?.action == Action.BANK
     }
   },
   methods: {
@@ -77,6 +85,9 @@ export default defineComponent({
         passed: passed ? true : undefined
       })
       this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
+    },
+    notPossible() : void {
+      this.$router.push(this.routeCalculator.getNextActionRouteTo())
     }
   }
 })
