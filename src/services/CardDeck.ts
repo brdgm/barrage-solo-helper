@@ -18,11 +18,11 @@ export default class CardDeck {
   }
 
   public get actionCard() : Card|undefined {
-    return this._discard.value[0]
+    return this._pile.value[0]
   }
 
-  public get supportCard() : Card|undefined {
-    return this._pile.value[0]
+  public get criteriaCard() : Card|undefined {
+    return this._discard.value[0]
   }
 
   public get pile() : readonly Card[] {

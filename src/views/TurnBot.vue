@@ -12,6 +12,8 @@
     {{t('action.next')}}
   </button>
 
+  <DebugInfo :navigationState="navigationState"/>
+
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
 </template>
 
@@ -25,13 +27,15 @@ import PlayerColorIcon from '@/components/structure/PlayerColorIcon.vue'
 import RouteCalculator from '@/services/RouteCalculator'
 import BotNavigationState from '@/util/BotNavigationState'
 import SideBar from '@/components/turn/SideBar.vue'
+import DebugInfo from '@/components/turn/DebugInfo.vue'
 
 export default defineComponent({
   name: 'TurnBot',
   components: {
     FooterButtons,
     PlayerColorIcon,
-    SideBar
+    SideBar,
+    DebugInfo
   },
   setup() {
     const { t } = useI18n()
@@ -55,6 +59,17 @@ export default defineComponent({
   },
   methods: {
     next() : void {
+      const workerUsed = 2
+      const workerLeft = this.navigationState.workerCount - workerUsed
+      const passed = workerLeft <= 0 ? true : undefined
+      this.state.storeTurn({
+        round:this.round,
+        turn:this.turn,
+        bot:this.bot,
+        cardDeck: this.navigationState.cardDeck.toPersistence(),
+        workerUsed,
+        passed: passed ? true : undefined
+      })
       this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
     }
   }

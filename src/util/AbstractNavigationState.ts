@@ -35,7 +35,7 @@ export default abstract class AbstractNavigationState {
       // count remaining workers
       const workerCount = Math.max(0, 12 - previousTurns
           .filter(turn => turn.bot == botNo)
-          .reduce((sum, turn) => sum + (turn.workerCount ?? 0), 0))
+          .reduce((sum, turn) => sum + (turn.workerUsed ?? 0), 0))
       result.push({bot:botNo, playerColor, workerCount})
     }
     return result

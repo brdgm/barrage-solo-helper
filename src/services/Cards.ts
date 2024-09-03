@@ -18,7 +18,7 @@ import Region from './enum/Region'
  */
 const cards : Card[] = [
   {
-    id: "5-10A-12",
+    id: '5-10A-12',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -85,7 +85,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "5-9A-8",
+    id: '5-9A-8',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -150,7 +150,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "3-6A-9",
+    id: '3-6A-9',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -216,7 +216,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "6-3A-5",
+    id: '6-3A-5',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -287,7 +287,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "7-3B-6",
+    id: '7-3B-6',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -357,7 +357,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "10-10B-12",
+    id: '10-10B-12',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -423,7 +423,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "3-2A-7",
+    id: '3-2A-7',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -483,7 +483,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "6-7A-10",
+    id: '6-7A-10',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -554,7 +554,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "2-1B-6",
+    id: '2-1B-6',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -627,7 +627,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "4-6B-10",
+    id: '4-6B-10',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -687,7 +687,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "9-4B-12",
+    id: '9-4B-12',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -757,7 +757,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "9-8B-12",
+    id: '9-8B-12',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -822,7 +822,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "10-9B-11",
+    id: '10-9B-11',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -894,7 +894,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "8-8A-11",
+    id: '8-8A-11',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -954,7 +954,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "4-2B-11",
+    id: '4-2B-11',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -1015,7 +1015,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "7-7B-11",
+    id: '7-7B-11',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -1087,7 +1087,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "2-5B-9",
+    id: '2-5B-9',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -1158,7 +1158,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "1-1A-5",
+    id: '1-1A-5',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -1229,7 +1229,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "8-4A-7",
+    id: '8-4A-7',
     actions: [
       {
         action: Action.PRODUCTION,
@@ -1299,7 +1299,7 @@ const cards : Card[] = [
     ]
   },
   {
-    id: "1-5A-8",
+    id: '1-5A-8',
     actions: [
       {
         action: Action.PRODUCTION,
