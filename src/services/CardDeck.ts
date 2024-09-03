@@ -36,8 +36,9 @@ export default class CardDeck {
   /**
    * Draws next card.
    * If not sufficient cards are left, the discard pile is shuffled back into the pile.
+   * @returns Next action card
    */
-  public draw() : void {
+  public draw() : Card {
     const card = this._pile.value.shift()
     if (!card) {
       throw new Error('Pile is empty.')
@@ -49,6 +50,7 @@ export default class CardDeck {
       this._discard.value = []
       this.draw()
     }
+    return this._pile.value[0]
   }
 
   /**

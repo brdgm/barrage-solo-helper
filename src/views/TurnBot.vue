@@ -6,7 +6,7 @@
     {{t('turnBot.title',{bot:bot},botCount)}}
   </h1>
 
-  <p>...</p>
+  <p v-for="(action,index) of navigationState.botActions.items" :key="index">{{ action }}</p>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
     {{t('action.next')}}

@@ -5,6 +5,7 @@ import AbstractNavigationState from './AbstractNavigationState'
 import CardDeck from '@/services/CardDeck'
 import getPreviousTurns from './getPreviousTurns'
 import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
+import BotActions from '@/services/BotActions'
 
 export default class BotNavigationState extends AbstractNavigationState {
 
@@ -13,17 +14,19 @@ export default class BotNavigationState extends AbstractNavigationState {
   readonly playerColor : PlayerColor
   readonly workerCount : number
   readonly cardDeck : CardDeck
+  readonly botActions : BotActions
 
   constructor(route : RouteLocation, state : State) {
     super(route, state)
     this.bot = getIntRouteParam(route, 'bot')
     this.action = getIntRouteParam(route, 'action')
     this.playerColor = this.playerColors[this.bot - 1] || PlayerColor.BLACK
-    this.workerCount = this.botInfos.find(info => info.bot == this.bot)?.workerCount || 0
+    this.workerCount = this.botInfos.find(info => info.bot == this.bot)?.workerCount ?? 0
     this.cardDeck = this.getCardDeck(state)
 
     // draw next card for bot
-    this.cardDeck.draw()
+    const actionCard = this.cardDeck.draw()
+    this.botActions = new BotActions(actionCard, state)
   }
 
   getCardDeck(state : State) : CardDeck {
