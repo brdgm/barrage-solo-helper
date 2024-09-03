@@ -25,8 +25,8 @@ export default abstract class AbstractNavigationState {
   }
 
   getBotInfos(route: RouteLocation, state: State) : BotInfo[] {
-    const bot = getIntRouteParam(route, 'bot')
-    const player = getIntRouteParam(route, 'player')
+    const bot = getIntRouteParamIfPresent(route, 'bot')
+    const player = getIntRouteParamIfPresent(route, 'player')
     const previousTurns = getPreviousTurns({state, round:this.round, turn:this.turn, player, bot})
 
     const result : BotInfo[] = []
@@ -47,4 +47,12 @@ export interface BotInfo {
   bot: number
   playerColor: PlayerColor
   workerCount: number  // remaining workers
+}
+
+function getIntRouteParamIfPresent(route: RouteLocation, key: string) : number | undefined {
+  const value = getIntRouteParam(route, key)
+  if (value > 0) {
+    return value
+  }
+  return undefined
 }
