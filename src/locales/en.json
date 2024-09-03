@@ -44,7 +44,8 @@
       "noStartingContract": "Do not assign starting contracts to Automa.",
       "victoryPoints": "Automa begins the game with 16 Victory Points.",
       "playerOrder": "Initial player order:"
-    }
+    },
+    "validCorporationExecutiveOfficer": "Please select a corporation and executive officer for Automa."
   },
   "difficultyLevel": {
     "1": "Easy - \"Low Voltage\"",

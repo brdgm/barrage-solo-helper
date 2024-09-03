@@ -20,6 +20,8 @@
     </ol>
   </div>
 
+  <div class="alert alert-warning" v-if="!isValid" v-html="t('setupBot.validCorporationExecutiveOfficer')"></div>
+
   <button class="btn btn-primary btn-lg mt-4" @click="startGame()" :disabled="!isValid">
     {{t('action.startGame')}}
   </button>
@@ -40,6 +42,7 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import isCorporationAvailable from '@/util/isCorporationAvailable'
 import Expansion from '@/services/enum/Expansion'
 import isExecutiveOfficerAvailable from '@/util/isExecutiveOfficerAvailable'
+import Corporation from '@/services/enum/Corporation'
 
 export default defineComponent({
   name: 'SetupBot',
@@ -81,14 +84,22 @@ export default defineComponent({
       return false
     },
     isValid() : boolean {
+      const selectedCorporations = new Set<Corporation>()
       for (let botIndex = 0; botIndex<this.botCount; botIndex++) {
-        if (!isCorporationAvailable(this.state.setup.botCorporations[botIndex], this.expansions)) {
+        const selectedCorporation = this.state.setup.botCorporations[botIndex]
+        const selectedExecutiveOfficer = this.state.setup.botExecutiveOfficers[botIndex]
+        const difficultyLevel = this.state.setup.difficultyLevels[botIndex]
+        if (!isCorporationAvailable(selectedCorporation, this.expansions)) {
           return false
         }
-        if (this.state.setup.difficultyLevels[botIndex] == DifficultyLevel.VERY_HARD
-            && !isExecutiveOfficerAvailable(this.state.setup.botExecutiveOfficers[botIndex], this.expansions)) {
+        if (difficultyLevel == DifficultyLevel.VERY_HARD
+            && !isExecutiveOfficerAvailable(selectedExecutiveOfficer, this.expansions)) {
           return false
         }
+        if (selectedCorporations.has(selectedCorporation)) {
+          return false
+        }
+        selectedCorporations.add(selectedCorporation)
       }
       return true
     }

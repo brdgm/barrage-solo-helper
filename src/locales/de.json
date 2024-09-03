@@ -44,7 +44,8 @@
       "noStartingContract": "Automa erhält keinen Startvertrag.",
       "victoryPoints": "Automa beginnt das Spiel mit 16 SP.",
       "playerOrder": "Initiale Spielerreihenfolge:"
-    }
+    },
+    "validCorporationExecutiveOfficer": "Bitte wähle ein Unternehmen und Chefingenieur für Automa."
   },
   "difficultyLevel": {
     "1": "Einfach - \"Schwachstrom\"",
