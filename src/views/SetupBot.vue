@@ -13,9 +13,7 @@
       <li v-html="t('setupBot.setup.victoryPoints')"></li>
       <li>
         <span v-html="t('setupBot.setup.playerOrder')"></span><br/>
-        <svg v-for="playerColor in playerColors" :key="playerColor" width="1.5rem" height="1.5rem" class="color">
-          <rect width="1rem" height="1rem" :style="`fill:${getColorCode(playerColor)};'`"/>
-        </svg>
+        <PlayerColorDisplay v-for="playerColor in playerColors" :key="playerColor" :playerColor="playerColor"/>
       </li>
     </ol>
   </div>
@@ -37,18 +35,19 @@ import FooterButtons from '@/components/structure/FooterButtons.vue'
 import BotCorporation from '@/components/setup/BotCorporation.vue'
 import BotExecutiveOfficer from '@/components/setup/BotExecutiveOfficer.vue'
 import PlayerColor from '@/services/enum/PlayerColor'
-import getPlayerColorCode from '@/util/getPlayerColorCode'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import isCorporationAvailable from '@/util/isCorporationAvailable'
 import Expansion from '@/services/enum/Expansion'
 import isExecutiveOfficerAvailable from '@/util/isExecutiveOfficerAvailable'
 import Corporation from '@/services/enum/Corporation'
+import PlayerColorDisplay from '@/components/structure/PlayerColorDisplay.vue'
 
 export default defineComponent({
   name: 'SetupBot',
   components: {
     FooterButtons,
     BotCorporation,
+    PlayerColorDisplay,
     BotExecutiveOfficer
   },
   setup() {
@@ -107,9 +106,6 @@ export default defineComponent({
   methods: {
     startGame() : void {
       this.$router.push('/turn/1/bot')
-    },
-    getColorCode(color : PlayerColor) : string {
-      return getPlayerColorCode(color)
     }
   }
 })
