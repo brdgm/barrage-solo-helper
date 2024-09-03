@@ -60,7 +60,9 @@
   },
   "sideBar": {
     "round": "Runde {round}",
-    "turn": "Zug {turn}"
+    "turn": "Zug {turn}",
+    "workers": "{count} Arbeiter",
+    "pass": "(gepasst)"
   },
   "difficultyLevel": {
     "1": "Einfach - \"Schwachstrom\"",

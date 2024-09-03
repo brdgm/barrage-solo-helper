@@ -11,7 +11,7 @@ export default class RouteCalculator {
   readonly player? : number
   readonly bot? : number
 
-  constructor(params:{round: number, turn?: number, player?: number, bot?: number}) {    
+  constructor(params:{round: number, turn?: number, player?: number, bot?: number}) {
     this.round = params.round
     this.turn = params.turn ?? MAX_TURN  // when called in EndOfRound/EndOfGame context
     this.player = params.player

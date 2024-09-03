@@ -2,6 +2,14 @@
   <div class="sidebar">
     {{t('sideBar.round', {round:navigationState.round})}}<br/>
     {{t('sideBar.turn', {turn:navigationState.turn})}}<br/>
+    <div v-for="botInfo of botInfos" :key="botInfo.bot" class="mt-3">
+      <h6>
+        <PlayerColorIcon :playerColor="botInfo.playerColor" class="playerIcon"/>
+        {{t('turnBot.title', {bot:botInfo.bot}, botCount)}}
+      </h6>
+      <p v-if="botInfo.workerCount > 0" v-html="t('sideBar.workers', {count:botInfo.workerCount})"></p>
+      <p v-else v-html="t('sideBar.pass')"></p>
+    </div>
   </div>
 </template>
 
@@ -10,10 +18,12 @@ import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import AbstractNavigationState from '@/util/AbstractNavigationState'
+import PlayerColorIcon from '../structure/PlayerColorIcon.vue';
 
 export default defineComponent({
   name: 'SideBar',
   components: {
+    PlayerColorIcon
   },
   setup() {
     const { t } = useI18n()
@@ -24,6 +34,14 @@ export default defineComponent({
     navigationState: {
       type: Object as PropType<AbstractNavigationState>,
       required: true
+    }
+  },
+  computed: {
+    botCount() {
+      return this.navigationState.botCount
+    },
+    botInfos() {
+      return this.navigationState.botInfos
     }
   }
 })
@@ -40,5 +58,10 @@ export default defineComponent({
   background-color: #ddd;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+}
+.playerIcon {
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-top: -0.1rem;
 }
 </style>

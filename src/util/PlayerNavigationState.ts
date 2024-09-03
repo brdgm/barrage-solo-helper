@@ -2,6 +2,7 @@ import { State } from '@/store/state'
 import { RouteLocation } from 'vue-router'
 import PlayerColor from '@/services/enum/PlayerColor'
 import AbstractNavigationState from './AbstractNavigationState'
+import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
 
 export default class PlayerNavigationState extends AbstractNavigationState {
 
@@ -10,7 +11,7 @@ export default class PlayerNavigationState extends AbstractNavigationState {
 
   constructor(route : RouteLocation, state : State) {
     super(route, state)
-    this.player = parseInt(route.params['player'] as string)
+    this.player = getIntRouteParam(route, 'player')
     this.playerColor = this.playerColors[this.botCount + this.player - 1] || PlayerColor.BLACK
   }
 

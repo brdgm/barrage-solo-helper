@@ -59,7 +59,9 @@
   },
   "sideBar": {
     "round": "Round {round}",
-    "turn": "Turn {turn}"
+    "turn": "Turn {turn}",
+    "workers": "{count} Engineers",
+    "pass": "(passed)"
   },
   "difficultyLevel": {
     "1": "Easy - \"Low Voltage\"",
