@@ -113,6 +113,7 @@
       "doesNotTakeContractTiles": "<b>Automa nehmen keine Vertragsplättchen.</b> Automa erfüllen Verträge direkt aus der offenen Auslage im Notariat.",
       "advancedTechnologyTiles": "<b>Automa können fortgeschrittene Technologieplättchen erwerben</b>, sie nutzen aber nur die Basisfunktion <i>(den Bau eines Bauteils)</i> und nicht die Sonderfähigkeit.",
       "objectiveTileScoring": "Wenn ein Automa für die Erfüllung des <b>Zielplättchens</b> Punkte erhält, dann erhält er, ggf. nach der Auflösung von Gleichständen, 5 Zusatzpunkte. Ohne Gleichstände also 20 SP für den 1. Platz, 15 SP für den 2. Platz oder 10 SP für den 3. Platz.",
+      "building": "Ein Automa benutzt niemals die Aktionsfelder der von ihm <b>aktivierten privaten Gebäude</b>. Sobald 1 Automa aber ein privates Gebäude aktiviert hat, gilt das dazugehörige linke Aktionsfeld (ohne Zusatzkosten) für dich für den Rest des Spiels als belegt.",
       "engineerPlacement": {
         "title": "Arbeitereinsatz",
         "constructionSpaces": "<b>Automa Bauaktionen</b> – Wenn ein Automa baut, platziert er so viele Arbeiter auf seinem Unternehmensplan, wie es die Applikation angibt. Ignoriere dabei die Aktionsfelder. Ein Automa kann beliebig viele Bauaktionen in einer Runde durchführen.",
@@ -141,7 +142,19 @@
         "newContractTiles": "Danach decke 2 neue Verträge der entsprechenden Farbe auf."
       },
       "construction": {
-        
+        "intro": "Der Automa baut, falls die folgenden Bedingungen alle erfüllt sind, das abgebildete Bauteil:",
+        "structureAvailable": "<b>Bauteil vorhanden:</b> Auf dem Unternehmensplan des Automa ist noch mindestens 1 abgebildetes Bauteil vorhanden.",
+        "technologyTileAvailable": "<b>Technologieplättchen vorhanden:</b> Im Vorrat des Automa ist noch mindestens 1 Technologieplättchen <i>(einfach oder fortgeschritten)</i> vorhanden, mit dem das Bauteil gebaut werden kann.",
+        "machineriesAvailable": "<b>Maschinen vorhanden:</b> Im Vorrat des Automa befinden sich noch genügend Maschinen, um ein abgebildetes Bauteil zu bauen. Wenn keine speziellen Vorgaben gemacht werden <i>(z. B. Grundmauer muss in den Bergen gebaut werden)</i> reicht es aus, wenn die Maschinen für einen Bau an irgendeiner Stelle vorhanden sind.",
+        "buildingSpaceAvailable": "<b>Bauplatz vorhanden</b>: Es gibt mindestens 1 freies Baufeld auf dem Spielplan, auf dem das Bauteil gebaut werden kann.",
+        "buildStructure": "Wenn alle Punkte erfüllt sind, baut der Automa das abgebildete Bauteil. Nutze die Bauscheibe wie üblich <i>(beachte die abweichenden Regeln zum Arbeitereinsatz der Automa)</i>.",
+        "oneSpace": "Wenn es nur 1 freies Baufeld auf dem Spielplan gibt, auf dem der Automa das Bauteil bauen kann, platziere es dort. ",
+        "multipleSpaces": "Wenn es mehrere mögliche Baufelder gibt, nutze die Regeln zur „Platzierung von Bauteilen“ auf S. 9, um zu entscheiden, auf welchem Feld der Automa baut (TODO: link).",
+        "income": "Wenn der Automa durch den Bau ein Einkommen freischaltet, erhält er es wie üblich einmalig sofort <i>(anstelle von Geld erhält er SP)</i>.",
+        "building": {
+          "up": "<b>Gebäude:</b> Der Automa baut das erste <i>(von unten nach oben)</i> noch nicht von ihm aktivierte private Gebäude, für das er die nötigen Maschinen hat.",
+          "down": "<b>Gebäude:</b> Der Automa baut das erste <i>(von oben nach unten)</i> noch nicht von ihm aktivierte private Gebäude, für das er die nötigen Maschinen hat."
+        }
       },
       "workshop": {
         "intro": "Der Automa dreht, falls seine Bauscheibe nicht komplett leer ist, seine Bauscheibe um die angegebene Anzahl von Segmenten weiter.",

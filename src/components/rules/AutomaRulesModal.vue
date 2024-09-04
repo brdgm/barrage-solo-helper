@@ -13,6 +13,7 @@
         <li v-html="t('rules.general.doesNotTakeContractTiles')"></li>
         <li v-html="t('rules.general.advancedTechnologyTiles')"></li>
         <li v-html="t('rules.general.objectiveTileScoring')"></li>
+        <li v-if="hasLeeghwaterProject" v-html="t('rules.general.building')"></li>
       </ul>
       <h5 v-html="t('rules.general.engineerPlacement.title')"></h5>
       <ul>
@@ -30,6 +31,7 @@ import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDial
 import AppIcon from '../structure/AppIcon.vue'
 import { useStateStore } from '@/store/state'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'AutomaRulesModal',
@@ -53,6 +55,9 @@ export default defineComponent({
         }
       }
       return false
+    },
+    hasLeeghwaterProject() : boolean {
+      return this.state.setup.expansions.includes(Expansion.LEEGHWATER_PROJECT)
     }
   }
 })

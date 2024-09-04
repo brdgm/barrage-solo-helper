@@ -112,6 +112,7 @@
       "doesNotTakeContractTiles": "<b>Automa don’t take Contract tiles.</b> Automa players directly fulfill face-up Contracts available in the Contract Office.",
       "advancedTechnologyTiles": "<b>Automa can buy Advanced Technology tiles</b>, but they will use only the basic effect <i>(i.e. the construction of a structure)</i> without using the relevant special effect.",
       "objectiveTileScoring": "If an Automa player has the most elements according to the <b>Objective tile</b> condition, it scores 20 VPs; if it is the second, it score 15 VPs; if it is third, it scores 10 VPs.",
+      "building": "Automa will never use the <b>Private Building special action</b>. However, when a Private Building has been activated by an Automa, the corresponding action space on the left <i>(the cheaper one)</i> will no longer be available for any other player for the rest of the game.",
       "engineerPlacement": {
         "title": "Engineer Placement",
         "constructionSpaces": "<b>Automa construction action spaces</b> - Unlike human players, when an Automa player performs a construction action, it will place the number of Engineers indicated in the App on the Company board, independently from the availability of action spaces. There is no limit to the number of structures Automa can build in a single round.",
@@ -140,7 +141,19 @@
         "newContractTiles": "Then, place 2 new Contract tiles in the empty spaces taking them from the related pile."
       },
       "construction": {
-        
+        "intro": "The Automa will build the indicated Structure if all of the following conditions are satisfied:",
+        "structureAvailable": "<b>Structure Available</b> - The Automa has the indicated structure piece available on its Company board.",
+        "technologyTileAvailable": "<b>Technology Tile Available</b> - The Automa has at least one Technology tile <i>(basic or advanced)</i> that allows it to build the indicated Structure.",
+        "machineriesAvailable": "<b>Machineries Available</b> - The Automa has the minimum required number of Machineries <i>(Excavators or Concrete Mixers)</i> for the construction of the depicted structure. Some tile indicates also a specific type of structure <i>(e.g. a Base to be built in the Mountains area - 5 Excavators required - or a Conduit of value 3 or more - at least 6 Excavators required, and so on)</i>.",
+        "buildingSpaceAvailable": "<b>Building Space Available</b> - There is at least one available building space on the Map for the indicated Structure.",
+        "buildStructure": "If all the above conditions are verified, Automa will build the indicated structure, placing Engineers on its Company board and using its Construction Wheel as usual <i>(remember that the Automa doesn’t follow the standard rules of construction action spaces)</i>.",
+        "oneSpace": "If there is only one possible space on the Map for the placement of the structure, the Automa will place the structure in that space.",
+        "multipleSpaces": "If there are more possible spaces, you have to follow the rules described in “Structure Placing Procedure” at page 9 in order to determine where the structure will be placed (TODO: link).",
+        "income": "Like a human player, if an income is discovered on the Automa Company board, Automa receive immediately that income.",
+        "building": {
+          "up": "<b>Building:</b> The Automa will build the Building connected to the first <i>(from bottom to top)</i> available Private Building for which it has available the required Machineries.",
+          "down": "<b>Building:</b> The Automa will build the Building connected to the first <i>(from top to bottom)</i> available Private Building for which it has available the required Machineries."
+        }
       },
       "workshop": {
         "intro": "The Automa will rotate its Construction Wheel by the indicated number of segments, only if it’s not completely empty.",
