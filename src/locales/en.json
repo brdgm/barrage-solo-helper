@@ -111,7 +111,12 @@
       "noExecutiveOfficers": "<b>Automa don’t use Executive Officers.</b>",
       "doesNotTakeContractTiles": "<b>Automa don’t take Contract tiles.</b> Automa players directly fulfill face-up Contracts available in the Contract Office.",
       "advancedTechnologyTiles": "<b>Automa can buy Advanced Technology tiles</b>, but they will use only the basic effect <i>(i.e. the construction of a structure)</i> without using the relevant special effect.",
-      "objectiveTileScoring": "If an Automa player has the most elements according to the <b>Objective tile</b> condition, it scores 20 VPs; if it is the second, it score 15 VPs; if it is third, it scores 10 VPs."
+      "objectiveTileScoring": "If an Automa player has the most elements according to the <b>Objective tile</b> condition, it scores 20 VPs; if it is the second, it score 15 VPs; if it is third, it scores 10 VPs.",
+      "engineerPlacement": {
+        "title": "Engineer Placement",
+        "constructionSpaces": "<b>Automa construction action spaces</b> - Unlike human players, when an Automa player performs a construction action, it will place the number of Engineers indicated in the App on the Company board, independently from the availability of action spaces. There is no limit to the number of structures Automa can build in a single round.",
+        "managementSpaces": "<b>Automa Management action spaces</b> - Unlike human players, when Automa players perform a Management action, Automa will place - on the relevant section - the number of Engineers indicated in the App, independently from the availability of action spaces. The Engineers indicated in the App have to be placed always on the first free <i>(i.e. without Engineers)</i> action space on the relevant section of the Management Board, Patent Office or Extra Management Board, from the top to the bottom of the left column and then from the top to the bottom of the right column ignoring the number of Engineers required on the filled action space. Please note that the occupied action space does not define the action effectively performed by the Automa - which is actually indicated by the icon on the Automa tile. <b>If there are no available action spaces on the relevant section, and the Automa is able to perform the action indicated on the Automa tile, just place the required Engineers next to the corresponding section.</b>"
+      }
     },
     "actionItem": {
       "production": {

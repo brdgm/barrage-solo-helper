@@ -14,6 +14,11 @@
         <li v-html="t('rules.general.advancedTechnologyTiles')"></li>
         <li v-html="t('rules.general.objectiveTileScoring')"></li>
       </ul>
+      <h5 v-html="t('rules.general.engineerPlacement.title')"></h5>
+      <ul>
+        <li v-html="t('rules.general.engineerPlacement.constructionSpaces')"></li>
+        <li v-html="t('rules.general.engineerPlacement.managementSpaces')"></li>
+      </ul>
     </template>
   </ModalDialog>
 </template>
