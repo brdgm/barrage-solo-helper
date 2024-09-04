@@ -141,7 +141,9 @@
         
       },
       "workshop": {
-        
+        "intro": "The Automa will rotate its Construction Wheel by the indicated number of segments, only if it’s not completely empty.",
+        "technologyTiles": "If the Automa Construction Wheel has Machineries and/or Technology Tiles inside, perform the action.",
+        "engineerPlacement": "Automa must place the number of Engineers indicated by the App on the Workshop action spaces and pay the number of Victory Points as indicated. As usual, the Automa must immediately take back any Machineries and/or Technology tiles that are back in the entry segment after each individual rotation."
       },
       "machinery-shop": {
         

@@ -6,7 +6,9 @@
       </div>
     </template>
     <template #rules>
-      <p>...</p>
+      <p class="fw-bold fst-italic" v-html="t('rules.actionItem.contract-office.intro')"></p>
+      <p v-html="t('rules.actionItem.contract-office.xxx')"></p>
+      <p v-html="t('rules.actionItem.contract-office.xxx')"></p>
     </template>
   </ActionBox>
 </template>

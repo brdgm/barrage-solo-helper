@@ -2,11 +2,17 @@
   <ActionBox :actionItem="actionItem" :navigationState="navigationState">
     <template #action>
       <div class="action">
-        <AppIcon type="action" name="workshop" class="icon action"/>
+        <HydroCost v-if="actionItem.hydroCost" :hydroCost="actionItem.hydroCost" class="me-2"/>
+        <div class="workshop">
+          <div class="steps" v-if="actionItem.workshopSteps">{{actionItem.workshopSteps}}</div>
+          <AppIcon type="action" name="workshop" class="icon"/>
+        </div>
       </div>
     </template>
     <template #rules>
-      <p>...</p>
+      <p class="fw-bold fst-italic" v-html="t('rules.actionItem.workshop.intro')"></p>
+      <p v-html="t('rules.actionItem.workshop.technologyTiles')"></p>
+      <p v-html="t('rules.actionItem.workshop.engineerPlacement')"></p>
     </template>
   </ActionBox>
 </template>
@@ -18,6 +24,7 @@ import AppIcon from '../../structure/AppIcon.vue'
 import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
+import HydroCost from '@/components/structure/HydroCost.vue'
 
 export default defineComponent({
   name: 'ActionWorkshop',
@@ -27,7 +34,8 @@ export default defineComponent({
   },
   components: {
     ActionBox,
-    AppIcon
+    AppIcon,
+    HydroCost
   },
   props: {
     actionItem: {
@@ -48,6 +56,18 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .icon {
-  width: 4rem;
+  height: 3.5rem;
+}
+.workshop {
+  display: inline-block;
+  position: relative;
+  .steps {
+    position: absolute;
+    left: 30px;
+    top: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  }
 }
 </style>

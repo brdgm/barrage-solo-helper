@@ -142,7 +142,9 @@
         
       },
       "workshop": {
-        
+        "intro": "Der Automa dreht, falls seine Bauscheibe nicht komplett leer ist, seine Bauscheibe um die angegebene Anzahl von Segmenten weiter.",
+        "technologyTiles": "Wenn sich in der Bauscheibe des Automa mindestens 1 Technologieplättchen und/oder 1 Maschine befindet, führt er die Aktion durch.",
+        "engineerPlacement": "Der Automa platziert die abgebildete Anzahl Arbeiter auf dem Managementplan und bezahlt die angegebene Anzahl SP. Wie üblich nimmt der Automa nach jeder Drehung die Technologie und Maschinen im oberen Segment in seinen Vorrat zurück."
       },
       "machinery-shop": {
         

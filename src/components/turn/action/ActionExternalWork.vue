@@ -6,7 +6,9 @@
       </div>
     </template>
     <template #rules>
-      <p>...</p>
+      <p class="fw-bold fst-italic" v-html="t('rules.actionItem.external-work.intro')"></p>
+      <p v-html="t('rules.actionItem.external-work.xxx')"></p>
+      <p v-html="t('rules.actionItem.external-work.xxx')"></p>
     </template>
   </ActionBox>
 </template>
