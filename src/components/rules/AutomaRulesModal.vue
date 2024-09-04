@@ -8,10 +8,28 @@
           <AppIcon name="credits-victory-points" class="icon float-end"/>
           <span v-html="t('rules.general.noCredits')"></span>
         </li>
-        <li v-html="t('rules.general.noCompanyAbility')"></li>
-        <li v-if="!hasVeryHardDifficulty" v-html="t('rules.general.noExecutiveOfficers')"></li>
+        <li>
+          <span v-html="t('rules.general.noCompanyAbility')"></span>
+          <div v-if="hasHardDifficulty" class="alert alert-warning fst-italic mt-2" v-html="t('rules.difficultyLevel.hard.companyAbilities')"></div>
+        </li>
+        <li>
+          <span v-html="t('rules.general.noExecutiveOfficers')"></span>
+          <div v-if="hasVeryHardDifficulty" class="alert alert-warning fst-italic mt-2" v-html="t('rules.difficultyLevel.veryHard.executiveOfficers')"></div>
+        </li>
         <li v-html="t('rules.general.doesNotTakeContractTiles')"></li>
-        <li v-html="t('rules.general.advancedTechnologyTiles')"></li>
+        <li>
+          <span v-html="t('rules.general.advancedTechnologyTiles')"></span>
+          <div v-if="hasHardDifficulty" class="alert alert-warning fst-italic mt-2">
+            <span v-html="t('rules.difficultyLevel.hard.advancedTechnologyTiles')"></span>
+            <ul>
+              <li v-for="tile of hardDifficultyAdvancedTechnologyTiles" :key="tile">
+                <AppIcon type="advanced-technology-tile" :name="tile" class="icon advancedTechnology float-end"/>
+                <b><span v-html="t(`rules.difficultyLevel.hard.advancedTechnology.${tile}.title`)"></span>:</b><span>&nbsp;</span>
+                <span v-html="t(`rules.difficultyLevel.hard.advancedTechnology.${tile}.description`)"></span>
+              </li>
+            </ul>
+          </div>
+        </li>
         <li v-html="t('rules.general.objectiveTileScoring')"></li>
         <li v-if="hasLeeghwaterProject" v-html="t('rules.general.building')"></li>
       </ul>
@@ -49,11 +67,30 @@ export default defineComponent({
     botCount() : number {
       return this.state.setup.playerSetup.botCount
     },
+    hasHardDifficulty() : boolean {
+      return hasDifficultyLevel(DifficultyLevel.HARD, this.state)
+    },
     hasVeryHardDifficulty() : boolean {
       return hasDifficultyLevel(DifficultyLevel.VERY_HARD, this.state)
     },
     hasLeeghwaterProject() : boolean {
       return this.state.setup.expansions.includes(Expansion.LEEGHWATER_PROJECT)
+    },
+    hardDifficultyAdvancedTechnologyTiles() : string[] {
+      const tiles = [
+        'conduit-level2',
+        'powerhouse-level2',
+        'building-level1',
+        'building-level2',
+        'joker-level1',
+        'joker-level2'
+      ]
+      if (this.hasLeeghwaterProject) {
+        return tiles
+      }
+      else {
+        return tiles.filter(tile => tile !== 'building-level1' && tile !== 'building-level2')
+      }
     }
   }
 })
@@ -63,6 +100,10 @@ export default defineComponent({
 .icon {
   height: 3rem;
   margin: 0.5rem;
+  &.advancedTechnology {
+    height: 4rem;
+    margin: 0.1rem;
+  }
 }
 ul > li {
   clear: both;

@@ -23,8 +23,11 @@
       <p v-html="t('rules.actionItem.production.fulfillContract')"></p>
       <p v-html="t('rules.actionItem.production.multipleOptions')"></p>
     </template>
-    <template #warnings v-if="isEasyDifficulty">
-      <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noProductionBonus')"></div>
+    <template #warnings v-if="isEasyDifficulty || isHardDifficultyGermany || isHardDifficultyFrance || isHardDifficultyNetherlands">
+      <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noProductionBonus')"></div>
+      <div v-if="isHardDifficultyGermany" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.germany')"></div>
+      <div v-if="isHardDifficultyFrance" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.france')"></div>
+      <div v-if="isHardDifficultyNetherlands" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.netherlands')"></div>
     </template>
   </ActionBox>
 </template>
@@ -39,6 +42,8 @@ import ActionBox from '../ActionBox.vue'
 import { useStateStore } from '@/store/state'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import isDifficultyLevel from '@/util/isDifficultyLevel'
+import isDifficultyLevelCorporation from '@/util/isDifficultyLevelCorporation'
+import Corporation from '@/services/enum/Corporation'
 
 export default defineComponent({
   name: 'ActionProduction',
@@ -68,7 +73,16 @@ export default defineComponent({
   computed: {
     isEasyDifficulty() : boolean {
       return isDifficultyLevel(this.navigationState.bot, DifficultyLevel.EASY, this.state)
-    }    
+    },
+    isHardDifficultyGermany() : boolean {
+      return isDifficultyLevelCorporation(this.navigationState.bot, DifficultyLevel.HARD, Corporation.GERMANY, this.state)
+    },
+    isHardDifficultyFrance() : boolean {
+      return isDifficultyLevelCorporation(this.navigationState.bot, DifficultyLevel.HARD, Corporation.FRANCE, this.state)
+    },
+    isHardDifficultyNetherlands() : boolean {
+      return isDifficultyLevelCorporation(this.navigationState.bot, DifficultyLevel.HARD, Corporation.NETHERLANDS, this.state)
+    }
   }
 })
 </script>

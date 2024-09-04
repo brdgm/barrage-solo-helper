@@ -265,8 +265,47 @@
     },
     "difficultyLevel": {
       "easy": {
-        "noIncome": "<b>Schwachstrom</b>: Der Automa erhält kein Einkommen aus seinem Unternehmensplan.",
-        "noProductionBonus": "<b>Schwachstrom</b>: Der Automa erhält keine Produktionsboni <i>(durch den Bau von Turbinenhäusern)</i>."
+        "noIncome": "<b>Schwachstrom:</b> Der Automa erhält kein Einkommen aus seinem Unternehmensplan.",
+        "noProductionBonus": "<b>Schwachstrom:</b> Der Automa erhält keine Produktionsboni <i>(durch den Bau von Turbinenhäusern)</i>."
+      },
+      "hard": {
+        "companyAbilities": "<b>Starkstrom:</b> Der Automa kann die Spezialfähigkeit seines Unternehmens nutzen <i>(die mit Bau des dritten Turbinenhauses aktiviert wird)</i>.",
+        "advancedTechnologyTiles": "<b>Starkstrom:</b> Der Automa kann die Sonderfähigkeiten von fortgeschrittenen Technologieplättchen nutzen. Beim Bau eines Bauwerks nutzt der Automa nach Möglichkeit immer ein fortgeschrittenes Technologieplättchen (auch ein Jokerplättchen) und, falls er mehrere Plättchen zur Auswahl hat, eines der höchsten Stufe. Wenn er von dieser Stufe ein spezifisches und ein Jokerplättchen besitzt, nutzt er das spezifische Plättchen.",
+        "advancedTechnology": {
+          "conduit-level2": {
+            "title": "Rohrwerk Stufe 2",
+            "description": "Bei mehreren möglichen Baufeldern baut der Automa wenn möglich ein Rohrwerk mit Produktionswert 3 oder höher."
+          },
+          "powerhouse-level2": {
+            "title": "Turbinenhaus Stufe 2",
+            "description": "Der Automa produziert Energie dort, wo er den höchsten Ertrag erzielt."
+          },
+          "building-level1": {
+            "title": "Gebäude Stufe 1",
+            "description": "Anstatt das neu gebaute Gebäude zu aktivieren, erhält der Automa die SP des neu gebauten Gebäudes.."
+          },
+          "building-level2": {
+            "title": "Gebäude Stufe 2",
+            "description": "Der Automa benutzt zum Bau die Art von Maschinen, von der er weniger hat. Bei Gleichstand benutzt er Bagger."
+          },
+          "joker-level1": {
+            "title": "Joker Stufe 1",
+            "description": "Wenn der Automa mit diesem Plättchen eine Grundmauer baut und durch die Regeln zur Platzierung von Bauteilen entschieden ist, in welchem Tal er die Mauer baut, so wählt er dort, wenn möglich, ein rot umrandetes Baufeld."
+          },
+          "joker-level2": {
+            "title": "Joker Stufe 2",
+            "description": "Der Automa nutzt die Fähigkeit nur, wenn er sonst zu wenig Maschinen zum Bau hätte."
+          }
+        },
+        "corporation": {
+          "usa": "<b>Starkstrom/USA:</b> Hat der Automa bei einer Aktion „Wassermanagement“ mehrere Quellen zur Auswahl, wählt er die, die über die Spezialfähigkeit mehr Schritte auf der Energieleiste auslöst.",
+          "germany": "<b>Starkstrom/Deutschland:</b> Bei der zweiten Energieproduktion (sofern eine möglich ist) produziert der Automa dort, wo er den höchsten Ertrag erzielt.",
+          "france": "<b>Starkstrom/Frankreich:</b> Der Automa berücksichtigt die Fähigkeit sowohl bei der Bedingung „Erfüllbarer Vertrag“ als auch bei der Erfüllung eines Vertrags..",
+          "netherlands": "<b>Starkstrom/Die Niederlande:</b> Platziere die Wassereinheit hinter der Staumauer <i>(außer der gerade genutzten)</i>, mit der der Automa als nächstes die meiste Energie produzieren könnte. Gibt es keine oder mehrere solcher Staumauern, nutze die erste Spalte des Kriterienplättchens zur Entscheidung, hinter welchen Damm die Wassereinheit platziert wird (TODO: link)."
+        }
+      },
+      "veryHard": {
+        "executiveOfficers": "<b>Hochspannung:</b> Der Automa erhält beim Spielaufbau einen Chefingenieur und kann ihn während des Spiels nutzen."
       }
     }
   },

@@ -97,7 +97,7 @@
       <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
     </template>
     <template #warnings v-if="isEasyDifficulty">
-      <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>      
+      <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
     </template>
   </ActionBox>
 </template>

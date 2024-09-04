@@ -43,6 +43,7 @@ import Corporation from '@/services/enum/Corporation'
 import PlayerColorIcon from '@/components/structure/PlayerColorIcon.vue'
 import CardDeck from '@/services/CardDeck'
 import hasDifficultyLevel from '@/util/hasDifficultyLevel'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 
 export default defineComponent({
   name: 'SetupBot',
@@ -81,6 +82,7 @@ export default defineComponent({
     },
     isValid() : boolean {
       const selectedCorporations = new Set<Corporation>()
+      const selectedExecutiveOfficers = new Set<ExecutiveOfficer>()
       for (let botIndex = 0; botIndex<this.botCount; botIndex++) {
         const selectedCorporation = this.state.setup.botCorporations[botIndex]
         const selectedExecutiveOfficer = this.state.setup.botExecutiveOfficers[botIndex]
@@ -96,6 +98,10 @@ export default defineComponent({
           return false
         }
         selectedCorporations.add(selectedCorporation)
+        if (selectedExecutiveOfficers.has(selectedExecutiveOfficer)) {
+          return false
+        }
+        selectedExecutiveOfficers.add(selectedExecutiveOfficer)
       }
       return true
     }

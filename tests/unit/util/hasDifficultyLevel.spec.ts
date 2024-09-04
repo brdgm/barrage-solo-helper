@@ -13,6 +13,15 @@ describe('util/hasDifficultyLevel', () => {
     expect(hasDifficultyLevel(DifficultyLevel.VERY_HARD, state)).to.false
   })
 
+  it('veryHard', () => {
+    const state = mockState({difficultyLevels:[DifficultyLevel.VERY_HARD]})
+
+    expect(hasDifficultyLevel(DifficultyLevel.EASY, state)).to.false
+    expect(hasDifficultyLevel(DifficultyLevel.MEDIUM, state)).to.false
+    expect(hasDifficultyLevel(DifficultyLevel.HARD, state)).to.true
+    expect(hasDifficultyLevel(DifficultyLevel.VERY_HARD, state)).to.true
+  })
+
   it('mixed-overlongArray', () => {
     const state = mockState({botCount:2, difficultyLevels:[DifficultyLevel.EASY,DifficultyLevel.HARD,DifficultyLevel.VERY_HARD]})
 

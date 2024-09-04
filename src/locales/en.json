@@ -264,8 +264,47 @@
     },
     "difficultyLevel": {
       "easy": {
-        "noIncome": "<b>Low Voltage</b>: Automa players never receive income from their own Company board.",
-        "noProductionBonus": "<b>Low Voltage</b>: Automa players does not use production bonuses (activated by building Powerhouses)."
+        "noIncome": "<b>Low Voltage:</b> Automa players never receive income from their own Company board.",
+        "noProductionBonus": "<b>Low Voltage:</b> Automa players does not use production bonuses (activated by building Powerhouses)."
+      },
+      "hard": {
+        "companyAbilities": "<b>High Voltage:</b> Automa players can use the special ability of their Company board, activated with the construction of the 3rd Powerhouse.",
+        "advancedTechnologyTiles": "<b>High Voltage:</b> Automa players can use the special effect of the used Advanced Technology tiles. If Automa have more tiles related to the same structure (including wild tiles), they always use higher level tile. In case of tie, Automa prefer a specific structure tile, before to use a wild tile.",
+        "advancedTechnology": {
+          "conduit-level2": {
+            "title": "Conduit Level 2",
+            "description": "In case of a tie among eligible positions, Automa always choose a Conduit of value 3 or higher."
+          },
+          "powerhouse-level2": {
+            "title": "Powerhouse Level 2",
+            "description": "Automa will activate the best production available."
+          },
+          "building-level1": {
+            "title": "Building Level 1",
+            "description": "Instead of the indicated special effect (i.e. activation of the connected Private Building), Automa immediately score the connected Private Building Victory Points."
+          },
+          "building-level2": {
+            "title": "Building Level 2",
+            "description": "Automa use only the type of Machinery of which they have less in their supply. In case of a tie, Automa will use only Excavators."
+          },
+          "joker-level1": {
+            "title": "Any of your choice Level 1",
+            "description": "If building a Base, after checking all the Structure Placing Procedure criteria, Automa will chose the building space with a red outline."
+          },
+          "joker-level2": {
+            "title": "Any of your choice Level 2",
+            "description": "Automa will use the Machineries usually required for the structure they are building, before using the other type."
+          }
+        },
+        "corporation": {
+          "usa": "<b>High Voltage/USA:</b> When performing a Water Management action, in case of tie among eligible Headstreams, Automa will chose the one generating more steps on the Energy Track.",
+          "germany": "<b>High Voltage/Germany:</b> The second production, if available, is always the most productive one among the eligibles.",
+          "france": "<b>High Voltage/France:</b> Apply the discount both when checking the production action conditions AND when fulfilling the Contract.",
+          "netherlands": "<b>High Voltage/The Netherlands:</b> The Water Drop is placed on the Dam connected to the most productive system <i>(except the one just used)</i>. If there is not an eligible dam which is part of a complete productive system or there is more than one, use the first column of criteria tile to determine which Dam will be filled (TODO: link)."
+        }
+      },
+      "veryHard": {
+        "executiveOfficers": "<b>Overpowered:</b> Automa players receive an Executive Officer tile during the setup and use the corresponding special ability during the play."
       }
     }
   },
