@@ -135,7 +135,9 @@
         "engineerPlacement": "If at least one Water Drop was placed with this action, the Automa must place one Engineer on the Water Management Action spaces."
       },
       "contract-office": {
-        
+        "intro": "The Automa removes the indicated Contracts from the Contract Office. Then, it move its Energy marker by 2 steps on the Energy Track.",
+        "engineerPlacement": "Place the Engineer in the Contract Office.",
+        "newContractTiles": "Then, place 2 new Contract tiles in the empty spaces taking them from the related pile."
       },
       "construction": {
         

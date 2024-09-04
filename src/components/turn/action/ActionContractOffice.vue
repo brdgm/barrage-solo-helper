@@ -3,12 +3,13 @@
     <template #action>
       <div class="action">
         <AppIcon type="action" :name="`contract-office-${actionItem.contractDiscard}`" class="icon"/>
+        <AppIcon name="energy-increase-2" class="icon"/>
       </div>
     </template>
     <template #rules>
       <p class="fw-bold fst-italic" v-html="t('rules.actionItem.contract-office.intro')"></p>
-      <p v-html="t('rules.actionItem.contract-office.xxx')"></p>
-      <p v-html="t('rules.actionItem.contract-office.xxx')"></p>
+      <p v-html="t('rules.actionItem.contract-office.engineerPlacement')"></p>
+      <p v-html="t('rules.actionItem.contract-office.newContractTiles')"></p>
     </template>
   </ActionBox>
 </template>
