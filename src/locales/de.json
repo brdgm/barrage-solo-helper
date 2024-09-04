@@ -151,7 +151,10 @@
         "engineerPlacement": "Der Automa platziert die angegebene Anzahl Arbeiter auf dem ersten freien Aktionsfeld dieser Kategorie, zahlt die angegebene Anzahl SP und nimmt sich die auf dem Automaplättchen abgebildeten Maschinen."
       },
       "patent-office": {
-        
+        "intro": "Der Automa nimmt sich, falls vorhanden, ein fortgeschrittenes Technologieplättchen der abgebildeten Sorte (oder, falls nicht vorhanden, ein Jokerplättchen) und zahlt dafür 2 SP.",
+        "engineerPlacement": "Der Automa platziert 1 Arbeiter auf dem zu diesem Technologieplättchen gehörenden Aktionsfeld und zahlt 2 SP, anstelle der normalen Kosten von 2 Arbeitern und 5 SP.",
+        "multipleTiles": "Falls mehrere passende Plättchen ausliegen, nimmt er das Plättchen mit der höheren Zahl auf der Rückseite.",
+        "noneAvailable": "Wenn weder ein Plättchen der abgebildeten Sorte noch ein Jokerplättchen ausliegen, führt der Automa die Aktion nicht durch."
       },
       "external-work": {
         "intro": "Der Automa führt, falls er kann, eine Auftragsarbeit aus.",

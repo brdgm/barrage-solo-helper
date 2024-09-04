@@ -150,7 +150,10 @@
         "engineerPlacement": "Place the indicated number of Engineers on the first available Machinery Shop action space and pay the number of Victory Points indicated on the Action tile to take the Machineries indicated on the Action tile."
       },
       "patent-office": {
-        
+        "intro": "The Automa will pay 2 Victory Points to take the indicated Advanced Technology tile, if available in the Patent Office (or a wild Advanced Technology tile, if available).",
+        "engineerPlacement": "Automa places 1 Engineer on the Patent Office action space and pays 2 Victory Points instead of 2 Engineers and 5 VPs.",
+        "multipleTiles": "In case two tiles for the same structure are available, Automa will take the higher level tile.",
+        "noneAvailable": "If neither the indicated Technology tile neither a wild Technology tile are available, the Automa will not perform this action."
       },
       "external-work": {
         "intro": "The Automa will fulfill an available External Work.",
