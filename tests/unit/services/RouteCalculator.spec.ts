@@ -24,6 +24,37 @@ describe('services/RouteCalculator', () => {
     expect(routeCalculator.getBackRouteTo(state)).to.eq('/round/1/turn/1/player/1')
   })
 
+  it('getNextRouteTo-round1-turn1-bot1-nextAction', () => {
+    const routeCalculator = new RouteCalculator({round:1, turn:1, action:1, bot:1})
+
+    const state = mockState({playerCount:1, botCount:2, rounds:[
+      mockRound({round:1, playerOrder:[{player:1},{bot:1},{bot:2}]})
+    ]})
+    expect(routeCalculator.getNextActionRouteTo()).to.eq('/round/1/turn/1/bot/1/action/2')
+    expect(routeCalculator.getBackRouteTo(state)).to.eq('/round/1/turn/1/bot/1')
+  })
+
+  it('getNextRouteTo-round1-turn1-bot1-nextAction-workerUsedPreviousAction', () => {
+    const routeCalculator = new RouteCalculator({round:1, turn:1, action:3, workerUsedPreviousAction:1, bot:1})
+
+    const state = mockState({playerCount:1, botCount:2, rounds:[
+      mockRound({round:1, playerOrder:[{player:1},{bot:1},{bot:2}]})
+    ]})
+    expect(routeCalculator.getNextActionRouteTo()).to.eq('/round/1/turn/1/bot/1/action/4/worker/1')
+    expect(routeCalculator.getBackRouteTo(state)).to.eq('/round/1/turn/1/bot/1/action/2/worker/1')
+  })
+
+  it('getNextRouteTo-round1-turn1-bot1-nextAction-workerUsedPreviousAction-action2', () => {
+    const routeCalculator = new RouteCalculator({round:1, turn:1, action:2, workerUsedPreviousAction:1, bot:1})
+
+    const state = mockState({playerCount:1, botCount:2, rounds:[
+      mockRound({round:1, playerOrder:[{player:1},{bot:1},{bot:2}]})
+    ]})
+    expect(routeCalculator.getNextActionRouteTo()).to.eq('/round/1/turn/1/bot/1/action/3/worker/1')
+    // no workerUsedPreviousAction because action 1 may be the special "nextAction" action
+    expect(routeCalculator.getBackRouteTo(state)).to.eq('/round/1/turn/1/bot/1/action/1')
+  })
+
   it('getNextRouteTo_round1-turn1-bot2', () => {
     const routeCalculator = new RouteCalculator({round:1, turn:1, bot:2})
     

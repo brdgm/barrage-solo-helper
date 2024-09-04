@@ -42,6 +42,11 @@ const routes: Array<RouteRecordRaw> = [
     component: TurnBot
   },
   {
+    path: '/round/:round/turn/:turn/bot/:bot/action/:action/worker/:worker',
+    name: 'TurnBotActionWorker',
+    component: TurnBot
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: NotFound

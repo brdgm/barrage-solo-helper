@@ -12,6 +12,7 @@ export default class BotNavigationState extends AbstractNavigationState {
 
   readonly bot : number
   readonly action : number
+  readonly workerUsedPreviousAction? : number
   readonly playerColor : PlayerColor
   readonly workerCount : number
   readonly cardDeck : CardDeck
@@ -22,6 +23,7 @@ export default class BotNavigationState extends AbstractNavigationState {
     super(route, state)
     this.bot = getIntRouteParam(route, 'bot')
     this.action = getIntRouteParam(route, 'action')
+    this.workerUsedPreviousAction = this.getIntRouteParamIfPresent(route, 'worker')
     this.playerColor = this.playerColors[this.bot - 1] || PlayerColor.BLACK
     this.workerCount = this.botInfos.find(info => info.bot == this.bot)?.workerCount ?? 0
     this.cardDeck = this.getCardDeck(state)

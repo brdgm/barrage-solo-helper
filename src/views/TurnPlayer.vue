@@ -55,12 +55,8 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new PlayerNavigationState(route, state)
-    const playerCount = navigationState.playerCount
-    const round = navigationState.round
-    const turn = navigationState.turn
-    const player = navigationState.player
-    const playerColor = navigationState.playerColor
-    const routeCalculator = new RouteCalculator({round:round, turn:turn, player:player})
+    const { playerCount, round, turn, player, playerColor } = navigationState
+    const routeCalculator = new RouteCalculator({round, turn, player})
 
     return { t, state, playerCount, round, turn, player, playerColor, routeCalculator, navigationState }
   },

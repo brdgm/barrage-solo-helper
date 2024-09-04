@@ -53,13 +53,8 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new BotNavigationState(route, state)
-    const botCount = navigationState.botCount
-    const round = navigationState.round
-    const turn = navigationState.turn
-    const action = navigationState.action
-    const bot = navigationState.bot
-    const playerColor = navigationState.playerColor
-    const routeCalculator = new RouteCalculator({round:round, turn:turn, action:action, bot:bot})
+    const { botCount, round, turn, action, workerUsedPreviousAction, bot, playerColor} = navigationState
+    const routeCalculator = new RouteCalculator({round, turn, action, workerUsedPreviousAction, bot})
 
     return { t, state, botCount, round, turn, bot, playerColor, routeCalculator, navigationState }
   },
@@ -73,7 +68,11 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      const workerUsed = this.navigationState.actionItem?.workerCount ?? 0
+      if (this.navigationState.actionItem?.nextAction) {
+        this.$router.push(this.routeCalculator.getNextActionRouteTo(this.navigationState.actionItem?.workerCount))
+        return
+      }
+      const workerUsed = (this.navigationState.actionItem?.workerCount ?? 0) + (this.navigationState.workerUsedPreviousAction ?? 0)
       const workerLeft = this.navigationState.workerCount - workerUsed
       const passed = workerLeft <= 0 ? true : undefined
       this.state.storeTurn({
@@ -87,7 +86,7 @@ export default defineComponent({
       this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
     },
     notPossible() : void {
-      this.$router.push(this.routeCalculator.getNextActionRouteTo())
+      this.$router.push(this.routeCalculator.getNextActionRouteTo(this.navigationState.workerUsedPreviousAction))
     }
   }
 })

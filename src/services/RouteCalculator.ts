@@ -9,13 +9,15 @@ export default class RouteCalculator {
   readonly round : number
   readonly turn : number
   readonly action? : number
+  readonly workerUsedPreviousAction? : number
   readonly player? : number
   readonly bot? : number
 
-  constructor(params:{round: number, turn?: number, action?: number, player?: number, bot?: number}) {
+  constructor(params:{round: number, turn?: number, action?: number, workerUsedPreviousAction?: number, player?: number, bot?: number}) {
     this.round = params.round
     this.turn = params.turn ?? MAX_TURN  // when called in EndOfRound/EndOfGame context
     this.action = params.action
+    this.workerUsedPreviousAction = params.workerUsedPreviousAction
     this.player = params.player
     this.bot = params.bot
   }
@@ -46,8 +48,9 @@ export default class RouteCalculator {
   /**
    * Get route to next action ins same bot turn.
    */
-  public getNextActionRouteTo() : string {
-    return RouteCalculator.routeTo({round:this.round, turn:this.turn, action:(this.action ?? 0) + 1, bot:this.bot})
+  public getNextActionRouteTo(workerUsedPreviousAction? : number) : string {
+    return RouteCalculator.routeTo({round:this.round, turn:this.turn, action:(this.action ?? 0) + 1,
+        workerUsedPreviousAction:workerUsedPreviousAction ?? this.workerUsedPreviousAction, bot:this.bot})
   }
 
   /**
@@ -56,7 +59,8 @@ export default class RouteCalculator {
    */
   public getBackRouteTo(state: State) : string {
     if (this.bot && this.action && this.action > 0) {
-      return RouteCalculator.routeTo({round:this.round, turn:this.turn, action:(this.action ?? 0) - 1, bot:this.bot})
+      return RouteCalculator.routeTo({round:this.round, turn:this.turn, action:(this.action ?? 0) - 1,
+          workerUsedPreviousAction:this.workerUsedPreviousAction, bot:this.bot})
     }
     const steps = getTurnOrder(state, this.round, this.turn)
     const currentStepIndex = steps.findIndex(item => item.round==this.round && item.turn==this.turn
@@ -104,15 +108,14 @@ export default class RouteCalculator {
   private static routeTo(step: Step) : string {
     if (step.bot) {
       if (step.action && step.action > 0) {
+        if (step.workerUsedPreviousAction && step.workerUsedPreviousAction > 0 && step.action > 1) {
+          return `/round/${step.round}/turn/${step.turn}/bot/${step.bot}/action/${step.action}/worker/${step.workerUsedPreviousAction}`
+        }
         return `/round/${step.round}/turn/${step.turn}/bot/${step.bot}/action/${step.action}`
       }
-      else {
-        return `/round/${step.round}/turn/${step.turn}/bot/${step.bot}`
-      }
+      return `/round/${step.round}/turn/${step.turn}/bot/${step.bot}`
     }
-    else {
-      return `/round/${step.round}/turn/${step.turn}/player/${step.player}`
-    }
+    return `/round/${step.round}/turn/${step.turn}/player/${step.player}`
   }
 
 }
@@ -121,6 +124,7 @@ interface Step {
   readonly round?: number
   readonly turn?: number
   readonly action?: number
+  readonly workerUsedPreviousAction?: number
   readonly player?: number
   readonly bot?: number
 }
