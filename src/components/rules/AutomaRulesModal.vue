@@ -32,6 +32,7 @@ import AppIcon from '../structure/AppIcon.vue'
 import { useStateStore } from '@/store/state'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Expansion from '@/services/enum/Expansion'
+import hasDifficultyLevel from '@/util/hasDifficultyLevel'
 
 export default defineComponent({
   name: 'AutomaRulesModal',
@@ -49,12 +50,7 @@ export default defineComponent({
       return this.state.setup.playerSetup.botCount
     },
     hasVeryHardDifficulty() : boolean {
-      for (let botIndex = 0; botIndex<this.botCount; botIndex++) {
-        if (this.state.setup.difficultyLevels[botIndex] == DifficultyLevel.VERY_HARD) {
-          return true
-        }
-      }
-      return false
+      return hasDifficultyLevel(DifficultyLevel.VERY_HARD, this.state)
     },
     hasLeeghwaterProject() : boolean {
       return this.state.setup.expansions.includes(Expansion.LEEGHWATER_PROJECT)

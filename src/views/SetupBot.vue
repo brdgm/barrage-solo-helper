@@ -42,7 +42,7 @@ import isExecutiveOfficerAvailable from '@/util/isExecutiveOfficerAvailable'
 import Corporation from '@/services/enum/Corporation'
 import PlayerColorIcon from '@/components/structure/PlayerColorIcon.vue'
 import CardDeck from '@/services/CardDeck'
-import RouteCalculator from '@/services/RouteCalculator'
+import hasDifficultyLevel from '@/util/hasDifficultyLevel'
 
 export default defineComponent({
   name: 'SetupBot',
@@ -77,12 +77,7 @@ export default defineComponent({
         .filter((_color,index) => index < this.playerCount+this.botCount)
     },
     hasVeryHardDifficulty() : boolean {
-      for (let botIndex = 0; botIndex<this.botCount; botIndex++) {
-        if (this.state.setup.difficultyLevels[botIndex] == DifficultyLevel.VERY_HARD) {
-          return true
-        }
-      }
-      return false
+      return hasDifficultyLevel(DifficultyLevel.VERY_HARD, this.state)
     },
     isValid() : boolean {
       const selectedCorporations = new Set<Corporation>()
@@ -125,8 +120,7 @@ export default defineComponent({
         turns: []
       })
       // start first turn (skip income in first round)
-      const routeCalculator = new RouteCalculator({round:1})
-      this.$router.push(routeCalculator.getFirstTurnRouteTo(this.state))
+      this.$router.push('/round/1/start')
     }
   }
 })

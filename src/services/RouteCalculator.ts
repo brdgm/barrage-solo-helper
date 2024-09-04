@@ -70,12 +70,7 @@ export default class RouteCalculator {
     }
     const previousStep = steps[currentStepIndex-1]
     if (!previousStep) {
-      if (this.round > 1) {
-        return `/round/${this.round-1}/end`
-      }
-      else {
-        return ''
-      }
+      return `/round/${this.round}/start`
     }
     return RouteCalculator.routeTo(previousStep)
   }

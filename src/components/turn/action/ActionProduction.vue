@@ -23,6 +23,9 @@
       <p v-html="t('rules.actionItem.production.fulfillContract')"></p>
       <p v-html="t('rules.actionItem.production.multipleOptions')"></p>
     </template>
+    <template #warnings v-if="isEasyDifficulty">
+      <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noProductionBonus')"></div>
+    </template>
   </ActionBox>
 </template>
 
@@ -33,12 +36,16 @@ import AppIcon from '../../structure/AppIcon.vue'
 import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
+import { useStateStore } from '@/store/state'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import isDifficultyLevel from '@/util/isDifficultyLevel'
 
 export default defineComponent({
   name: 'ActionProduction',
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   components: {
     ActionBox,
@@ -57,6 +64,11 @@ export default defineComponent({
       type: BotNavigationState,
       required: true
     }
+  },
+  computed: {
+    isEasyDifficulty() : boolean {
+      return isDifficultyLevel(this.navigationState.bot, DifficultyLevel.EASY, this.state)
+    }    
   }
 })
 </script>

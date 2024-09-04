@@ -261,6 +261,12 @@
         "owned-dam": "A Powerhouse linked to an owned Dam.",
         "plains": "A Powerhouse in the Plains."
       }
+    },
+    "difficultyLevel": {
+      "easy": {
+        "noIncome": "<b>Low Voltage</b>: Automa players never receive income from their own Company board.",
+        "noProductionBonus": "<b>Low Voltage</b>: Automa players does not use production bonuses (activated by building Powerhouses)."
+      }
     }
   },
   "notfound": {

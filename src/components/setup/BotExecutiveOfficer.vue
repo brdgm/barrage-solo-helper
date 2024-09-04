@@ -24,6 +24,7 @@ import getAllEnumValues from '@brdgm/brdgm-commons/src/util/enum/getAllEnumValue
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 import isExecutiveOfficerAvailable from '@/util/isExecutiveOfficerAvailable'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import isDifficultyLevel from '@/util/isDifficultyLevel'
 
 export default defineComponent({
   name: 'BotExecutiveOfficer',
@@ -42,7 +43,7 @@ export default defineComponent({
   },
   methods: {
     isVeryHardDifficulty(bot : number) : boolean {
-      return this.state.setup.difficultyLevels[bot-1] == DifficultyLevel.VERY_HARD
+      return isDifficultyLevel(bot, DifficultyLevel.VERY_HARD, this.state)
     }
   }
 })

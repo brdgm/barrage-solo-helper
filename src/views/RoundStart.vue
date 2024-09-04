@@ -1,10 +1,13 @@
 <template>
   <h1 v-html="t('roundStart.title', {round})"></h1>
 
-  <h4 v-html="t('roundStart.income.title')"></h4>
-  <ul>
-    <li v-html="t('roundStart.income.activeIncome')"></li>
-  </ul>
+  <template v-if="round > 1">
+    <h4 v-html="t('roundStart.income.title')"></h4>
+    <ul>
+      <li v-html="t('roundStart.income.activeIncome')"></li>
+    </ul>
+    <div v-if="hasEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
+  </template>
 
   <template v-if="round < 5">
     <h4 v-html="t('roundStart.headstreams.title')"></h4>
@@ -28,6 +31,8 @@ import { useRoute } from 'vue-router'
 import { useStateStore } from '@/store/state'
 import RouteCalculator from '@/services/RouteCalculator'
 import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
+import hasDifficultyLevel from '@/util/hasDifficultyLevel'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
 
 export default defineComponent({
   name: 'RoundStart',
@@ -46,7 +51,15 @@ export default defineComponent({
   },
   computed: {
     backButtonRouteTo() : string {
-      return `/round/${this.round-1}/end`
+      if (this.round > 1) {
+        return `/round/${this.round-1}/end`
+      }
+      else {
+        return ''
+      }
+    },
+    hasEasyDifficulty() : boolean {
+      return hasDifficultyLevel(DifficultyLevel.EASY, this.state)
     }
   },
   methods: {

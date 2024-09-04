@@ -1,33 +1,43 @@
 <template>
-  <div class="boxContainer">
-    <div class="actionBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalActionRules">
-      <div class="actionTitle">{{t(`actionItem.${actionItem.action}`)}}</div>
-      <div :class="{nextAction:actionItem.nextAction}">
-        <div class="workers">
-          <AppIcon name="worker" class="workerIcon" v-for="worker of workerCount" :key="worker"/>
+  <div>
+    <div class="boxContainer">
+      <div class="actionBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalActionRules">
+        <div class="actionTitle">{{t(`actionItem.${actionItem.action}`)}}</div>
+        <div :class="{nextAction:actionItem.nextAction}">
+          <div class="workers">
+            <AppIcon name="worker" class="workerIcon" v-for="worker of workerCount" :key="worker"/>
+          </div>
+          <slot name="action"></slot>
         </div>
-        <slot name="action"></slot>
+      </div>
+
+      <div v-if="$slots.criteria" class="criteriaBox mt-2" data-bs-toggle="modal" data-bs-target="#modalCriteriaRules">
+        <slot name="criteria"></slot>
       </div>
     </div>
 
-    <div v-if="$slots.criteria" class="criteriaBox mt-2" data-bs-toggle="modal" data-bs-target="#modalCriteriaRules">
-      <slot name="criteria"></slot>
+    <div v-if="$slots.warnings" class="mt-4 container-fluid">
+      <div class="row">
+        <div class="col">
+          <slot name="warnings"></slot>
+        </div>
+      </div>
     </div>
+
+    <ModalDialog id="modalActionRules" :title="t(`actionItem.${actionItem.action}`)"
+        :size-lg="true" :scrollable="true">
+      <template #body>
+        <slot name="rules"></slot>
+      </template>
+    </ModalDialog>
+
+    <ModalDialog v-if="$slots.criteriaRules" id="modalCriteriaRules" :title="t('turnBot.structurePlacement')"
+        :size-lg="true" :scrollable="true">
+      <template #body>
+        <slot name="criteriaRules"></slot>
+      </template>
+    </ModalDialog>
   </div>
-
-  <ModalDialog id="modalActionRules" :title="t(`actionItem.${actionItem.action}`)"
-      :size-lg="true" :scrollable="true">
-    <template #body>
-      <slot name="rules"></slot>
-    </template>
-  </ModalDialog>
-
-  <ModalDialog v-if="$slots.criteriaRules" id="modalCriteriaRules" :title="t('turnBot.structurePlacement')"
-      :size-lg="true" :scrollable="true">
-    <template #body>
-      <slot name="criteriaRules"></slot>
-    </template>
-  </ModalDialog>
 </template>
 
 <script lang="ts">

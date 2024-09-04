@@ -96,6 +96,9 @@
       </div>
       <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
     </template>
+    <template #warnings v-if="isEasyDifficulty">
+      <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>      
+    </template>
   </ActionBox>
 </template>
 
@@ -108,12 +111,16 @@ import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
 import ConstructionType from '@/services/enum/ConstructionType'
 import PlacingCriteriaDamElevation from '@/services/enum/PlacingCriteriaDamElevation'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import { useStateStore } from '@/store/state'
+import isDifficultyLevel from '@/util/isDifficultyLevel'
 
 export default defineComponent({
   name: 'ActionConstruction',
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   components: {
     ActionBox,
@@ -146,6 +153,9 @@ export default defineComponent({
     },
     isPowerhouse() : boolean {
       return this.actionItem.constructionType == ConstructionType.POWERHOUSE
+    },
+    isEasyDifficulty() : boolean {
+      return isDifficultyLevel(this.navigationState.bot, DifficultyLevel.EASY, this.state)
     }
   },
   methods: {

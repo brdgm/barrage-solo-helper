@@ -262,6 +262,12 @@
         "owned-dam": "Ein Bauplatz verbunden mit einer eigenen Staumauer.",
         "plains": "Ein Bauplatz im Vorland."
       }
+    },
+    "difficultyLevel": {
+      "easy": {
+        "noIncome": "<b>Schwachstrom</b>: Der Automa erhält kein Einkommen aus seinem Unternehmensplan.",
+        "noProductionBonus": "<b>Schwachstrom</b>: Der Automa erhält keine Produktionsboni <i>(durch den Bau von Turbinenhäusern)</i>."
+      }
     }
   },
   "notfound": {

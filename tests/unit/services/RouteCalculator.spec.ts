@@ -11,7 +11,7 @@ describe('services/RouteCalculator', () => {
       mockRound({round:1, playerOrder:[{player:1},{bot:1},{bot:2}]})
     ]})
     expect(routeCalculator.getNextRouteTo(state)).to.eq('/round/1/turn/1/bot/1')
-    expect(routeCalculator.getBackRouteTo(state)).to.eq('')
+    expect(routeCalculator.getBackRouteTo(state)).to.eq('/round/1/start')
   })
 
   it('getNextRouteTo-round1-turn1-bot1', () => {
