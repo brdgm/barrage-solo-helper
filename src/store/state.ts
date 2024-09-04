@@ -19,7 +19,7 @@ export const useStateStore = defineStore(`${name}.state`, {
           botCount: 1,
           playerColors: [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED]
         },
-        difficultyLevels: [DifficultyLevel.NORMAL],
+        difficultyLevels: [DifficultyLevel.MEDIUM],
         botCorporations: [],
         botExecutiveOfficers: []
       },

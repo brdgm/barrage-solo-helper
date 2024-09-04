@@ -38,7 +38,7 @@ export default defineComponent({
 
     const initialLevels : number[] = []
     for (let bot = 1; bot<=3; bot++) {
-      initialLevels[bot-1] = state.setup.difficultyLevels[bot-1] ?? DifficultyLevel.NORMAL
+      initialLevels[bot-1] = state.setup.difficultyLevels[bot-1] ?? DifficultyLevel.MEDIUM
     }
 
     const levels = ref(initialLevels)
@@ -54,7 +54,7 @@ export default defineComponent({
   },
   methods: {
     getDifficultyLevelForBot(bot : number) {
-      return this.state.setup.difficultyLevels[bot-1] ?? DifficultyLevel.NORMAL
+      return this.state.setup.difficultyLevels[bot-1] ?? DifficultyLevel.MEDIUM
     },
     updateDifficultyLevel(bot : number, event: Event) {
       const level = parseInt((event.target as HTMLInputElement).value)

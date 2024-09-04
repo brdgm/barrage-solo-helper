@@ -16,7 +16,7 @@ export default function (params?: MockStateParams) : State {
         botCount: params?.botCount ?? 1,
         playerColors: params?.playerColors ?? [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED]
       },
-      difficultyLevels: params?.difficultyLevels ?? [DifficultyLevel.NORMAL],
+      difficultyLevels: params?.difficultyLevels ?? [DifficultyLevel.MEDIUM],
       botCorporations: params?.botCorporations ?? [Corporation.USA],
       botExecutiveOfficers: params?.botExecutiveOfficers ?? [],
       initialCardDeck: params?.initialCardDeck
