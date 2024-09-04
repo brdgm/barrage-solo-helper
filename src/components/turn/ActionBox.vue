@@ -3,7 +3,7 @@
     <div class="actionBox" data-bs-toggle="modal" data-bs-target="#modalActionRules">
       <div class="actionTitle">{{t(`actionItem.${actionItem.action}`)}}</div>
       <div class="workers">
-        <AppIcon name="worker" class="workerIcon" v-for="worker of actionItem.workerCount" :key="worker"/>
+        <AppIcon name="worker" class="workerIcon" v-for="worker of workerCount" :key="worker"/>
       </div>
       <slot name="action"></slot>
     </div>
@@ -22,7 +22,8 @@ import { defineComponent, PropType } from 'vue'
 import { ActionItem } from '@/services/Card'
 import AppIcon from '../structure/AppIcon.vue'
 import { useI18n } from 'vue-i18n'
-import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue';
+import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
+import BotNavigationState from '@/util/BotNavigationState'
 
 export default defineComponent({
   name: 'ActionBox',
@@ -38,6 +39,16 @@ export default defineComponent({
     actionItem: {
       type: Object as PropType<ActionItem>,
       required: true
+    },
+    navigationState: {
+      type: BotNavigationState,
+      required: true
+    }
+  },
+  computed: {
+    workerCount() : number {
+      // required workers - limited by available workers
+      return Math.min(this.actionItem.workerCount, this.navigationState.workerCount)
     }
   }
 })

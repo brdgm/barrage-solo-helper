@@ -1,5 +1,5 @@
 <template>
-  <ActionBox :actionItem="actionItem">
+  <ActionBox :actionItem="actionItem" :navigationState="navigationState">
     <template #action>
       <div class="action">
         <AppIcon type="action" name="production" class="icon action"/>

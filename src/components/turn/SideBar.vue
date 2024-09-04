@@ -18,7 +18,7 @@ import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import AbstractNavigationState from '@/util/AbstractNavigationState'
-import PlayerColorIcon from '../structure/PlayerColorIcon.vue';
+import PlayerColorIcon from '../structure/PlayerColorIcon.vue'
 
 export default defineComponent({
   name: 'SideBar',
