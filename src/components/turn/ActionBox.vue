@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="actionBox" data-bs-toggle="modal" data-bs-target="#modalActionRules">
+    <div class="actionBox mt-2" data-bs-toggle="modal" data-bs-target="#modalActionRules">
       <div class="actionTitle">{{t(`actionItem.${actionItem.action}`)}}</div>
       <div :class="{nextAction:actionItem.nextAction}">
         <div class="workers">

@@ -153,7 +153,10 @@
         
       },
       "external-work": {
-        
+        "intro": "The Automa will fulfill an available External Work.",
+        "enoughMachineries": "Check if the Automa has enough Machineries to complete at least one available External Work. If it can fulfill more than one External Work, Automa will choose which one to fulfill according to the indicated preference order: the number refers to the tiles position on the Management board.",
+        "engineerPlacement": "Automa places the indicated number of Engineers on the corresponding action space and discard the required number of Machineries.",
+        "particularEffect": "<b>Particular effect:</b> if the Automa must fulfill a Contract as effect of an External Work, it must fulfill the higher Private Contract available in the Contract Office <i>(in case of a tie, the one on the right; if the effect is a 4-value Contract, the higher between those valued 4 or less)</i>."
       },
       "bank": {
         "intro": "Automa scores 1 Victory Point, placing 1 Engineer in the Bank."

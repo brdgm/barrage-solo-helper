@@ -4,11 +4,18 @@
       <div class="action">
         <AppIcon type="action" name="external-work" class="icon"/>
       </div>
+      <div class="tiles">
+        <template v-for="(tile,index) of actionItem.externalWorkTiles" :key="tile">
+          <span v-if="index > 0">-</span>
+          <span>{{tile}}</span>
+        </template>
+      </div>
     </template>
     <template #rules>
       <p class="fw-bold fst-italic" v-html="t('rules.actionItem.external-work.intro')"></p>
-      <p v-html="t('rules.actionItem.external-work.xxx')"></p>
-      <p v-html="t('rules.actionItem.external-work.xxx')"></p>
+      <p v-html="t('rules.actionItem.external-work.enoughMachineries')"></p>
+      <p v-html="t('rules.actionItem.external-work.engineerPlacement')"></p>
+      <p v-html="t('rules.actionItem.external-work.particularEffect')"></p>
     </template>
   </ActionBox>
 </template>
@@ -51,5 +58,10 @@ export default defineComponent({
 <style lang="scss" scoped>
 .icon {
   width: 4rem;
+}
+.tiles {
+  span { 
+    margin: 0.1rem;
+  }
 }
 </style>

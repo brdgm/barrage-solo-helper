@@ -154,7 +154,10 @@
         
       },
       "external-work": {
-        
+        "intro": "Der Automa führt, falls er kann, eine Auftragsarbeit aus.",
+        "enoughMachineries": "Prüfe, ob der Automa die benötigten Maschinen hat, um eine Auftragsarbeit auszuführen. Falls der Automa mehrere Arbeiten ausführen könnte, bestimme die Arbeit, die er ausführt anhand der abgebildeten Reihenfolge von links nach rechts. Die Zahl bezieht sich auf die Position des Plättchens auf dem Managementplan, von oben nach unten.",
+        "engineerPlacement": "Der Automa platziert die benötigten Arbeiter auf dem zu dieser Auftragsarbeit gehörenden Aktionsfeld und gibt die benötigten Maschinen ab.",
+        "particularEffect": "<b>Sonderregelung:</b> Wenn der Automa durch die Auftragsarbeit einen Vertrag erfüllen kann, erfüllt er den Vertrag mit dem höchsten möglichen Wert und bei 2 ausliegenden Verträgen mit selbem Wert den rechts liegenden."
       },
       "bank": {
         "intro": "Der Automa platziert 1 Arbeiter in der Bank und erhält 1 SP."
