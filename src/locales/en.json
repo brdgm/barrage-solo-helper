@@ -60,6 +60,43 @@
     "notPossible": "Not possible",
     "structurePlacement": "Structure Placement"
   },
+  "roundStart": {
+    "title": "Round {round}",
+    "income": {
+      "title": "Income",
+      "activeIncome": "All players get the active income on their Company boards."
+    },
+    "headstreams": {
+      "title": "Headstreams",
+      "placeWaterDrops": "Place Water Drops on the Headstream tiles according to the number indicated on the tile for the current round."
+    }
+  },
+  "roundEnd": {
+    "title": "End of Round {round}",
+    "waterFlow": {
+      "title": "Water Flow",
+      "flowDown": "All the Water Drops on the Headstream tiles flow down."
+    },
+    "scoring": {
+      "title": "Scoring",
+      "firstSecondPlayer": "The first player on the Energy Track scores 6 Victory Points; the second scores 2 Victory Points",
+      "gainCredits": "Gain Credits (Victory Points for Automa) according to the position on the Energy Track.",
+      "bonusTile": "Score Victory Points thanks to the Bonus tile of the current round, discard the Bonus tile."
+    },
+    "determinePlayerOrder": {
+      "title": "Update Turn Order",
+      "currentItems": "Current Player Order",
+      "newItems": "New Player Order",
+      "newItemsSelect": "Please determine the new player order."
+    },
+    "cleanUp": {
+      "title": "Clean Up",
+      "resetEnergyMarkers": "Reset Energy markers.",
+      "takeBackEngineers": "Take back all engineers.",
+      "discardTechnologyTiles": "Discard and refill advanced technology tiles.",
+      "discardBuildingTiles": "Discard and refill private building tiles."
+    }
+  },
   "sideBar": {
     "round": "Round {round}",
     "turn": "Turn {turn}",

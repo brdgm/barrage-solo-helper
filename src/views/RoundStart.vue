@@ -1,0 +1,58 @@
+<template>
+  <h1 v-html="t('roundStart.title', {round})"></h1>
+
+  <h4 v-html="t('roundStart.income.title')"></h4>
+  <ul>
+    <li v-html="t('roundStart.income.activeIncome')"></li>
+  </ul>
+
+  <template v-if="round < 5">
+    <h4 v-html="t('roundStart.headstreams.title')"></h4>
+    <ul>
+      <li v-html="t('roundStart.headstreams.placeWaterDrops')"></li>
+    </ul>
+  </template>
+
+  <button class="btn btn-primary btn-lg mt-4" @click="next()">
+    {{t('action.next')}}
+  </button>
+
+  <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
+import FooterButtons from '@/components/structure/FooterButtons.vue'
+import { useRoute } from 'vue-router'
+import { useStateStore } from '@/store/state'
+import RouteCalculator from '@/services/RouteCalculator'
+import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
+
+export default defineComponent({
+  name: 'RoundStart',
+  components: {
+    FooterButtons
+  },
+  setup() {
+    const { t } = useI18n()
+    const route = useRoute()
+    const state = useStateStore()
+
+    const round = getIntRouteParam(route, 'round')
+    const routeCalculator = new RouteCalculator({round})
+
+    return { t, state, round, routeCalculator }
+  },
+  computed: {
+    backButtonRouteTo() : string {
+      return this.routeCalculator.getBackRouteTo(this.state)
+    }
+  },
+  methods: {
+    next() : void {
+      this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
+    }
+  }
+})
+</script>

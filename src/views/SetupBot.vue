@@ -13,7 +13,7 @@
       <li v-html="t('setupBot.setup.victoryPoints')"></li>
       <li>
         <span v-html="t('setupBot.setup.playerOrder')"></span><br/>
-        <PlayerColorIcon v-for="playerColor in playerColors" :key="playerColor" :playerColor="playerColor"/>
+        <PlayerColorIcon v-for="playerColor in playerColors" :key="playerColor" :playerColor="playerColor" class="playerOrderIcon"/>
       </li>
     </ol>
   </div>
@@ -138,5 +138,12 @@ export default defineComponent({
   ol > li {
     margin-top: 0.5rem;
   }
+}
+.playerOrderIcon {
+  height: 2.5rem;
+  width: 2.5rem;
+  filter: drop-shadow(0.15rem 0.15rem 0.15rem #aaa);
+  margin-top: 5px;
+  margin-right: 10px;
 }
 </style>

@@ -45,6 +45,9 @@ export const useStateStore = defineStore(`${name}.state`, {
       }
       round.turns = round.turns.filter(item => (item.turn < turn.turn) || (item.player != turn.player) || (item.bot != turn.bot))
       round.turns.push(turn)
+    },
+    getPlayerOrder(round: number) : PlayerOrder[] {
+      return this.rounds.find(item => item.round == round)?.playerOrder || []
     }
   },
   persist: true

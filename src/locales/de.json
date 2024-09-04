@@ -61,6 +61,20 @@
     "notPossible": "Nicht möglich",
     "structurePlacement": "Platzierung von Bauteilen"
   },
+  "roundStart": {
+    "title": "Runde {round}",
+    "income": {
+      "title": "Einkommen",
+      "activeIncome": "Jeder erhält das auf seinem Unternehmensplan freigeschaltete Einkommen."
+    },
+    "headstreams": {
+      "title": "Quellwasser",
+      "placeWaterDrops": "Platziere Wassereinheiten auf die Quellenplättchen, abhängig von der aktuellen Rundenzahl."
+    }
+  },
+  "roundEnd": {
+    "title": "Ende Runde {round}"
+  },
   "sideBar": {
     "round": "Runde {round}",
     "turn": "Zug {turn}",

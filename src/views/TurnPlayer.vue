@@ -60,11 +60,6 @@ export default defineComponent({
 
     return { t, state, playerCount, round, turn, player, playerColor, routeCalculator, navigationState }
   },
-  data() {
-    return {
-      claimFirstPlayer: false
-    }
-  },
   computed: {
     backButtonRouteTo() : string {
       return this.routeCalculator.getBackRouteTo(this.state)
@@ -85,9 +80,6 @@ export default defineComponent({
         passed: passed ? true : undefined
       })
       this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
-    },
-    firstPlayerClaimed() : void {
-      this.claimFirstPlayer = true
     }
   }
 })
