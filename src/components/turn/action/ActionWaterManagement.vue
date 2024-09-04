@@ -2,11 +2,14 @@
   <ActionBox :actionItem="actionItem" :navigationState="navigationState">
     <template #action>
       <div class="action">
-        <AppIcon type="action" name="water-management" class="icon action"/>
+        <AppIcon type="action" :name="isOneDropImmediately ? 'water-management-immediately' : 'water-management'" class="icon action"/>
       </div>
     </template>
     <template #rules>
-      <p>...</p>
+      <p class="fw-bold fst-italic" v-html="t('rules.actionItem.water-management.intro')"></p>
+      <p v-html="t('rules.actionItem.water-management.damReachable')"></p>
+      <p v-html="t('rules.actionItem.water-management.damCapacity')"></p>
+      <p v-html="t('rules.actionItem.water-management.engineerPlacement')"></p>
     </template>
   </ActionBox>
 </template>
@@ -18,6 +21,7 @@ import AppIcon from '../../structure/AppIcon.vue'
 import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
+import WaterManagementType from '@/services/enum/WaterManagementType'
 
 export default defineComponent({
   name: 'ActionWaterManagement',
@@ -42,12 +46,17 @@ export default defineComponent({
       type: BotNavigationState,
       required: true
     }
+  },
+  computed: {
+    isOneDropImmediately() : boolean {
+      return this.actionItem.waterManagementType == WaterManagementType.ONE_DROP_IMMEDIATELY
+    }
   }
 })
 </script>
 
 <style lang="scss" scoped>
 .icon {
-  width: 4rem;
+  width: 2.8rem;
 }
 </style>

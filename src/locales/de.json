@@ -121,7 +121,7 @@
     },
     "actionItem": {
       "production": {
-        "intro": "<b><i>Der Automa produziert, falls die folgenden Bedingungen alle erfüllt sind, dort Energie, wo er den höchsten Ertrag erzielt:</i></b>",
+        "intro": "Der Automa produziert, falls die folgenden Bedingungen alle erfüllt sind, dort Energie, wo er den höchsten Ertrag erzielt:",
         "productionSystemReady": "<b>Vollständiges System:</b> Es gibt mindestens 1 Kombination aus Bauteilen (<i>Staumauer mit min. 1 Wassereinheit, Rohrwerk, Turbinenhaus</i>), mit der der Automa produzieren könnte.",
         "energyTrack": "<b>Energieleiste:</b> Der Automa ist nicht Erster auf der Energieleiste und/oder hat noch nicht genug Energie produziert, um den vollen Bonus bei der Wertung des aktuellen Bonusplättchens zu bekommen. <i>(Diese Bedingung ist also nur nicht erfüllt, wenn er Erster ist und bereits den vollen Bonus bekäme.)</i>",
         "contractRequirement": "<b>Erfüllbarer Vertrag:</b> Die maximale Energie, die der Automa produzieren könnte <i>(inkl. Bonus oder Malus)</i> reicht aus, um mindestens 1 im Notariat offen ausliegenden Vertrag der abgebildeten Farbe zu erfüllen.",
@@ -130,7 +130,10 @@
         "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand der in der Spalte „Rohrwerk“ auf dem Kriterienplättchen abgebildeten Nummer, mit welchem Rohrwerk der Automa produziert <i>(TODO: link)</i>."
       },
       "water-management": {
-        
+        "intro": "Der Automa platziert die angegebene Anzahl Wassereinheiten auf 1 oder mehrere Quellenplättchen.",
+        "damReachable": "Der Automa führt diese Aktion nur durch, wenn mindestens 1 der platzierten Wassereinheiten zu 1 seiner Staumauern gelangen würde <i>(prüfe, ob dies zutrifft, wenn das Wasser sofort fließen würde, selbst wenn die Wassereinheit nicht sofort fließt)</i>.",
+        "damCapacity": "Die Staumauer muss noch genug Kapazität haben, um die Wassereinheit auch stauen zu können. Wenn die erste Wassereinheit zu einer eigenen Staumauer gelangen kann, die zweite aber nicht, dann platziert der Automa nur 1 Wassereinheit.",
+        "engineerPlacement": "Auch in diesem Fall platziere 1 Arbeiter auf dem Managementplan."
       },
       "contract-office": {
         

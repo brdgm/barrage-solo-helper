@@ -1,11 +1,13 @@
 <template>
-  <div class="actionBoxContainer">
+  <div>
     <div class="actionBox" data-bs-toggle="modal" data-bs-target="#modalActionRules">
       <div class="actionTitle">{{t(`actionItem.${actionItem.action}`)}}</div>
-      <div class="workers">
-        <AppIcon name="worker" class="workerIcon" v-for="worker of workerCount" :key="worker"/>
+      <div :class="{nextAction:actionItem.nextAction}">
+        <div class="workers">
+          <AppIcon name="worker" class="workerIcon" v-for="worker of workerCount" :key="worker"/>
+        </div>
+        <slot name="action"></slot>
       </div>
-      <slot name="action"></slot>
     </div>
   </div>
 
@@ -55,14 +57,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.actionBoxContainer {
-  display: flex;
-}
 .actionBox {
   display: inline-block;
   padding: 20px;
-  background-color: #2c2c2b;
   border-radius: 10px;
+  background-color: #2c2c2b;
   color: #eee;
   filter: drop-shadow(0.1rem 0.1rem 0.2rem #888);
   cursor: pointer;
@@ -71,9 +70,16 @@ export default defineComponent({
   background-position: right 5px top 5px;
   background-size: 1.5rem;
   min-width: 200px;
+  text-align: center;
+  .nextAction {
+    border: 2px dashed #999;
+    padding: 10px;
+  }
   .actionTitle {
     font-weight: 500;
     margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .workers {
     margin-bottom: 1rem;

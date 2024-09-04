@@ -11,7 +11,7 @@
       </div>
     </template>
     <template #rules>
-      <p v-html="t('rules.actionItem.production.intro')"></p>
+      <p class="fw-bold fst-italic" v-html="t('rules.actionItem.production.intro')"></p>
       <ul>
         <li><AppIcon name="production-system-ready" class="icon action production-system float-end"/><span v-html="t('rules.actionItem.production.productionSystemReady')"></span></li>
         <li><AppIcon name="energy-track" class="icon energy float-end"/><span v-html="t('rules.actionItem.production.energyTrack')"></span></li>

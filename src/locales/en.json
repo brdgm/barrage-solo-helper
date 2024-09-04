@@ -120,7 +120,7 @@
     },
     "actionItem": {
       "production": {
-        "intro": "<b><i>The Automa will produce Energy using its best available production system, only if the following conditions are all satisfied:</i></b>",
+        "intro": "The Automa will produce Energy using its best available production system, only if the following conditions are all satisfied:",
         "productionSystemReady": "<b>Production System Ready</b> - There is at least one structure connection <i>(i.e. Dam containing at least 1 Water Drop + Conduit + Powerhouse)</i> which allows Automa to produce.",
         "energyTrack": "<b>Energy Track</b> - Automa is not yet in the current round numbered section which allows it to get the Full Reward from the Bonus tile OR Automa is not currently the first player on the Energy Track <i>(at least one of the two conditions)</i>.",
         "contractRequirement": "<b>Contract Requirement</b> - The maximum potential energy producible <i>(including the production bonus/malus indicated)</i> is equal or greater than the energy requirement of at least one available Contract of the indicated type.",
@@ -129,7 +129,10 @@
         "multipleOptions": "If there are multiple options to fulfill the contract with the same highest value, Automa uses water from a neutral dam first. If there are still multiple options, use the number for column „Conduit“ of the criteria tile <i>(TODO: link)</i>."
       },
       "water-management": {
-        
+        "intro": "The Automa will place the indicated amount of Water Drops on one or more Headstream tiles, following the standard rules.",
+        "damReachable": "The Automa will perform this action only if at least one of the placed Water Drops can reach one of its own Dams <i>(either immediately or in the upcoming Water Phase, taking into consideration the current map status)</i>.",
+        "damCapacity": "The Dam <i>(or Dams)</i> must have enough capacity left to store the Water Drop(s); any exceeding Water Drop will not be placed.",
+        "engineerPlacement": "If at least one Water Drop was placed with this action, the Automa must place one Engineer on the Water Management Action spaces."
       },
       "contract-office": {
         
