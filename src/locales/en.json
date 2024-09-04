@@ -185,13 +185,13 @@
     "structurePlacement": {
       "intro": "Check these criteria on after another to find the building space:",
       "thirdStructure": "<b>Third structure of a system</b>: First of all, if there is one single potential system <i>(i.e. a set including a Dam - neutral or owned - a Conduit, and an owned Powerhouse)</i> that would be completed by placing the structure, the position completing this system will be chosen.",
-      "location": "Location <b>{location}</b> or higher.",
+      "location": "Location <b>{location}</b> or higher number.",
       "locationDescription": "Start from this position and proceed forward following the basins order up to the first eligible position. If you reach the end of the positions start again your check from the first position and proceed forward up to the first eligible position. When looking for further building spaces for conduits, first check the left space (A), then the right space (B).",
       "locationRestriction": "Some actions indicate a particular restriction to the structure to be build (e.g. a Dam Base in the Mountains): this restriction rule to any below further tiebreaking.",
       "damElevation": {
         "downstream-dam": "Dam linked (by a Conduit link) to a downstream basin with an owned Dam <b>OTHERWISE</b> A Dam not linked (by a Conduit link) to a downstream basin with an opponent Dam.",
         "most-powerful-conduit": "A Dam linked to the most powerful Conduit already built (owned or opponent).<br/><b>Tiebreaker: owned Conduit.</b>",
-        "most-water-drops": "A Dam able to receive the most Water Drops in the current Map condition.<br/><b>Tiebreaker: Headstream order.</b>",
+        "most-water-drops": "A Dam able to receive the most Water Drops in the current Map condition.<br/><b>Tiebreaker: </b>",
         "owned-powerhouse": "A Dam linked to an owned Powerhouse.",
         "red-outline-space": "A building space with a red outline Dam among the eligibles.",
         "upstream-powerhouse": "A Dam linked (through basins without other Dams) to an upstream Powerhouse."

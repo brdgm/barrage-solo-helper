@@ -5,9 +5,9 @@
         <AppIcon type="action" :name="isOneDropImmediately ? 'water-management-immediately' : 'water-management'" class="icon"/>
       </div>
       <div class="columns">
-        <template v-for="(tile,index) of criteriaCard.waterManagementBasinColumns" :key="tile">
+        <template v-for="(column,index) of criteriaCard.waterManagementBasinColumns" :key="column">
           <span v-if="index > 0">-</span>
-          <span>{{tile}}</span>
+          <span>{{column}}</span>
         </template>
       </div>
     </template>

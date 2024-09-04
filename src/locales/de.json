@@ -186,13 +186,13 @@
     "structurePlacement": {
       "intro": "Prüfe diese Kriterien einer nach der anderen um den Bauplatz zu finden:",
       "thirdStructure": "<b>Drittes Bauteil eines Systems</b>: Gibt es 1 System, bestehend aus Staumauer, Rohrwerk und Turbinenhaus, welches durch den Bau dieses Bauteils vervollständigt würde, so dass der Automa damit Energie produzieren könnte <i>(egal ob zur Zeit Wassereinheiten vorhanden sind oder nicht)</i>, so baut der Automa dort, wo dieses System vervollständigt würde.",
-      "location": "Bauplatz <b>{location}</b> oder höher.",
+      "location": "Bauplatz <b>{location}</b> oder höhere Zahl.",
       "locationDescription": "Baue hier falls möglich. Anderenfalls gehe die weiteren Bauplätze in aufsteigender Reihenfolge der Zahlen durch. Falls du bei der höchsten Zahl ankommst ohne einen Bauplatz gefunden zu haben, fange bei der niedrigsten Zahl erneut an. Bei den Rohrwerken prüfe bei allen folgenden Bauplätzen immer zuerst den linken Platz im Tal (A) und dann den rechten Platz (B).",
       "locationRestriction": "Manche Aktionen machen bereits Vorgaben, wo der Automa das Bauteil bauen soll <i>(z. B. eine Grundmauer in den Bergen)</i>. Diese Vorgabe gilt für den gesamten Platzierungsprozess, auch auf der Übersichtskarte ignorierst du dann alle Bauplätze, die nicht dieser Vorgabe entsprechen.",
       "damElevation": {
         "downstream-dam": "Ein Bauplatz, der über ein Rohrwerk mit einem Tal verbunden ist, in dem schon eine eigene Staumauer steht.<br/><b>Falls es den nicht gibt</b>: Ein Bauplatz, der nicht über ein Rohrwerk mit einem Tal verbunden ist, in dem schon eine gegnerische Staumauer steht.",
         "most-powerful-conduit": "Ein Bauplatz neben dem schon gebauten Rohrwerk mit dem höchsten Produktionswert. Ein eigenes Rohrwerk wird bevorzugt vor einem fremden.",
-        "most-water-drops": "Ein Bauplatz, auf dem die Staumauer aktuell am meisten Wasser erhalten würde.",
+        "most-water-drops": "Ein Bauplatz, auf dem die Staumauer aktuell am meisten Wasser erhalten würde.<br/>Bei Gleichstand:",
         "owned-powerhouse": "Ein Bauplatz verbunden mit einem eigenen Turbinenhaus.",
         "red-outline-space": "Ein Bauplatz mit rotem Rand.",
         "upstream-powerhouse": "Ein Bauplatz, der ohne Staumauern dazwischen unterhalb eines Turbinenhauses liegt."

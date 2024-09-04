@@ -56,6 +56,13 @@
           <li v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
             <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon float-start" :class="criteria"/>
             <span v-html="t(`rules.structurePlacement.damElevation.${criteria}`)"></span>
+            <template v-if="isShowHeadstreamOrder(criteria)">
+              <span>&nbsp;</span>
+              <template v-for="(column,index) of criteriaCard.waterManagementBasinColumns" :key="column">
+                <span v-if="index > 0"> - </span>
+                <span>{{column}}</span>
+              </template>
+            </template>
             <hr/>
           </li>
           <li>
@@ -100,6 +107,7 @@ import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
 import ConstructionType from '@/services/enum/ConstructionType'
+import PlacingCriteriaDamElevation from '@/services/enum/PlacingCriteriaDamElevation'
 
 export default defineComponent({
   name: 'ActionConstruction',
@@ -138,6 +146,11 @@ export default defineComponent({
     },
     isPowerhouse() : boolean {
       return this.actionItem.constructionType == ConstructionType.POWERHOUSE
+    }
+  },
+  methods: {
+    isShowHeadstreamOrder(criteria: PlacingCriteriaDamElevation) {
+      return criteria == PlacingCriteriaDamElevation.MOST_WATER_DROPS
     }
   }
 })
