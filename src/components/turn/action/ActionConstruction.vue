@@ -2,7 +2,7 @@
   <ActionBox :actionItem="actionItem" :navigationState="navigationState">
     <template #action>
       <div class="action">
-        <AppIcon type="action" name="construction" class="icon action"/>
+        <AppIcon type="action" name="construction" class="icon"/>
       </div>
     </template>
     <template #rules>

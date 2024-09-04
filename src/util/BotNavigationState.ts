@@ -30,7 +30,7 @@ export default class BotNavigationState extends AbstractNavigationState {
 
     // draw next card for bot
     const actionCard = this.cardDeck.draw()
-    this.botActions = new BotActions(actionCard, state)
+    this.botActions = new BotActions(actionCard, this.round, state)
     this.actionItem = this.botActions.get(this.action)
   }
 

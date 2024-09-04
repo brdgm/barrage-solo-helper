@@ -146,7 +146,8 @@
         "engineerPlacement": "Automa must place the number of Engineers indicated by the App on the Workshop action spaces and pay the number of Victory Points as indicated. As usual, the Automa must immediately take back any Machineries and/or Technology tiles that are back in the entry segment after each individual rotation."
       },
       "machinery-shop": {
-        
+        "intro": "Automa pays the indicated number of VPs to take the indicated number of Machineries.",
+        "engineerPlacement": "Place the indicated number of Engineers on the first available Machinery Shop action space and pay the number of Victory Points indicated on the Action tile to take the Machineries indicated on the Action tile."
       },
       "patent-office": {
         

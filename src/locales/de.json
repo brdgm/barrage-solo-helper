@@ -147,7 +147,8 @@
         "engineerPlacement": "Der Automa platziert die abgebildete Anzahl Arbeiter auf dem Managementplan und bezahlt die angegebene Anzahl SP. Wie üblich nimmt der Automa nach jeder Drehung die Technologie und Maschinen im oberen Segment in seinen Vorrat zurück."
       },
       "machinery-shop": {
-        
+        "intro": "Der Automa erhält die abgebildeten Maschinen und zahlt dafür die angegebene Anzahl SP.",
+        "engineerPlacement": "Der Automa platziert die angegebene Anzahl Arbeiter auf dem ersten freien Aktionsfeld dieser Kategorie, zahlt die angegebene Anzahl SP und nimmt sich die auf dem Automaplättchen abgebildeten Maschinen."
       },
       "patent-office": {
         

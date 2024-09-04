@@ -2,13 +2,14 @@
   <ActionBox :actionItem="actionItem" :navigationState="navigationState">
     <template #action>
       <div class="action">
-        <AppIcon type="action" name="machinery-shop" class="icon action"/>
+        <HydroCost v-if="actionItem.hydroCost" :hydroCost="actionItem.hydroCost" class="me-2"/>
+        <AppIcon v-for="(machineryType,index) of actionItem.machineryTypes" :key="index"
+            type="machinery-type" :name="machineryType" class="icon"/>
       </div>
     </template>
     <template #rules>
       <p class="fw-bold fst-italic" v-html="t('rules.actionItem.machinery-shop.intro')"></p>
-      <p v-html="t('rules.actionItem.machinery-shop.xxx')"></p>
-      <p v-html="t('rules.actionItem.machinery-shop.xxx')"></p>
+      <p v-html="t('rules.actionItem.machinery-shop.engineerPlacement')"></p>
     </template>
   </ActionBox>
 </template>
@@ -20,6 +21,7 @@ import AppIcon from '../../structure/AppIcon.vue'
 import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
+import HydroCost from '@/components/structure/HydroCost.vue'
 
 export default defineComponent({
   name: 'ActionMachineryShop',
@@ -29,7 +31,8 @@ export default defineComponent({
   },
   components: {
     ActionBox,
-    AppIcon
+    AppIcon,
+    HydroCost
   },
   props: {
     actionItem: {
@@ -50,6 +53,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .icon {
-  width: 4rem;
+  height: 3rem;
 }
 </style>

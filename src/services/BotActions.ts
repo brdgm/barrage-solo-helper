@@ -11,7 +11,7 @@ export default class BotActions {
 
   private _items : ActionItem[]
   
-  public constructor(actionCard : Card, state: State) {
+  public constructor(actionCard : Card, round: number, state: State) {
     const hasLeeghwaterProject = state.setup.expansions.includes(Expansion.LEEGHWATER_PROJECT)
     if (hasLeeghwaterProject) {
       this._items = actionCard.actions
@@ -21,6 +21,10 @@ export default class BotActions {
       this._items = actionCard.actions
           .filter(item => item.action != Action.EXTERNAL_WORK)
           .filter(item => item.constructionType != ConstructionType.BUILDING)
+    }
+    // no more machinery shop actions in round 5
+    if (round == 5) {
+      this._items = this._items.filter(item => item.action != Action.MACHINERY_SHOP)
     }
   }
 
