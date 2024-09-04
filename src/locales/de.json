@@ -104,6 +104,16 @@
     "bank": "Bank"
   },
   "rules": {
+    "general": {
+      "title": "Automa-Regeln",
+      "intro": "Einige Regeln werden für den Automa wie folgt modifiziert:",
+      "noCredits": "<b>Automa nutzen kein Geld.</b> Immer wenn ein Automa Hydro bezahlen oder erhalten würde, so verliert oder erhält er entsprechend viele Siegpunkte <i>(um ein Bauteil auf einem rot umrandeten Baufeld zu bauen, würde er also 3 SP verlieren)</i>. Automa können dadurch auch negative Siegpunkte haben.",
+      "noCompanyAbility": "<b>Automa nutzen auch nicht die Spezialfähigkeit ihres Unternehmens</b>, die durch den Bau des dritten Turbinenhauses freigeschaltet wird. Sie nutzen aber die Boni für den Bau des zweiten und vierten Turbinenhauses.",
+      "noExecutiveOfficers": "<b>Automa nutzen keine Chefingenieure.</b>",
+      "doesNotTakeContractTiles": "<b>Automa nehmen keine Vertragsplättchen.</b> Automa erfüllen Verträge direkt aus der offenen Auslage im Notariat.",
+      "advancedTechnologyTiles": "<b>Automa können fortgeschrittene Technologieplättchen erwerben</b>, sie nutzen aber nur die Basisfunktion <i>(den Bau eines Bauteils)</i> und nicht die Sonderfähigkeit.",
+      "objectiveTileScoring": "Wenn ein Automa für die Erfüllung des <b>Zielplättchens</b> Punkte erhält, dann erhält er, ggf. nach der Auflösung von Gleichständen, 5 Zusatzpunkte. Ohne Gleichstände also 20 SP für den 1. Platz, 15 SP für den 2. Platz oder 10 SP für den 3. Platz."
+    },
     "actionItem": {
       "production": {
         "intro": "<b><i>Der Automa produziert, falls die folgenden Bedingungen alle erfüllt sind, dort Energie, wo er den höchsten Ertrag erzielt:</i></b>",

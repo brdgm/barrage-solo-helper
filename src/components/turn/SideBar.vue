@@ -10,7 +10,9 @@
       <p v-if="botInfo.workerCount > 0" v-html="t('sideBar.workers', {count:botInfo.workerCount})"></p>
       <p v-else v-html="t('sideBar.pass')"></p>
     </div>
+    <a class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#automaRulesModal">{{t('rules.general.title')}}</a>
   </div>
+  <AutomaRulesModal/>
 </template>
 
 <script lang="ts">
@@ -19,11 +21,13 @@ import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import AbstractNavigationState from '@/util/AbstractNavigationState'
 import PlayerColorIcon from '../structure/PlayerColorIcon.vue'
+import AutomaRulesModal from '../rules/AutomaRulesModal.vue'
 
 export default defineComponent({
   name: 'SideBar',
   components: {
-    PlayerColorIcon
+    PlayerColorIcon,
+    AutomaRulesModal
   },
   setup() {
     const { t } = useI18n()
