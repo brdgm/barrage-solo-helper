@@ -4,12 +4,20 @@
       <div class="action">
         <AppIcon type="action" :name="isOneDropImmediately ? 'water-management-immediately' : 'water-management'" class="icon"/>
       </div>
+      <div class="columns">
+        <template v-for="(tile,index) of navigationState.cardDeck.criteriaCard?.waterManagementBasinColumns" :key="tile">
+          <span v-if="index > 0">-</span>
+          <span>{{tile}}</span>
+        </template>
+      </div>
     </template>
     <template #rules>
       <p class="fw-bold fst-italic" v-html="t('rules.actionItem.water-management.intro')"></p>
       <p v-html="t('rules.actionItem.water-management.damReachable')"></p>
       <p v-html="t('rules.actionItem.water-management.damCapacity')"></p>
       <p v-html="t('rules.actionItem.water-management.engineerPlacement')"></p>
+      <p v-html="t('rules.actionItem.water-management.tiebreaker')"></p>
+      <img src="@/assets/map-basin.webp" alt="" class="img-fluid"/>
     </template>
   </ActionBox>
 </template>
@@ -58,5 +66,10 @@ export default defineComponent({
 <style lang="scss" scoped>
 .icon {
   width: 2.8rem;
+}
+.columns {
+  span { 
+    margin: 0.1rem;
+  }
 }
 </style>

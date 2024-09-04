@@ -133,7 +133,8 @@
         "intro": "The Automa will place the indicated amount of Water Drops on one or more Headstream tiles, following the standard rules.",
         "damReachable": "The Automa will perform this action only if at least one of the placed Water Drops can reach one of its own Dams <i>(either immediately or in the upcoming Water Phase, taking into consideration the current map status)</i>.",
         "damCapacity": "The Dam <i>(or Dams)</i> must have enough capacity left to store the Water Drop(s); any exceeding Water Drop will not be placed.",
-        "engineerPlacement": "If at least one Water Drop was placed with this action, the Automa must place one Engineer on the Water Management Action spaces."
+        "engineerPlacement": "If at least one Water Drop was placed with this action, the Automa must place one Engineer on the Water Management Action spaces.",
+        "tiebreaker": "The Automa will always try to place the highest amount of Water Drops. If there are two or more eligible Headstreams, use the indicated tiebreaker relating to the basins as shown below. If the first letter refers to one of the possible Headstreams, place the Water Drops there, and so on."
       },
       "contract-office": {
         "intro": "The Automa removes the indicated Contracts from the Contract Office. Then, it move its Energy marker by 2 steps on the Energy Track.",

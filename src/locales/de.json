@@ -134,7 +134,8 @@
         "intro": "Der Automa platziert die angegebene Anzahl Wassereinheiten auf 1 oder mehrere Quellenplättchen.",
         "damReachable": "Der Automa führt diese Aktion nur durch, wenn mindestens 1 der platzierten Wassereinheiten zu 1 seiner Staumauern gelangen würde <i>(prüfe, ob dies zutrifft, wenn das Wasser sofort fließen würde, selbst wenn die Wassereinheit nicht sofort fließt)</i>.",
         "damCapacity": "Die Staumauer muss noch genug Kapazität haben, um die Wassereinheit auch stauen zu können. Wenn die erste Wassereinheit zu einer eigenen Staumauer gelangen kann, die zweite aber nicht, dann platziert der Automa nur 1 Wassereinheit.",
-        "engineerPlacement": "Auch in diesem Fall platziere 1 Arbeiter auf dem Managementplan."
+        "engineerPlacement": "Der Automa platziert 1 Arbeiter auf dem Managementplan.",
+        "tiebreaker": "Der Automa führt die Aktion so aus, dass möglichst viele Wassereinheiten zu seinen Staumauern gelangen. Wenn es dafür mehrere verschiedene Möglichkeiten gibt, nutze die angezeigten Kriterien zur Entscheidung, auf welche Quelle(n) die Wassereinheit(en) gelegt werden. Prüfe die Buchstaben einer nach dem anderen <i>(Reihenfolge der Quellen siehe unten)</i> und platziere die Einheiten auf der ersten möglichen Quelle."
       },
       "contract-office": {
         "intro": "Der Automa entfernt die offenen Verträge der abgebildeten Farbe aus dem Spiel. Danach rückt er seinen Energiemarker 2 Felder vor.",
