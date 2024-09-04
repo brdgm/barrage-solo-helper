@@ -155,6 +155,12 @@
     "external-work": "External Work",
     "bank": "Bank"
   },
+  "constructionType": {
+    "dam": "Dam Base",
+    "elevation": "Elevation",
+    "conduit": "Conduit",
+    "powerhouse": "Powerhouse"
+  },
   "rules": {
     "general": {
       "title": "Automa Rules",

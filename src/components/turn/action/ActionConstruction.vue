@@ -34,7 +34,7 @@
             <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon" :class="criteria"/>
             <hr/>
           </template>
-          <div class="location">{{criteriaCard.locationConduit}}</div>
+          <div class="location">{{criteriaCard.locationConduit}}{{criteriaCard.locationConduitPosition}}</div>
         </template>
         <template v-else-if="isPowerhouse">
           <template v-for="criteria of criteriaCard.placingCriteriaPowerhouse" :key="criteria" >
@@ -76,7 +76,7 @@
             <span v-html="t(`rules.structurePlacement.conduit.${criteria}`)"></span>
           </li>
           <li>
-            <span v-html="t('rules.structurePlacement.location', {location:criteriaCard.locationConduit})"></span><br/>
+            <span v-html="t('rules.structurePlacement.location', {location:`${criteriaCard.locationConduit}${criteriaCard.locationConduitPosition}`})"></span><br/>
             <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
           </li>
         </template>

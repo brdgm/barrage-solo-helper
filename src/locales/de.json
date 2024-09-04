@@ -156,6 +156,12 @@
     "external-work": "Auftragsarbeit",
     "bank": "Bank"
   },
+  "constructionType": {
+    "dam": "Grundmauer",
+    "elevation": "Erhöhung",
+    "conduit": "Rohrwerk",
+    "powerhouse": "Turbinenhaus"
+  },
   "rules": {
     "general": {
       "title": "Automa-Regeln",

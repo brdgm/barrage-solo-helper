@@ -71,7 +71,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_NEUTRAL_OPPONENT_DAM
     ],
     locationConduit: 10,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.OWNED_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -136,7 +136,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_OPPONENT_POWERHOUSE
     ],
     locationConduit: 9,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.OWNED_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -202,7 +202,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 6,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
       PlacingCriteriaPowerhouse.OWNED_DAM,
@@ -273,7 +273,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 3,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.HILLS_BASIN_5,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -343,7 +343,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 3,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.HILLS_BASIN_6,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -409,7 +409,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_NEUTRAL_OPPONENT_DAM
     ],
     locationConduit: 10,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.OWNED_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -469,7 +469,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_NEUTRAL_OPPONENT_DAM
     ],
     locationConduit: 2,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.NOT_FEEDING_OPPONENT_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -540,7 +540,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_OPPONENT_POWERHOUSE
     ],
     locationConduit: 7,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
       PlacingCriteriaPowerhouse.OWNED_DAM,
@@ -613,7 +613,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_OPPONENT_POWERHOUSE
     ],
     locationConduit: 1,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.FEEDING_OWNED_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -673,7 +673,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 6,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
       PlacingCriteriaPowerhouse.OWNED_DAM,
@@ -743,7 +743,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 4,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.PLAINS,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -808,7 +808,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OPPONENT_NEUTRAL_OWNED_DAM
     ],
     locationConduit: 8,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.OWNED_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -880,7 +880,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_OPPONENT_POWERHOUSE
     ],
     locationConduit: 9,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.OWNED_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -940,7 +940,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OPPONENT_NEUTRAL_OWNED_DAM
     ],
     locationConduit: 8,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
       PlacingCriteriaPowerhouse.OWNED_DAM,
@@ -1001,7 +1001,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_NEUTRAL_OPPONENT_DAM
     ],
     locationConduit: 2,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.NOT_FEEDING_OPPONENT_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -1073,7 +1073,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_OPPONENT_POWERHOUSE
     ],
     locationConduit: 7,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
       PlacingCriteriaPowerhouse.OWNED_DAM,
@@ -1144,7 +1144,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 5,
-    locationConduitPosition: ConduitPosition.RIGHT,
+    locationConduitPosition: ConduitPosition.B,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
       PlacingCriteriaPowerhouse.OWNED_DAM,
@@ -1215,7 +1215,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.OWNED_OPPONENT_POWERHOUSE
     ],
     locationConduit: 1,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.FEEDING_OWNED_DAM,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -1285,7 +1285,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 4,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.HILLS_BASIN_7,
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
@@ -1357,7 +1357,7 @@ const cards : Card[] = [
       PlacingCriteriaConduit.MOST_POWERFUL
     ],
     locationConduit: 5,
-    locationConduitPosition: ConduitPosition.LEFT,
+    locationConduitPosition: ConduitPosition.A,
     placingCriteriaPowerhouse: [
       PlacingCriteriaPowerhouse.MOST_POWERFUL_CONDUIT,
       PlacingCriteriaPowerhouse.OWNED_DAM,

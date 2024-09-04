@@ -2,7 +2,7 @@
  * Conduit position besides basin.
  */
 enum ConduitPosition {
-  LEFT = 'left',
-  RIGHT = 'right'
+  A = 'A',
+  B = 'B'
 }
 export default ConduitPosition

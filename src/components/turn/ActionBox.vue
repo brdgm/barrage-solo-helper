@@ -12,6 +12,7 @@
       </div>
 
       <div v-if="$slots.criteria" class="criteriaBox mt-2" data-bs-toggle="modal" data-bs-target="#modalCriteriaRules">
+        <div class="actionTitle">{{t(`constructionType.${actionItem.constructionType}`)}}</div>
         <slot name="criteria"></slot>
       </div>
     </div>
