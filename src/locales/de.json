@@ -11,7 +11,8 @@
     "expansions": {
       "title": "Erweiterungen",
       "leeghwater-project": "Das Leeghwater-Projekt",
-      "far-companies": "Far Companies"
+      "far-companies": "Far Companies",
+      "executive-officer-promo": "Promo-Chefingenieure (Auswahl)"
     },
     "players": {
       "title": "Spieler",
@@ -138,7 +139,11 @@
     "simone-luciani": "Simone Luciani",
     "tommaso-battista": "Tommaso Battista",
     "leslie-spencer": "Leslie Spencer",
-    "margot-fouche": "Margot Fouché"
+    "margot-fouche": "Margot Fouché",
+    "elon-audia": "Elon Audia",
+    "dr-octavius": "Dr. Octavius",
+    "amir-zahir": "Amir Zahir",
+    "franz-de-lasse": "Franz de Lasse"
   },
   "actionItem": {
     "production": "Energieproduktion",
@@ -316,11 +321,15 @@
           },
           "solomon-p-jordan": "<b>Hochspannung/Solomon P. Jordan:</b> Der Automa setzt immer zuerst seine vorhandenen Maschinen ein. <b>Wenn ihm genau 1 Maschine für eine Aktion fehlt, zahlt er stattdessen 3 SP.</b> Wenn ihm mehrere Maschinen fehlen, führt er die Aktion nicht aus.",
           "anton-krylov": "<b>Hochspannung/Anton Krylov:</b> <b>Der Automa setzt das Sondertechnologieplättchen erst ein, wenn er kein passendes einfaches oder fortgeschrittenes Technologieplättchen zur Verfügung hat</b> (inkl. Jokerplättchen). Er kopiert immer ein Plättchen der höchstmöglichen Stufe (einfach = Stufe 0) und bei 2 Plättchen derselben Stufe das spezifische Plättchen und nicht das Jokerplättchen.",
-          "mahiri-sekibo": "<b>Hochspannung/Mahiri Sekibo:</b> Der Automa nutzt diese Fähigkeit nicht. Dafür <b>müssen alle menschlichen Spieler ihre erste Aktion in jeder Runde so durchführen, als wären sie ein Automa</b>. Decke ein neues Automaplättchen auf und nutze es um zu entscheiden,  welche Aktion du durchführst (TODO: link).",
+          "mahiri-sekibo": "<b>Hochspannung/Mahiri Sekibo:</b> Der Automa nutzt diese Fähigkeit nicht. Dafür <b>müssen alle menschlichen Spieler ihre erste Aktion in jeder Runde so durchführen, als wären sie ein Automa</b>. Decke ein neues Automaplättchen auf und nutze es um zu entscheiden, welche Aktion du durchführst.",
           "simone-luciani": "<b>Hochspannung/Simone Luciani:</b> Wenn der Automa Energie produziert, <b>erfüllt er damit so viele Verträge wie möglich</b>, anstatt nur den Vertrag mit dem höchsten Wert zu erfüllen. Wenn es mehrere Kombinationen zur Auswahl gibt, wählt der Automa die Verträge mit dem höchsten Wert und bei mehreren Verträgen desselben Werts immer den rechten (liegen z. B. Verträge mit Wert 2, 3, 6, 6, 9 und 10 aus, erfüllt der Automa bei einer Energieproduktion von 9 die Verträge mit Wert 6 und 3, bei einer Energieproduktion von 12 die Verträge mit Wert 6, 3 und 2. In beiden Fällen wählt er den rechten der beiden 6er-Verträge). Wenn der Automa allerdings einen staatlichen Vertrag erfüllen kann, wird er das immer tun (wenn möglich in Kombination mit privaten Verträgen).",
           "tommaso-battista": "<b>Hochspannung/Tommaso Battista:</b> Wenn der Automa mit genau 1 Arbeiter eine Aktion ausführt, die seinen Zug beenden würde (also keine in einem gestrichelten Rahmen), so nutzt er dafür (soweit noch verfügbar) den Architekten und führt direkt nach der Aktion einen zusätzlichen Zug aus. Decke dazu ein neues Automaplättchen auf.",
           "leslie-spencer": "<b>Hochspannung/Leslie Spencer:</b> Wenn der Automa eine Bauaktion durchführen soll und das Sondertechnologieplättchen noch zur Verfügung hat, prüfe stattdessen, ob er eine Auftragsarbeit durchführen kann. Wenn ja, <b>führe stattdessen diese Auftragsarbeit mit diesem Plättchen durch und ignoriere die Bauaktion</b>. Wenn nicht, führe die Bauaktion ganz normal durch.",
-          "margot-fouche": "<b>Hochspannung/Margot Fouché:</b> Der Automa nutzt diese Fähigkeit nicht. Wenn der Automa eine beliebige Bauaktion durchführen soll, prüfe stattdessen, ob es ihm möglich ist, 1 Gebäude zu bauen (er also die nötigen Maschinen und ein entsprechendes Technologieplättchen im Vorrat hat, um 1 noch nicht aktiviertes Gebäude zu bauen). Wenn ja, <b>baue 1 Gebäude und ignoriere das eigentlich auf dem Automaplättchen abgebildete Bauwerk</b>. Diese Bauaktion kostet 1 Arbeiter. Wenn nicht, führe die Bauaktion ganz normal durch."
+          "margot-fouche": "<b>Hochspannung/Margot Fouché:</b> Der Automa nutzt diese Fähigkeit nicht. Wenn der Automa eine beliebige Bauaktion durchführen soll, prüfe stattdessen, ob es ihm möglich ist, 1 Gebäude zu bauen (er also die nötigen Maschinen und ein entsprechendes Technologieplättchen im Vorrat hat, um 1 noch nicht aktiviertes Gebäude zu bauen). Wenn ja, <b>baue 1 Gebäude und ignoriere das eigentlich auf dem Automaplättchen abgebildete Bauwerk</b>. Diese Bauaktion kostet 1 Arbeiter. Wenn nicht, führe die Bauaktion ganz normal durch.",
+          "elon-audia": "<b>Hochspannung/Elon Audia:</b> When building or performing an External Work action, Automa will always prefer to use Excavators and Conrete Mixer before using its Excamixers.",
+          "dr-octavius": "<b>Hochspannung/Dr. Octavius:</b> When checking the amount of producible Energy, the Automa will consider the best possible production considering all possible Water Drops sources. Moreover, when selecting where to place a Dam Base, it will prefer, between the current eligible positions, one connected (by a built or unbuilt Conduit) to one of its Powerhouses.",
+          "amir-zahir": "<b>Hochspannung/Amir Zahir:</b> Whenever the Automa places Water Drop on the Headstreams, they always flow immediately. When the Automa is supposed to place Water Drops that should flow immediately on the Headstreams, the Automa will try to place them in its Dams. The first choice will be a DAm that is part of a complete Dam-Conduit-Powerhouse system (in case of multiple options, the system having the Conduit with the highest value). The seconds choice will be any of its Dams. In case of a tie between multiple options, the Automa follows the code of the DAm column on the Automa Criteria Card (TODO: link).",
+          "franz-de-lasse": "<b>Hochspannung/Franz de Lasse:</b> The Automa always chooses to fulfill the available Contracts with the lowest value (in case of a tie, it would be the Contract on the right)."
         }
       }
     }

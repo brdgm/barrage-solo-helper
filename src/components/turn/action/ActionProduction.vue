@@ -23,12 +23,16 @@
       <p v-html="t('rules.actionItem.production.fulfillContract')"></p>
       <p v-html="t('rules.actionItem.production.multipleOptions')"></p>
     </template>
-    <template #warnings v-if="isEasyDifficulty || isHardDifficultyGermany || isHardDifficultyFrance || isHardDifficultyNetherlands || isVeryHardDifficultyViktorViesler">
+    <template #warnings v-if="isEasyDifficulty || isHardDifficultyGermany || isHardDifficultyFrance || isHardDifficultyNetherlands || isVeryHardDifficultyViktorViesler
+        || isVeryHardDifficultySimoneLuciani || isVeryHardDifficultyDrOctavius || isVeryHardDifficultyFranzDeLasse">
       <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noProductionBonus')"></div>
       <div v-if="isHardDifficultyGermany" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.germany')"></div>
       <div v-if="isHardDifficultyFrance" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.france')"></div>
       <div v-if="isHardDifficultyNetherlands" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.netherlands')"></div>
       <div v-if="isVeryHardDifficultyViktorViesler" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.viktor-fiesler')"></div>
+      <div v-if="isVeryHardDifficultySimoneLuciani" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.simone-luciani')"></div>
+      <div v-if="isVeryHardDifficultyDrOctavius" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.dr-octavius')"></div>
+      <div v-if="isVeryHardDifficultyFranzDeLasse" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.franz-de-lasse')"></div>
     </template>
   </ActionBox>
 </template>
@@ -88,6 +92,15 @@ export default defineComponent({
     },
     isVeryHardDifficultyViktorViesler() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.VIKTOR_FIESLER, this.state)
+    },
+    isVeryHardDifficultySimoneLuciani() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.SIMONE_LUCIANI, this.state)
+    },
+    isVeryHardDifficultyDrOctavius() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.DR_OCTAVIUS, this.state)
+    },
+    isVeryHardDifficultyFranzDeLasse() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.FRANZ_DE_LASSE, this.state)
     }
   }
 })

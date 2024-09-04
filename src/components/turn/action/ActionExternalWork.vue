@@ -17,6 +17,9 @@
       <p v-html="t('rules.actionItem.external-work.engineerPlacement')"></p>
       <p v-html="t('rules.actionItem.external-work.particularEffect')"></p>
     </template>
+    <template #warnings v-if="isVeryHardDifficultyElonAudia">
+      <div v-if="isVeryHardDifficultyElonAudia" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.elon-audia')"></div>
+    </template>
   </ActionBox>
 </template>
 
@@ -27,12 +30,17 @@ import AppIcon from '../../structure/AppIcon.vue'
 import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
+import { useStateStore } from '@/store/state'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
+import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 
 export default defineComponent({
   name: 'ActionExternalWork',
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   components: {
     ActionBox,
@@ -50,6 +58,11 @@ export default defineComponent({
     navigationState: {
       type: BotNavigationState,
       required: true
+    }
+  },
+  computed: {
+    isVeryHardDifficultyElonAudia() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.ELON_AUDIA, this.state)
     }
   }
 })

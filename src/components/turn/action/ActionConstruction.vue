@@ -97,13 +97,14 @@
       <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
     </template>
     <template #warnings v-if="isEasyDifficulty || isVeryHardDifficultyWilhelmAdlerDam || isVeryHardDifficultyGracianoDelMonte || isVeryHardDifficultyJillMcDowellConduit
-        || isVeryHardDifficultySolomonPJordan || isVeryHardDifficultyAntonKrylov">
+        || isVeryHardDifficultySolomonPJordan || isVeryHardDifficultyAntonKrylov || isVeryHardDifficultyElonAudia">
       <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
       <div v-if="isVeryHardDifficultyWilhelmAdlerDam" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.wilhelm-adler')"></div>
       <div v-if="isVeryHardDifficultyGracianoDelMonte" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.graziano-del-monte')"></div>
       <div v-if="isVeryHardDifficultyJillMcDowellConduit" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.jill-mcdowell.constructConduit')"></div>
       <div v-if="isVeryHardDifficultySolomonPJordan" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.solomon-p-jordan')"></div>
       <div v-if="isVeryHardDifficultyAntonKrylov" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.anton-krylov')"></div>
+      <div v-if="isVeryHardDifficultyElonAudia" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.elon-audia')"></div>
     </template>
   </ActionBox>
 </template>
@@ -181,6 +182,9 @@ export default defineComponent({
     },
     isVeryHardDifficultyAntonKrylov() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.ANTON_KRYLOV, this.state)
+    },
+    isVeryHardDifficultyElonAudia() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.ELON_AUDIA, this.state)
     }
   },
   methods: {

@@ -19,8 +19,9 @@
       <p v-html="t('rules.actionItem.water-management.tiebreaker')"></p>
       <img src="@/assets/map-basin.webp" alt="" class="img-fluid"/>
     </template>
-    <template #warnings v-if="isHardDifficultyUSA">
+    <template #warnings v-if="isHardDifficultyUSA || isVeryHardDifficultyAmirZahir">
       <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.usa')"></div>
+      <div v-if="isVeryHardDifficultyAmirZahir" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.amir-zahir')"></div>
     </template>
   </ActionBox>
 </template>
@@ -37,6 +38,8 @@ import { useStateStore } from '@/store/state'
 import isDifficultyLevelCorporation from '@/util/isDifficultyLevelCorporation'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Corporation from '@/services/enum/Corporation'
+import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 
 export default defineComponent({
   name: 'ActionWaterManagement',
@@ -69,6 +72,9 @@ export default defineComponent({
     },
     isHardDifficultyUSA() : boolean {
       return isDifficultyLevelCorporation(this.navigationState.bot, DifficultyLevel.HARD, Corporation.USA, this.state)
+    },
+    isVeryHardDifficultyAmirZahir() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.AMIR_ZAHIR, this.state)
     }
   }
 })

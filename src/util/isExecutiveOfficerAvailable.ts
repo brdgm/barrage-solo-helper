@@ -14,13 +14,14 @@ export default function isExecutiveOfficerAvailable(executiveOfficer : Executive
     case ExecutiveOfficer.JILL_MCDOWELL:
     case ExecutiveOfficer.SOLOMON_P_JORDAN:
     case ExecutiveOfficer.ANTON_KRYLOV:
-    case ExecutiveOfficer.MAHIRI_SEKIBO:
       return true
-    case ExecutiveOfficer.LESLIE_SPENCER:
-    case ExecutiveOfficer.MARGOT_FOUCHE:
     case ExecutiveOfficer.SIMONE_LUCIANI:
-    case ExecutiveOfficer.TOMMASO_BATTISTA:
       return expansions.includes(Expansion.LEEGHWATER_PROJECT)
+    case ExecutiveOfficer.ELON_AUDIA:
+    case ExecutiveOfficer.DR_OCTAVIUS:
+    case ExecutiveOfficer.AMIR_ZAHIR:
+    case ExecutiveOfficer.FRANZ_DE_LASSE:
+      return expansions.includes(Expansion.EXECUTIVE_OFFICER_PROMO)
     default:
       return false
   }
