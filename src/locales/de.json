@@ -60,7 +60,11 @@
     "title": "Automa | Automa {bot}",
     "done": "Arbeiter platziert",
     "notPossible": "Nicht möglich",
-    "structurePlacement": "Platzierung von Bauteilen"
+    "structurePlacement": {
+      "damElevation": "Grundmauer/Erhöhung",
+      "conduit": "Rohrwerk",
+      "powerhouse": "Turbinenhaus"
+    }
   },
   "roundStart": {
     "title": "Runde {round}",
@@ -187,7 +191,7 @@
         "contractRequirement": "<b>Erfüllbarer Vertrag:</b> Die maximale Energie, die der Automa produzieren könnte <i>(inkl. Bonus oder Malus)</i> reicht aus, um mindestens 1 im Notariat offen ausliegenden Vertrag der abgebildeten Farbe zu erfüllen.",
         "produceEnergy": "<b>Der Automa produziert mit der Kombination von Bauteilen, mit der er den höchsten Energieertrag erzielt</b>. Addiere bzw. subtrahiere ggf. noch den angegebenen <b>Bonus oder Malus</b>, sowie den Bonus seiner gebauten Turbinenhäuser. Bewege die Wassereinheiten und den Energiemarker wie üblich.",
         "fulfillContract": "Danach <b>erfüllt der Automa den im Notariat offen ausliegenden Vertrag mit dem höchsten Wert</b>, den er mit seiner Produktion erfüllen kann. Das kann auch ein Vertrag einer anderen Farbe sein als auf dem Automaplättchen angegeben <i>(auch ein staatlicher Vertrag)</i>. Wenn es mehrere Verträge mit dem höchsten Wert gibt, wählt er den weiter rechts liegenden. Der Automa erhält die Belohnung des Vertrags, danach wird der Vertrag neben seinem Unternehmensplan abgelegt und durch ein neues Plättchen ersetzt <i>(außer bei einem staatlichen Vertrag)</i>.",
-        "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand der in der Spalte „Rohrwerk“ auf dem Kriterienplättchen abgebildeten Nummer, mit welchem Rohrwerk der Automa produziert <i>(TODO: link)</i>."
+        "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand der in des „Rohrwerk“ Bauplatz-Kriteriums.</i>."
       },
       "water-management": {
         "intro": "Der Automa platziert die angegebene Anzahl Wassereinheiten auf 1 oder mehrere Quellenplättchen.",
@@ -312,14 +316,14 @@
           "usa": "<b>Starkstrom/USA:</b> Hat der Automa bei einer Aktion „Wassermanagement“ mehrere Quellen zur Auswahl, wählt er die, die über die Spezialfähigkeit mehr Schritte auf der Energieleiste auslöst.",
           "germany": "<b>Starkstrom/Deutschland:</b> Bei der zweiten Energieproduktion (sofern eine möglich ist) produziert der Automa dort, wo er den höchsten Ertrag erzielt.",
           "france": "<b>Starkstrom/Frankreich:</b> Der Automa berücksichtigt die Fähigkeit sowohl bei der Bedingung „Erfüllbarer Vertrag“ als auch bei der Erfüllung eines Vertrags..",
-          "netherlands": "<b>Starkstrom/Die Niederlande:</b> Platziere die Wassereinheit hinter der Staumauer <i>(außer der gerade genutzten)</i>, mit der der Automa als nächstes die meiste Energie produzieren könnte. Gibt es keine oder mehrere solcher Staumauern, nutze die erste Spalte des Kriterienplättchens zur Entscheidung, hinter welchen Damm die Wassereinheit platziert wird (TODO: link)."
+          "netherlands": "<b>Starkstrom/Die Niederlande:</b> Platziere die Wassereinheit hinter der Staumauer <i>(außer der gerade genutzten)</i>, mit der der Automa als nächstes die meiste Energie produzieren könnte. Gibt es keine oder mehrere solcher Staumauern, nutze die Grundmauer-Kriterien zur Entscheidung, hinter welchen Damm die Wassereinheit platziert wird."
         }
       },
       "veryHard": {
         "executiveOfficers": "<b>Hochspannung:</b> Der Automa erhält beim Spielaufbau einen Chefingenieur und kann ihn während des Spiels nutzen.",
         "executiveOfficer": {
           "wilhelm-adler": "<b>Hochspannung/Wilhelm Adler:</b> Der Automa <b>baut Grundmauern bevorzugt in den Bergen</b>, dann in den Hügeln und erst dann im Vorland.",
-          "graziano-del-monte": "<b>Hochspannung/Graziano del Monte:</b> Bei einer Bauaktion <b>ignoriert der Automa das auf dem Automaplättchen angegebene Bauteil</b> und baut stattdessen eine Erhöhung, falls es eine Grundmauer gibt, die er mit seinen vorhandenen Ressourcen erhöhen kann (TODO: link).",
+          "graziano-del-monte": "<b>Hochspannung/Graziano del Monte:</b> Bei einer Bauaktion <b>ignoriert der Automa das auf dem Automaplättchen angegebene Bauteil</b> und baut stattdessen eine Erhöhung, falls es eine Grundmauer gibt, die er mit seinen vorhandenen Ressourcen erhöhen kann.",
           "viktor-fiesler": "<b>Hochspannung/Viktor Fiesler:</b> Wenn der Automa eine Aktion „Energieproduktion“ mit einem Rohrwerk der Stufe 1 oder 2 durchführt, <b>nutzt er dafür nur 1 Wassereinheit</b>.",
           "jill-mcdowell": {
             "constructConduit": "<b>Hochspannung/Jill McDowell:</b> Solange der Automa mindestens so viele Betonmischer wie Bagger hat, bezahlt er Rohrwerke immer mit Betonmischern.",
@@ -334,7 +338,7 @@
           "margot-fouche": "<b>Hochspannung/Margot Fouché:</b> Der Automa nutzt diese Fähigkeit nicht. Wenn der Automa eine beliebige Bauaktion durchführen soll, prüfe stattdessen, ob es ihm möglich ist, 1 Gebäude zu bauen (er also die nötigen Maschinen und ein entsprechendes Technologieplättchen im Vorrat hat, um 1 noch nicht aktiviertes Gebäude zu bauen). Wenn ja, <b>baue 1 Gebäude und ignoriere das eigentlich auf dem Automaplättchen abgebildete Bauwerk</b>. Diese Bauaktion kostet 1 Arbeiter. Wenn nicht, führe die Bauaktion ganz normal durch.",
           "elon-audia": "<b>Hochspannung/Elon Audia:</b> When building or performing an External Work action, Automa will always prefer to use Excavators and Conrete Mixer before using its Excamixers.",
           "dr-octavius": "<b>Hochspannung/Dr. Octavius:</b> When checking the amount of producible Energy, the Automa will consider the best possible production considering all possible Water Drops sources. Moreover, when selecting where to place a Dam Base, it will prefer, between the current eligible positions, one connected (by a built or unbuilt Conduit) to one of its Powerhouses.",
-          "amir-zahir": "<b>Hochspannung/Amir Zahir:</b> Whenever the Automa places Water Drop on the Headstreams, they always flow immediately. When the Automa is supposed to place Water Drops that should flow immediately on the Headstreams, the Automa will try to place them in its Dams. The first choice will be a DAm that is part of a complete Dam-Conduit-Powerhouse system (in case of multiple options, the system having the Conduit with the highest value). The seconds choice will be any of its Dams. In case of a tie between multiple options, the Automa follows the code of the DAm column on the Automa Criteria Card (TODO: link).",
+          "amir-zahir": "<b>Overpowered/Amir Zahir:</b> Whenever the Automa places Water Drop on the Headstreams, they always flow immediately. When the Automa is supposed to place Water Drops that should flow immediately on the Headstreams, the Automa will try to place them in its Dams. The first choice will be a Dam that is part of a complete Dam-Conduit-Powerhouse system (in case of multiple options, the system having the Conduit with the highest value). The seconds choice will be any of its Dams. In case of a tie between multiple options, the Automa follows the location of the Dam criteria.",
           "franz-de-lasse": "<b>Hochspannung/Franz de Lasse:</b> The Automa always chooses to fulfill the available Contracts with the lowest value (in case of a tie, it would be the Contract on the right)."
         }
       }

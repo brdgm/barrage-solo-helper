@@ -1,5 +1,5 @@
 <template>
-  <ActionBox :actionItem="actionItem" :navigationState="navigationState">
+  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState">
     <template #action>
       <div class="action">
         <HydroCost v-if="actionItem.hydroCost" :hydroCost="actionItem.hydroCost" class="hydroCost"/>

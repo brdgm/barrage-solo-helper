@@ -1,5 +1,5 @@
 <template>
-  <ActionBox :actionItem="actionItem" :navigationState="navigationState">
+  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState">
     <template #action>
       <div class="action" v-if="actionItem.constructionType">
         <AppIcon v-if="isBuilding" type="construction-type" :name="`building-${actionItem.buildingSearchDirection}`" class="icon building"/>
@@ -19,82 +19,6 @@
       <p v-html="t('rules.actionItem.construction.multipleSpaces')"></p>
       <p v-html="t('rules.actionItem.construction.income')"></p>
       <p v-if="isBuilding" v-html="t(`rules.actionItem.construction.building.${actionItem.buildingSearchDirection}`)"></p>
-    </template>
-    <template #criteria v-if="!isBuilding">
-      <div class="criteria">
-        <template v-if="isDamElevation">
-          <template v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
-            <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon" :class="criteria"/>
-            <hr/>
-          </template>
-          <div class="location">{{criteriaCard.locationDamElevation}}</div>
-        </template>
-        <template v-else-if="isConduit">
-          <template v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
-            <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon" :class="criteria"/>
-            <hr/>
-          </template>
-          <div class="location">{{criteriaCard.locationConduit}}{{criteriaCard.locationConduitPosition}}</div>
-        </template>
-        <template v-else-if="isPowerhouse">
-          <template v-for="criteria of criteriaCard.placingCriteriaPowerhouse" :key="criteria" >
-            <AppIcon type="placing-criteria-powerhouse" :name="criteria" class="icon" :class="criteria"/>
-            <hr/>
-          </template>
-          <div class="location">{{criteriaCard.locationPowerhouse}}</div>
-        </template>
-      </div>
-    </template>
-    <template #criteriaRules>
-      <p v-html="t('rules.structurePlacement.intro')"></p>
-      <ol class="criteriaRules">
-        <li>
-          <span v-html="t('rules.structurePlacement.thirdStructure')"></span>
-          <hr/>
-        </li>
-        <template v-if="isDamElevation">
-          <li v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
-            <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon float-start" :class="criteria"/>
-            <span v-html="t(`rules.structurePlacement.damElevation.${criteria}`)"></span>
-            <template v-if="isShowHeadstreamOrder(criteria)">
-              <span>&nbsp;</span>
-              <template v-for="(column,index) of criteriaCard.waterManagementBasinColumns" :key="column">
-                <span v-if="index > 0"> - </span>
-                <span>{{column}}</span>
-              </template>
-            </template>
-            <hr/>
-          </li>
-          <li>
-            <span v-html="t('rules.structurePlacement.location', {location:criteriaCard.locationDamElevation})"></span><br/>
-            <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
-          </li>
-        </template>
-        <template v-else-if="isConduit">
-          <li v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
-            <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon float-start" :class="criteria"/>
-            <span v-html="t(`rules.structurePlacement.conduit.${criteria}`)"></span>
-          </li>
-          <li>
-            <span v-html="t('rules.structurePlacement.location', {location:`${criteriaCard.locationConduit}${criteriaCard.locationConduitPosition}`})"></span><br/>
-            <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
-          </li>
-        </template>
-        <template v-else-if="isPowerhouse">
-          <li v-for="criteria of criteriaCard.placingCriteriaPowerhouse" :key="criteria" >
-            <AppIcon type="placing-criteria-powerhouse" :name="criteria" class="icon float-start" :class="criteria"/>
-            <span v-html="t(`rules.structurePlacement.powerhouse.${criteria}`)"></span>
-          </li>
-          <li>
-            <span v-html="t('rules.structurePlacement.location', {location:criteriaCard.locationPowerhouse})"></span><br/>
-            <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
-          </li>
-        </template>
-      </ol>
-      <div class="text-center">
-        <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
-      </div>
-      <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
     </template>
     <template #warnings v-if="isEasyDifficulty || isVeryHardDifficultyWilhelmAdlerDam || isVeryHardDifficultyGracianoDelMonte || isVeryHardDifficultyJillMcDowellConduit
         || isVeryHardDifficultySolomonPJordan || isVeryHardDifficultyAntonKrylov || isVeryHardDifficultyElonAudia">
@@ -117,7 +41,6 @@ import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
 import ConstructionType from '@/services/enum/ConstructionType'
-import PlacingCriteriaDamElevation from '@/services/enum/PlacingCriteriaDamElevation'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { useStateStore } from '@/store/state'
 import isDifficultyLevel from '@/util/isDifficultyLevel'
@@ -186,11 +109,6 @@ export default defineComponent({
     isVeryHardDifficultyElonAudia() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.ELON_AUDIA, this.state)
     }
-  },
-  methods: {
-    isShowHeadstreamOrder(criteria: PlacingCriteriaDamElevation) {
-      return criteria == PlacingCriteriaDamElevation.MOST_WATER_DROPS
-    }
   }
 })
 </script>
@@ -205,42 +123,5 @@ export default defineComponent({
 ul > li, ol > li {
   margin-bottom: 0.5rem;
   clear: both;
-}
-.criteria {
-  display: flex;
-  flex-direction: column;
-  .icon {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 7rem;
-    max-height: 2.5rem;
-    align-self: center;
-  }
-  .location {
-    font-weight: bold;
-    font-size: 20px;
-  }
-  hr {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-}
-.criteriaRules {
-  .icon {
-    width: auto;
-    height: auto;
-    max-width: 7rem;
-    max-height: 2.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  hr {
-    clear: both;
-  }
-}
-.map {
-  width: 100%;
-  max-width: 500px;
 }
 </style>
