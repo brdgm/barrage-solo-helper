@@ -58,7 +58,8 @@
   "turnBot": {
     "title": "Automa | Automa {bot}",
     "done": "Arbeiter platziert",
-    "notPossible": "Nicht möglich"
+    "notPossible": "Nicht möglich",
+    "structurePlacement": "Platzierung von Bauteilen"
   },
   "sideBar": {
     "round": "Runde {round}",
@@ -150,7 +151,7 @@
         "buildingSpaceAvailable": "<b>Bauplatz vorhanden</b>: Es gibt mindestens 1 freies Baufeld auf dem Spielplan, auf dem das Bauteil gebaut werden kann.",
         "buildStructure": "Wenn alle Punkte erfüllt sind, baut der Automa das abgebildete Bauteil. Nutze die Bauscheibe wie üblich <i>(beachte die abweichenden Regeln zum Arbeitereinsatz der Automa)</i>.",
         "oneSpace": "Wenn es nur 1 freies Baufeld auf dem Spielplan gibt, auf dem der Automa das Bauteil bauen kann, platziere es dort. ",
-        "multipleSpaces": "Wenn es mehrere mögliche Baufelder gibt, nutze die Regeln zur „Platzierung von Bauteilen“ auf S. 9, um zu entscheiden, auf welchem Feld der Automa baut (TODO: link).",
+        "multipleSpaces": "Wenn es mehrere mögliche Baufelder gibt, nutze die Regeln zur „Platzierung von Bauteilen“ <i>(Klicke auf die Kriterien)</i>.",
         "income": "Wenn der Automa durch den Bau ein Einkommen freischaltet, erhält er es wie üblich einmalig sofort <i>(anstelle von Geld erhält er SP)</i>.",
         "building": {
           "up": "<b>Gebäude:</b> Der Automa baut das erste <i>(von unten nach oben)</i> noch nicht von ihm aktivierte private Gebäude, für das er die nötigen Maschinen hat.",
@@ -180,6 +181,39 @@
       },
       "bank": {
         "intro": "Der Automa platziert 1 Arbeiter in der Bank und erhält 1 SP."
+      }
+    },
+    "structurePlacement": {
+      "intro": "Prüfe diese Kriterien einer nach der anderen um den Bauplatz zu finden:",
+      "thirdStructure": "<b>Drittes Bauteil eines Systems</b>: Gibt es 1 System, bestehend aus Staumauer, Rohrwerk und Turbinenhaus, welches durch den Bau dieses Bauteils vervollständigt würde, so dass der Automa damit Energie produzieren könnte <i>(egal ob zur Zeit Wassereinheiten vorhanden sind oder nicht)</i>, so baut der Automa dort, wo dieses System vervollständigt würde.",
+      "location": "Bauplatz <b>{location}</b> oder höher.",
+      "locationDescription": "Baue hier falls möglich. Anderenfalls gehe die weiteren Bauplätze in aufsteigender Reihenfolge der Zahlen durch. Falls du bei der höchsten Zahl ankommst ohne einen Bauplatz gefunden zu haben, fange bei der niedrigsten Zahl erneut an. Bei den Rohrwerken prüfe bei allen folgenden Bauplätzen immer zuerst den linken Platz im Tal (A) und dann den rechten Platz (B).",
+      "locationRestriction": "Manche Aktionen machen bereits Vorgaben, wo der Automa das Bauteil bauen soll <i>(z. B. eine Grundmauer in den Bergen)</i>. Diese Vorgabe gilt für den gesamten Platzierungsprozess, auch auf der Übersichtskarte ignorierst du dann alle Bauplätze, die nicht dieser Vorgabe entsprechen.",
+      "damElevation": {
+        "downstream-dam": "Ein Bauplatz, der über ein Rohrwerk mit einem Tal verbunden ist, in dem schon eine eigene Staumauer steht.<br/><b>Falls es den nicht gibt</b>: Ein Bauplatz, der nicht über ein Rohrwerk mit einem Tal verbunden ist, in dem schon eine gegnerische Staumauer steht.",
+        "most-powerful-conduit": "Ein Bauplatz neben dem schon gebauten Rohrwerk mit dem höchsten Produktionswert. Ein eigenes Rohrwerk wird bevorzugt vor einem fremden.",
+        "most-water-drops": "Ein Bauplatz, auf dem die Staumauer aktuell am meisten Wasser erhalten würde.",
+        "owned-powerhouse": "Ein Bauplatz verbunden mit einem eigenen Turbinenhaus.",
+        "red-outline-space": "Ein Bauplatz mit rotem Rand.",
+        "upstream-powerhouse": "Ein Bauplatz, der ohne Staumauern dazwischen unterhalb eines Turbinenhauses liegt."
+      },
+      "conduit": {
+        "most-powerful": "Ein Bauplatz mit dem höchsten noch verfügbaren Produktionswert.",
+        "opponent-neutral-owned-dam": "Ein Bauplatz neben einer Staumauer. Eine fremde Staumauer wird bevorzugt vor einer eigenen und eine gegnerische vor einer neutralen.",
+        "opponent-owned-powerhouse": "Ein Bauplatz verbunden mit einem Turbinenhaus. Ein fremdes Turbinenhaus wird bevorzugt vor einem eigenen.",
+        "owned-neutral-opponent-dam": "Ein Bauplatz neben einer Staumauer. Eine eigene Staumauer wird bevorzugt vor einer fremden und eine neutrale vor einer gegnerischen.",
+        "owned-opponent-powerhouse": "Ein Bauplatz verbunden mit einem Turbinenhaus. Ein eigenes Turbinenhaus wird bevorzugt vor einem fremden.",
+        "second-most-powerful": "Ein Bauplatz mit dem zweithöchsten noch verfügbaren Produktionswert."
+      },
+      "powerhouse": {
+        "feeding-owned-dam": "Ein Bauplatz, der ohne fremde Staumauern dazwischen oberhalb einer eigenen Staumauer liegt.<br/><b>Falls es den nicht gibt</b>: Ein Bauplatz, der nicht oberhalb einer gegnerischen Staumauer liegt.",
+        "hills-basin-5": "Ein Bauplatz im Tal <b>5</b> in den Hügeln (siehe Karte).",
+        "hills-basin-6": "Ein Bauplatz im Tal <b>6</b> in den Hügeln (siehe Karte).",
+        "hills-basin-7": "Ein Bauplatz im Tal <b>7</b> in den Hügeln (siehe Karte).",
+        "most-powerful-conduit": "Ein Bauplatz verbunden mit dem schon gebauten Rohrwerk mit dem höchsten Produktionswert. Ein eigenes Rohrwerk wird bevorzugt vor einem fremden.",
+        "not-feeding-opponent-dam": "Ein Bauplatz, der nicht oberhalb einer gegnerischen Staumauer liegt.<br/><b>Falls es den nicht gibt:</b> Ein Bauplatz, der ohne fremde Staumauern dazwischen oberhalb einer eigenen Staumauer liegt.",
+        "owned-dam": "Ein Bauplatz verbunden mit einer eigenen Staumauer.",
+        "plains": "Ein Bauplatz im Vorland."
       }
     }
   },

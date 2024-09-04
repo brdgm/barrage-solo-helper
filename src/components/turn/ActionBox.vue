@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="actionBox mt-2" data-bs-toggle="modal" data-bs-target="#modalActionRules">
+  <div class="boxContainer">
+    <div class="actionBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalActionRules">
       <div class="actionTitle">{{t(`actionItem.${actionItem.action}`)}}</div>
       <div :class="{nextAction:actionItem.nextAction}">
         <div class="workers">
@@ -9,12 +9,23 @@
         <slot name="action"></slot>
       </div>
     </div>
+
+    <div v-if="$slots.criteria" class="criteriaBox mt-2" data-bs-toggle="modal" data-bs-target="#modalCriteriaRules">
+      <slot name="criteria"></slot>
+    </div>
   </div>
 
   <ModalDialog id="modalActionRules" :title="t(`actionItem.${actionItem.action}`)"
       :size-lg="true" :scrollable="true">
     <template #body>
       <slot name="rules"></slot>
+    </template>
+  </ModalDialog>
+
+  <ModalDialog v-if="$slots.criteriaRules" id="modalCriteriaRules" :title="t('turnBot.structurePlacement')"
+      :size-lg="true" :scrollable="true">
+    <template #body>
+      <slot name="criteriaRules"></slot>
     </template>
   </ModalDialog>
 </template>
@@ -57,7 +68,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.actionBox {
+.boxContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.actionBox, .criteriaBox {
   display: inline-block;
   padding: 20px;
   border-radius: 10px;
@@ -87,9 +102,5 @@ export default defineComponent({
   .workerIcon {
     height: 2.5rem;
   }
-}
-.descriptionBox {
-  display: inline-block;
-  margin-left: 1rem;
 }
 </style>

@@ -57,7 +57,8 @@
   "turnBot": {
     "title": "Automa | Automa {bot}",
     "done": "Engineer placed | Engineers placed",
-    "notPossible": "Not possible"
+    "notPossible": "Not possible",
+    "structurePlacement": "Structure Placement"
   },
   "sideBar": {
     "round": "Round {round}",
@@ -149,7 +150,7 @@
         "buildingSpaceAvailable": "<b>Building Space Available</b> - There is at least one available building space on the Map for the indicated Structure.",
         "buildStructure": "If all the above conditions are verified, Automa will build the indicated structure, placing Engineers on its Company board and using its Construction Wheel as usual <i>(remember that the Automa doesn’t follow the standard rules of construction action spaces)</i>.",
         "oneSpace": "If there is only one possible space on the Map for the placement of the structure, the Automa will place the structure in that space.",
-        "multipleSpaces": "If there are more possible spaces, you have to follow the rules described in “Structure Placing Procedure” at page 9 in order to determine where the structure will be placed (TODO: link).",
+        "multipleSpaces": "If there are more possible spaces, you have to follow the rules described in “Structure Placing” procedure <i>(click on the indicated criteria)</i>.",
         "income": "Like a human player, if an income is discovered on the Automa Company board, Automa receive immediately that income.",
         "building": {
           "up": "<b>Building:</b> The Automa will build the Building connected to the first <i>(from bottom to top)</i> available Private Building for which it has available the required Machineries.",
@@ -179,6 +180,39 @@
       },
       "bank": {
         "intro": "Automa scores 1 Victory Point, placing 1 Engineer in the Bank."
+      }
+    },
+    "structurePlacement": {
+      "intro": "Check these criteria on after another to find the building space:",
+      "thirdStructure": "<b>Third structure of a system</b>: First of all, if there is one single potential system <i>(i.e. a set including a Dam - neutral or owned - a Conduit, and an owned Powerhouse)</i> that would be completed by placing the structure, the position completing this system will be chosen.",
+      "location": "Location <b>{location}</b> or higher.",
+      "locationDescription": "Start from this position and proceed forward following the basins order up to the first eligible position. If you reach the end of the positions start again your check from the first position and proceed forward up to the first eligible position. When looking for further building spaces for conduits, first check the left space (A), then the right space (B).",
+      "locationRestriction": "Some actions indicate a particular restriction to the structure to be build (e.g. a Dam Base in the Mountains): this restriction rule to any below further tiebreaking.",
+      "damElevation": {
+        "downstream-dam": "Dam linked (by a Conduit link) to a downstream basin with an owned Dam <b>OTHERWISE</b> A Dam not linked (by a Conduit link) to a downstream basin with an opponent Dam.",
+        "most-powerful-conduit": "A Dam linked to the most powerful Conduit already built (owned or opponent).<br/><b>Tiebreaker: owned Conduit.</b>",
+        "most-water-drops": "A Dam able to receive the most Water Drops in the current Map condition.<br/><b>Tiebreaker: Headstream order.</b>",
+        "owned-powerhouse": "A Dam linked to an owned Powerhouse.",
+        "red-outline-space": "A building space with a red outline Dam among the eligibles.",
+        "upstream-powerhouse": "A Dam linked (through basins without other Dams) to an upstream Powerhouse."
+      },
+      "conduit": {
+        "most-powerful": "The most powerful Conduit among the eligibles.",
+        "opponent-neutral-owned-dam": "A Conduit linked to an opponent / neutral / owned Dam.<br/><b>Tiebreaker: opponent, neutral, owned.</b>",
+        "opponent-owned-powerhouse": "Conduit linked to an opponent / owned Powerhouse.<br/><b>Tiebreaker: opponent, owned.</b>",
+        "owned-neutral-opponent-dam": "A Conduit linked to an owned / neutral / opponent Dam.<br/><b>Tiebreaker: owned, neutral, opponent.</b>",
+        "owned-opponent-powerhouse": "A Conduit linked to an owned / opponent Powerhouse.<br/><b>Tiebreaker: owned, opponent.</b>",
+        "second-most-powerful": "The second most powerful Conduit among the eligibles, if any <b>OTHERWISE</b> The most powerful one."
+      },
+      "powerhouse": {
+        "feeding-owned-dam": "A Powerhouse feeding an owned Dam (through basins without other Dams) <b>OTHERWISE</b> A Powerhouse not directly feeding (through basins) an opponent Dam.",
+        "hills-basin-5": "Powerhouse in the Hills basin <b>5</b> (see Map).",
+        "hills-basin-6": "Powerhouse in the Hills basin <b>5</b> (see Map).",
+        "hills-basin-7": "Powerhouse in the Hills basin <b>7</b> (see Map).",
+        "most-powerful-conduit": "A Powerhouse linked to the most powerful Conduit already built (owned or opponent).<br/><b>Tiebreaker: owned Conduit.</b>",
+        "not-feeding-opponent-dam": "A Powerhouse not directly feeding (through rivers) an opponent Dam <b>OTHERWISE</b> A Powerhouse directly feeding an owned Dam (through rivers without other Dams).",
+        "owned-dam": "A Powerhouse linked to an owned Dam.",
+        "plains": "A Powerhouse in the Plains."
       }
     }
   },

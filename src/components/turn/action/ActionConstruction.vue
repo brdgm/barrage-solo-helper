@@ -20,6 +20,75 @@
       <p v-html="t('rules.actionItem.construction.income')"></p>
       <p v-if="isBuilding" v-html="t(`rules.actionItem.construction.building.${actionItem.buildingSearchDirection}`)"></p>
     </template>
+    <template #criteria v-if="!isBuilding">
+      <div class="criteria">
+        <template v-if="isDamElevation">
+          <template v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
+            <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon" :class="criteria"/>
+            <hr/>
+          </template>
+          <div class="location">{{criteriaCard.locationDamElevation}}</div>
+        </template>
+        <template v-else-if="isConduit">
+          <template v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
+            <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon" :class="criteria"/>
+            <hr/>
+          </template>
+          <div class="location">{{criteriaCard.locationConduit}}</div>
+        </template>
+        <template v-else-if="isPowerhouse">
+          <template v-for="criteria of criteriaCard.placingCriteriaPowerhouse" :key="criteria" >
+            <AppIcon type="placing-criteria-powerhouse" :name="criteria" class="icon" :class="criteria"/>
+            <hr/>
+          </template>
+          <div class="location">{{criteriaCard.locationPowerhouse}}</div>
+        </template>
+      </div>
+    </template>
+    <template #criteriaRules>
+      <p v-html="t('rules.structurePlacement.intro')"></p>
+      <ol class="criteriaRules">
+        <li>
+          <span v-html="t('rules.structurePlacement.thirdStructure')"></span>
+          <hr/>
+        </li>
+        <template v-if="isDamElevation">
+          <li v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
+            <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon float-start" :class="criteria"/>
+            <span v-html="t(`rules.structurePlacement.damElevation.${criteria}`)"></span>
+            <hr/>
+          </li>
+          <li>
+            <span v-html="t('rules.structurePlacement.location', {location:criteriaCard.locationDamElevation})"></span><br/>
+            <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
+          </li>
+        </template>
+        <template v-else-if="isConduit">
+          <li v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
+            <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon float-start" :class="criteria"/>
+            <span v-html="t(`rules.structurePlacement.conduit.${criteria}`)"></span>
+          </li>
+          <li>
+            <span v-html="t('rules.structurePlacement.location', {location:criteriaCard.locationConduit})"></span><br/>
+            <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
+          </li>
+        </template>
+        <template v-else-if="isPowerhouse">
+          <li v-for="criteria of criteriaCard.placingCriteriaPowerhouse" :key="criteria" >
+            <AppIcon type="placing-criteria-powerhouse" :name="criteria" class="icon float-start" :class="criteria"/>
+            <span v-html="t(`rules.structurePlacement.powerhouse.${criteria}`)"></span>
+          </li>
+          <li>
+            <span v-html="t('rules.structurePlacement.location', {location:criteriaCard.locationPowerhouse})"></span><br/>
+            <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
+          </li>
+        </template>
+      </ol>
+      <div class="text-center">
+        <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
+      </div>
+      <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
+    </template>
   </ActionBox>
 </template>
 
@@ -59,6 +128,16 @@ export default defineComponent({
   computed: {
     isBuilding() : boolean {
       return this.actionItem.constructionType == ConstructionType.BUILDING
+    },
+    isDamElevation() : boolean {
+      return this.actionItem.constructionType == ConstructionType.DAM
+          || this.actionItem.constructionType == ConstructionType.ELEVATION
+    },
+    isConduit() : boolean {
+      return this.actionItem.constructionType == ConstructionType.CONDUIT
+    },
+    isPowerhouse() : boolean {
+      return this.actionItem.constructionType == ConstructionType.POWERHOUSE
     }
   }
 })
@@ -71,7 +150,45 @@ export default defineComponent({
     height: 4rem;
   }
 }
-ul > li {
+ul > li, ol > li {
   margin-bottom: 0.5rem;
+  clear: both;
+}
+.criteria {
+  display: flex;
+  flex-direction: column;
+  .icon {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 7rem;
+    max-height: 2.5rem;
+    align-self: center;
+  }
+  .location {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  hr {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+.criteriaRules {
+  .icon {
+    width: auto;
+    height: auto;
+    max-width: 7rem;
+    max-height: 2.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  hr {
+    clear: both;
+  }
+}
+.map {
+  width: 100%;
+  max-width: 500px;
 }
 </style>
