@@ -305,7 +305,23 @@
         }
       },
       "veryHard": {
-        "executiveOfficers": "<b>Hochspannung:</b> Der Automa erhält beim Spielaufbau einen Chefingenieur und kann ihn während des Spiels nutzen."
+        "executiveOfficers": "<b>Hochspannung:</b> Der Automa erhält beim Spielaufbau einen Chefingenieur und kann ihn während des Spiels nutzen.",
+        "executiveOfficer": {
+          "wilhelm-adler": "<b>Hochspannung/Wilhelm Adler:</b> Der Automa <b>baut Grundmauern bevorzugt in den Bergen</b>, dann in den Hügeln und erst dann im Vorland.",
+          "graziano-del-monte": "<b>Hochspannung/Graziano del Monte:</b> Bei einer Bauaktion <b>ignoriert der Automa das auf dem Automaplättchen angegebene Bauteil</b> und baut stattdessen eine Erhöhung, falls es eine Grundmauer gibt, die er mit seinen vorhandenen Ressourcen erhöhen kann (TODO: link).",
+          "viktor-fiesler": "<b>Hochspannung/Viktor Fiesler:</b> Wenn der Automa eine Aktion „Energieproduktion“ mit einem Rohrwerk der Stufe 1 oder 2 durchführt, <b>nutzt er dafür nur 1 Wassereinheit</b>.",
+          "jill-mcdowell": {
+            "constructConduit": "<b>Hochspannung/Jill McDowell:</b> Solange der Automa mindestens so viele Betonmischer wie Bagger hat, bezahlt er Rohrwerke immer mit Betonmischern.",
+            "machineryShop": "<b>Hochspannung/Jill McDowell:</b> Wenn der Automa beim Erhalt von Maschinen die Wahl hat, nimmt er immer Betonmischer."
+          },
+          "solomon-p-jordan": "<b>Hochspannung/Solomon P. Jordan:</b> Der Automa setzt immer zuerst seine vorhandenen Maschinen ein. <b>Wenn ihm genau 1 Maschine für eine Aktion fehlt, zahlt er stattdessen 3 SP.</b> Wenn ihm mehrere Maschinen fehlen, führt er die Aktion nicht aus.",
+          "anton-krylov": "<b>Hochspannung/Anton Krylov:</b> <b>Der Automa setzt das Sondertechnologieplättchen erst ein, wenn er kein passendes einfaches oder fortgeschrittenes Technologieplättchen zur Verfügung hat</b> (inkl. Jokerplättchen). Er kopiert immer ein Plättchen der höchstmöglichen Stufe (einfach = Stufe 0) und bei 2 Plättchen derselben Stufe das spezifische Plättchen und nicht das Jokerplättchen.",
+          "mahiri-sekibo": "<b>Hochspannung/Mahiri Sekibo:</b> Der Automa nutzt diese Fähigkeit nicht. Dafür <b>müssen alle menschlichen Spieler ihre erste Aktion in jeder Runde so durchführen, als wären sie ein Automa</b>. Decke ein neues Automaplättchen auf und nutze es um zu entscheiden,  welche Aktion du durchführst (TODO: link).",
+          "simone-luciani": "<b>Hochspannung/Simone Luciani:</b> Wenn der Automa Energie produziert, <b>erfüllt er damit so viele Verträge wie möglich</b>, anstatt nur den Vertrag mit dem höchsten Wert zu erfüllen. Wenn es mehrere Kombinationen zur Auswahl gibt, wählt der Automa die Verträge mit dem höchsten Wert und bei mehreren Verträgen desselben Werts immer den rechten (liegen z. B. Verträge mit Wert 2, 3, 6, 6, 9 und 10 aus, erfüllt der Automa bei einer Energieproduktion von 9 die Verträge mit Wert 6 und 3, bei einer Energieproduktion von 12 die Verträge mit Wert 6, 3 und 2. In beiden Fällen wählt er den rechten der beiden 6er-Verträge). Wenn der Automa allerdings einen staatlichen Vertrag erfüllen kann, wird er das immer tun (wenn möglich in Kombination mit privaten Verträgen).",
+          "tommaso-battista": "<b>Hochspannung/Tommaso Battista:</b> Wenn der Automa mit genau 1 Arbeiter eine Aktion ausführt, die seinen Zug beenden würde (also keine in einem gestrichelten Rahmen), so nutzt er dafür (soweit noch verfügbar) den Architekten und führt direkt nach der Aktion einen zusätzlichen Zug aus. Decke dazu ein neues Automaplättchen auf.",
+          "leslie-spencer": "<b>Hochspannung/Leslie Spencer:</b> Wenn der Automa eine Bauaktion durchführen soll und das Sondertechnologieplättchen noch zur Verfügung hat, prüfe stattdessen, ob er eine Auftragsarbeit durchführen kann. Wenn ja, <b>führe stattdessen diese Auftragsarbeit mit diesem Plättchen durch und ignoriere die Bauaktion</b>. Wenn nicht, führe die Bauaktion ganz normal durch.",
+          "margot-fouche": "<b>Hochspannung/Margot Fouché:</b> Der Automa nutzt diese Fähigkeit nicht. Wenn der Automa eine beliebige Bauaktion durchführen soll, prüfe stattdessen, ob es ihm möglich ist, 1 Gebäude zu bauen (er also die nötigen Maschinen und ein entsprechendes Technologieplättchen im Vorrat hat, um 1 noch nicht aktiviertes Gebäude zu bauen). Wenn ja, <b>baue 1 Gebäude und ignoriere das eigentlich auf dem Automaplättchen abgebildete Bauwerk</b>. Diese Bauaktion kostet 1 Arbeiter. Wenn nicht, führe die Bauaktion ganz normal durch."
+        }
       }
     }
   },

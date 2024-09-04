@@ -23,11 +23,12 @@
       <p v-html="t('rules.actionItem.production.fulfillContract')"></p>
       <p v-html="t('rules.actionItem.production.multipleOptions')"></p>
     </template>
-    <template #warnings v-if="isEasyDifficulty || isHardDifficultyGermany || isHardDifficultyFrance || isHardDifficultyNetherlands">
+    <template #warnings v-if="isEasyDifficulty || isHardDifficultyGermany || isHardDifficultyFrance || isHardDifficultyNetherlands || isVeryHardDifficultyViktorViesler">
       <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noProductionBonus')"></div>
       <div v-if="isHardDifficultyGermany" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.germany')"></div>
       <div v-if="isHardDifficultyFrance" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.france')"></div>
       <div v-if="isHardDifficultyNetherlands" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.netherlands')"></div>
+      <div v-if="isVeryHardDifficultyViktorViesler" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.viktor-fiesler')"></div>
     </template>
   </ActionBox>
 </template>
@@ -44,6 +45,8 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import isDifficultyLevel from '@/util/isDifficultyLevel'
 import isDifficultyLevelCorporation from '@/util/isDifficultyLevelCorporation'
 import Corporation from '@/services/enum/Corporation'
+import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 
 export default defineComponent({
   name: 'ActionProduction',
@@ -82,6 +85,9 @@ export default defineComponent({
     },
     isHardDifficultyNetherlands() : boolean {
       return isDifficultyLevelCorporation(this.navigationState.bot, DifficultyLevel.HARD, Corporation.NETHERLANDS, this.state)
+    },
+    isVeryHardDifficultyViktorViesler() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.VIKTOR_FIESLER, this.state)
     }
   }
 })

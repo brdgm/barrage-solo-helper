@@ -96,8 +96,11 @@
       </div>
       <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
     </template>
-    <template #warnings v-if="isEasyDifficulty">
-      <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
+    <template #warnings v-if="isEasyDifficulty || isVeryHardDifficultyWilhelmAdlerDam || isVeryHardDifficultyGracianoDelMonte || isVeryHardDifficultyJillMcDowellConduit">
+      <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
+      <div v-if="isVeryHardDifficultyWilhelmAdlerDam" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.wilhelm-adler')"></div>
+      <div v-if="isVeryHardDifficultyGracianoDelMonte" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.graziano-del-monte')"></div>
+      <div v-if="isVeryHardDifficultyJillMcDowellConduit" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.jill-mcdowell.constructConduit')"></div>
     </template>
   </ActionBox>
 </template>
@@ -114,6 +117,8 @@ import PlacingCriteriaDamElevation from '@/services/enum/PlacingCriteriaDamEleva
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { useStateStore } from '@/store/state'
 import isDifficultyLevel from '@/util/isDifficultyLevel'
+import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 
 export default defineComponent({
   name: 'ActionConstruction',
@@ -156,6 +161,17 @@ export default defineComponent({
     },
     isEasyDifficulty() : boolean {
       return isDifficultyLevel(this.navigationState.bot, DifficultyLevel.EASY, this.state)
+    },
+    isVeryHardDifficultyWilhelmAdlerDam() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.WILHELM_ADLER, this.state)
+          && this.actionItem.constructionType == ConstructionType.DAM
+    },
+    isVeryHardDifficultyGracianoDelMonte() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.GRAZIANO_DEL_MONTE, this.state)
+    },
+    isVeryHardDifficultyJillMcDowellConduit() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.JILL_MCDOWELL, this.state)
+          && this.actionItem.constructionType == ConstructionType.CONDUIT
     }
   },
   methods: {

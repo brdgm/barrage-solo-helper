@@ -304,7 +304,23 @@
         }
       },
       "veryHard": {
-        "executiveOfficers": "<b>Overpowered:</b> Automa players receive an Executive Officer tile during the setup and use the corresponding special ability during the play."
+        "executiveOfficers": "<b>Overpowered:</b> Automa players receive an Executive Officer tile during the setup and use the corresponding special ability during the play.",
+        "executiveOfficer": {
+          "wilhelm-adler": "<b>Overpowered/Wilhelm Adler:</b> When checking for a Dam positioning criteria, <b>Dams on the Mountains</b> (and secondarily in the Hills) <b>are always preferred</b> among the eligibles.",
+          "graziano-del-monte": "<b>Overpowered/Graziano del Monte:</b> When checking for the structure construction action, if Automa can build an Elevation (e.g. there is a Dam that it is possible to elevate with the available Machineries and Technology tiles), <b>Automa will always perform an Elevation construction action, ignoring the structures suggested by the Automa tiles (TODO: link).</b>",
+          "viktor-fiesler": "<b>Overpowered/Viktor Fiesler:</b> When Automa perform a production action using a Conduit of value 1 or 2, <b>Automa will produce using only 1 Water Drop</b>.",
+          "jill-mcdowell": {
+            "constructConduit": "<b>Overpowered/Jill McDowell:</b> When building a Conduit, in case of a tie, Automa prefer to use Concrete Mixers instead of Excavators.",
+            "machineryShop": "<b>Overpowered/Jill McDowell:</b> When taking Machineries of your choice, Automa <b>always prefer to take Concrete Mixers</b>."
+          },
+          "solomon-p-jordan": "<b>Overpowered/Solomon P. Jordan:</b> <b>Automa will use only 3 Victory Points instead of a Machinery</b>, no more (using Machineries - if available - will be always preferred than spending Victory Points). Remember this ability when checking the Machineries availability condition to perform a construction action.",
+          "anton-krylov": "<b>Overpowered/Anton Krylov:</b> <b>The Special Technology tile will be always used after the Advanced and Basic tiles.</b> When used, the tile will always copy the Technology tile of the highest level (i.e. in this order: 3, 2, 1, basic). In case of a tie, Automa prefer a specific structure tile, before to use a wild tile.",
+          "mahiri-sekibo": "<b>Overpowered/Mahiri Sekibo:</b> The Automa don’t use this special ability. On the other hand, <b>human players must perform their first action during each round as if they were an Automa.</b> Draw a new Automa tile and follow it to “decide” which action to perform (TODO: link).",
+          "simone-luciani": "<b>Overpowered/Simone Luciani:</b> When a production is performed, <b>Automa fulfill as more Contracts as possible</b>, instead of choosing the highest valued one among the available. In case of tie, the higher value Contracts are chosen (e.g. if the Contracts of value 2, 3, 6, 6, 9, 10 are available, with a production of 9 Energy Units the Contracts of value 3 and 6 will be fulfilled. As usual, in case of a tie the Contracts on the right is chosen. In the same condition, with a production of 12 Energy Units, the Contracts of value 2, 3 and 6 on the right will be fulfilled). If a National Contract is eligible to be fulfilled, it will be always chosen (eventually in combination with one or more Private Contracts).",
+          "tommaso-battista": "<b>Overpowered/Tommaso Battista:</b> <b>If an action listed on the Automa tile that will end the turn</b> (i.e. not the actions in the dashed frame) <b>requires 1 single Engineer, Automa will use the “Architect”</b> (if available) and after the resolution of the action, immediately starts a second turn, using a new Automa tile.",
+          "leslie-spencer": "<b>Overpowered/Leslie Spencer:</b> If the Special Technology tile is available when checking the possibility to perform a construction action, check the possibility to perform an External Works action using the Special Technology tile as a construction action requiring 1 Engineer: if so, <b>perform the External Works “construction” and ignore the structure indicated by the Automa tile</b>. Otherwise resolve the construction action as usual.",
+          "margot-fouche": "<b>Overpowered/Margot Fouché:</b> The Automa don’t use this special ability. However, when checking the possibility to perform a construction action, if it’s possible to build a Building (e.g. there is a Private Building that it is possible to build with the available Machineries and Technology tiles), <b>Automa will always build a Building, ignoring the structure indicated by the Automa tile</b>. The Building construction action requires 1 Engineer."
+        }
       }
     }
   },
