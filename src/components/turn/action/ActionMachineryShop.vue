@@ -11,6 +11,9 @@
       <p class="fw-bold fst-italic" v-html="t('rules.actionItem.machinery-shop.intro')"></p>
       <p v-html="t('rules.actionItem.machinery-shop.engineerPlacement')"></p>
     </template>
+    <template #warnings v-if="isVeryHardDifficultyJillMcDowellWild">
+      <div v-if="isVeryHardDifficultyJillMcDowellWild" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.jill-mcdowell.machineryShop')"></div>
+    </template>
   </ActionBox>
 </template>
 
@@ -22,12 +25,18 @@ import Card, { ActionItem } from '@/services/Card'
 import BotNavigationState from '@/util/BotNavigationState'
 import ActionBox from '../ActionBox.vue'
 import HydroCost from '@/components/structure/HydroCost.vue'
+import { useStateStore } from '@/store/state'
+import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import MachineryType from '@/services/enum/MachineryType'
 
 export default defineComponent({
   name: 'ActionMachineryShop',
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   components: {
     ActionBox,
@@ -46,6 +55,12 @@ export default defineComponent({
     navigationState: {
       type: BotNavigationState,
       required: true
+    }
+  },
+  computed: {
+    isVeryHardDifficultyJillMcDowellWild() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.JILL_MCDOWELL, this.state)
+          && (this.actionItem.machineryTypes ?? []).includes(MachineryType.WILD)
     }
   }
 })
