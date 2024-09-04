@@ -43,7 +43,7 @@
       "noExecutiveOfficer": "Automa erhält keinen Chefingenieur.",
       "noStartingContract": "Automa erhält keinen Startvertrag.",
       "victoryPoints": "Automa beginnt das Spiel mit 16 SP.",
-      "playerOrder": "Initiale Spielerreihenfolge:"
+      "playerOrder": "Initiale Spielreihenfolge:"
     },
     "validCorporationExecutiveOfficer": "Bitte wähle ein Unternehmen und Chefingenieur für Automa."
   },
@@ -73,7 +73,40 @@
     }
   },
   "roundEnd": {
-    "title": "Ende Runde {round}"
+    "title": "Ende Runde {round}",
+    "waterFlow": {
+      "title": "Wasserfluss",
+      "flowDown": "Alle Wassereinheiten auf den Quellen fließen abwärts durch die Flüsse und Täler."
+    },
+    "scoring": {
+      "title": "Wertung",
+      "firstSecondPlayer": "Das führende Unternehmen auf der Energieleiste erhält 6 SP, das zweite Unternehmen 2 SP.",
+      "gainCredits": "Erhaltet Geld gemäß eurer Position auf der Energieleiste (Automa erhält SP).",
+      "bonusTile": "Erhaltet Siegpunkte für das Bonusplättchen der aktuellen Runde, werfe das Bonusplättchen ab."
+    },
+    "determinePlayerOrder": {
+      "title": "Spielreihenfolge anpassen",
+      "currentItems": "Aktuelle Spielreihenfolge",
+      "newItems": "Neue Spielreihenfolge",
+      "newItemsSelect": "Bitte neue Spielreihenfolge bestimmen."
+    },
+    "cleanUp": {
+      "title": "Aufräumen",
+      "resetEnergyMarkers": "Energiemarker zurücksetzen.",
+      "takeBackEngineers": "Arbeiter zurücknehmen.",
+      "discardTechnologyTiles": "Werfe fortgeschrittene Technologieplättchen ab und fülle die Auslage neu auf.",
+      "discardExternalWorkTiles": "Werfe Auftragsarbeiten ab und fülle die Auslage neu auf."
+    }
+  },
+  "gameEnd": {
+    "title": "Spielende",
+    "objectiveTile": "Erhaltet SP für die Erfüllung des Zielplättchens.",
+    "resourcesLeft": "Erhaltet SP für die restlichen Ressourcen in eurem persönlichen Vorrat.",
+    "resourcesLeftExplanation": "Ermittelt die Anzahl eurer restlichen Bagger, Betonmischer und Hydro. Für je 5 Ressourcen erhaltet ihr 1 SP. Ressourcen auf eurer Bauscheibe zählen nicht.",
+    "damWater": "Erhaltet 1 SP für jede Wassereinheit hinter euren Staumauern.",
+    "privateBuildingTiles": "Erhaltet SP für die von euch aktivierten privaten Gebäudeplättchen.",
+    "winner": "Wer von euch jetzt die meisten Siegpunkte hat, gewinnt das Spiel.",
+    "tiebreaker": "Bei einem Gleichstand gewinnt von den beteiligten Spielern, wer in der letzten Runde am meisten Energie produziert hat."
   },
   "sideBar": {
     "round": "Runde {round}",

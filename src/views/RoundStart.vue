@@ -46,12 +46,12 @@ export default defineComponent({
   },
   computed: {
     backButtonRouteTo() : string {
-      return this.routeCalculator.getBackRouteTo(this.state)
+      return `/round/${this.round-1}/end`
     }
   },
   methods: {
     next() : void {
-      this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
+      this.$router.push(this.routeCalculator.getFirstTurnRouteTo(this.state))
     }
   }
 })

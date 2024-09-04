@@ -93,9 +93,19 @@
       "title": "Clean Up",
       "resetEnergyMarkers": "Reset Energy markers.",
       "takeBackEngineers": "Take back all engineers.",
-      "discardTechnologyTiles": "Discard and refill advanced technology tiles.",
-      "discardBuildingTiles": "Discard and refill private building tiles."
+      "discardTechnologyTiles": "Discard and refill Advanced Technology tiles.",
+      "discardExternalWorkTiles": "Discard and refill External Work tiles."
     }
+  },
+  "gameEnd": {
+    "title": "End of Game",
+    "objectiveTile": "Gain Victory Points according to the Objective tile.",
+    "resourcesLeft": "Score Victory Points for the resources left available in the supply.",
+    "resourcesLeftExplanation": "Add the resources (Excavators, Concrete Mixers, Credits) together. Score 1 Victory Point every 5 items of any type. Any resources still on the Construction Wheel are not counted.",
+    "damWater": "Score 1 Victory Point for each Water Drop held by own Dams.",
+    "privateBuildingTiles": "Score Victory Points for the activated Private Building tiles.",
+    "winner": "The player with the most Victory Points wins.",
+    "tiebreaker": "In case of a tie, the player who produced most Energy Units during the last round is the winner."
   },
   "sideBar": {
     "round": "Round {round}",

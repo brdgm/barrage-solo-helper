@@ -13,16 +13,18 @@
     <li v-html="t('roundEnd.scoring.bonusTile')"></li>
   </ul>
 
-  <h4 v-html="t('roundEnd.determinePlayerOrder.title')"></h4>
-  <DeterminePlayerOrder :playerOrder="currentPlayerOrder" @newPlayerOrder="values => newPlayerOrder = values"/>
+  <template v-if="round < 5">
+    <h4 v-html="t('roundEnd.determinePlayerOrder.title')"></h4>
+    <DeterminePlayerOrder :playerOrder="currentPlayerOrder" @newPlayerOrder="values => newPlayerOrder = values"/>
 
-  <h4 v-html="t('roundEnd.cleanUp.title')" class="mt-2"></h4>
-  <ul>
-    <li v-html="t('roundEnd.cleanUp.resetEnergyMarkers')"></li>
-    <li v-html="t('roundEnd.cleanUp.takeBackEngineers')"></li>
-    <li v-html="t('roundEnd.cleanUp.discardTechnologyTiles')"></li>
-    <li v-if="hasLeeghwaterProject" v-html="t('roundEnd.cleanUp.discardBuildingTiles')"></li>
-  </ul>
+    <h4 v-html="t('roundEnd.cleanUp.title')" class="mt-2"></h4>
+    <ul>
+      <li v-html="t('roundEnd.cleanUp.resetEnergyMarkers')"></li>
+      <li v-html="t('roundEnd.cleanUp.takeBackEngineers')"></li>
+      <li v-html="t('roundEnd.cleanUp.discardTechnologyTiles')"></li>
+      <li v-if="hasLeeghwaterProject" v-html="t('roundEnd.cleanUp.discardExternalWorkTiles')"></li>
+    </ul>
+  </template>
 
   <button class="btn btn-primary btn-lg mt-4" @click="next()" :disabled="!hasValidPlayerOrder">
     {{t('action.next')}}
@@ -67,10 +69,11 @@ export default defineComponent({
   },
   computed: {
     backButtonRouteTo() : string {
-      return this.routeCalculator.getBackRouteTo(this.state)
+      return this.routeCalculator.getLastTurnRouteTo(this.state)
     },
     hasValidPlayerOrder() : boolean {
       return this.newPlayerOrder.length == this.currentPlayerOrder.length
+          || this.round == 5
     },
     hasLeeghwaterProject() : boolean {
       return this.state.setup.expansions.includes(Expansion.LEEGHWATER_PROJECT)
@@ -78,7 +81,18 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
+      if (this.round == 5) {
+        this.$router.push('/gameEnd')
+      }
+      else {
+        // prepare next round
+        this.state.storeRound({
+          round: this.round+1,
+          playerOrder: this.newPlayerOrder,
+          turns: []
+        })
+        this.$router.push(`/round/${this.round+1}/start`)
+      }
     }
   }
 })

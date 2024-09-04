@@ -124,7 +124,7 @@ export default defineComponent({
         playerOrder,
         turns: []
       })
-      // start first turn
+      // start first turn (skip income in first round)
       const routeCalculator = new RouteCalculator({round:1})
       this.$router.push(routeCalculator.getFirstTurnRouteTo(this.state))
     }
