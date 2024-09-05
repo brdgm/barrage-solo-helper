@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
@@ -38,7 +38,6 @@ import SideBar from '@/components/turn/SideBar.vue'
 import DebugInfo from '@/components/turn/DebugInfo.vue'
 import BotAction from '@/components/turn/BotAction.vue'
 import Action from '@/services/enum/Action'
-import { ref } from 'vue'
 
 export default defineComponent({
   name: 'TurnBot',

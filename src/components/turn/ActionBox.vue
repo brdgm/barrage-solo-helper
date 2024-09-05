@@ -182,7 +182,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, ref } from 'vue'
 import Card, { ActionItem } from '@/services/Card'
 import AppIcon from '../structure/AppIcon.vue'
 import { useI18n } from 'vue-i18n'
@@ -197,7 +197,6 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Corporation from '@/services/enum/Corporation'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
-import { ref } from 'vue'
 import hasDifficultyLevel from '@/util/hasDifficultyLevel'
 
 export default defineComponent({
@@ -239,7 +238,8 @@ export default defineComponent({
     },
     showCriteriaDamElevation() : boolean {
       return (this.actionItem.action == Action.CONSTRUCTION
-          && (this.actionItem.constructionType == ConstructionType.DAM || this.actionItem.constructionType == ConstructionType.ELEVATION || this.isVeryHardDifficultyGracianoDelMonte))
+          && (this.actionItem.constructionType == ConstructionType.DAM || this.actionItem.constructionType == ConstructionType.ELEVATION
+            || this.isVeryHardDifficultyGracianoDelMonte || this.isVeryHardDifficultyWuFang))
           || (this.actionItem.action == Action.PRODUCTION && this.isHardDifficultyNetherlands)
           || (this.actionItem.action == Action.WATER_MANAGEMENT && this.isVeryHardDifficultyAmirZahir)
     },
@@ -267,6 +267,9 @@ export default defineComponent({
     },
     isVeryHardDifficultyAmirZahir() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.AMIR_ZAHIR, this.state)
+    },
+    isVeryHardDifficultyWuFang() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.WU_FANG, this.state)
     }
   },
   methods: {
