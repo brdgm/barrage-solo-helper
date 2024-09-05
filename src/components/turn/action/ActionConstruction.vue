@@ -22,13 +22,15 @@
       <p v-if="isBuilding" v-html="t(`rules.actionItem.construction.building.${actionItem.buildingSearchDirection}`)"></p>
     </template>
     <template #warnings v-if="isEasyDifficulty || isVeryHardDifficultyWilhelmAdlerDam || isVeryHardDifficultyGracianoDelMonte || isVeryHardDifficultyJillMcDowellConduit
-        || isVeryHardDifficultySolomonPJordan || isVeryHardDifficultyAntonKrylov || isVeryHardDifficultyElonAudia">
+        || isVeryHardDifficultySolomonPJordan || isVeryHardDifficultyAntonKrylov || isVeryHardDifficultyLeslieSpencer || isVeryHardDifficultyMargotFouche || isVeryHardDifficultyElonAudia">
       <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
       <div v-if="isVeryHardDifficultyWilhelmAdlerDam" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.wilhelm-adler')"></div>
       <div v-if="isVeryHardDifficultyGracianoDelMonte" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.graziano-del-monte')"></div>
       <div v-if="isVeryHardDifficultyJillMcDowellConduit" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.jill-mcdowell.constructConduit')"></div>
       <div v-if="isVeryHardDifficultySolomonPJordan" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.solomon-p-jordan')"></div>
       <div v-if="isVeryHardDifficultyAntonKrylov" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.anton-krylov')"></div>
+      <div v-if="isVeryHardDifficultyLeslieSpencer" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.leslie-spencer')"></div>
+      <div v-if="isVeryHardDifficultyMargotFouche" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.margot-fouche')"></div>
       <div v-if="isVeryHardDifficultyElonAudia" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.elon-audia')"></div>
     </template>
   </ActionBox>
@@ -109,6 +111,12 @@ export default defineComponent({
     },
     isVeryHardDifficultyAntonKrylov() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.ANTON_KRYLOV, this.state)
+    },
+    isVeryHardDifficultyLeslieSpencer() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.LESLIE_SPENCER, this.state)
+    },
+    isVeryHardDifficultyMargotFouche() : boolean {
+      return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.MARGOT_FOUCHE, this.state)
     },
     isVeryHardDifficultyElonAudia() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.ELON_AUDIA, this.state)

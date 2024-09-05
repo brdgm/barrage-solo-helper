@@ -11,7 +11,8 @@ enum ExecutiveOfficer {
   MAHIRI_SEKIBO = 'mahiri-sekibo',
   // leeghwater project
   SIMONE_LUCIANI = 'simone-luciani',
-  TOMMASO_BATTISTA = 'tommaso-battista',
+  // not supported: too complicated to dynamically insert an additional automa turn
+  /*TOMMASO_BATTISTA = 'tommaso-battista',*/
   LESLIE_SPENCER = 'leslie-spencer',
   MARGOT_FOUCHE = 'margot-fouche',
   // xo pack A

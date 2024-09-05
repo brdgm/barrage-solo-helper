@@ -17,7 +17,6 @@ export default function isExecutiveOfficerAvailable(executiveOfficer : Executive
     case ExecutiveOfficer.MAHIRI_SEKIBO:
       return true
     case ExecutiveOfficer.SIMONE_LUCIANI:
-    case ExecutiveOfficer.TOMMASO_BATTISTA:
     case ExecutiveOfficer.LESLIE_SPENCER:
     case ExecutiveOfficer.MARGOT_FOUCHE:
       return expansions.includes(Expansion.LEEGHWATER_PROJECT)
