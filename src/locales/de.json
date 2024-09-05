@@ -1,0 +1,387 @@
+{
+  "gameTitle": "Wasserkraft",
+  "home": {
+    "title": "Wasserkraft Solo Helper",
+    "play1": "Spiele <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Wasserkraft</b></a> gegen Automa, die künstliche Gegenspielerin.",
+    "play2": "Diese Applikation ersetzt das Automa-Kartendeck und führt dich durch das Spiel und das Automa-Regelwerk.",
+    "feedback": "Discussion and Feedback:"
+  },
+  "setup": {
+    "title": "Spielaufbau",
+    "expansions": {
+      "title": "Erweiterungen",
+      "leeghwater-project": "Das Leeghwater-Projekt",
+      "far-companies": "Far Companies",
+      "executive-officer-promo": "Promo-Chefingenieure (Auswahl)"
+    },
+    "players": {
+      "title": "Spieler",
+      "playerCount": "Menschliche Spieler",
+      "playerCountItem": "{count} Spieler",
+      "playerColor": "Spieler-Farbe | Spieler {index} Farbe",
+      "botCount": "Automa",
+      "botCountItem": "{count} Automa | {count} Automas",
+      "botColor": "Automa-Farbe | Automa {index} Farbe"
+    },
+    "difficultyLevel": {
+      "title": "Schwierigkeitsgrad",
+      "easy": "Leicht",
+      "hard": "Schwer",
+      "bot": "Automa {bot}"
+    }
+  },
+  "setupBot": {
+    "title": "Automa-Aufbau",
+    "corporation": {
+      "title": "Unternehmen"
+    },
+    "executiveOfficer": {
+      "title": "Chefingenieur"
+    },
+    "setup": {
+      "title": "Aufbau",
+      "playerPieces": "Bereite Automa mit dem gewählten Unternehmensplan und allem Spielmaterial vor.",
+      "noExecutiveOfficer": "Automa erhält keinen Chefingenieur.",
+      "noStartingContract": "Automa erhält keinen Startvertrag.",
+      "victoryPoints": "Automa beginnt das Spiel mit 16 SP.",
+      "playerOrder": "Initiale Spielreihenfolge:"
+    },
+    "validCorporationExecutiveOfficer": "Bitte wähle ein Unternehmen und Chefingenieur für Automa."
+  },
+  "turnPlayer": {
+    "title": "Spieler | Spieler {player}",
+    "takeTurn": "Führe deinen Zug aus.",
+    "pass":{
+      "title": "Passen",
+      "confirm": "Passen und die Aktionsphase beenden?"
+    }
+  },
+  "turnBot": {
+    "title": "Automa | Automa {bot}",
+    "done": "Arbeiter platziert",
+    "notPossible": "Nicht möglich",
+    "structurePlacement": {
+      "damElevation": "Grundmauer/Erhöhung",
+      "conduit": "Rohrwerk",
+      "powerhouse": "Turbinenhaus"
+    },
+    "placeEngineers": {
+      "title": "Platziere Arbeiter",
+      "button": "Platziere Arbeiter: {count}",
+      "intro": "Grundsätzlich wird die für die Aktion angegebene Anzahl von Arbeitern eingesetzt. Im Starkstrom- oder Hochspannung-Modus kann es aber durch fortgeschrittene Technologieplättchen oder Chefingenieure zu Abweichungen kommen.",
+      "workerUsed": "{count} Arbeiter",
+      "nextAction": "Führe eine weitere Aktion aus"
+    }
+  },
+  "roundStart": {
+    "title": "Runde {round}",
+    "income": {
+      "title": "Einkommen",
+      "activeIncome": "Jeder erhält das auf seinem Unternehmensplan freigeschaltete Einkommen."
+    },
+    "headstreams": {
+      "title": "Quellwasser",
+      "placeWaterDrops": "Platziere Wassereinheiten auf die Quellenplättchen, abhängig von der aktuellen Rundenzahl."
+    }
+  },
+  "roundEnd": {
+    "title": "Ende Runde {round}",
+    "waterFlow": {
+      "title": "Wasserfluss",
+      "flowDown": "Alle Wassereinheiten auf den Quellen fließen abwärts durch die Flüsse und Täler."
+    },
+    "scoring": {
+      "title": "Wertung",
+      "firstSecondPlayer": "Das führende Unternehmen auf der Energieleiste erhält 6 SP, das zweite Unternehmen 2 SP.",
+      "gainCredits": "Erhaltet Geld gemäß eurer Position auf der Energieleiste (Automa erhält SP).",
+      "bonusTile": "Erhaltet Siegpunkte für das Bonusplättchen der aktuellen Runde, werfe das Bonusplättchen ab."
+    },
+    "determinePlayerOrder": {
+      "title": "Spielreihenfolge anpassen",
+      "currentItems": "Aktuelle Spielreihenfolge",
+      "newItems": "Neue Spielreihenfolge",
+      "newItemsSelect": "Bitte neue Spielreihenfolge bestimmen."
+    },
+    "cleanUp": {
+      "title": "Aufräumen",
+      "resetEnergyMarkers": "Energiemarker zurücksetzen.",
+      "takeBackEngineers": "Arbeiter zurücknehmen.",
+      "discardTechnologyTiles": "Werfe fortgeschrittene Technologieplättchen ab und fülle die Auslage neu auf.",
+      "discardExternalWorkTiles": "Werfe Auftragsarbeiten ab und fülle die Auslage neu auf."
+    }
+  },
+  "gameEnd": {
+    "title": "Spielende",
+    "objectiveTile": "Erhaltet SP für die Erfüllung des Zielplättchens.",
+    "resourcesLeft": "Erhaltet SP für die restlichen Ressourcen in eurem persönlichen Vorrat.",
+    "resourcesLeftExplanation": "Ermittelt die Anzahl eurer restlichen Bagger, Betonmischer und Hydro. Für je 5 Ressourcen erhaltet ihr 1 SP. Ressourcen auf eurer Bauscheibe zählen nicht.",
+    "damWater": "Erhaltet 1 SP für jede Wassereinheit hinter euren Staumauern.",
+    "privateBuildingTiles": "Erhaltet SP für die von euch aktivierten privaten Gebäudeplättchen.",
+    "winner": "Wer von euch jetzt die meisten Siegpunkte hat, gewinnt das Spiel.",
+    "tiebreaker": "Bei einem Gleichstand gewinnt von den beteiligten Spielern, wer in der letzten Runde am meisten Energie produziert hat."
+  },
+  "sideBar": {
+    "round": "Runde {round}",
+    "turn": "Zug {turn}",
+    "workers": "{count} Arbeiter",
+    "pass": "(gepasst)"
+  },
+  "difficultyLevel": {
+    "1": "Einfach - \"Schwachstrom\"",
+    "2": "Normal",
+    "3": "Schwer - \"Starkstrom\"",
+    "4": "Sehr schwer - \"Hochspannung\""
+  },
+  "corporation": {
+    "usa": "USA",
+    "germany": "Deutschland",
+    "italy": "Italien",
+    "france": "Frankreich",
+    "netherlands": "Die Niederlande"
+  },
+  "executiveOfficer": {
+    "wilhelm-adler": "Wilhelm Adler",
+    "graziano-del-monte": "Graziano del Monte",
+    "viktor-fiesler": "Viktor Fiesler",
+    "jill-mcdowell": "Jill McDowell",
+    "solomon-p-jordan": "Solomon P. Jordan",
+    "anton-krylov": "Anton Krylov",
+    "mahiri-sekibo": "Mahiri Sekibo",
+    "simone-luciani": "Simone Luciani",
+    "tommaso-battista": "Tommaso Battista",
+    "leslie-spencer": "Leslie Spencer",
+    "margot-fouche": "Margot Fouché",
+		"elon-audia": "Elon Audia",
+    "gennaro-grasso": "Gennaro Grasso",
+    "wu-fang": "Wu Fang",
+    "dr-octavius": "Dr. Octavius",
+    "amir-zahir": "Amir Zahir",
+    "franz-de-lasse": "Franz de Lasse"
+  },
+  "actionItem": {
+    "production": "Energieproduktion",
+    "water-management": "Wassermanagement",
+    "contract-office": "Notariat",
+    "construction": "Bauaktion",
+    "workshop": "Werkstatt",
+    "machinery-shop": "Maschinenausstellung",
+    "patent-office": "Patentamt",
+    "external-work": "Auftragsarbeit",
+    "bank": "Bank"
+  },
+  "constructionType": {
+    "dam": "Grundmauer",
+    "elevation": "Erhöhung",
+    "conduit": "Rohrwerk",
+    "powerhouse": "Turbinenhaus"
+  },
+  "rules": {
+    "general": {
+      "title": "Automa-Regeln",
+      "intro": "Einige Regeln werden für den Automa wie folgt modifiziert:",
+      "noCredits": "<b>Automa nutzen kein Geld.</b> Immer wenn ein Automa Hydro bezahlen oder erhalten würde, so verliert oder erhält er entsprechend viele Siegpunkte <i>(um ein Bauteil auf einem rot umrandeten Baufeld zu bauen, würde er also 3 SP verlieren)</i>. Automa können dadurch auch negative Siegpunkte haben.",
+      "noCompanyAbility": "<b>Automa nutzen auch nicht die Spezialfähigkeit ihres Unternehmens</b>, die durch den Bau des dritten Turbinenhauses freigeschaltet wird. Sie nutzen aber die Boni für den Bau des zweiten und vierten Turbinenhauses.",
+      "noExecutiveOfficers": "<b>Automa nutzen keine Chefingenieure.</b>",
+      "doesNotTakeContractTiles": "<b>Automa nehmen keine Vertragsplättchen.</b> Automa erfüllen Verträge direkt aus der offenen Auslage im Notariat.",
+      "advancedTechnologyTiles": "<b>Automa können fortgeschrittene Technologieplättchen erwerben</b>, sie nutzen aber nur die Basisfunktion <i>(den Bau eines Bauteils)</i> und nicht die Sonderfähigkeit.",
+      "objectiveTileScoring": "Wenn ein Automa für die Erfüllung des <b>Zielplättchens</b> Punkte erhält, dann erhält er, ggf. nach der Auflösung von Gleichständen, 5 Zusatzpunkte. Ohne Gleichstände also 20 SP für den 1. Platz, 15 SP für den 2. Platz oder 10 SP für den 3. Platz.",
+      "building": "Ein Automa benutzt niemals die Aktionsfelder der von ihm <b>aktivierten privaten Gebäude</b>. Sobald 1 Automa aber ein privates Gebäude aktiviert hat, gilt das dazugehörige linke Aktionsfeld (ohne Zusatzkosten) für dich für den Rest des Spiels als belegt.",
+      "engineerPlacement": {
+        "title": "Arbeitereinsatz",
+        "constructionSpaces": "<b>Automa Bauaktionen</b> – Wenn ein Automa baut, platziert er so viele Arbeiter auf seinem Unternehmensplan, wie es die Applikation angibt. Ignoriere dabei die Aktionsfelder. Ein Automa kann beliebig viele Bauaktionen in einer Runde durchführen.",
+        "managementSpaces": "<b>Automa Managementaktionen</b> – Wenn ein Automa eine Managementaktion durchführt, platziert er die in der Applikation angegebene Anzahl von Arbeitern auf ein Aktionsfeld in der entsprechenden Kategorie auf dem Managementplan. Er blockiert mit diesen Arbeitern das erste noch freie Feld in dieser Kategorie, das er vorfindet, erst auf der linken Seite von oben nach unten und dann auf der rechten Seite von oben nach unten. <b>Wenn kein Aktionsfeld mehr frei ist, platziert er die Arbeiter neben dem letzten Feld.</b> Die Aktion, die der Automa durchführt, wird nicht durch das Aktionsfeld bestimmt, sondern allein über das Automaplättchen. Das Gleiche gilt für die Kosten der Aktion, auch Zusatzkosten für ein rot umrandetes Aktionsfeld werden vom Automa ignoriert. Die Arbeiter blockieren immer genau 1 Aktionsfeld, auch wenn es mehr oder weniger Arbeiter sind als auf dem Aktionsfeld abgebildet."
+      }
+    },
+    "actionItem": {
+      "production": {
+        "intro": "Der Automa produziert, falls die folgenden Bedingungen alle erfüllt sind, dort Energie, wo er den höchsten Ertrag erzielt:",
+        "productionSystemReady": "<b>Vollständiges System:</b> Es gibt mindestens 1 Kombination aus Bauteilen (<i>Staumauer mit min. 1 Wassereinheit, Rohrwerk, Turbinenhaus</i>), mit der der Automa produzieren könnte.",
+        "energyTrack": "<b>Energieleiste:</b> Der Automa ist nicht Erster auf der Energieleiste und/oder hat noch nicht genug Energie produziert, um den vollen Bonus bei der Wertung des aktuellen Bonusplättchens zu bekommen. <i>(Diese Bedingung ist also nur nicht erfüllt, wenn er Erster ist und bereits den vollen Bonus bekäme.)</i>",
+        "contractRequirement": "<b>Erfüllbarer Vertrag:</b> Die maximale Energie, die der Automa produzieren könnte <i>(inkl. Bonus oder Malus)</i> reicht aus, um mindestens 1 im Notariat offen ausliegenden Vertrag der abgebildeten Farbe zu erfüllen.",
+        "produceEnergy": "<b>Der Automa produziert mit der Kombination von Bauteilen, mit der er den höchsten Energieertrag erzielt</b>. Addiere bzw. subtrahiere ggf. noch den angegebenen <b>Bonus oder Malus</b>, sowie den Bonus seiner gebauten Turbinenhäuser. Bewege die Wassereinheiten und den Energiemarker wie üblich.",
+        "fulfillContract": "Danach <b>erfüllt der Automa den im Notariat offen ausliegenden Vertrag mit dem höchsten Wert</b>, den er mit seiner Produktion erfüllen kann. Das kann auch ein Vertrag einer anderen Farbe sein als auf dem Automaplättchen angegeben <i>(auch ein staatlicher Vertrag)</i>. Wenn es mehrere Verträge mit dem höchsten Wert gibt, wählt er den weiter rechts liegenden. Der Automa erhält die Belohnung des Vertrags, danach wird der Vertrag neben seinem Unternehmensplan abgelegt und durch ein neues Plättchen ersetzt <i>(außer bei einem staatlichen Vertrag)</i>.",
+        "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand des „Rohrwerk“-Kriteriums."
+      },
+      "water-management": {
+        "intro": "Der Automa platziert die angegebene Anzahl Wassereinheiten auf 1 oder mehrere Quellenplättchen.",
+        "damReachable": "Der Automa führt diese Aktion nur durch, wenn mindestens 1 der platzierten Wassereinheiten zu 1 seiner Staumauern gelangen würde <i>(prüfe, ob dies zutrifft, wenn das Wasser sofort fließen würde, selbst wenn die Wassereinheit nicht sofort fließt)</i>.",
+        "damCapacity": "Die Staumauer muss noch genug Kapazität haben, um die Wassereinheit auch stauen zu können. Wenn die erste Wassereinheit zu einer eigenen Staumauer gelangen kann, die zweite aber nicht, dann platziert der Automa nur 1 Wassereinheit.",
+        "engineerPlacement": "Der Automa platziert 1 Arbeiter auf dem Managementplan.",
+        "tiebreaker": "Der Automa führt die Aktion so aus, dass möglichst viele Wassereinheiten zu seinen Staumauern gelangen. Wenn es dafür mehrere verschiedene Möglichkeiten gibt, nutze die angezeigten Kriterien zur Entscheidung, auf welche Quelle(n) die Wassereinheit(en) gelegt werden. Prüfe die Buchstaben einer nach dem anderen <i>(Reihenfolge der Quellen siehe unten)</i> und platziere die Einheiten auf der ersten möglichen Quelle."
+      },
+      "contract-office": {
+        "intro": "Der Automa entfernt die offenen Verträge der abgebildeten Farbe aus dem Spiel. Danach rückt er seinen Energiemarker 2 Felder vor.",
+        "engineerPlacement": "Platziere den Arbeiter im Notariat.",
+        "newContractTiles": "Danach decke 2 neue Verträge der entsprechenden Farbe auf."
+      },
+      "construction": {
+        "intro": "Der Automa baut, falls die folgenden Bedingungen alle erfüllt sind, das abgebildete Bauteil:",
+        "structureAvailable": "<b>Bauteil vorhanden:</b> Auf dem Unternehmensplan des Automa ist noch mindestens 1 abgebildetes Bauteil vorhanden.",
+        "technologyTileAvailable": "<b>Technologieplättchen vorhanden:</b> Im Vorrat des Automa ist noch mindestens 1 Technologieplättchen <i>(einfach oder fortgeschritten)</i> vorhanden, mit dem das Bauteil gebaut werden kann.",
+        "machineriesAvailable": "<b>Maschinen vorhanden:</b> Im Vorrat des Automa befinden sich noch genügend Maschinen, um ein abgebildetes Bauteil zu bauen. Wenn keine speziellen Vorgaben gemacht werden <i>(z. B. Grundmauer muss in den Bergen gebaut werden)</i> reicht es aus, wenn die Maschinen für einen Bau an irgendeiner Stelle vorhanden sind.",
+        "buildingSpaceAvailable": "<b>Bauplatz vorhanden</b>: Es gibt mindestens 1 freies Baufeld auf dem Spielplan, auf dem das Bauteil gebaut werden kann.",
+        "buildStructure": "Wenn alle Punkte erfüllt sind, baut der Automa das abgebildete Bauteil. Nutze die Bauscheibe wie üblich <i>(beachte die abweichenden Regeln zum Arbeitereinsatz der Automa)</i>.",
+        "oneSpace": "Wenn es nur 1 freies Baufeld auf dem Spielplan gibt, auf dem der Automa das Bauteil bauen kann, platziere es dort. ",
+        "multipleSpaces": "Wenn es mehrere mögliche Baufelder gibt, nutze die Regeln zur „Platzierung von Bauteilen“ <i>(Klicke auf die Kriterien)</i>.",
+        "income": "Wenn der Automa durch den Bau ein Einkommen freischaltet, erhält er es wie üblich einmalig sofort <i>(anstelle von Geld erhält er SP)</i>.",
+        "building": {
+          "up": "<b>Gebäude:</b> Der Automa baut das erste <i>(von unten nach oben)</i> noch nicht von ihm aktivierte private Gebäude, für das er die nötigen Maschinen hat.",
+          "down": "<b>Gebäude:</b> Der Automa baut das erste <i>(von oben nach unten)</i> noch nicht von ihm aktivierte private Gebäude, für das er die nötigen Maschinen hat."
+        }
+      },
+      "workshop": {
+        "intro": "Der Automa dreht, falls seine Bauscheibe nicht komplett leer ist, seine Bauscheibe um die angegebene Anzahl von Segmenten weiter.",
+        "technologyTiles": "Wenn sich in der Bauscheibe des Automa mindestens 1 Technologieplättchen und/oder 1 Maschine befindet, führt er die Aktion durch.",
+        "engineerPlacement": "Der Automa platziert die abgebildete Anzahl Arbeiter auf dem Managementplan und bezahlt die angegebene Anzahl SP. Wie üblich nimmt der Automa nach jeder Drehung die Technologie und Maschinen im oberen Segment in seinen Vorrat zurück."
+      },
+      "machinery-shop": {
+        "intro": "Der Automa erhält die abgebildeten Maschinen und zahlt dafür die angegebene Anzahl SP.",
+        "engineerPlacement": "Der Automa platziert die angegebene Anzahl Arbeiter auf dem ersten freien Aktionsfeld dieser Kategorie, zahlt die angegebene Anzahl SP und nimmt sich die auf dem Automaplättchen abgebildeten Maschinen."
+      },
+      "patent-office": {
+        "intro": "Der Automa nimmt sich, falls vorhanden, ein fortgeschrittenes Technologieplättchen der abgebildeten Sorte (oder, falls nicht vorhanden, ein Jokerplättchen) und zahlt dafür 2 SP.",
+        "engineerPlacement": "Der Automa platziert 1 Arbeiter auf dem zu diesem Technologieplättchen gehörenden Aktionsfeld und zahlt 2 SP, anstelle der normalen Kosten von 2 Arbeitern und 5 SP.",
+        "multipleTiles": "Falls mehrere passende Plättchen ausliegen, nimmt er das Plättchen mit der höheren Zahl auf der Rückseite.",
+        "noneAvailable": "Wenn weder ein Plättchen der abgebildeten Sorte noch ein Jokerplättchen ausliegen, führt der Automa die Aktion nicht durch."
+      },
+      "external-work": {
+        "intro": "Der Automa führt, falls er kann, eine Auftragsarbeit aus.",
+        "enoughMachineries": "Prüfe, ob der Automa die benötigten Maschinen hat, um eine Auftragsarbeit auszuführen. Falls der Automa mehrere Arbeiten ausführen könnte, bestimme die Arbeit, die er ausführt anhand der abgebildeten Reihenfolge von links nach rechts. Die Zahl bezieht sich auf die Position des Plättchens auf dem Managementplan, von oben nach unten.",
+        "engineerPlacement": "Der Automa platziert die benötigten Arbeiter auf dem zu dieser Auftragsarbeit gehörenden Aktionsfeld und gibt die benötigten Maschinen ab.",
+        "particularEffect": "<b>Sonderregelung:</b> Wenn der Automa durch die Auftragsarbeit einen Vertrag erfüllen kann, erfüllt er den Vertrag mit dem höchsten möglichen Wert und bei 2 ausliegenden Verträgen mit selbem Wert den rechts liegenden."
+      },
+      "bank": {
+        "intro": "Der Automa platziert 1 Arbeiter in der Bank und erhält 1 SP."
+      }
+    },
+    "structurePlacement": {
+      "intro": "Prüfe diese Kriterien einer nach der anderen um den Bauplatz zu finden:",
+      "thirdStructure": "<b>Drittes Bauteil eines Systems</b>: Gibt es 1 System, bestehend aus Staumauer, Rohrwerk und Turbinenhaus, welches durch den Bau dieses Bauteils vervollständigt würde, so dass der Automa damit Energie produzieren könnte <i>(egal ob zur Zeit Wassereinheiten vorhanden sind oder nicht)</i>, so baut der Automa dort, wo dieses System vervollständigt würde.",
+      "location": "Bauplatz <b>{location}</b> oder höhere Zahl.",
+      "locationDescription": "Baue hier falls möglich. Anderenfalls gehe die weiteren Bauplätze in aufsteigender Reihenfolge der Zahlen durch. Falls du bei der höchsten Zahl ankommst ohne einen Bauplatz gefunden zu haben, fange bei der niedrigsten Zahl erneut an. Bei den Rohrwerken prüfe bei allen folgenden Bauplätzen immer zuerst den linken Platz im Tal (A) und dann den rechten Platz (B).",
+      "locationRestriction": "Manche Aktionen machen bereits Vorgaben, wo der Automa das Bauteil bauen soll <i>(z. B. eine Grundmauer in den Bergen)</i>. Diese Vorgabe gilt für den gesamten Platzierungsprozess, auch auf der Übersichtskarte ignorierst du dann alle Bauplätze, die nicht dieser Vorgabe entsprechen.",
+      "damElevation": {
+        "downstream-dam": "Ein Bauplatz, der über ein Rohrwerk mit einem Tal verbunden ist, in dem schon eine eigene Staumauer steht.<br/><b>Falls es den nicht gibt</b>: Ein Bauplatz, der nicht über ein Rohrwerk mit einem Tal verbunden ist, in dem schon eine gegnerische Staumauer steht.",
+        "most-powerful-conduit": "Ein Bauplatz neben dem schon gebauten Rohrwerk mit dem höchsten Produktionswert. Ein eigenes Rohrwerk wird bevorzugt vor einem fremden.",
+        "most-water-drops": "Ein Bauplatz, auf dem die Staumauer aktuell am meisten Wasser erhalten würde.<br/>Bei Gleichstand:",
+        "owned-powerhouse": "Ein Bauplatz verbunden mit einem eigenen Turbinenhaus.",
+        "red-outline-space": "Ein Bauplatz mit rotem Rand.",
+        "upstream-powerhouse": "Ein Bauplatz, der ohne Staumauern dazwischen unterhalb eines Turbinenhauses liegt."
+      },
+      "conduit": {
+        "most-powerful": "Ein Bauplatz mit dem höchsten noch verfügbaren Produktionswert.",
+        "opponent-neutral-owned-dam": "Ein Bauplatz neben einer Staumauer. Eine fremde Staumauer wird bevorzugt vor einer eigenen und eine gegnerische vor einer neutralen.",
+        "opponent-owned-powerhouse": "Ein Bauplatz verbunden mit einem Turbinenhaus. Ein fremdes Turbinenhaus wird bevorzugt vor einem eigenen.",
+        "owned-neutral-opponent-dam": "Ein Bauplatz neben einer Staumauer. Eine eigene Staumauer wird bevorzugt vor einer fremden und eine neutrale vor einer gegnerischen.",
+        "owned-opponent-powerhouse": "Ein Bauplatz verbunden mit einem Turbinenhaus. Ein eigenes Turbinenhaus wird bevorzugt vor einem fremden.",
+        "second-most-powerful": "Ein Bauplatz mit dem zweithöchsten noch verfügbaren Produktionswert."
+      },
+      "powerhouse": {
+        "feeding-owned-dam": "Ein Bauplatz, der ohne fremde Staumauern dazwischen oberhalb einer eigenen Staumauer liegt.<br/><b>Falls es den nicht gibt</b>: Ein Bauplatz, der nicht oberhalb einer gegnerischen Staumauer liegt.",
+        "hills-basin-5": "Ein Bauplatz im Tal <b>5</b> in den Hügeln (siehe Karte).",
+        "hills-basin-6": "Ein Bauplatz im Tal <b>6</b> in den Hügeln (siehe Karte).",
+        "hills-basin-7": "Ein Bauplatz im Tal <b>7</b> in den Hügeln (siehe Karte).",
+        "most-powerful-conduit": "Ein Bauplatz verbunden mit dem schon gebauten Rohrwerk mit dem höchsten Produktionswert. Ein eigenes Rohrwerk wird bevorzugt vor einem fremden.",
+        "not-feeding-opponent-dam": "Ein Bauplatz, der nicht oberhalb einer gegnerischen Staumauer liegt.<br/><b>Falls es den nicht gibt:</b> Ein Bauplatz, der ohne fremde Staumauern dazwischen oberhalb einer eigenen Staumauer liegt.",
+        "owned-dam": "Ein Bauplatz verbunden mit einer eigenen Staumauer.",
+        "plains": "Ein Bauplatz im Vorland."
+      }
+    },
+    "difficultyLevel": {
+      "easy": {
+        "noIncome": "<b>Schwachstrom:</b> Der Automa erhält kein Einkommen aus seinem Unternehmensplan.",
+        "noProductionBonus": "<b>Schwachstrom:</b> Der Automa erhält keine Produktionsboni <i>(durch den Bau von Turbinenhäusern)</i>."
+      },
+      "hard": {
+        "companyAbilities": "<b>Starkstrom:</b> Der Automa kann die Spezialfähigkeit seines Unternehmens nutzen <i>(die mit Bau des dritten Turbinenhauses aktiviert wird)</i>.",
+        "advancedTechnologyTiles": "<b>Starkstrom:</b> Der Automa kann die Sonderfähigkeiten von fortgeschrittenen Technologieplättchen nutzen. Beim Bau eines Bauwerks nutzt der Automa nach Möglichkeit immer ein fortgeschrittenes Technologieplättchen (auch ein Jokerplättchen) und, falls er mehrere Plättchen zur Auswahl hat, eines der höchsten Stufe. Wenn er von dieser Stufe ein spezifisches und ein Jokerplättchen besitzt, nutzt er das spezifische Plättchen.",
+        "advancedTechnology": {
+          "conduit-level2": {
+            "title": "Rohrwerk Stufe 2",
+            "description": "Bei mehreren möglichen Baufeldern baut der Automa wenn möglich ein Rohrwerk mit Produktionswert 3 oder höher."
+          },
+          "powerhouse-level2": {
+            "title": "Turbinenhaus Stufe 2",
+            "description": "Der Automa produziert Energie dort, wo er den höchsten Ertrag erzielt."
+          },
+          "building-level1": {
+            "title": "Gebäude Stufe 1",
+            "description": "Anstatt das neu gebaute Gebäude zu aktivieren, erhält der Automa die SP des neu gebauten Gebäudes."
+          },
+          "building-level2": {
+            "title": "Gebäude Stufe 2",
+            "description": "Der Automa benutzt zum Bau die Art von Maschinen, von der er weniger hat. Bei Gleichstand benutzt er Bagger."
+          },
+          "joker-level1": {
+            "title": "Joker Stufe 1",
+            "description": "Wenn der Automa mit diesem Plättchen eine Grundmauer baut und durch die Regeln zur Platzierung von Bauteilen entschieden ist, in welchem Tal er die Mauer baut, so wählt er dort, wenn möglich, ein rot umrandetes Baufeld."
+          },
+          "joker-level2": {
+            "title": "Joker Stufe 2",
+            "description": "Der Automa nutzt die Fähigkeit nur, wenn er sonst zu wenig Maschinen zum Bau hätte."
+          }
+        },
+        "corporation": {
+          "usa": "<b>Starkstrom/USA:</b> Hat der Automa bei einer Aktion „Wassermanagement“ mehrere Quellen zur Auswahl, wählt er die, die über die Spezialfähigkeit mehr Schritte auf der Energieleiste auslöst.",
+          "germany": "<b>Starkstrom/Deutschland:</b> Bei der zweiten Energieproduktion (sofern eine möglich ist) produziert der Automa dort, wo er den höchsten Ertrag erzielt.",
+          "france": "<b>Starkstrom/Frankreich:</b> Der Automa berücksichtigt die Fähigkeit sowohl bei der Bedingung „Erfüllbarer Vertrag“ als auch bei der Erfüllung eines Vertrags.",
+          "netherlands": "<b>Starkstrom/Die Niederlande:</b> Platziere die Wassereinheit hinter der Staumauer <i>(außer der gerade genutzten)</i>, mit der der Automa als nächstes die meiste Energie produzieren könnte. Gibt es keine oder mehrere solcher Staumauern, nutze die Grundmauer-Kriterien zur Entscheidung, hinter welchen Damm die Wassereinheit platziert wird."
+        }
+      },
+      "veryHard": {
+        "executiveOfficers": "<b>Hochspannung:</b> Der Automa erhält beim Spielaufbau einen Chefingenieur und kann ihn während des Spiels nutzen.",
+        "executiveOfficer": {
+          "wilhelm-adler": "<b>Hochspannung/Wilhelm Adler:</b> Der Automa <b>baut Grundmauern bevorzugt in den Bergen</b>, dann in den Hügeln und erst dann im Vorland.",
+          "graziano-del-monte": "<b>Hochspannung/Graziano del Monte:</b> Bei einer Bauaktion <b>ignoriert der Automa das auf dem Automaplättchen angegebene Bauteil</b> und baut stattdessen eine Erhöhung, falls es eine Grundmauer gibt, die er mit seinen vorhandenen Ressourcen erhöhen kann.",
+          "viktor-fiesler": "<b>Hochspannung/Viktor Fiesler:</b> Wenn der Automa eine Aktion „Energieproduktion“ mit einem Rohrwerk der Stufe 1 oder 2 durchführt, <b>nutzt er dafür nur 1 Wassereinheit</b>.",
+          "jill-mcdowell": {
+            "constructConduit": "<b>Hochspannung/Jill McDowell:</b> Solange der Automa mindestens so viele Betonmischer wie Bagger hat, bezahlt er Rohrwerke immer mit Betonmischern.",
+            "machineryShop": "<b>Hochspannung/Jill McDowell:</b> Wenn der Automa beim Erhalt von Maschinen die Wahl hat, nimmt er immer Betonmischer."
+          },
+          "solomon-p-jordan": "<b>Hochspannung/Solomon P. Jordan:</b> Der Automa setzt immer zuerst seine vorhandenen Maschinen ein. <b>Wenn ihm genau 1 Maschine für eine Aktion fehlt, zahlt er stattdessen 3 SP.</b> Wenn ihm mehrere Maschinen fehlen, führt er die Aktion nicht aus.",
+          "anton-krylov": "<b>Hochspannung/Anton Krylov:</b> <b>Der Automa setzt das Sondertechnologieplättchen erst ein, wenn er kein passendes einfaches oder fortgeschrittenes Technologieplättchen zur Verfügung hat</b> (inkl. Jokerplättchen). Er kopiert immer ein Plättchen der höchstmöglichen Stufe (einfach = Stufe 0) und bei 2 Plättchen derselben Stufe das spezifische Plättchen und nicht das Jokerplättchen.",
+          "mahiri-sekibo": "<b>Hochspannung/Mahiri Sekibo:</b> Der Automa nutzt diese Fähigkeit nicht. Dafür <b>müssen alle menschlichen Spieler ihre erste Aktion in jeder Runde so durchführen, als wären sie ein Automa</b>. Verwende dafür die Automaplättchen, die Applikation unterstützt es nicht. Decke ein neues Automaplättchen auf und nutze es um zu entscheiden, welche Aktion du durchführst.",
+          "simone-luciani": "<b>Hochspannung/Simone Luciani:</b> Wenn der Automa Energie produziert, <b>erfüllt er damit so viele Verträge wie möglich</b>, anstatt nur den Vertrag mit dem höchsten Wert zu erfüllen. Wenn es mehrere Kombinationen zur Auswahl gibt, wählt der Automa die Verträge mit dem höchsten Wert und bei mehreren Verträgen desselben Werts immer den rechten (liegen z. B. Verträge mit Wert 2, 3, 6, 6, 9 und 10 aus, erfüllt der Automa bei einer Energieproduktion von 9 die Verträge mit Wert 6 und 3, bei einer Energieproduktion von 12 die Verträge mit Wert 6, 3 und 2. In beiden Fällen wählt er den rechten der beiden 6er-Verträge). Wenn der Automa allerdings einen staatlichen Vertrag erfüllen kann, wird er das immer tun (wenn möglich in Kombination mit privaten Verträgen).",
+          "tommaso-battista": "<b>Hochspannung/Tommaso Battista:</b> Wenn der Automa mit genau 1 Arbeiter eine Aktion ausführt, die seinen Zug beenden würde (also keine in einem gestrichelten Rahmen), so nutzt er dafür (soweit noch verfügbar) den Architekten und führt direkt nach der Aktion einen zusätzlichen Zug aus. Decke dazu ein neues Automaplättchen auf.",
+          "leslie-spencer": "<b>Hochspannung/Leslie Spencer:</b> Wenn der Automa eine Bauaktion durchführen soll und das Sondertechnologieplättchen noch zur Verfügung hat, prüfe stattdessen, ob er eine Auftragsarbeit durchführen kann. Wenn ja, <b>führe stattdessen diese Auftragsarbeit mit diesem Plättchen durch und ignoriere die Bauaktion</b>. Wenn nicht, führe die Bauaktion ganz normal durch.",
+          "margot-fouche": "<b>Hochspannung/Margot Fouché:</b> Der Automa nutzt diese Fähigkeit nicht. Wenn der Automa eine beliebige Bauaktion durchführen soll, prüfe stattdessen, ob es ihm möglich ist, 1 Gebäude zu bauen (er also die nötigen Maschinen und ein entsprechendes Technologieplättchen im Vorrat hat, um 1 noch nicht aktiviertes Gebäude zu bauen). Wenn ja, <b>baue 1 Gebäude und ignoriere das eigentlich auf dem Automaplättchen abgebildete Bauwerk</b>. Diese Bauaktion kostet 1 Arbeiter. Wenn nicht, führe die Bauaktion ganz normal durch.",
+          "elon-audia": "<b>Hochspannung/Elon Audia:</b> When building or performing an External Work action, Automa will always prefer to use Excavators and Concrete Mixer before using its Excamixers.",
+          "gennaro-grasso": "<b>Hochspannung/Gennaro Grasso:</b> Automa doesn't use the extra Construction space of Gennaro Grasso. The first construction of each round always costs 1 less engineer (put the used Engineer in the XO extra Construction space as a reminder: in case of the construction of a Private Building just put 1 Credit on the Construction space as a reminder). ",
+          "wu-fang": {
+            "production": "<b>Hochspannung/Wu Fang:</b> Before checking which action (or actions) to perform from the Automa tile, the Automa player must verify if it controls a number of Water Drops equal (or higher) to the energy needed to fulfill a contract depicted in the production action. If that's true, as its turn action, it will place one of its Engineers on its XO special action space and produce an amount of Energy Units equal to the Water Drops it controls; then, it will fulfill the best possible contract (in case of a tie, the rightmost one).",
+            "construction": "<b>Hochspannung/Wu Fang:</b> Before checking if and which structure to build, if the Automa has the right technology tile and required machineries, it will preferably build a Dam Base (or, as second choice, a Dam Elevation) rather than the structure depicted on the Automa tile."
+          },
+          "dr-octavius": "<b>Hochspannung/Dr. Octavius:</b> When checking the amount of producible Energy, the Automa will consider the best possible production considering all possible Water Drops sources. Moreover, when selecting where to place a Dam Base, it will prefer, between the current eligible positions, one connected (by a built or unbuilt Conduit) to one of its Powerhouses.",
+          "amir-zahir": "<b>Hochspannung/Amir Zahir:</b> Whenever the Automa places Water Drop on the Headstreams, they always flow immediately. When the Automa is supposed to place Water Drops that should flow immediately on the Headstreams, the Automa will try to place them in its Dams. The first choice will be a Dam that is part of a complete Dam-Conduit-Powerhouse system (in case of multiple options, the system having the Conduit with the highest value). The seconds choice will be any of its Dams. In case of a tie between multiple options, the Automa follows the location of the Dam criteria.",
+          "franz-de-lasse": "<b>Hochspannung/Franz de Lasse:</b> The Automa always chooses to fulfill the available Contracts with the lowest value (in case of a tie, it would be the Contract on the right)."
+        }
+      }
+    }
+  },
+  "notfound": {
+    "title": "Nicht Gefunden"
+  },
+  "action": {
+    "playGame": "Spielen",
+    "startGame": "Spiel starten",
+    "next": "Weiter",
+    "nextRound": "Nächste Runde",
+    "abortGame": "Spiel abbrechen",
+    "abortGameConfirm": "Das aktuelle Spiel wird abgebrochen - bist du sicher?",
+    "endGame": "Spiel beenden",
+    "endGameConfirm": "Dieses Spiel wird beendet - bist du sicher?",
+    "cancel": "Abbrechen",
+    "backToHome": "Zurück zum Anfang",
+    "back": "Zurück",
+    "close": "Schließen",
+    "ok": "OK",
+    "pass": "Passen"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Applikation neu laden",
+    "notice": "Die Applikation wurde aktualisiert - möchtest du die Seite neu laden um die neueste Version zu nutzen?"
+  }
+}
