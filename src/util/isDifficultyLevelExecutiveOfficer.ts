@@ -10,7 +10,8 @@ import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
  * @param difficultyLevel Difficulty level
  * @param state State
  */
-export default function isDifficultyLevelExecutiveOfficer(bot: number, difficultyLevel: DifficultyLevel, executiveOfficer: ExecutiveOfficer, state: State) : boolean {
+export default function isDifficultyLevelExecutiveOfficer(bot: number, difficultyLevel: DifficultyLevel,
+    executiveOfficer: ExecutiveOfficer, state: State) : boolean {
   const { botExecutiveOfficers } = state.setup
   if (botExecutiveOfficers[bot - 1] == executiveOfficer) {
     return isDifficultyLevel(bot, difficultyLevel, state)

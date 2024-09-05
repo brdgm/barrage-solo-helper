@@ -18,6 +18,6 @@ export default function hasDifficultyLevel(difficultyLevel: DifficultyLevel, sta
 function hasDifficultyLevelInternal(difficultyLevel: DifficultyLevel, state: State) : boolean {
   const { botCount } = state.setup.playerSetup
   const { difficultyLevels } = state.setup
-  // check only for actual bot index, array might be larger
+  // check only for actual bot count, array might be larger
   return difficultyLevels.slice(0, botCount).includes(difficultyLevel)
 }

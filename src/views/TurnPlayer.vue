@@ -8,6 +8,14 @@
 
   <p v-html="t('turnPlayer.takeTurn')" class="mt-4 mb-4"></p>
 
+  <div v-if="hasVeryHardDifficultyMahiriSekibo && turn == 1" class="mt-4 container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.mahiri-sekibo')"></div>
+      </div>
+    </div>
+  </div>
+
   <button class="btn btn-primary btn-lg mt-4" @click="next()">
     {{t('action.next')}}
   </button>
@@ -40,6 +48,9 @@ import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDial
 import PlayerNavigationState from '@/util/PlayerNavigationState'
 import PlayerColorIcon from '@/components/structure/PlayerColorIcon.vue'
 import SideBar from '@/components/turn/SideBar.vue'
+import hasDifficultyLevelExecutiveOfficer from '@/util/hasDifficultyLevelExecutiveOfficer'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 
 export default defineComponent({
   name: 'TurnPlayer',
@@ -63,6 +74,9 @@ export default defineComponent({
   computed: {
     backButtonRouteTo() : string {
       return this.routeCalculator.getBackRouteTo(this.state)
+    },
+    hasVeryHardDifficultyMahiriSekibo() : boolean {
+      return hasDifficultyLevelExecutiveOfficer(DifficultyLevel.VERY_HARD, ExecutiveOfficer.MAHIRI_SEKIBO, this.state)
     }
   },
   methods: {

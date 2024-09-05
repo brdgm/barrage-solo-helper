@@ -10,7 +10,8 @@ import isDifficultyLevel from './isDifficultyLevel'
  * @param difficultyLevel Difficulty level
  * @param state State
  */
-export default function isDifficultyLevelCorporation(bot: number, difficultyLevel: DifficultyLevel, corporation: Corporation, state: State) : boolean {
+export default function isDifficultyLevelCorporation(bot: number, difficultyLevel: DifficultyLevel,
+    corporation: Corporation, state: State) : boolean {
   const { botCorporations } = state.setup
   if (botCorporations[bot - 1] == corporation) {
     return isDifficultyLevel(bot, difficultyLevel, state)
