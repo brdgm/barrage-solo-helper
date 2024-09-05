@@ -1,5 +1,6 @@
 <template>
-  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState">
+  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState"
+      @workerPlaced="(workerUsed,nextAction) => $emit('workerPlaced',workerUsed,nextAction)">
     <template #action>
       <div class="action">
         <HydroCost v-if="actionItem.hydroCost" :hydroCost="actionItem.hydroCost" class="me-2"/>
@@ -33,15 +34,18 @@ import MachineryType from '@/services/enum/MachineryType'
 
 export default defineComponent({
   name: 'ActionMachineryShop',
-  setup() {
-    const { t } = useI18n()
-    const state = useStateStore()
-    return { t, state }
+  emits: {
+    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     ActionBox,
     AppIcon,
     HydroCost
+  },
+  setup() {
+    const { t } = useI18n()
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     actionItem: {

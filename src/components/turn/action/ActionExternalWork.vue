@@ -1,5 +1,6 @@
 <template>
-  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState">
+  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState"
+      @workerPlaced="(workerUsed,nextAction) => $emit('workerPlaced',workerUsed,nextAction)">
     <template #action>
       <div class="action">
         <AppIcon type="action" name="external-work" class="icon"/>
@@ -37,14 +38,17 @@ import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutive
 
 export default defineComponent({
   name: 'ActionExternalWork',
-  setup() {
-    const { t } = useI18n()
-    const state = useStateStore()
-    return { t, state }
+  emits: {
+    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     ActionBox,
     AppIcon
+  },
+  setup() {
+    const { t } = useI18n()
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     actionItem: {

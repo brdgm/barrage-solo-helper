@@ -10,7 +10,8 @@
       :is="`action-${navigationState.actionItem.action}`"
       :actionItem="navigationState.actionItem"
       :criteriaCard="navigationState.cardDeck.criteriaCard"
-      :navigationState="navigationState"/>
+      :navigationState="navigationState"
+      @workerPlaced="workerPlaced"/>
 
   <button class="btn btn-success btn-lg mt-4" @click="next()">
     {{t('turnBot.done', navigationState.actionItem?.workerCount ?? 0)}}
@@ -37,6 +38,7 @@ import SideBar from '@/components/turn/SideBar.vue'
 import DebugInfo from '@/components/turn/DebugInfo.vue'
 import BotAction from '@/components/turn/BotAction.vue'
 import Action from '@/services/enum/Action'
+import { ref } from 'vue'
 
 export default defineComponent({
   name: 'TurnBot',
@@ -56,7 +58,10 @@ export default defineComponent({
     const { botCount, round, turn, action, workerUsedPreviousAction, bot, playerColor} = navigationState
     const routeCalculator = new RouteCalculator({round, turn, action, workerUsedPreviousAction, bot})
 
-    return { t, state, botCount, round, turn, bot, playerColor, routeCalculator, navigationState }
+    const workerUsed = ref(navigationState.actionItem?.workerCount ?? 0)
+    const nextAction = ref(navigationState.actionItem?.nextAction ?? false)
+
+    return { t, state, botCount, round, turn, bot, playerColor, routeCalculator, navigationState, workerUsed, nextAction }
   },
   computed: {
     backButtonRouteTo() : string {
@@ -68,25 +73,29 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      if (this.navigationState.actionItem?.nextAction) {
-        this.$router.push(this.routeCalculator.getNextActionRouteTo(this.navigationState.actionItem?.workerCount))
+      if (this.nextAction) {
+        this.$router.push(this.routeCalculator.getNextActionRouteTo(this.workerUsed))
         return
       }
-      const workerUsed = (this.navigationState.actionItem?.workerCount ?? 0) + (this.navigationState.workerUsedPreviousAction ?? 0)
-      const workerLeft = this.navigationState.workerCount - workerUsed
+      const workerUsedTotal = this.workerUsed + (this.navigationState.workerUsedPreviousAction ?? 0)
+      const workerLeft = this.navigationState.workerCount - workerUsedTotal
       const passed = workerLeft <= 0 ? true : undefined
       this.state.storeTurn({
         round:this.round,
         turn:this.turn,
         bot:this.bot,
         cardDeck: this.navigationState.cardDeck.toPersistence(),
-        workerUsed,
+        workerUsed: workerUsedTotal,
         passed: passed ? true : undefined
       })
       this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
     },
     notPossible() : void {
       this.$router.push(this.routeCalculator.getNextActionRouteTo(this.navigationState.workerUsedPreviousAction))
+    },
+    workerPlaced(workerUsed: number, nextAction: boolean) {
+      this.workerUsed = workerUsed
+      this.nextAction = nextAction
     }
   }
 })

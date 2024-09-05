@@ -1,6 +1,6 @@
 <template>
   <component :is="`action-${actionItem.action}`"
-    :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState"/>
+    :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState" @workerPlaced="workerPlaced"/>
 </template>
 
 <script lang="ts">
@@ -20,9 +20,8 @@ import ActionWorkshop from './action/ActionWorkshop.vue'
 
 export default defineComponent({
   name: 'BotAction',
-  setup() {
-    const { t } = useI18n()
-    return { t }
+  emits: {
+    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     ActionBank,
@@ -34,6 +33,10 @@ export default defineComponent({
     ActionProduction,
     ActionWaterManagement,
     ActionWorkshop
+  },
+  setup() {
+    const { t } = useI18n()
+    return { t }
   },
   props: {
     actionItem: {
@@ -47,6 +50,11 @@ export default defineComponent({
     navigationState: {
       type: BotNavigationState,
       required: true
+    }
+  },
+  methods: {
+    workerPlaced(workerUsed: number, nextAction: boolean) {
+      this.$emit('workerPlaced', workerUsed, nextAction)
     }
   }
 })

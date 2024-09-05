@@ -1,5 +1,6 @@
 <template>
-  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState">
+  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState"
+      @workerPlaced="(workerUsed,nextAction) => $emit('workerPlaced',workerUsed,nextAction)">
     <template #action>
       <div class="action" v-if="actionItem.constructionType">
         <AppIcon v-if="isBuilding" type="construction-type" :name="`building-${actionItem.buildingSearchDirection}`" class="icon building"/>
@@ -49,14 +50,17 @@ import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 
 export default defineComponent({
   name: 'ActionConstruction',
-  setup() {
-    const { t } = useI18n()
-    const state = useStateStore()
-    return { t, state }
+  emits: {
+    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     ActionBox,
     AppIcon
+  },
+  setup() {
+    const { t } = useI18n()
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     actionItem: {

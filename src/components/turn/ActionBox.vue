@@ -50,6 +50,12 @@
     
     </div>
 
+    <div v-if="hasHardDifficulty">
+      <button class="btn btn-outline-secondary mt-3" data-bs-toggle="modal" data-bs-target="#modalPlaceEngineers">
+        {{t('turnBot.placeEngineers.button', {count:workerUsed})}}
+      </button>
+    </div>
+
     <div v-if="$slots.warnings" class="mt-4 container-fluid">
       <div class="row">
         <div class="col">
@@ -154,6 +160,24 @@
       </template>
     </ModalDialog>
 
+    <ModalDialog id="modalPlaceEngineers" :title="t('turnBot.placeEngineers.title')" :scrollable="true">
+      <template #body>
+        <p v-html="t('turnBot.placeEngineers.intro')"></p>
+        <div class="form-check form-check-inline" v-for="count in [2,1,0]" :key="count">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="numberEngineers" v-model="workerUsed" :value="count">
+            {{t('turnBot.placeEngineers.workerUsed', {count}, count)}}
+          </label>
+        </div>
+        <div class="form-check mt-3" v-if="navigationState.action > 0">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" v-model="nextAction" :value="true">
+            {{t('turnBot.placeEngineers.nextAction')}}
+          </label>
+        </div>
+      </template>
+    </ModalDialog>
+
 </div>
 </template>
 
@@ -173,13 +197,22 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Corporation from '@/services/enum/Corporation'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
+import { ref } from 'vue'
+import hasDifficultyLevel from '@/util/hasDifficultyLevel'
 
 export default defineComponent({
   name: 'ActionBox',
-  setup() {
+  setup(props) {
     const { t } = useI18n()
     const state = useStateStore()
-    return { t, state }
+
+    const workerUsed = ref(props.actionItem.workerCount)
+    const nextAction = ref(props.actionItem.nextAction ?? false)
+
+    return { t, state, workerUsed, nextAction }
+  },
+  emits: {
+    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     AppIcon,
@@ -223,6 +256,9 @@ export default defineComponent({
     showCriteriaPowerhouse() : boolean {
       return this.actionItem.action == Action.CONSTRUCTION && this.actionItem.constructionType == ConstructionType.POWERHOUSE
     },
+    hasHardDifficulty() : boolean {
+      return hasDifficultyLevel(DifficultyLevel.HARD, this.state)
+    },
     isHardDifficultyNetherlands() : boolean {
       return isDifficultyLevelCorporation(this.navigationState.bot, DifficultyLevel.HARD, Corporation.NETHERLANDS, this.state)
     },
@@ -236,6 +272,14 @@ export default defineComponent({
   methods: {
     isShowHeadstreamOrder(criteria: PlacingCriteriaDamElevation) {
       return criteria == PlacingCriteriaDamElevation.MOST_WATER_DROPS
+    }
+  },
+  watch: {
+    workerUsed(value) {
+      this.$emit('workerPlaced', value, this.nextAction)
+    },
+    nextAction(value) {
+      this.$emit('workerPlaced', this.workerUsed, value)
     }
   }
 })

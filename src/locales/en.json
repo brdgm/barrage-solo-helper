@@ -63,6 +63,13 @@
       "damElevation": "Dam/Elevation",
       "conduit": "Conduit",
       "powerhouse": "Powerhouse"
+    },
+    "placeEngineers": {
+      "title": "Place Engineers",
+      "button": "Place Engineers: {count}",
+      "intro": "By default, the number of engineers is used as indicated for the action. But in High Voltage or Overpowered mode the actual number of Engineers to use may be different due to Advanced Technology tiles or Executive Officer special powers.",
+      "workerUsed": "{count} Engineer | {count} Engineers",
+      "nextAction": "Execute another action"
     }
   },
   "roundStart": {
@@ -192,7 +199,7 @@
         "contractRequirement": "<b>Contract Requirement</b> - The maximum potential energy producible <i>(including the production bonus/malus indicated)</i> is equal or greater than the energy requirement of at least one available Contract of the indicated type.",
         "produceEnergy": "<b>The Automa will produce Energy using the best production system available</b> <i>(i.e. the one producing the higher amount of Energy)</i> <b>and applying the indicated bonus/malus </b> <i>(and eventually the bonus activated on the Company board)</i>. Move the Water Drops and update the Energy Track as usual.",
         "fulfillContract": "Then, <b>the Automa will immediately fulfill the higher value Contract available</b> in the Contract Office, not only among those checked as a condition <i>(in case of tie, the contract on the right space)</i> and receive the corresponding reward. The fulfilled Contract is removed and replaced by a new one. The Automa can fulfill National Contracts like a human player <i>(in case of tie, the rightmost one)</i>.",
-        "multipleOptions": "If there are multiple options to fulfill the contract with the same highest value, Automa uses water from a neutral dam first. If there are still multiple options, check to „Conduit“ location number criteria.</i>."
+        "multipleOptions": "If there are multiple options to fulfill the contract with the same highest value, Automa uses water from a neutral dam first. If there are still multiple options, check the „Conduit“ location criteria."
       },
       "water-management": {
         "intro": "The Automa will place the indicated amount of Water Drops on one or more Headstream tiles, following the standard rules.",

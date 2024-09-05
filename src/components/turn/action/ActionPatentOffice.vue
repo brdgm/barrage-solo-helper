@@ -1,5 +1,6 @@
 <template>
-  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState">
+  <ActionBox :actionItem="actionItem" :criteriaCard="criteriaCard" :navigationState="navigationState"
+      @workerPlaced="(workerUsed,nextAction) => $emit('workerPlaced',workerUsed,nextAction)">
     <template #action>
       <div class="action">
         <HydroCost v-if="actionItem.hydroCost" :hydroCost="actionItem.hydroCost" class="hydroCost"/>
@@ -27,14 +28,17 @@ import HydroCost from '@/components/structure/HydroCost.vue'
 
 export default defineComponent({
   name: 'ActionPatentOffice',
-  setup() {
-    const { t } = useI18n()
-    return { t }
+  emits: {
+    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
   },
   components: {
     ActionBox,
     AppIcon,
     HydroCost
+  },
+  setup() {
+    const { t } = useI18n()
+    return { t }
   },
   props: {
     actionItem: {

@@ -64,6 +64,13 @@
       "damElevation": "Grundmauer/Erhöhung",
       "conduit": "Rohrwerk",
       "powerhouse": "Turbinenhaus"
+    },
+    "placeEngineers": {
+      "title": "Platziere Arbeiter",
+      "button": "Platziere Arbeiter: {count}",
+      "intro": "Grundsätzlich wird die für die Aktion angegebene Anzahl von Arbeitern eingesetzt. Im Starkstrom- oder Hochspannung-Modus kann es aber durch fortgeschrittene Technologieplättchen oder Chefingenieure zu Abweichungen kommen.",
+      "workerUsed": "{count} Arbeiter",
+      "nextAction": "Führe eine weitere Aktion aus"
     }
   },
   "roundStart": {
@@ -193,7 +200,7 @@
         "contractRequirement": "<b>Erfüllbarer Vertrag:</b> Die maximale Energie, die der Automa produzieren könnte <i>(inkl. Bonus oder Malus)</i> reicht aus, um mindestens 1 im Notariat offen ausliegenden Vertrag der abgebildeten Farbe zu erfüllen.",
         "produceEnergy": "<b>Der Automa produziert mit der Kombination von Bauteilen, mit der er den höchsten Energieertrag erzielt</b>. Addiere bzw. subtrahiere ggf. noch den angegebenen <b>Bonus oder Malus</b>, sowie den Bonus seiner gebauten Turbinenhäuser. Bewege die Wassereinheiten und den Energiemarker wie üblich.",
         "fulfillContract": "Danach <b>erfüllt der Automa den im Notariat offen ausliegenden Vertrag mit dem höchsten Wert</b>, den er mit seiner Produktion erfüllen kann. Das kann auch ein Vertrag einer anderen Farbe sein als auf dem Automaplättchen angegeben <i>(auch ein staatlicher Vertrag)</i>. Wenn es mehrere Verträge mit dem höchsten Wert gibt, wählt er den weiter rechts liegenden. Der Automa erhält die Belohnung des Vertrags, danach wird der Vertrag neben seinem Unternehmensplan abgelegt und durch ein neues Plättchen ersetzt <i>(außer bei einem staatlichen Vertrag)</i>.",
-        "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand der in des „Rohrwerk“ Bauplatz-Kriteriums.</i>."
+        "multipleOptions": "Gibt es mehrere Möglichkeiten, denselben höchsten Ertrag zu erzielen, so nutzt der Automa vorrangig die Wassereinheiten aus neutralen Staumauern. Gibt es auch danach noch mehrere Möglichkeiten, entscheide anhand des „Rohrwerk“-Kriteriums."
       },
       "water-management": {
         "intro": "Der Automa platziert die angegebene Anzahl Wassereinheiten auf 1 oder mehrere Quellenplättchen.",
@@ -299,7 +306,7 @@
           },
           "building-level1": {
             "title": "Gebäude Stufe 1",
-            "description": "Anstatt das neu gebaute Gebäude zu aktivieren, erhält der Automa die SP des neu gebauten Gebäudes.."
+            "description": "Anstatt das neu gebaute Gebäude zu aktivieren, erhält der Automa die SP des neu gebauten Gebäudes."
           },
           "building-level2": {
             "title": "Gebäude Stufe 2",
@@ -317,7 +324,7 @@
         "corporation": {
           "usa": "<b>Starkstrom/USA:</b> Hat der Automa bei einer Aktion „Wassermanagement“ mehrere Quellen zur Auswahl, wählt er die, die über die Spezialfähigkeit mehr Schritte auf der Energieleiste auslöst.",
           "germany": "<b>Starkstrom/Deutschland:</b> Bei der zweiten Energieproduktion (sofern eine möglich ist) produziert der Automa dort, wo er den höchsten Ertrag erzielt.",
-          "france": "<b>Starkstrom/Frankreich:</b> Der Automa berücksichtigt die Fähigkeit sowohl bei der Bedingung „Erfüllbarer Vertrag“ als auch bei der Erfüllung eines Vertrags..",
+          "france": "<b>Starkstrom/Frankreich:</b> Der Automa berücksichtigt die Fähigkeit sowohl bei der Bedingung „Erfüllbarer Vertrag“ als auch bei der Erfüllung eines Vertrags.",
           "netherlands": "<b>Starkstrom/Die Niederlande:</b> Platziere die Wassereinheit hinter der Staumauer <i>(außer der gerade genutzten)</i>, mit der der Automa als nächstes die meiste Energie produzieren könnte. Gibt es keine oder mehrere solcher Staumauern, nutze die Grundmauer-Kriterien zur Entscheidung, hinter welchen Damm die Wassereinheit platziert wird."
         }
       },
