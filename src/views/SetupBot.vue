@@ -18,7 +18,8 @@
     </ol>
   </div>
 
-  <div class="alert alert-warning" v-if="!isValid" v-html="t('setupBot.validCorporationExecutiveOfficer')"></div>
+  <div class="alert alert-warning" v-if="!isValid"
+      v-html="t(hasVeryHardDifficulty ? 'setupBot.validCorporationExecutiveOfficer' : 'setupBot.validCorporation')"></div>
 
   <button class="btn btn-primary btn-lg mt-4" @click="startGame()" :disabled="!isValid">
     {{t('action.startGame')}}
@@ -98,10 +99,12 @@ export default defineComponent({
           return false
         }
         selectedCorporations.add(selectedCorporation)
-        if (selectedExecutiveOfficers.has(selectedExecutiveOfficer)) {
-          return false
+        if (this.hasVeryHardDifficulty) {
+          if (selectedExecutiveOfficers.has(selectedExecutiveOfficer)) {
+            return false
+          }
+          selectedExecutiveOfficers.add(selectedExecutiveOfficer)
         }
-        selectedExecutiveOfficers.add(selectedExecutiveOfficer)
       }
       return true
     }

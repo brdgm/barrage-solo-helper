@@ -46,6 +46,7 @@
       "victoryPoints": "Automa beginnt das Spiel mit 16 SP.",
       "playerOrder": "Initiale Spielreihenfolge:"
     },
+    "validCorporation": "Bitte wähle ein Unternehmen für Automa.",
     "validCorporationExecutiveOfficer": "Bitte wähle ein Unternehmen und Chefingenieur für Automa."
   },
   "turnPlayer": {

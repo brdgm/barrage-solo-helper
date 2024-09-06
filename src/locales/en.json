@@ -45,6 +45,7 @@
       "victoryPoints": "Automa begins the game with 16 Victory Points.",
       "playerOrder": "Initial player order:"
     },
+    "validCorporation": "Please select a corporation for Automa.",
     "validCorporationExecutiveOfficer": "Please select a corporation and executive officer for Automa."
   },
   "turnPlayer": {
