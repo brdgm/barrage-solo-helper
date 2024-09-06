@@ -3,7 +3,7 @@
   "home": {
     "title": "Barrage Solo Helper",
     "play1": "Play <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Barrage</b></a> against Automa, the artificial opponent.",
-    "play2": "This application replaces the Automa card deck and guides you through the game and Automa ruleset.",
+    "play2": "This application replaces the Automa card deck and guides you through the game and Automa ruleset. It supports all difficult levels, the company special abilities and most of the executive officers. You can play against up to three Automa players.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
