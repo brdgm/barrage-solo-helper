@@ -11,6 +11,7 @@
     <template #rules>
       <p class="fw-bold fst-italic" v-html="t('rules.actionItem.machinery-shop.intro')"></p>
       <p v-html="t('rules.actionItem.machinery-shop.engineerPlacement')"></p>
+      <p v-if="isWildMachinery" v-html="t('rules.general.machineryTypeWild')"></p>
     </template>
     <template #warnings v-if="isVeryHardDifficultyJillMcDowellWild">
       <div v-if="isVeryHardDifficultyJillMcDowellWild" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.jill-mcdowell.machineryShop')"></div>
@@ -62,6 +63,9 @@ export default defineComponent({
     }
   },
   computed: {
+    isWildMachinery() : boolean {
+      return (this.actionItem.machineryTypes ?? []).includes(MachineryType.WILD)
+    },
     isVeryHardDifficultyJillMcDowellWild() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.JILL_MCDOWELL, this.state)
           && (this.actionItem.machineryTypes ?? []).includes(MachineryType.WILD)

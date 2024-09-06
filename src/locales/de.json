@@ -3,7 +3,7 @@
   "home": {
     "title": "Wasserkraft Solo Helper",
     "play1": "Spiele <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Wasserkraft</b></a> gegen Automa, die künstliche Gegenspielerin.",
-    "play2": "Diese Applikation ersetzt das Automa-Kartendeck und führt dich durch das Spiel und das Automa-Regelwerk.",
+    "play2": "Diese Applikation ersetzt das Automa-Kartendeck und führt dich durch das Spiel und das Automa-Regelwerk. Alle Schwierigkeitsgrade werden unterstützt, die Spezialfähigkeiten der Unternehmens und die der meisten Chefingenieure. Es kann gegen bis zu drei Automas gespielt werden.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
@@ -61,6 +61,7 @@
     "title": "Automa | Automa {bot}",
     "done": "Arbeiter platziert",
     "notPossible": "Nicht möglich",
+    "criteria": "Kriterien",
     "structurePlacement": {
       "damElevation": "Grundmauer/Erhöhung",
       "conduit": "Rohrwerk",
@@ -185,6 +186,7 @@
       "noExecutiveOfficers": "<b>Automa nutzen keine Chefingenieure.</b>",
       "doesNotTakeContractTiles": "<b>Automa nehmen keine Vertragsplättchen.</b> Automa erfüllen Verträge direkt aus der offenen Auslage im Notariat.",
       "advancedTechnologyTiles": "<b>Automa können fortgeschrittene Technologieplättchen erwerben</b>, sie nutzen aber nur die Basisfunktion <i>(den Bau eines Bauteils)</i> und nicht die Sonderfähigkeit.",
+      "machineryTypeWild": "Erhält der Automa eine <b>beliebige Maschine</b>, nimmt er sich die Art von Maschine, von der er weniger in seinem Vorrat hat. Bei Gleichstand nimmt er 1 Bagger.",
       "objectiveTileScoring": "Wenn ein Automa für die Erfüllung des <b>Zielplättchens</b> Punkte erhält, dann erhält er, ggf. nach der Auflösung von Gleichständen, 5 Zusatzpunkte. Ohne Gleichstände also 20 SP für den 1. Platz, 15 SP für den 2. Platz oder 10 SP für den 3. Platz.",
       "building": "Ein Automa benutzt niemals die Aktionsfelder der von ihm <b>aktivierten privaten Gebäude</b>. Sobald 1 Automa aber ein privates Gebäude aktiviert hat, gilt das dazugehörige linke Aktionsfeld (ohne Zusatzkosten) für dich für den Rest des Spiels als belegt.",
       "engineerPlacement": {
@@ -208,7 +210,7 @@
         "damReachable": "Der Automa führt diese Aktion nur durch, wenn mindestens 1 der platzierten Wassereinheiten zu 1 seiner Staumauern gelangen würde <i>(prüfe, ob dies zutrifft, wenn das Wasser sofort fließen würde, selbst wenn die Wassereinheit nicht sofort fließt)</i>.",
         "damCapacity": "Die Staumauer muss noch genug Kapazität haben, um die Wassereinheit auch stauen zu können. Wenn die erste Wassereinheit zu einer eigenen Staumauer gelangen kann, die zweite aber nicht, dann platziert der Automa nur 1 Wassereinheit.",
         "engineerPlacement": "Der Automa platziert 1 Arbeiter auf dem Managementplan.",
-        "tiebreaker": "Der Automa führt die Aktion so aus, dass möglichst viele Wassereinheiten zu seinen Staumauern gelangen. Wenn es dafür mehrere verschiedene Möglichkeiten gibt, nutze die angezeigten Kriterien zur Entscheidung, auf welche Quelle(n) die Wassereinheit(en) gelegt werden. Prüfe die Buchstaben einer nach dem anderen <i>(Reihenfolge der Quellen siehe unten)</i> und platziere die Einheiten auf der ersten möglichen Quelle."
+        "tiebreaker": "Der Automa führt die Aktion so aus, dass möglichst viele Wassereinheiten zu seinen Staumauern gelangen. Wenn es dafür mehrere verschiedene Möglichkeiten gibt, nutze die Quellen-Kriterien zur Entscheidung."
       },
       "contract-office": {
         "intro": "Der Automa entfernt die offenen Verträge der abgebildeten Farbe aus dem Spiel. Danach rückt er seinen Energiemarker 2 Felder vor.",
@@ -288,6 +290,10 @@
         "plains": "Ein Bauplatz im Vorland."
       }
     },
+    "headwater": {
+      "title": "Quellen",
+      "criteria": "Wenn es mehrere verschiedene Möglichkeiten gibt, Wassereinheiten auf Quellen zu platzieren, nutze diese Kriterien zur Entscheidung. Prüfe die Buchstaben einer nach dem anderen und platziere die Einheiten auf der ersten möglichen Quelle."
+    },
     "difficultyLevel": {
       "easy": {
         "noIncome": "<b>Schwachstrom:</b> Der Automa erhält kein Einkommen aus seinem Unternehmensplan.",
@@ -323,10 +329,10 @@
           }
         },
         "corporation": {
-          "usa": "<b>Starkstrom/USA:</b> Hat der Automa bei einer Aktion „Wassermanagement“ mehrere Quellen zur Auswahl, wählt er die, die über die Spezialfähigkeit mehr Schritte auf der Energieleiste auslöst.",
-          "germany": "<b>Starkstrom/Deutschland:</b> Bei der zweiten Energieproduktion (sofern eine möglich ist) produziert der Automa dort, wo er den höchsten Ertrag erzielt.",
-          "france": "<b>Starkstrom/Frankreich:</b> Der Automa berücksichtigt die Fähigkeit sowohl bei der Bedingung „Erfüllbarer Vertrag“ als auch bei der Erfüllung eines Vertrags.",
-          "netherlands": "<b>Starkstrom/Die Niederlande:</b> Platziere die Wassereinheit hinter der Staumauer <i>(außer der gerade genutzten)</i>, mit der der Automa als nächstes die meiste Energie produzieren könnte. Gibt es keine oder mehrere solcher Staumauern, nutze die Grundmauer-Kriterien zur Entscheidung, hinter welchen Damm die Wassereinheit platziert wird."
+          "usa": "<b>Starkstrom/USA & 3. Turbinenhaus gebaut:</b> Hat der Automa bei einer Aktion „Wassermanagement“ mehrere Quellen zur Auswahl, wählt er die, die über die Spezialfähigkeit mehr Schritte auf der Energieleiste auslöst.",
+          "germany": "<b>Starkstrom/Deutschland & 3. Turbinenhaus gebaut:</b> Bei der zweiten Energieproduktion (sofern eine möglich ist) produziert der Automa dort, wo er den höchsten Ertrag erzielt.",
+          "france": "<b>Starkstrom/Frankreich & 3. Turbinenhaus gebaut:</b> Der Automa berücksichtigt die Fähigkeit sowohl bei der Bedingung „Erfüllbarer Vertrag“ als auch bei der Erfüllung eines Vertrags.",
+          "netherlands": "<b>Starkstrom/Die Niederlande & 3. Turbinenhaus gebaut:</b> Platziere die Wassereinheit hinter der Staumauer <i>(außer der gerade genutzten)</i>, mit der der Automa als nächstes die meiste Energie produzieren könnte. Gibt es keine oder mehrere solcher Staumauern, nutze die Grundmauer-Kriterien zur Entscheidung, hinter welchen Damm die Wassereinheit platziert wird."
         }
       },
       "veryHard": {

@@ -3,7 +3,7 @@
   "home": {
     "title": "Barrage Solo Helper",
     "play1": "Play <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Barrage</b></a> against Automa, the artificial opponent.",
-    "play2": "This application replaces the Automa card deck and guides you through the game and Automa ruleset.",
+    "play2": "This application replaces the Automa card deck and guides you through the game and Automa ruleset. It supports all difficult levels, the company special abilities and most of the executive officers. You can play against up to three Automa players.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
@@ -60,6 +60,7 @@
     "title": "Automa | Automa {bot}",
     "done": "Engineer placed | Engineers placed",
     "notPossible": "Not possible",
+    "criteria": "Criteria",
     "structurePlacement": {
       "damElevation": "Dam/Elevation",
       "conduit": "Conduit",
@@ -184,6 +185,7 @@
       "noExecutiveOfficers": "<b>Automa don’t use Executive Officers.</b>",
       "doesNotTakeContractTiles": "<b>Automa don’t take Contract tiles.</b> Automa players directly fulfill face-up Contracts available in the Contract Office.",
       "advancedTechnologyTiles": "<b>Automa can buy Advanced Technology tiles</b>, but they will use only the basic effect <i>(i.e. the construction of a structure)</i> without using the relevant special effect.",
+      "machineryTypeWild": "If Automa receives a <b>wild Machinery</b>, it takes the type of Machinery of which it has less available <i>(i.e. out of the Construction Wheel)</i>. In case of tie, Automa takes 1 Excavator.",
       "objectiveTileScoring": "If an Automa player has the most elements according to the <b>Objective tile</b> condition, it scores 20 VPs; if it is the second, it score 15 VPs; if it is third, it scores 10 VPs.",
       "building": "Automa will never use the <b>Private Building special action</b>. However, when a Private Building has been activated by an Automa, the corresponding action space on the left <i>(the cheaper one)</i> will no longer be available for any other player for the rest of the game.",
       "engineerPlacement": {
@@ -207,7 +209,7 @@
         "damReachable": "The Automa will perform this action only if at least one of the placed Water Drops can reach one of its own Dams <i>(either immediately or in the upcoming Water Phase, taking into consideration the current map status)</i>.",
         "damCapacity": "The Dam <i>(or Dams)</i> must have enough capacity left to store the Water Drop(s); any exceeding Water Drop will not be placed.",
         "engineerPlacement": "If at least one Water Drop was placed with this action, the Automa must place one Engineer on the Water Management Action spaces.",
-        "tiebreaker": "The Automa will always try to place the highest amount of Water Drops. If there are two or more eligible Headstreams, use the indicated tiebreaker relating to the basins as shown below. If the first letter refers to one of the possible Headstreams, place the Water Drops there, and so on."
+        "tiebreaker": "The Automa will always try to place the highest amount of Water Drops. If there are two or more eligible Headstreams, use the Headwater criteria."
       },
       "contract-office": {
         "intro": "The Automa removes the indicated Contracts from the Contract Office. Then, it move its Energy marker by 2 steps on the Energy Track.",
@@ -287,6 +289,10 @@
         "plains": "A Powerhouse in the Plains."
       }
     },
+    "headwater": {
+      "title": "Headwater",
+      "criteria": "If there are two or more eligible Headstreams, use the indicated tiebreaker relating to the basins as shown below. If the first letter refers to one of the possible Headstreams, place the Water Drops there, and so on."
+    },
     "difficultyLevel": {
       "easy": {
         "noIncome": "<b>Low Voltage:</b> Automa players never receive income from their own Company board.",
@@ -322,10 +328,10 @@
           }
         },
         "corporation": {
-          "usa": "<b>High Voltage/USA:</b> When performing a Water Management action, in case of tie among eligible Headstreams, Automa will chose the one generating more steps on the Energy Track.",
-          "germany": "<b>High Voltage/Germany:</b> The second production, if available, is always the most productive one among the eligibles.",
-          "france": "<b>High Voltage/France:</b> Apply the discount both when checking the production action conditions AND when fulfilling the Contract.",
-          "netherlands": "<b>High Voltage/The Netherlands:</b> The Water Drop is placed on the Dam connected to the most productive system <i>(except the one just used)</i>. If there is not an eligible dam which is part of a complete productive system or there is more than one, use the Dam criteria to determine which Dam will be filled."
+          "usa": "<b>High Voltage/USA & 3rd Powerhouse built:</b> When performing a Water Management action, in case of tie among eligible Headstreams, Automa will chose the one generating more steps on the Energy Track.",
+          "germany": "<b>High Voltage/Germany & 3rd Powerhouse built:</b> The second production, if available, is always the most productive one among the eligibles.",
+          "france": "<b>High Voltage/France & 3rd Powerhouse built:</b> Apply the discount both when checking the production action conditions AND when fulfilling the Contract.",
+          "netherlands": "<b>High Voltage/The Netherlands & 3rd Powerhouse built:</b> The Water Drop is placed on the Dam connected to the most productive system <i>(except the one just used)</i>. If there is not an eligible dam which is part of a complete productive system or there is more than one, use the Dam criteria to determine which Dam will be filled."
         }
       },
       "veryHard": {

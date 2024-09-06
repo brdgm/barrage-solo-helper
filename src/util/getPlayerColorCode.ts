@@ -12,15 +12,15 @@ export default function getPlayerColorCode(playerColor: PlayerColor) : string {
     case PlayerColor.BLACK:
       return "#3a3a3a"
     case PlayerColor.TURQUOISE:
-      return "#1a7077"
+      return "#339999"
     case PlayerColor.RED:
-      return "#af2a4b"
+      return "#cc3366"
     case PlayerColor.ORANGE:
-      return "#de761f"
+      return "#ff6633"
     case PlayerColor.PINK:
-      return "#ea8fb6"
+      return "#ff99cc"
     case PlayerColor.YELLOW:
-      return "#ebb51d"
+      return "#ffcc33"
     default:
       throw new Error(`Invalid player color: ${playerColor}.`)
   }

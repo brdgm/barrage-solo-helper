@@ -26,10 +26,10 @@
     </template>
     <template #warnings v-if="isEasyDifficulty || isHardDifficultyGermany || isHardDifficultyFrance || isHardDifficultyNetherlands || isVeryHardDifficultyViktorViesler
         || isVeryHardDifficultySimoneLuciani || isVeryHardDifficultyDrOctavius || isVeryHardDifficultyWuFang || isVeryHardDifficultyFranzDeLasse">
-      <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noProductionBonus')"></div>
-      <div v-if="isHardDifficultyGermany" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.germany')"></div>
-      <div v-if="isHardDifficultyFrance" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.france')"></div>
-      <div v-if="isHardDifficultyNetherlands" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.netherlands')"></div>
+      <div v-if="isEasyDifficulty" class="alert alert-success fst-italic" v-html="t('rules.difficultyLevel.easy.noProductionBonus')"></div>
+      <div v-if="isHardDifficultyGermany" class="alert alert-info fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.germany')"></div>
+      <div v-if="isHardDifficultyFrance" class="alert alert-info fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.france')"></div>
+      <div v-if="isHardDifficultyNetherlands" class="alert alert-info fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.netherlands')"></div>
       <div v-if="isVeryHardDifficultyViktorViesler" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.viktor-fiesler')"></div>
       <div v-if="isVeryHardDifficultySimoneLuciani" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.simone-luciani')"></div>
       <div v-if="isVeryHardDifficultyDrOctavius" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.dr-octavius')"></div>
