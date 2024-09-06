@@ -30,6 +30,10 @@
             </ul>
           </div>
         </li>
+        <li>
+          <AppIcon type="machinery-type" name="wild" class="icon float-end"/>
+          <span v-html="t('rules.general.machineryTypeWild')"></span>
+        </li>
         <li v-html="t('rules.general.objectiveTileScoring')"></li>
         <li v-if="hasLeeghwaterProject" v-html="t('rules.general.building')"></li>
       </ul>

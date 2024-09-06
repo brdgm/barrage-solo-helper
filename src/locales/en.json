@@ -185,6 +185,7 @@
       "noExecutiveOfficers": "<b>Automa don’t use Executive Officers.</b>",
       "doesNotTakeContractTiles": "<b>Automa don’t take Contract tiles.</b> Automa players directly fulfill face-up Contracts available in the Contract Office.",
       "advancedTechnologyTiles": "<b>Automa can buy Advanced Technology tiles</b>, but they will use only the basic effect <i>(i.e. the construction of a structure)</i> without using the relevant special effect.",
+      "machineryTypeWild": "If Automa receives a <b>wild Machinery</b>, it takes the type of Machinery of which it has less available <i>(i.e. out of the Construction Wheel)</i>. In case of tie, Automa takes 1 Excavator.",
       "objectiveTileScoring": "If an Automa player has the most elements according to the <b>Objective tile</b> condition, it scores 20 VPs; if it is the second, it score 15 VPs; if it is third, it scores 10 VPs.",
       "building": "Automa will never use the <b>Private Building special action</b>. However, when a Private Building has been activated by an Automa, the corresponding action space on the left <i>(the cheaper one)</i> will no longer be available for any other player for the rest of the game.",
       "engineerPlacement": {
