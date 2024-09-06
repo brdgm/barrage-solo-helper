@@ -1,0 +1,393 @@
+{
+  "gameTitle": "Barrage",
+  "home": {
+    "title": "Barrage Solo Helper",
+    "play1": "Play <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Barrage</b></a> against Automa, the artificial opponent.",
+    "play2": "This application replaces the Automa card deck and guides you through the game and Automa ruleset. It supports all difficult levels, the company special abilities and most of the executive officers. You can play against up to three Automa players.",
+    "feedback": "Discussion and Feedback:"
+  },
+  "setup": {
+    "title": "Setup Game",
+    "expansions": {
+      "title": "Expansions",
+      "leeghwater-project": "The Leeghwater Project",
+      "far-companies": "Far Companies",
+      "executive-officer-promo": "Executive Officer Promos (Subset)"
+    },
+    "players": {
+      "title": "Player",
+      "playerCount": "Human Players",
+      "playerCountItem": "{count} Player | {count} Players",
+      "playerColor": "Player Color | Player {index} Color",
+      "botCount": "Automa",
+      "botCountItem": "{count} Automa | {count} Automas",
+      "botColor": "Automa Color | Automa {index} Color"
+    },
+    "difficultyLevel": {
+      "title": "Difficulty Level",
+      "easy": "Easy",
+      "hard": "Hard"
+    }
+  },
+  "setupBot": {
+    "title": "Setup Automa",
+    "corporation": {
+      "title": "Corporation"
+    },
+    "executiveOfficer": {
+      "title": "Executive Officer"
+    },
+    "setup": {
+      "title": "Setup",
+      "playerPieces": "Setup Automa with the chosen company board and all game components.",
+      "noExecutiveOfficer": "Do not assign executive officers to Automa.",
+      "noStartingContract": "Do not assign starting contracts to Automa.",
+      "victoryPoints": "Automa begins the game with 16 Victory Points.",
+      "playerOrder": "Initial player order:"
+    },
+    "validCorporation": "Please select a corporation for Automa.",
+    "validCorporationExecutiveOfficer": "Please select a corporation and executive officer for Automa."
+  },
+  "turnPlayer": {
+    "title": "Player | Player {player}",
+    "takeTurn": "Take your turn.",
+    "pass":{
+      "title": "Pass",
+      "confirm": "Pass and drop out of the action phase?"
+    }
+  },
+  "turnBot": {
+    "title": "Automa | Automa {bot}",
+    "done": "Engineer placed | Engineers placed",
+    "notPossible": "Not possible",
+    "criteria": "Criteria",
+    "structurePlacement": {
+      "damElevation": "Dam/Elevation",
+      "conduit": "Conduit",
+      "powerhouse": "Powerhouse"
+    },
+    "placeEngineers": {
+      "title": "Place Engineers",
+      "button": "Place Engineers: {count}",
+      "intro": "By default, the number of engineers is used as indicated for the action. But in High Voltage or Overpowered mode the actual number of Engineers to use may be different due to Advanced Technology tiles or Executive Officer special powers.",
+      "workerUsed": "{count} Engineer | {count} Engineers",
+      "nextAction": "Execute another action"
+    }
+  },
+  "roundStart": {
+    "title": "Round {round}",
+    "income": {
+      "title": "Income",
+      "activeIncome": "All players get the active income on their Company boards."
+    },
+    "headstreams": {
+      "title": "Headstreams",
+      "placeWaterDrops": "Place Water Drops on the Headstream tiles according to the number indicated on the tile for the current round."
+    }
+  },
+  "roundEnd": {
+    "title": "End of Round {round}",
+    "waterFlow": {
+      "title": "Water Flow",
+      "flowDown": "All the Water Drops on the Headstream tiles flow down."
+    },
+    "scoring": {
+      "title": "Scoring",
+      "firstSecondPlayer": "The first player on the Energy Track scores 6 Victory Points; the second scores 2 Victory Points",
+      "gainCredits": "Gain Credits (Victory Points for Automa) according to the position on the Energy Track.",
+      "bonusTile": "Score Victory Points thanks to the Bonus tile of the current round, discard the Bonus tile."
+    },
+    "determinePlayerOrder": {
+      "title": "Update Turn Order",
+      "currentItems": "Current Player Order",
+      "newItems": "New Player Order",
+      "newItemsSelect": "Please determine the new player order."
+    },
+    "cleanUp": {
+      "title": "Clean Up",
+      "resetEnergyMarkers": "Reset Energy markers.",
+      "takeBackEngineers": "Take back all engineers.",
+      "discardTechnologyTiles": "Discard and refill Advanced Technology tiles.",
+      "discardExternalWorkTiles": "Discard and refill External Work tiles."
+    }
+  },
+  "gameEnd": {
+    "title": "End of Game",
+    "objectiveTile": "Gain Victory Points according to the Objective tile.",
+    "resourcesLeft": "Score Victory Points for the resources left available in the supply.",
+    "resourcesLeftExplanation": "Add the resources (Excavators, Concrete Mixers, Credits) together. Score 1 Victory Point every 5 items of any type. Any resources still on the Construction Wheel are not counted.",
+    "damWater": "Score 1 Victory Point for each Water Drop held by own Dams.",
+    "privateBuildingTiles": "Score Victory Points for the activated Private Building tiles.",
+    "winner": "The player with the most Victory Points wins.",
+    "tiebreaker": "In case of a tie, the player who produced most Energy Units during the last round is the winner."
+  },
+  "sideBar": {
+    "round": "Round {round}",
+    "turn": "Turn {turn}",
+    "workers": "{count} Engineers",
+    "pass": "(passed)"
+  },
+  "difficultyLevel": {
+    "1": "Easy - \"Low Voltage\"",
+    "2": "Medium",
+    "3": "Hard - \"High Voltage\"",
+    "4": "Very Hard - \"Overpowered\""
+  },
+  "corporation": {
+    "usa": "USA",
+    "germany": "Germany",
+    "italy": "Italy",
+    "france": "France",
+    "netherlands": "The Netherlands"
+  },
+  "executiveOfficer": {
+    "wilhelm-adler": "Wilhelm Adler",
+    "graziano-del-monte": "Graziano del Monte",
+    "viktor-fiesler": "Viktor Fiesler",
+    "jill-mcdowell": "Jill McDowell",
+    "solomon-p-jordan": "Solomon P. Jordan",
+    "anton-krylov": "Anton Krylov",
+    "mahiri-sekibo": "Mahiri Sekibo",
+    "simone-luciani": "Simone Luciani",
+    "tommaso-battista": "Tommaso Battista",
+    "leslie-spencer": "Leslie Spencer",
+    "margot-fouche": "Margot Fouché",
+		"elon-audia": "Elon Audia",
+    "gennaro-grasso": "Gennaro Grasso",
+    "wu-fang": "Wu Fang",
+    "dr-octavius": "Dr. Octavius",
+    "amir-zahir": "Amir Zahir",
+    "franz-de-lasse": "Franz de Lasse"
+  },
+  "actionItem": {
+    "production": "Production",
+    "water-management": "Water Management",
+    "contract-office": "Contract Office",
+    "construction": "Construction",
+    "workshop": "Workshop",
+    "machinery-shop": "Machinery Shop",
+    "patent-office": "Patent Office",
+    "external-work": "External Work",
+    "bank": "Bank"
+  },
+  "constructionType": {
+    "dam": "Dam Base",
+    "elevation": "Elevation",
+    "conduit": "Conduit",
+    "powerhouse": "Powerhouse"
+  },
+  "rules": {
+    "general": {
+      "title": "Automa Rules",
+      "intro": "Some of the basic rules of the game are modified for the Automa players:",
+      "noCredits": "<b>Automa don’t use Credits.</b> Each time an Automa must pay or gain Credits, it pays or gains an equivalent number of Victory Points <i>(e.g. if an Automa build a structure in a space with a red bordered icon, it will pay 3 VPs)</i>. Automa Victory Points can go down below zero.",
+      "noCompanyAbility": "<b>Automa don’t use the Company special ability activated</b> by the construction of the 3rd Powerhouse. However, Automa will use the production bonuses activated by building the 2nd and 4th Powerhouse.",
+      "noExecutiveOfficers": "<b>Automa don’t use Executive Officers.</b>",
+      "doesNotTakeContractTiles": "<b>Automa don’t take Contract tiles.</b> Automa players directly fulfill face-up Contracts available in the Contract Office.",
+      "advancedTechnologyTiles": "<b>Automa can buy Advanced Technology tiles</b>, but they will use only the basic effect <i>(i.e. the construction of a structure)</i> without using the relevant special effect.",
+      "machineryTypeWild": "If Automa receives a <b>wild Machinery</b>, it takes the type of Machinery of which it has less available <i>(i.e. out of the Construction Wheel)</i>. In case of tie, Automa takes 1 Excavator.",
+      "objectiveTileScoring": "If an Automa player has the most elements according to the <b>Objective tile</b> condition, it scores 20 VPs; if it is the second, it score 15 VPs; if it is third, it scores 10 VPs.",
+      "building": "Automa will never use the <b>Private Building special action</b>. However, when a Private Building has been activated by an Automa, the corresponding action space on the left <i>(the cheaper one)</i> will no longer be available for any other player for the rest of the game.",
+      "engineerPlacement": {
+        "title": "Engineer Placement",
+        "constructionSpaces": "<b>Automa construction action spaces</b> - Unlike human players, when an Automa player performs a construction action, it will place the number of Engineers indicated in the App on the Company board, independently from the availability of action spaces. There is no limit to the number of structures Automa can build in a single round.",
+        "managementSpaces": "<b>Automa Management action spaces</b> - Unlike human players, when Automa players perform a Management action, Automa will place - on the relevant section - the number of Engineers indicated in the App, independently from the availability of action spaces. The Engineers indicated in the App have to be placed always on the first free <i>(i.e. without Engineers)</i> action space on the relevant section of the Management Board, Patent Office or Extra Management Board, from the top to the bottom of the left column and then from the top to the bottom of the right column ignoring the number of Engineers required on the filled action space. Please note that the occupied action space does not define the action effectively performed by the Automa - which is actually indicated by the icon on the Automa tile. <b>If there are no available action spaces on the relevant section, and the Automa is able to perform the action indicated on the Automa tile, just place the required Engineers next to the corresponding section.</b>"
+      }
+    },
+    "actionItem": {
+      "production": {
+        "intro": "The Automa will produce Energy using its best available production system, only if the following conditions are all satisfied:",
+        "productionSystemReady": "<b>Production System Ready</b> - There is at least one structure connection <i>(i.e. Dam containing at least 1 Water Drop + Conduit + Powerhouse)</i> which allows Automa to produce.",
+        "energyTrack": "<b>Energy Track</b> - Automa is not yet in the current round numbered section which allows it to get the Full Reward from the Bonus tile OR Automa is not currently the first player on the Energy Track <i>(at least one of the two conditions)</i>.",
+        "contractRequirement": "<b>Contract Requirement</b> - The maximum potential energy producible <i>(including the production bonus/malus indicated)</i> is equal or greater than the energy requirement of at least one available Contract of the indicated type.",
+        "produceEnergy": "<b>The Automa will produce Energy using the best production system available</b> <i>(i.e. the one producing the higher amount of Energy)</i> <b>and applying the indicated bonus/malus </b> <i>(and eventually the bonus activated on the Company board)</i>. Move the Water Drops and update the Energy Track as usual.",
+        "fulfillContract": "Then, <b>the Automa will immediately fulfill the higher value Contract available</b> in the Contract Office, not only among those checked as a condition <i>(in case of tie, the contract on the right space)</i> and receive the corresponding reward. The fulfilled Contract is removed and replaced by a new one. The Automa can fulfill National Contracts like a human player <i>(in case of tie, the rightmost one)</i>.",
+        "multipleOptions": "If there are multiple options to fulfill the contract with the same highest value, Automa uses water from a neutral dam first. If there are still multiple options, check the „Conduit“ location criteria."
+      },
+      "water-management": {
+        "intro": "The Automa will place the indicated amount of Water Drops on one or more Headstream tiles, following the standard rules.",
+        "damReachable": "The Automa will perform this action only if at least one of the placed Water Drops can reach one of its own Dams <i>(either immediately or in the upcoming Water Phase, taking into consideration the current map status)</i>.",
+        "damCapacity": "The Dam <i>(or Dams)</i> must have enough capacity left to store the Water Drop(s); any exceeding Water Drop will not be placed.",
+        "engineerPlacement": "If at least one Water Drop was placed with this action, the Automa must place one Engineer on the Water Management Action spaces.",
+        "tiebreaker": "The Automa will always try to place the highest amount of Water Drops. If there are two or more eligible Headstreams, use the Headwater criteria."
+      },
+      "contract-office": {
+        "intro": "The Automa removes the indicated Contracts from the Contract Office. Then, it move its Energy marker by 2 steps on the Energy Track.",
+        "engineerPlacement": "Place the Engineer in the Contract Office.",
+        "newContractTiles": "Then, place 2 new Contract tiles in the empty spaces taking them from the related pile."
+      },
+      "construction": {
+        "intro": "The Automa will build the indicated Structure if all of the following conditions are satisfied:",
+        "structureAvailable": "<b>Structure Available</b> - The Automa has the indicated structure piece available on its Company board.",
+        "technologyTileAvailable": "<b>Technology Tile Available</b> - The Automa has at least one Technology tile <i>(basic or advanced)</i> that allows it to build the indicated Structure.",
+        "machineriesAvailable": "<b>Machineries Available</b> - The Automa has the minimum required number of Machineries <i>(Excavators or Concrete Mixers)</i> for the construction of the depicted structure. Some tile indicates also a specific type of structure <i>(e.g. a Base to be built in the Mountains area - 5 Excavators required - or a Conduit of value 3 or more - at least 6 Excavators required, and so on)</i>.",
+        "buildingSpaceAvailable": "<b>Building Space Available</b> - There is at least one available building space on the Map for the indicated Structure.",
+        "buildStructure": "If all the above conditions are verified, Automa will build the indicated structure, placing Engineers on its Company board and using its Construction Wheel as usual <i>(remember that the Automa doesn’t follow the standard rules of construction action spaces)</i>.",
+        "oneSpace": "If there is only one possible space on the Map for the placement of the structure, the Automa will place the structure in that space.",
+        "multipleSpaces": "If there are more possible spaces, you have to follow the rules described in “Structure Placing” procedure <i>(click on the indicated criteria)</i>.",
+        "income": "Like a human player, if an income is discovered on the Automa Company board, Automa receive immediately that income.",
+        "building": {
+          "up": "<b>Building:</b> The Automa will build the Building connected to the first <i>(from bottom to top)</i> available Private Building for which it has available the required Machineries.",
+          "down": "<b>Building:</b> The Automa will build the Building connected to the first <i>(from top to bottom)</i> available Private Building for which it has available the required Machineries."
+        }
+      },
+      "workshop": {
+        "intro": "The Automa will rotate its Construction Wheel by the indicated number of segments, only if it’s not completely empty.",
+        "technologyTiles": "If the Automa Construction Wheel has Machineries and/or Technology Tiles inside, perform the action.",
+        "engineerPlacement": "Automa must place the number of Engineers indicated by the App on the Workshop action spaces and pay the number of Victory Points as indicated. As usual, the Automa must immediately take back any Machineries and/or Technology tiles that are back in the entry segment after each individual rotation."
+      },
+      "machinery-shop": {
+        "intro": "Automa pays the indicated number of VPs to take the indicated number of Machineries.",
+        "engineerPlacement": "Place the indicated number of Engineers on the first available Machinery Shop action space and pay the number of Victory Points indicated on the Action tile to take the Machineries indicated on the Action tile."
+      },
+      "patent-office": {
+        "intro": "The Automa will pay 2 Victory Points to take the indicated Advanced Technology tile, if available in the Patent Office (or a wild Advanced Technology tile, if available).",
+        "engineerPlacement": "Automa places 1 Engineer on the Patent Office action space and pays 2 Victory Points instead of 2 Engineers and 5 VPs.",
+        "multipleTiles": "In case two tiles for the same structure are available, Automa will take the higher level tile.",
+        "noneAvailable": "If neither the indicated Technology tile neither a wild Technology tile are available, the Automa will not perform this action."
+      },
+      "external-work": {
+        "intro": "The Automa will fulfill an available External Work.",
+        "enoughMachineries": "Check if the Automa has enough Machineries to complete at least one available External Work. If it can fulfill more than one External Work, Automa will choose which one to fulfill according to the indicated preference order: the number refers to the tiles position on the Management board.",
+        "engineerPlacement": "Automa places the indicated number of Engineers on the corresponding action space and discard the required number of Machineries.",
+        "particularEffect": "<b>Particular effect:</b> if the Automa must fulfill a Contract as effect of an External Work, it must fulfill the higher Private Contract available in the Contract Office <i>(in case of a tie, the one on the right; if the effect is a 4-value Contract, the higher between those valued 4 or less)</i>."
+      },
+      "bank": {
+        "intro": "Automa scores 1 Victory Point, placing 1 Engineer in the Bank."
+      }
+    },
+    "structurePlacement": {
+      "intro": "Check these criteria on after another to find the building space:",
+      "thirdStructure": "<b>Third structure of a system</b>: First of all, if there is one single potential system <i>(i.e. a set including a Dam - neutral or owned - a Conduit, and an owned Powerhouse)</i> that would be completed by placing the structure, the position completing this system will be chosen.",
+      "location": "Location <b>{location}</b> or higher number.",
+      "locationDescription": "Start from this position and proceed forward following the basins order up to the first eligible position. If you reach the end of the positions start again your check from the first position and proceed forward up to the first eligible position. When looking for further building spaces for conduits, first check the left space (A), then the right space (B).",
+      "locationRestriction": "Some actions indicate a particular restriction to the structure to be build (e.g. a Dam Base in the Mountains): this restriction rule to any below further tiebreaking.",
+      "damElevation": {
+        "downstream-dam": "Dam linked (by a Conduit link) to a downstream basin with an owned Dam <b>OTHERWISE</b> A Dam not linked (by a Conduit link) to a downstream basin with an opponent Dam.",
+        "most-powerful-conduit": "A Dam linked to the most powerful Conduit already built (owned or opponent).<br/><b>Tiebreaker: owned Conduit.</b>",
+        "most-water-drops": "A Dam able to receive the most Water Drops in the current Map condition.<br/><b>Tiebreaker: </b>",
+        "owned-powerhouse": "A Dam linked to an owned Powerhouse.",
+        "red-outline-space": "A building space with a red outline Dam among the eligibles.",
+        "upstream-powerhouse": "A Dam linked (through basins without other Dams) to an upstream Powerhouse."
+      },
+      "conduit": {
+        "most-powerful": "The most powerful Conduit among the eligibles.",
+        "opponent-neutral-owned-dam": "A Conduit linked to an opponent / neutral / owned Dam.<br/><b>Tiebreaker: opponent, neutral, owned.</b>",
+        "opponent-owned-powerhouse": "Conduit linked to an opponent / owned Powerhouse.<br/><b>Tiebreaker: opponent, owned.</b>",
+        "owned-neutral-opponent-dam": "A Conduit linked to an owned / neutral / opponent Dam.<br/><b>Tiebreaker: owned, neutral, opponent.</b>",
+        "owned-opponent-powerhouse": "A Conduit linked to an owned / opponent Powerhouse.<br/><b>Tiebreaker: owned, opponent.</b>",
+        "second-most-powerful": "The second most powerful Conduit among the eligibles, if any <b>OTHERWISE</b> The most powerful one."
+      },
+      "powerhouse": {
+        "feeding-owned-dam": "A Powerhouse feeding an owned Dam (through basins without other Dams) <b>OTHERWISE</b> A Powerhouse not directly feeding (through basins) an opponent Dam.",
+        "hills-basin-5": "Powerhouse in the Hills basin <b>5</b> (see Map).",
+        "hills-basin-6": "Powerhouse in the Hills basin <b>5</b> (see Map).",
+        "hills-basin-7": "Powerhouse in the Hills basin <b>7</b> (see Map).",
+        "most-powerful-conduit": "A Powerhouse linked to the most powerful Conduit already built (owned or opponent).<br/><b>Tiebreaker: owned Conduit.</b>",
+        "not-feeding-opponent-dam": "A Powerhouse not directly feeding (through rivers) an opponent Dam <b>OTHERWISE</b> A Powerhouse directly feeding an owned Dam (through rivers without other Dams).",
+        "owned-dam": "A Powerhouse linked to an owned Dam.",
+        "plains": "A Powerhouse in the Plains."
+      }
+    },
+    "headwater": {
+      "title": "Headwater",
+      "criteria": "If there are two or more eligible Headstreams, use the indicated tiebreaker relating to the basins as shown below. If the first letter refers to one of the possible Headstreams, place the Water Drops there, and so on."
+    },
+    "difficultyLevel": {
+      "easy": {
+        "noIncome": "<b>Low Voltage:</b> Automa players never receive income from their own Company board.",
+        "noProductionBonus": "<b>Low Voltage:</b> Automa players does not use production bonuses (activated by building Powerhouses)."
+      },
+      "hard": {
+        "companyAbilities": "<b>High Voltage:</b> Automa players can use the special ability of their Company board, activated with the construction of the 3rd Powerhouse.",
+        "advancedTechnologyTiles": "<b>High Voltage:</b> Automa players can use the special effect of the used Advanced Technology tiles. If Automa have more tiles related to the same structure (including wild tiles), they always use higher level tile. In case of tie, Automa prefer a specific structure tile, before to use a wild tile.",
+        "advancedTechnology": {
+          "conduit-level2": {
+            "title": "Conduit Level 2",
+            "description": "In case of a tie among eligible positions, Automa always choose a Conduit of value 3 or higher."
+          },
+          "powerhouse-level2": {
+            "title": "Powerhouse Level 2",
+            "description": "Automa will activate the best production available."
+          },
+          "building-level1": {
+            "title": "Building Level 1",
+            "description": "Instead of the indicated special effect (i.e. activation of the connected Private Building), Automa immediately score the connected Private Building Victory Points."
+          },
+          "building-level2": {
+            "title": "Building Level 2",
+            "description": "Automa use only the type of Machinery of which they have less in their supply. In case of a tie, Automa will use only Excavators."
+          },
+          "joker-level1": {
+            "title": "Any of your choice Level 1",
+            "description": "If building a Base, after checking all the Structure Placing Procedure criteria, Automa will chose the building space with a red outline."
+          },
+          "joker-level2": {
+            "title": "Any of your choice Level 2",
+            "description": "Automa will use the Machineries usually required for the structure they are building, before using the other type."
+          }
+        },
+        "corporation": {
+          "usa": "<b>High Voltage/USA & 3rd Powerhouse built:</b> When performing a Water Management action, in case of tie among eligible Headstreams, Automa will chose the one generating more steps on the Energy Track.",
+          "germany": "<b>High Voltage/Germany & 3rd Powerhouse built:</b> The second production, if available, is always the most productive one among the eligibles.",
+          "france": "<b>High Voltage/France & 3rd Powerhouse built:</b> Apply the discount both when checking the production action conditions AND when fulfilling the Contract.",
+          "netherlands": "<b>High Voltage/The Netherlands & 3rd Powerhouse built:</b> The Water Drop is placed on the Dam connected to the most productive system <i>(except the one just used)</i>. If there is not an eligible dam which is part of a complete productive system or there is more than one, use the Dam criteria to determine which Dam will be filled."
+        }
+      },
+      "veryHard": {
+        "executiveOfficers": "<b>Overpowered:</b> Automa players receive an Executive Officer tile during the setup and use the corresponding special ability during the play.",
+        "executiveOfficer": {
+          "wilhelm-adler": "<b>Overpowered/Wilhelm Adler:</b> When checking for a Dam positioning criteria, <b>Dams on the Mountains</b> (and secondarily in the Hills) <b>are always preferred</b> among the eligibles.",
+          "graziano-del-monte": "<b>Overpowered/Graziano del Monte:</b> When checking for the structure construction action, if Automa can build an Elevation (e.g. there is a Dam that it is possible to elevate with the available Machineries and Technology tiles), <b>Automa will always perform an Elevation construction action, ignoring the structures suggested by the Automa tiles.</b>",
+          "viktor-fiesler": "<b>Overpowered/Viktor Fiesler:</b> When Automa perform a production action using a Conduit of value 1 or 2, <b>Automa will produce using only 1 Water Drop</b>.",
+          "jill-mcdowell": {
+            "constructConduit": "<b>Overpowered/Jill McDowell:</b> When building a Conduit, in case of a tie, Automa prefer to use Concrete Mixers instead of Excavators.",
+            "machineryShop": "<b>Overpowered/Jill McDowell:</b> When taking Machineries of your choice, Automa <b>always prefer to take Concrete Mixers</b>."
+          },
+          "solomon-p-jordan": "<b>Overpowered/Solomon P. Jordan:</b> <b>Automa will use only 3 Victory Points instead of a Machinery</b>, no more (using Machineries - if available - will be always preferred than spending Victory Points). Remember this ability when checking the Machineries availability condition to perform a construction action.",
+          "anton-krylov": "<b>Overpowered/Anton Krylov:</b> <b>The Special Technology tile will be always used after the Advanced and Basic tiles.</b> When used, the tile will always copy the Technology tile of the highest level (i.e. in this order: 3, 2, 1, basic). In case of a tie, Automa prefer a specific structure tile, before to use a wild tile.",
+          "mahiri-sekibo": "<b>Overpowered/Mahiri Sekibo:</b> The Automa don’t use this special ability. On the other hand, <b>human players must perform their first action during each round as if they were an Automa.</b> Use the Automa tiles for this, the App does not support it. Draw a new Automa tile and follow it to “decide” which action to perform.",
+          "simone-luciani": "<b>Overpowered/Simone Luciani:</b> When a production is performed, <b>Automa fulfill as more Contracts as possible</b>, instead of choosing the highest valued one among the available. In case of tie, the higher value Contracts are chosen (e.g. if the Contracts of value 2, 3, 6, 6, 9, 10 are available, with a production of 9 Energy Units the Contracts of value 3 and 6 will be fulfilled. As usual, in case of a tie the Contracts on the right is chosen. In the same condition, with a production of 12 Energy Units, the Contracts of value 2, 3 and 6 on the right will be fulfilled). If a National Contract is eligible to be fulfilled, it will be always chosen (eventually in combination with one or more Private Contracts).",
+          "tommaso-battista": "<b>Overpowered/Tommaso Battista:</b> <b>If an action listed on the Automa tile that will end the turn</b> (i.e. not the actions in the dashed frame) <b>requires 1 single Engineer, Automa will use the “Architect”</b> (if available) and after the resolution of the action, immediately starts a second turn, using a new Automa tile.",
+          "leslie-spencer": "<b>Overpowered/Leslie Spencer:</b> If the Special Technology tile is available when checking the possibility to perform a construction action, check the possibility to perform an External Works action using the Special Technology tile as a construction action requiring 1 Engineer: if so, <b>perform the External Works “construction” and ignore the structure indicated by the Automa tile</b>. Otherwise resolve the construction action as usual.",
+          "margot-fouche": "<b>Overpowered/Margot Fouché:</b> The Automa don’t use this special ability. However, when checking the possibility to perform a construction action, if it’s possible to build a Building (e.g. there is a Private Building that it is possible to build with the available Machineries and Technology tiles), <b>Automa will always build a Building, ignoring the structure indicated by the Automa tile</b>. The Building construction action requires 1 Engineer.",
+          "elon-audia": "<b>Overpowered/Elon Audia:</b> When building or performing an External Work action, Automa will always prefer to use Excavators and Concrete Mixer before using its Excamixers.",
+          "gennaro-grasso": "<b>Overpowered/Gennaro Grasso:</b> Automa doesn't use the extra Construction space of Gennaro Grasso. The first construction of each round always costs 1 less engineer (put the used Engineer in the XO extra Construction space as a reminder: in case of the construction of a Private Building just put 1 Credit on the Construction space as a reminder). ",
+          "wu-fang": {
+            "production": "<b>Overpowered/Wu Fang:</b> Before checking which action (or actions) to perform from the Automa tile, the Automa player must verify if it controls a number of Water Drops equal (or higher) to the energy needed to fulfill a contract depicted in the production action. If that's true, as its turn action, it will place one of its Engineers on its XO special action space and produce an amount of Energy Units equal to the Water Drops it controls; then, it will fulfill the best possible contract (in case of a tie, the rightmost one).",
+            "construction": "<b>Overpowered/Wu Fang:</b> Before checking if and which structure to build, if the Automa has the right technology tile and required machineries, it will preferably build a Dam Base (or, as second choice, a Dam Elevation) rather than the structure depicted on the Automa tile."
+          },
+          "dr-octavius": "<b>Overpowered/Dr. Octavius:</b> When checking the amount of producible Energy, the Automa will consider the best possible production considering all possible Water Drops sources. Moreover, when selecting where to place a Dam Base, it will prefer, between the current eligible positions, one connected (by a built or unbuilt Conduit) to one of its Powerhouses.",
+          "amir-zahir": "<b>Overpowered/Amir Zahir:</b> Whenever the Automa places Water Drop on the Headstreams, they always flow immediately. When the Automa is supposed to place Water Drops that should flow immediately on the Headstreams, the Automa will try to place them in its Dams. The first choice will be a Dam that is part of a complete Dam-Conduit-Powerhouse system (in case of multiple options, the system having the Conduit with the highest value). The seconds choice will be any of its Dams. In case of a tie between multiple options, the Automa follows the location of the Dam criteria.",
+          "franz-de-lasse": "<b>Overpowered/Franz de Lasse:</b> The Automa always chooses to fulfill the available Contracts with the lowest value (in case of a tie, it would be the Contract on the right)."
+        }
+      }
+    }
+  },
+  "notfound": {
+    "title": "Not Found"
+  },
+  "action": {
+    "playGame": "Play Game",
+    "startGame": "Start Game",
+    "next": "Next",
+    "nextRound": "Next Round",
+    "abortGame": "Abort Game",
+    "abortGameConfirm": "Aborting the running game - are you sure?",
+    "endGame": "End Game",
+    "endGameConfirm": "End this game and return to home screen - are you sure?",
+    "cancel": "Cancel",
+    "backToHome": "Back to Home",
+    "back": "Back",
+    "close": "Close",
+    "ok": "OK",
+    "pass": "Pass"
+  },
+  "footer": {
+    "credits": "Credits"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Refresh Application",
+    "notice": "The application was updated - do you want to refresh to use the latest version?"
+  }
+}
