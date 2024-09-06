@@ -11,33 +11,29 @@
         </div>
       </div>
 
-      <div v-if="showCriteriaDamElevation" class="criteriaBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalCriteriaDamElevationRules">
+      <div v-if="showCriteriaDamElevation || showCriteriaAll" class="criteriaBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalCriteriaDamElevationRules">
         <div class="criteria">
           <div class="criteriaTitle">{{t('turnBot.structurePlacement.damElevation')}}</div>
-          <template v-if="!showCriteriaDamElevationLocationOnly">
-            <template v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
-              <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon" :class="criteria"/>
-              <hr/>
-            </template>
+          <template v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
+            <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon" :class="criteria"/>
+            <hr/>
           </template>
           <div class="location">{{criteriaCard.locationDamElevation}}</div>
         </div>
       </div>
 
-      <div v-if="showCriteriaConduit" class="criteriaBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalCriteriaConduitRules">
+      <div v-if="showCriteriaConduit || showCriteriaAll" class="criteriaBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalCriteriaConduitRules">
         <div class="criteria">
           <div class="criteriaTitle">{{t('turnBot.structurePlacement.conduit')}}</div>
-          <template v-if="!showCriteriaConduitLocationOnly">
-            <template v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
-              <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon" :class="criteria"/>
-              <hr/>
-            </template>
+          <template v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
+            <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon" :class="criteria"/>
+            <hr/>
           </template>
           <div class="location">{{criteriaCard.locationConduit}}{{criteriaCard.locationConduitPosition}}</div>
         </div>
       </div>
 
-      <div v-if="showCriteriaPowerhouse" class="criteriaBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalCriteriaPowerhouseRules">
+      <div v-if="showCriteriaPowerhouse || showCriteriaAll" class="criteriaBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalCriteriaPowerhouseRules">
         <div class="criteria">
           <div class="criteriaTitle">{{t('turnBot.structurePlacement.powerhouse')}}</div>
           <template v-for="criteria of criteriaCard.placingCriteriaPowerhouse" :key="criteria" >
@@ -48,10 +44,23 @@
         </div>
       </div>
     
+      <div v-if="showCriteriaHeadwater || showCriteriaAll" class="criteriaBox mt-2 me-3" data-bs-toggle="modal" data-bs-target="#modalCriteriaHeadwaterRules">
+        <div class="criteria">
+          <div class="criteriaTitle">{{t('rules.headwater.title')}}</div>
+          <div class="headwaterCriteria">
+            <HeadwaterCriteria :criteriaCard="criteriaCard"/>
+          </div>
+        </div>
+      </div>
+    
     </div>
 
-    <div v-if="hasHardDifficulty">
-      <button class="btn btn-outline-secondary mt-3" data-bs-toggle="modal" data-bs-target="#modalPlaceEngineers">
+    <div>
+      <button class="btn btn-sm mt-3 me-3" :class="{'btn-secondary':showCriteriaAll, 'btn-outline-secondary':!showCriteriaAll}"
+          @click="showCriteriaAll = !showCriteriaAll">
+        {{t('turnBot.criteria')}}
+      </button>
+      <button v-if="hasHardDifficulty" class="btn btn-sm btn-outline-secondary mt-3 me-3" data-bs-toggle="modal" data-bs-target="#modalPlaceEngineers">
         {{t('turnBot.placeEngineers.button', {count:workerUsed})}}
       </button>
     </div>
@@ -71,29 +80,19 @@
       </template>
     </ModalDialog>
 
-    <ModalDialog v-if="showCriteriaDamElevation" id="modalCriteriaDamElevationRules" :title="t('turnBot.structurePlacement.damElevation')"
+    <ModalDialog v-if="showCriteriaDamElevation || showCriteriaAll" id="modalCriteriaDamElevationRules" :title="t('turnBot.structurePlacement.damElevation')"
         :size-lg="true" :scrollable="true">
       <template #body>
         <p v-html="t('rules.structurePlacement.intro')"></p>
         <ol class="criteriaRules">
-          <li v-if="!showCriteriaDamElevationLocationOnly">
-            <span v-html="t('rules.structurePlacement.thirdStructure')"></span>
+          <span v-html="t('rules.structurePlacement.thirdStructure')"></span>
+          <hr/>
+          <li v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
+            <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon float-start" :class="criteria"/>
+            <span v-html="t(`rules.structurePlacement.damElevation.${criteria}`)"></span><span>&nbsp;</span>
+            <HeadwaterCriteria v-if="isShowHeadstreamOrder(criteria)" :criteriaCard="criteriaCard"/>
             <hr/>
           </li>
-          <template v-if="!showCriteriaDamElevationLocationOnly">
-            <li v-for="criteria of criteriaCard.placingCriteriaDamElevation" :key="criteria">
-              <AppIcon type="placing-criteria-dam-elevation" :name="criteria" class="icon float-start" :class="criteria"/>
-              <span v-html="t(`rules.structurePlacement.damElevation.${criteria}`)"></span>
-              <template v-if="isShowHeadstreamOrder(criteria)">
-                <span>&nbsp;</span>
-                <template v-for="(column,index) of criteriaCard.waterManagementBasinColumns" :key="column">
-                  <span v-if="index > 0"> - </span>
-                  <span>{{column}}</span>
-                </template>
-              </template>
-              <hr/>
-            </li>
-          </template>
           <li>
             <span v-html="t('rules.structurePlacement.location', {location:criteriaCard.locationDamElevation})"></span><br/>
             <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
@@ -102,26 +101,22 @@
         <div class="text-center">
           <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
-        <p v-if="!showCriteriaDamElevationLocationOnly" class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
+        <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
       </template>
     </ModalDialog>
 
-    <ModalDialog v-if="showCriteriaConduit" id="modalCriteriaConduitRules" :title="t('turnBot.structurePlacement.conduit')"
+    <ModalDialog v-if="showCriteriaConduit || showCriteriaAll" id="modalCriteriaConduitRules" :title="t('turnBot.structurePlacement.conduit')"
         :size-lg="true" :scrollable="true">
       <template #body>
         <p v-html="t('rules.structurePlacement.intro')"></p>
         <ol class="criteriaRules">
-          <li v-if="!showCriteriaConduitLocationOnly">
-            <span v-html="t('rules.structurePlacement.thirdStructure')"></span>
+          <span v-html="t('rules.structurePlacement.thirdStructure')"></span>
+          <hr/>
+          <li v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
+            <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon float-start" :class="criteria"/>
+            <span v-html="t(`rules.structurePlacement.conduit.${criteria}`)"></span>
             <hr/>
           </li>
-          <template v-if="!showCriteriaConduitLocationOnly">
-            <li v-for="criteria of criteriaCard.placingCriteriaConduit" :key="criteria">
-              <AppIcon type="placing-criteria-conduit" :name="criteria" class="icon float-start" :class="criteria"/>
-              <span v-html="t(`rules.structurePlacement.conduit.${criteria}`)"></span>
-              <hr/>
-            </li>
-          </template>
           <li>
             <span v-html="t('rules.structurePlacement.location', {location:`${criteriaCard.locationConduit}${criteriaCard.locationConduitPosition}`})"></span><br/>
             <span class="small fst-italic" v-html="t('rules.structurePlacement.locationDescription')"></span>
@@ -130,11 +125,11 @@
         <div class="text-center">
           <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
-        <p v-if="!showCriteriaConduitLocationOnly" class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
+        <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
       </template>
     </ModalDialog>
 
-    <ModalDialog v-if="showCriteriaPowerhouse" id="modalCriteriaPowerhouseRules" :title="t('turnBot.structurePlacement.powerhouse')"
+    <ModalDialog v-if="showCriteriaPowerhouse || showCriteriaAll" id="modalCriteriaPowerhouseRules" :title="t('turnBot.structurePlacement.powerhouse')"
         :size-lg="true" :scrollable="true">
       <template #body>
         <p v-html="t('rules.structurePlacement.intro')"></p>
@@ -157,6 +152,17 @@
           <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
+      </template>
+    </ModalDialog>
+
+    <ModalDialog v-if="showCriteriaHeadwater || showCriteriaAll" id="modalCriteriaHeadwaterRules" :title="t('rules.headwater.title')"
+        :size-lg="true" :scrollable="true">
+      <template #body>
+        <p v-html="t('rules.headwater.criteria')"></p>
+        <div class="headwaterCriteria text-center mb-3">
+          <HeadwaterCriteria :criteriaCard="criteriaCard"/>
+        </div>
+        <img src="@/assets/map-basin.webp" alt="" class="img-fluid"/>
       </template>
     </ModalDialog>
 
@@ -198,9 +204,18 @@ import Corporation from '@/services/enum/Corporation'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 import hasDifficultyLevel from '@/util/hasDifficultyLevel'
+import HeadwaterCriteria from '../rules/HeadwaterCriteria.vue'
 
 export default defineComponent({
   name: 'ActionBox',
+  emits: {
+    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
+  },
+  components: {
+    AppIcon,
+    ModalDialog,
+    HeadwaterCriteria
+  },
   setup(props) {
     const { t } = useI18n()
     const state = useStateStore()
@@ -209,13 +224,6 @@ export default defineComponent({
     const nextAction = ref(props.actionItem.nextAction ?? false)
 
     return { t, state, workerUsed, nextAction }
-  },
-  emits: {
-    workerPlaced: (_workerUsed: number, _nextAction: boolean) => true  // eslint-disable-line @typescript-eslint/no-unused-vars
-  },
-  components: {
-    AppIcon,
-    ModalDialog
   },
   props: {
     actionItem: {
@@ -231,30 +239,28 @@ export default defineComponent({
       required: true
     }
   },
+  data() {
+    return {
+      showCriteriaAll: false
+    }
+  },
   computed: {
     workerCount() : number {
       // required workers - limited by available workers
       return Math.min(this.actionItem.workerCount, this.navigationState.workerCount)
     },
     showCriteriaDamElevation() : boolean {
-      return (this.actionItem.action == Action.CONSTRUCTION
-          && (this.actionItem.constructionType == ConstructionType.DAM || this.actionItem.constructionType == ConstructionType.ELEVATION
-            || this.isVeryHardDifficultyGracianoDelMonte || this.isVeryHardDifficultyWuFang))
-          || (this.actionItem.action == Action.PRODUCTION && this.isHardDifficultyNetherlands)
-          || (this.actionItem.action == Action.WATER_MANAGEMENT && this.isVeryHardDifficultyAmirZahir)
-    },
-    showCriteriaDamElevationLocationOnly() : boolean {
-      return this.actionItem.action == Action.WATER_MANAGEMENT && this.isVeryHardDifficultyAmirZahir
+      return this.actionItem.action == Action.CONSTRUCTION
+          && (this.actionItem.constructionType == ConstructionType.DAM || this.actionItem.constructionType == ConstructionType.ELEVATION)
     },
     showCriteriaConduit() : boolean {
-      return (this.actionItem.action == Action.CONSTRUCTION && this.actionItem.constructionType == ConstructionType.CONDUIT)
-          || (this.actionItem.action == Action.PRODUCTION)
-    },
-    showCriteriaConduitLocationOnly() : boolean {
-      return (this.actionItem.action == Action.PRODUCTION)
+      return this.actionItem.action == Action.CONSTRUCTION && this.actionItem.constructionType == ConstructionType.CONDUIT
     },
     showCriteriaPowerhouse() : boolean {
       return this.actionItem.action == Action.CONSTRUCTION && this.actionItem.constructionType == ConstructionType.POWERHOUSE
+    },
+    showCriteriaHeadwater() : boolean {
+      return this.actionItem.action == Action.WATER_MANAGEMENT
     },
     hasHardDifficulty() : boolean {
       return hasDifficultyLevel(DifficultyLevel.HARD, this.state)
@@ -364,5 +370,9 @@ ul > li, ol > li {
 .map {
   width: 100%;
   max-width: 500px;
+}
+.headwaterCriteria {
+  font-size: 20px;
+  font-weight: bold;
 }
 </style>
