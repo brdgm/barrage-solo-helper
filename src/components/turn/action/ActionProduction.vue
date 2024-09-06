@@ -117,6 +117,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .action {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .icon {

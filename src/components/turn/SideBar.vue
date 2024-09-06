@@ -3,10 +3,10 @@
     {{t('sideBar.round', {round:navigationState.round})}}<br/>
     {{t('sideBar.turn', {turn:navigationState.turn})}}<br/>
     <div v-for="botInfo of botInfos" :key="botInfo.bot" class="mt-3">
-      <h6>
+      <b>
         <PlayerColorIcon :playerColor="botInfo.playerColor" class="playerIcon"/>
         {{t('turnBot.title', {bot:botInfo.bot}, botCount)}}
-      </h6>
+      </b>
       <p v-if="botInfo.workerCount > 0" v-html="t('sideBar.workers', {count:botInfo.workerCount})"></p>
       <p v-else v-html="t('sideBar.pass')"></p>
     </div>
@@ -58,14 +58,22 @@ export default defineComponent({
   margin-left: 15px;
   margin-bottom: 10px;
   margin-right: -12px;
-  padding: 15px 5px 15px 15px;
+  padding: 15px 10px 15px 15px;
   background-color: #ddd;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+    width: 120px;
+  }
 }
 .playerIcon {
   height: 1.1rem;
   width: 1.1rem;
   margin-top: -0.1rem;
+  @media (max-width: 600px) {
+    height: 0.8rem;
+    width: 0.8rem;
+  }
 }
 </style>

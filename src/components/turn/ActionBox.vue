@@ -311,8 +311,11 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-position: right 5px top 5px;
   background-size: 1.5rem;
-  min-width: 200px;
   text-align: center;
+  min-width: 200px;
+  @media (max-width: 600px) {
+    min-width: 150px;
+  }
   .nextAction {
     border: 2px dashed #999;
     padding: 10px;
@@ -322,6 +325,11 @@ export default defineComponent({
     margin-bottom: 0.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+      margin-left: 0.15rem;
+      margin-right: 0.15rem;
+    }
   }
   .workers {
     margin-bottom: 1rem;
@@ -344,6 +352,10 @@ ul > li, ol > li {
     max-width: 7rem;
     max-height: 2.5rem;
     align-self: center;
+    @media (max-width: 600px) {
+      max-width: 5rem;
+      max-height: 1.75rem;
+    }
   }
   .location {
     font-weight: bold;
