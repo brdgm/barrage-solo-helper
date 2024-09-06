@@ -24,7 +24,7 @@
     <template #warnings v-if="isEasyDifficulty || isVeryHardDifficultyWilhelmAdlerDam || isVeryHardDifficultyGracianoDelMonte || isVeryHardDifficultyJillMcDowellConduit
         || isVeryHardDifficultySolomonPJordan || isVeryHardDifficultyAntonKrylov || isVeryHardDifficultyLeslieSpencer || isVeryHardDifficultyMargotFouche
         || isVeryHardDifficultyElonAudia || isVeryHardDifficultyGennaroGrasso || isVeryHardDifficultyWuFang">
-      <div v-if="isEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
+      <div v-if="isEasyDifficulty" class="alert alert-success fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
       <div v-if="isVeryHardDifficultyWilhelmAdlerDam" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.wilhelm-adler')"></div>
       <div v-if="isVeryHardDifficultyGracianoDelMonte" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.graziano-del-monte')"></div>
       <div v-if="isVeryHardDifficultyJillMcDowellConduit" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.jill-mcdowell.constructConduit')"></div>

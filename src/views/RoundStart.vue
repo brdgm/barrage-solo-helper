@@ -6,7 +6,7 @@
     <ul>
       <li v-html="t('roundStart.income.activeIncome')"></li>
     </ul>
-    <div v-if="hasEasyDifficulty" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
+    <div v-if="hasEasyDifficulty" class="alert alert-success fst-italic" v-html="t('rules.difficultyLevel.easy.noIncome')"></div>
   </template>
 
   <template v-if="round < 5">

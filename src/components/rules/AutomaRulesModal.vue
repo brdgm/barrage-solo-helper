@@ -10,7 +10,7 @@
         </li>
         <li>
           <span v-html="t('rules.general.noCompanyAbility')"></span>
-          <div v-if="hasHardDifficulty" class="alert alert-warning fst-italic mt-2" v-html="t('rules.difficultyLevel.hard.companyAbilities')"></div>
+          <div v-if="hasHardDifficulty" class="alert alert-info fst-italic mt-2" v-html="t('rules.difficultyLevel.hard.companyAbilities')"></div>
         </li>
         <li>
           <span v-html="t('rules.general.noExecutiveOfficers')"></span>
@@ -19,7 +19,7 @@
         <li v-html="t('rules.general.doesNotTakeContractTiles')"></li>
         <li>
           <span v-html="t('rules.general.advancedTechnologyTiles')"></span>
-          <div v-if="hasHardDifficulty" class="alert alert-warning fst-italic mt-2">
+          <div v-if="hasHardDifficulty" class="alert alert-info fst-italic mt-2">
             <span v-html="t('rules.difficultyLevel.hard.advancedTechnologyTiles')"></span>
             <ul>
               <li v-for="tile of hardDifficultyAdvancedTechnologyTiles" :key="tile">

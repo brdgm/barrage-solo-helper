@@ -322,10 +322,10 @@
           }
         },
         "corporation": {
-          "usa": "<b>High Voltage/USA:</b> When performing a Water Management action, in case of tie among eligible Headstreams, Automa will chose the one generating more steps on the Energy Track.",
-          "germany": "<b>High Voltage/Germany:</b> The second production, if available, is always the most productive one among the eligibles.",
-          "france": "<b>High Voltage/France:</b> Apply the discount both when checking the production action conditions AND when fulfilling the Contract.",
-          "netherlands": "<b>High Voltage/The Netherlands:</b> The Water Drop is placed on the Dam connected to the most productive system <i>(except the one just used)</i>. If there is not an eligible dam which is part of a complete productive system or there is more than one, use the Dam criteria to determine which Dam will be filled."
+          "usa": "<b>High Voltage/USA & 3rd Powerhouse built:</b> When performing a Water Management action, in case of tie among eligible Headstreams, Automa will chose the one generating more steps on the Energy Track.",
+          "germany": "<b>High Voltage/Germany & 3rd Powerhouse built:</b> The second production, if available, is always the most productive one among the eligibles.",
+          "france": "<b>High Voltage/France & 3rd Powerhouse built:</b> Apply the discount both when checking the production action conditions AND when fulfilling the Contract.",
+          "netherlands": "<b>High Voltage/The Netherlands & 3rd Powerhouse built:</b> The Water Drop is placed on the Dam connected to the most productive system <i>(except the one just used)</i>. If there is not an eligible dam which is part of a complete productive system or there is more than one, use the Dam criteria to determine which Dam will be filled."
         }
       },
       "veryHard": {
