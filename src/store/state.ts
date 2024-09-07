@@ -90,6 +90,9 @@ export interface Turn {
   bot?: number
   cardDeck?: CardDeckPersistence
   workerUsed?: number
+  actionCard?: string
+  criteriaCard?: string
+  action?: number
   passed?: boolean
 }
 export interface CardDeckPersistence {

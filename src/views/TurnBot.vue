@@ -85,6 +85,9 @@ export default defineComponent({
         bot:this.bot,
         cardDeck: this.navigationState.cardDeck.toPersistence(),
         workerUsed: workerUsedTotal,
+        actionCard: this.navigationState.cardDeck.actionCard?.id,
+        criteriaCard: this.navigationState.cardDeck.criteriaCard?.id,
+        action: this.navigationState.action,
         passed: passed ? true : undefined
       })
       this.$router.push(this.routeCalculator.getNextRouteTo(this.state))
