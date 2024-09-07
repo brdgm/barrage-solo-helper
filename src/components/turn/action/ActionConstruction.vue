@@ -30,8 +30,10 @@
       <div v-if="isVeryHardDifficultyJillMcDowellConduit" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.jill-mcdowell.constructConduit')"></div>
       <div v-if="isVeryHardDifficultySolomonPJordan" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.solomon-p-jordan')"></div>
       <div v-if="isVeryHardDifficultyAntonKrylov" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.anton-krylov')"></div>
-      <div v-if="isVeryHardDifficultyLeslieSpencer" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.leslie-spencer')"></div>
-      <div v-if="isVeryHardDifficultyMargotFouche" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.margot-fouche')"></div>
+      <div v-if="isVeryHardDifficultyLeslieSpencer" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.leslie-spencer',
+          {externalWorkTiles:veryHardDifficultyLeslieSpencerExternalWorkTiles})"></div>
+      <div v-if="isVeryHardDifficultyMargotFouche" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.margot-fouche',
+          {buildingSearchDirection:veryHardDifficultyMargotFoucheBuildingSearchDirection})"></div>
       <div v-if="isVeryHardDifficultyElonAudia" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.elon-audia')"></div>
       <div v-if="isVeryHardDifficultyGennaroGrasso" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.gennaro-grasso')"></div>
       <div v-if="isVeryHardDifficultyWuFang" class="alert alert-warning fst-italic" v-html="t('rules.difficultyLevel.veryHard.executiveOfficer.wu-fang.construction')"></div>
@@ -52,6 +54,8 @@ import { useStateStore } from '@/store/state'
 import isDifficultyLevel from '@/util/isDifficultyLevel'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
+import getDiscardPileAllPreviousActions from '@/util/getDiscardPileAllPreviousActions'
+import ConduitPosition from '@/services/enum/ConduitPosition'
 
 export default defineComponent({
   name: 'ActionConstruction',
@@ -118,8 +122,16 @@ export default defineComponent({
     isVeryHardDifficultyLeslieSpencer() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.LESLIE_SPENCER, this.state)
     },
+    veryHardDifficultyLeslieSpencerExternalWorkTiles() : string {
+      const externalWorkTiles = getDiscardPileAllPreviousActions(this.navigationState.cardDeck)
+          .find(action => action.externalWorkTiles)?.externalWorkTiles ?? []
+      return externalWorkTiles.join(' - ')
+    },
     isVeryHardDifficultyMargotFouche() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.MARGOT_FOUCHE, this.state)
+    },
+    veryHardDifficultyMargotFoucheBuildingSearchDirection() : string {
+      return this.criteriaCard.locationConduitPosition == ConduitPosition.A ? '⇧' : '⇩'
     },
     isVeryHardDifficultyElonAudia() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.ELON_AUDIA, this.state)
