@@ -37,7 +37,7 @@
     <div class="col-5 col-lg-3">
       <PlayerColorPicker :model-value="playerColors[botCount+playerColorIndex-1]" @update:model-value="color => playerColorChanged(botCount+playerColorIndex-1, color)"/>
     </div>
-  </div>  
+  </div>
 
 </template>
 
@@ -48,6 +48,8 @@ import { useStateStore } from '@/store/state'
 import PlayerColorPicker from './PlayerColorPicker.vue'
 import PlayerColor from '@/services/enum/PlayerColor'
 import isPlayerColorAvailable from '@/util/isPlayerColorAvailable'
+import Expansion from '@/services/enum/Expansion'
+import { computed } from 'vue'
 
 export default defineComponent({
   name: 'PlayersSetup',
@@ -59,32 +61,48 @@ export default defineComponent({
     const state = useStateStore()
     const expansions = state.setup.expansions
 
-    const botCount = ref(state.setup.playerSetup?.botCount || 1)
-    const playerCount = ref(state.setup.playerSetup?.playerCount || 1)
-    const playerColors = ref(state.setup.playerSetup?.playerColors || [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED])
+    const botCount = ref(state.setup.playerSetup.botCount)
+    const playerCount = ref(state.setup.playerSetup.playerCount)
+    const playerColors = ref(state.setup.playerSetup.playerColors)
+    const maxTotalPlayerCount = computed(() => {
+      if (state.setup.expansions.includes(Expansion.FIVE_PLAYER)) {
+        return 5
+      }
+      return 4
+    })
 
     watch(
       () => state.setup.expansions,
       () => {
+        // check max player/bot count
+        while (botCount.value + playerCount.value > maxTotalPlayerCount.value) {
+          if (botCount.value > 1) {
+            botCount.value--
+          }
+          else {
+            playerCount.value--
+          }
+        }
         // available player colors depend on expansion selection - fallback to available color if expansion selection changes
-        for (let i=0; i<playerColors.value.length; i++) {
+        for (let i=0; i<maxTotalPlayerCount.value; i++) {
           if (!isPlayerColorAvailable(playerColors.value[i], expansions)) {
             const firstAvailableColor = Object.values(PlayerColor).find(color => !playerColors.value.includes(color) && isPlayerColorAvailable(color, expansions))
-            playerColors.value[i] = firstAvailableColor || PlayerColor.WHITE
+            const firstUnusedUnavailableColor = Object.values(PlayerColor).find(color => !playerColors.value.includes(color))
+            playerColors.value[i] = firstAvailableColor ?? firstUnusedUnavailableColor ?? PlayerColor.WHITE
           }
         }
       },
       { deep: true}
     )
 
-    return { t, state, playerCount, botCount, playerColors }
+    return { t, state, playerCount, botCount, maxTotalPlayerCount, playerColors }
   },
   computed: {
     maxPlayerCount() : number {
-      return 4 - this.botCount
+      return this.maxTotalPlayerCount - this.botCount
     },
     maxBotCount() : number {
-      return 4 - this.playerCount
+      return this.maxTotalPlayerCount - this.playerCount
     }
   },
   watch: {
@@ -115,9 +133,10 @@ export default defineComponent({
     playerColorChanged(index : number, color : PlayerColor) {
       const newPlayerColors = [...this.playerColors]
       newPlayerColors[index] = color
-      for (let i=0; i<this.playerColors.length; i++) {
+      for (let i=0; i<this.maxTotalPlayerCount; i++) {
         if (i!=index && newPlayerColors[i]==color) {
-          const newColor = Object.values(PlayerColor).find(c => !newPlayerColors.includes(c))
+          const newColor = Object.values(PlayerColor).find(c => isPlayerColorAvailable(c, this.state.setup.expansions)
+              && !newPlayerColors.slice(0, this.maxTotalPlayerCount).includes(c))
           if (newColor) {
             newPlayerColors[i] = newColor
           }
