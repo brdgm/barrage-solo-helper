@@ -174,7 +174,8 @@
         <p v-html="t('turnBot.placeEngineers.intro')"></p>
         <div class="form-check form-check-inline" v-for="count in [2,1,0]" :key="count">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="numberEngineers" v-model="workerUsed" :value="count">
+            <input class="form-check-input" type="radio" name="numberEngineers" v-model="workerUsed" :value="count"
+                :disabled="navigationState.workerCount < count">
             {{t('turnBot.placeEngineers.workerUsed', {count}, count)}}
           </label>
         </div>
@@ -227,6 +228,9 @@ export default defineComponent({
     const state = useStateStore()
 
     const workerUsed = ref(props.actionItem.workerCount)
+    if (workerUsed.value > props.navigationState.workerCount) {
+      workerUsed.value = props.navigationState.workerCount
+    }
     const nextAction = ref(props.actionItem.nextAction ?? false)
 
     return { t, state, workerUsed, nextAction }

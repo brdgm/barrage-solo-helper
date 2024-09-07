@@ -6,6 +6,12 @@
       <b>actionCard</b>: {{actionCard}}<br/>
       <b>criteriaCard</b>: {{criteriaCard}}<br/>
     </p>
+    <p v-if="navigationState.turn > 1" class="debug fw-bold">Previous turns:</p>
+    <ul v-if="navigationState.turn > 1" class="debug">
+      <li v-for="turn in getPreviousTurns().toReversed()" :key="turn.turn">
+        Turn {{turn.turn}}: {{turn.action}} - {{turn.workerUsed}} worker (action: {{turn.actionCard}}, criteria: {{turn.criteriaCard}})
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -15,6 +21,9 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import CardDeck from '@/services/CardDeck'
+import Action from '@/services/enum/Action'
+import Cards from '@/services/Cards'
+import BotActions from '@/services/BotActions'
 
 export default defineComponent({
   name: 'DebugInfo',
@@ -46,6 +55,23 @@ export default defineComponent({
         placingCriteriaConduit, locationConduit, locationConduitPosition,
         placingCriteriaPowerhouse, locationPowerhouse, waterManagementBasinColumns }
     }
+  },
+  methods: {
+    getPreviousTurns() : {round: number, turn: number, actionCard?: string, criteriaCard?: string,
+          action?: Action, workerUsed?: number}[] {
+      const currentRound = this.state.rounds.find(round => round.round == this.navigationState.round)
+      if (currentRound) {
+        return currentRound.turns.filter(turn => turn.turn < this.navigationState.turn && turn.bot == this.navigationState.bot
+            && turn.actionCard != undefined && turn.criteriaCard != undefined && turn.action != undefined)
+          .map(turn => {
+            const actionCard = Cards.get(turn.actionCard ?? '')
+            const botActions = new BotActions(actionCard, this.navigationState.round, this.navigationState.bot, this.state)
+            return {round: turn.round, turn: turn.turn, actionCard: turn.actionCard, criteriaCard: turn.criteriaCard,
+                action: botActions.items[turn.action ?? 0]?.action, workerUsed: turn.workerUsed}
+          })
+      }
+      return []
+    }
   }
 })
 </script>
@@ -53,5 +79,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .debug {
   font-size: small;
+}
+p.debug, ul.debug {
+  margin: 0;
 }
 </style>
