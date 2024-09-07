@@ -99,8 +99,10 @@
           </li>
         </ol>
         <div class="text-center">
-          <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
+          <img v-if="hasFivePlayerExpansion" src="@/assets/map-with-overlay-5player.webp" alt="" class="map"/>
+          <img v-else src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
+        <p v-if="hasFivePlayerExpansion" class="mt-3" v-html="t('rules.structurePlacement.fivePlayerMap')"></p>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
         <p v-html="t('rules.structurePlacement.damElevation.tiebreakerReadLinedSpace')"></p>
       </template>
@@ -124,8 +126,10 @@
           </li>
         </ol>
         <div class="text-center">
-          <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
+          <img v-if="hasFivePlayerExpansion" src="@/assets/map-with-overlay-5player.webp" alt="" class="map"/>
+          <img v-else src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
+        <p v-if="hasFivePlayerExpansion" class="mt-3" v-html="t('rules.structurePlacement.fivePlayerMap')"></p>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
       </template>
     </ModalDialog>
@@ -150,8 +154,10 @@
           </li>
         </ol>
         <div class="text-center">
-          <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
+          <img v-if="hasFivePlayerExpansion" src="@/assets/map-with-overlay-5player.webp" alt="" class="map"/>
+          <img v-else src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
+        <p v-if="hasFivePlayerExpansion" class="mt-3" v-html="t('rules.structurePlacement.fivePlayerMap')"></p>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
       </template>
     </ModalDialog>
@@ -159,15 +165,7 @@
     <ModalDialog v-if="showCriteriaHeadwater || showCriteriaAll" id="modalCriteriaHeadwaterRules" :title="t('rules.headwater.title')"
         :size-lg="true" :scrollable="true">
       <template #body>
-        <p class="fw-bold fst-italic" v-html="t('rules.actionItem.water-management.intro')"></p>
-        <p v-html="t('rules.actionItem.water-management.damReachable')"></p>
-        <p v-html="t('rules.actionItem.water-management.damCapacity')"></p>
-        <p v-html="t('rules.actionItem.water-management.engineerPlacement')"></p>
-        <p v-html="t('rules.actionItem.water-management.tiebreaker')"></p>
-        <div class="headwaterCriteria text-center mb-3">
-          <HeadwaterCriteria :criteriaCard="criteriaCard"/>
-        </div>
-        <img src="@/assets/map-basin.webp" alt="" class="img-fluid"/>
+        <WaterManagementRules :criteriaCard="criteriaCard"/>
       </template>
     </ModalDialog>
 
@@ -209,7 +207,9 @@ import Corporation from '@/services/enum/Corporation'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 import hasDifficultyLevel from '@/util/hasDifficultyLevel'
+import WaterManagementRules from '../rules/WaterManagementRules.vue'
 import HeadwaterCriteria from '../rules/HeadwaterCriteria.vue'
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'ActionBox',
@@ -219,6 +219,7 @@ export default defineComponent({
   components: {
     AppIcon,
     ModalDialog,
+    WaterManagementRules,
     HeadwaterCriteria
   },
   setup(props) {
@@ -284,6 +285,9 @@ export default defineComponent({
     },
     hasDamElevationRedOutlineCriteria() : boolean {
       return this.criteriaCard.placingCriteriaDamElevation.includes(PlacingCriteriaDamElevation.RED_OUTLINE_SPACE)
+    },
+    hasFivePlayerExpansion() : boolean {
+      return this.state.setup.expansions.includes(Expansion.FIVE_PLAYER)
     }
   },
   methods: {
@@ -390,9 +394,5 @@ ul > li, ol > li {
 .map {
   width: 100%;
   max-width: 500px;
-}
-.headwaterCriteria {
-  font-size: 20px;
-  font-weight: bold;
 }
 </style>

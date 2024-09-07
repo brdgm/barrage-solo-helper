@@ -7,15 +7,7 @@
       </div>
     </template>
     <template #rules>
-      <p class="fw-bold fst-italic" v-html="t('rules.actionItem.water-management.intro')"></p>
-      <p v-html="t('rules.actionItem.water-management.damReachable')"></p>
-      <p v-html="t('rules.actionItem.water-management.damCapacity')"></p>
-      <p v-html="t('rules.actionItem.water-management.engineerPlacement')"></p>
-      <p v-html="t('rules.actionItem.water-management.tiebreaker')"></p>
-      <div class="headwaterCriteria text-center mb-3">
-        <HeadwaterCriteria :criteriaCard="criteriaCard"/>
-      </div>
-      <img src="@/assets/map-basin.webp" alt="" class="img-fluid"/>
+      <WaterManagementRules :criteriaCard="criteriaCard"/>
     </template>
     <template #warnings v-if="isHardDifficultyUSA || isVeryHardDifficultyAmirZahir">
       <div class="alert alert-info fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.usa')"></div>
@@ -38,7 +30,7 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Corporation from '@/services/enum/Corporation'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
-import HeadwaterCriteria from '@/components/rules/HeadwaterCriteria.vue'
+import WaterManagementRules from '@/components/rules/WaterManagementRules.vue'
 
 export default defineComponent({
   name: 'ActionWaterManagement',
@@ -48,7 +40,7 @@ export default defineComponent({
   components: {
     ActionBox,
     AppIcon,
-    HeadwaterCriteria
+    WaterManagementRules
   },
   setup() {
     const { t } = useI18n()
@@ -86,13 +78,5 @@ export default defineComponent({
 <style lang="scss" scoped>
 .icon {
   width: 2.8rem;
-}
-.map {
-  width: 100%;
-  max-width: 500px;
-}
-.headwaterCriteria {
-  font-size: 20px;
-  font-weight: bold;
 }
 </style>

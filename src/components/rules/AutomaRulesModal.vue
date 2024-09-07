@@ -43,6 +43,13 @@
         <li v-html="t('rules.general.engineerPlacement.constructionSpaces')"></li>
         <li v-html="t('rules.general.engineerPlacement.managementSpaces')"></li>
       </ul>
+      <template v-if="hasFivePlayerExpansion">
+      <p v-html="t('rules.general.engineerPlacement.fivePlayerMap')"></p>
+        <img src="@/assets/workshop-etc-5player.webp" alt="" class="fiveplayer-image"/>
+        <p v-html="t('rules.general.engineerPlacement.fivePlayerWorkhopEtc')"></p>
+        <img src="@/assets/production-5player.webp" alt="" class="fiveplayer-image"/>
+        <p v-html="t('rules.general.engineerPlacement.fivePlayerProduction')"></p>
+      </template>
     </template>
   </ModalDialog>
 </template>
@@ -96,6 +103,9 @@ export default defineComponent({
       else {
         return tiles.filter(tile => tile !== 'building-level1' && tile !== 'building-level2')
       }
+    },
+    hasFivePlayerExpansion() : boolean {
+      return this.state.setup.expansions.includes(Expansion.FIVE_PLAYER)
     }
   }
 })
@@ -109,6 +119,12 @@ export default defineComponent({
     height: 4rem;
     margin: 0.1rem;
   }
+}
+.fiveplayer-image {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 ul > li {
   clear: both;
