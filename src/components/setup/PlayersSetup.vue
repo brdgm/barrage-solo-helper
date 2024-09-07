@@ -42,14 +42,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from 'vue'
+import { defineComponent, ref, watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import PlayerColorPicker from './PlayerColorPicker.vue'
 import PlayerColor from '@/services/enum/PlayerColor'
 import isPlayerColorAvailable from '@/util/isPlayerColorAvailable'
 import Expansion from '@/services/enum/Expansion'
-import { computed } from 'vue'
 
 export default defineComponent({
   name: 'PlayersSetup',
