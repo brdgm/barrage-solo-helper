@@ -25,7 +25,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
-import Expansion from '@/services/enum/Expansion';
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'GameEnd',

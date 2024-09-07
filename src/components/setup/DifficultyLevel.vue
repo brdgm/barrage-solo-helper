@@ -37,7 +37,7 @@ export default defineComponent({
     const state = useStateStore()
 
     const initialLevels : number[] = []
-    for (let bot = 1; bot<=3; bot++) {
+    for (let bot = 1; bot<=4; bot++) {
       initialLevels[bot-1] = state.setup.difficultyLevels[bot-1] ?? DifficultyLevel.MEDIUM
     }
 
