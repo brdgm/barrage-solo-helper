@@ -17,7 +17,7 @@ export const useStateStore = defineStore(`${name}.state`, {
         playerSetup: {
           playerCount: 1,
           botCount: 1,
-          playerColors: [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED]
+          playerColors: [PlayerColor.WHITE, PlayerColor.BLACK, PlayerColor.TURQUOISE, PlayerColor.RED, PlayerColor.ORANGE]
         },
         difficultyLevels: [DifficultyLevel.MEDIUM],
         botCorporations: [],
@@ -90,6 +90,9 @@ export interface Turn {
   bot?: number
   cardDeck?: CardDeckPersistence
   workerUsed?: number
+  actionCard?: string
+  criteriaCard?: string
+  action?: number
   passed?: boolean
 }
 export interface CardDeckPersistence {

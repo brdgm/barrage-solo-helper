@@ -3,6 +3,9 @@
 
   <ul class="mt-3">
     <li v-html="t('gameEnd.objectiveTile')"></li>
+    <ul>
+      <li class="small" v-html="t('rules.general.objectiveTileScoring')"></li>
+    </ul>
     <li v-html="t('gameEnd.resourcesLeft')"></li>
     <ul>
       <li class="small" v-html="t('gameEnd.resourcesLeftExplanation')"></li>
@@ -22,7 +25,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import { useStateStore } from '@/store/state'
-import Expansion from '@/services/enum/Expansion';
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'GameEnd',

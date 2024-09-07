@@ -7,11 +7,7 @@
       </div>
     </template>
     <template #rules>
-      <p class="fw-bold fst-italic" v-html="t('rules.actionItem.water-management.intro')"></p>
-      <p v-html="t('rules.actionItem.water-management.damReachable')"></p>
-      <p v-html="t('rules.actionItem.water-management.damCapacity')"></p>
-      <p v-html="t('rules.actionItem.water-management.engineerPlacement')"></p>
-      <p v-html="t('rules.actionItem.water-management.tiebreaker')"></p>
+      <WaterManagementRules :criteriaCard="criteriaCard"/>
     </template>
     <template #warnings v-if="isHardDifficultyUSA || isVeryHardDifficultyAmirZahir">
       <div class="alert alert-info fst-italic" v-html="t('rules.difficultyLevel.hard.corporation.usa')"></div>
@@ -34,6 +30,7 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Corporation from '@/services/enum/Corporation'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
+import WaterManagementRules from '@/components/rules/WaterManagementRules.vue'
 
 export default defineComponent({
   name: 'ActionWaterManagement',
@@ -42,7 +39,8 @@ export default defineComponent({
   },
   components: {
     ActionBox,
-    AppIcon
+    AppIcon,
+    WaterManagementRules
   },
   setup() {
     const { t } = useI18n()

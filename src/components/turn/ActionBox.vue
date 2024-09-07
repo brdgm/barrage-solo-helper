@@ -99,9 +99,12 @@
           </li>
         </ol>
         <div class="text-center">
-          <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
+          <img v-if="hasFivePlayerExpansion" src="@/assets/map-with-overlay-5player.webp" alt="" class="map"/>
+          <img v-else src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
+        <p v-if="hasFivePlayerExpansion" class="mt-3" v-html="t('rules.structurePlacement.fivePlayerMap')"></p>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
+        <p v-html="t('rules.structurePlacement.damElevation.tiebreakerReadLinedSpace')"></p>
       </template>
     </ModalDialog>
 
@@ -123,8 +126,10 @@
           </li>
         </ol>
         <div class="text-center">
-          <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
+          <img v-if="hasFivePlayerExpansion" src="@/assets/map-with-overlay-5player.webp" alt="" class="map"/>
+          <img v-else src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
+        <p v-if="hasFivePlayerExpansion" class="mt-3" v-html="t('rules.structurePlacement.fivePlayerMap')"></p>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
       </template>
     </ModalDialog>
@@ -149,8 +154,10 @@
           </li>
         </ol>
         <div class="text-center">
-          <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
+          <img v-if="hasFivePlayerExpansion" src="@/assets/map-with-overlay-5player.webp" alt="" class="map"/>
+          <img v-else src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
+        <p v-if="hasFivePlayerExpansion" class="mt-3" v-html="t('rules.structurePlacement.fivePlayerMap')"></p>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
       </template>
     </ModalDialog>
@@ -158,11 +165,7 @@
     <ModalDialog v-if="showCriteriaHeadwater || showCriteriaAll" id="modalCriteriaHeadwaterRules" :title="t('rules.headwater.title')"
         :size-lg="true" :scrollable="true">
       <template #body>
-        <p v-html="t('rules.headwater.criteria')"></p>
-        <div class="headwaterCriteria text-center mb-3">
-          <HeadwaterCriteria :criteriaCard="criteriaCard"/>
-        </div>
-        <img src="@/assets/map-basin.webp" alt="" class="img-fluid"/>
+        <WaterManagementRules :criteriaCard="criteriaCard"/>
       </template>
     </ModalDialog>
 
@@ -171,7 +174,8 @@
         <p v-html="t('turnBot.placeEngineers.intro')"></p>
         <div class="form-check form-check-inline" v-for="count in [2,1,0]" :key="count">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="numberEngineers" v-model="workerUsed" :value="count">
+            <input class="form-check-input" type="radio" name="numberEngineers" v-model="workerUsed" :value="count"
+                :disabled="navigationState.workerCount < count">
             {{t('turnBot.placeEngineers.workerUsed', {count}, count)}}
           </label>
         </div>
@@ -204,7 +208,9 @@ import Corporation from '@/services/enum/Corporation'
 import isDifficultyLevelExecutiveOfficer from '@/util/isDifficultyLevelExecutiveOfficer'
 import ExecutiveOfficer from '@/services/enum/ExecutiveOfficer'
 import hasDifficultyLevel from '@/util/hasDifficultyLevel'
+import WaterManagementRules from '../rules/WaterManagementRules.vue'
 import HeadwaterCriteria from '../rules/HeadwaterCriteria.vue'
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'ActionBox',
@@ -214,6 +220,7 @@ export default defineComponent({
   components: {
     AppIcon,
     ModalDialog,
+    WaterManagementRules,
     HeadwaterCriteria
   },
   setup(props) {
@@ -221,6 +228,9 @@ export default defineComponent({
     const state = useStateStore()
 
     const workerUsed = ref(props.actionItem.workerCount)
+    if (workerUsed.value > props.navigationState.workerCount) {
+      workerUsed.value = props.navigationState.workerCount
+    }
     const nextAction = ref(props.actionItem.nextAction ?? false)
 
     return { t, state, workerUsed, nextAction }
@@ -276,6 +286,12 @@ export default defineComponent({
     },
     isVeryHardDifficultyWuFang() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.WU_FANG, this.state)
+    },
+    hasDamElevationRedOutlineCriteria() : boolean {
+      return this.criteriaCard.placingCriteriaDamElevation.includes(PlacingCriteriaDamElevation.RED_OUTLINE_SPACE)
+    },
+    hasFivePlayerExpansion() : boolean {
+      return this.state.setup.expansions.includes(Expansion.FIVE_PLAYER)
     }
   },
   methods: {
@@ -382,9 +398,5 @@ ul > li, ol > li {
 .map {
   width: 100%;
   max-width: 500px;
-}
-.headwaterCriteria {
-  font-size: 20px;
-  font-weight: bold;
 }
 </style>
