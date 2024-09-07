@@ -1,6 +1,6 @@
 <template>
   <CommonsFooterButtons :backLabel="t('action.back')" :backButtonRouteTo="backButtonRouteTo"
-        :endGameLabel="t('action.'+endGameButtonType)" :endGameConfirmMessage="t(endGameConfirmMessage)" :cancelLabel="t('action.cancel')" @endGame="endGame" />
+        :endGameLabel="t('action.'+endGameButtonType)" :endGameConfirmMessage="t(`action.${endGameButtonType}Confirm`)" :cancelLabel="t('action.cancel')" @endGame="endGame" />
 </template>
 
 <script lang="ts">
@@ -29,25 +29,10 @@ export default defineComponent({
       required: false
     },
   },
-  computed: {
-    endGameConfirmMessage() : string {
-      if (this.endGameButtonType=='abortGame' || this.$route.name == 'EndGameScoring') {
-        return `action.${this.endGameButtonType}Confirm`
-      }
-      else {
-        return `action.endGameGoToScoringConfirm`
-      }
-    }
-  },
   methods: {
     endGame() {
-      if (this.endGameButtonType=='abortGame' || this.$route.name == 'EndGameScoring') {
-        this.state.resetGame()
-        this.$router.push('/')
-      }
-      else {
-        this.$router.push('/scoring')
-      }
+      this.state.resetGame()
+      this.$router.push('/')
     }
   }})
 </script>
