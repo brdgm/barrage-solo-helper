@@ -18,6 +18,7 @@
         </li>
         <li v-html="t('rules.general.doesNotTakeContractTiles')"></li>
         <li>
+          <AppIcon type="action" name="patent-office" class="icon float-end"/>
           <span v-html="t('rules.general.advancedTechnologyTiles')"></span>
           <div v-if="hasHardDifficulty" class="alert alert-info fst-italic mt-2">
             <span v-html="t('rules.difficultyLevel.hard.advancedTechnologyTiles')"></span>
