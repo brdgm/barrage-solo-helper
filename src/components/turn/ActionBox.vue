@@ -102,6 +102,7 @@
           <img src="@/assets/map-with-overlay.webp" alt="" class="map"/>
         </div>
         <p class="mt-3" v-html="t('rules.structurePlacement.locationRestriction')"></p>
+        <p v-html="t('rules.structurePlacement.damElevation.tiebreakerReadLinedSpace')"></p>
       </template>
     </ModalDialog>
 
@@ -158,7 +159,11 @@
     <ModalDialog v-if="showCriteriaHeadwater || showCriteriaAll" id="modalCriteriaHeadwaterRules" :title="t('rules.headwater.title')"
         :size-lg="true" :scrollable="true">
       <template #body>
-        <p v-html="t('rules.headwater.criteria')"></p>
+        <p class="fw-bold fst-italic" v-html="t('rules.actionItem.water-management.intro')"></p>
+        <p v-html="t('rules.actionItem.water-management.damReachable')"></p>
+        <p v-html="t('rules.actionItem.water-management.damCapacity')"></p>
+        <p v-html="t('rules.actionItem.water-management.engineerPlacement')"></p>
+        <p v-html="t('rules.actionItem.water-management.tiebreaker')"></p>
         <div class="headwaterCriteria text-center mb-3">
           <HeadwaterCriteria :criteriaCard="criteriaCard"/>
         </div>
@@ -276,6 +281,9 @@ export default defineComponent({
     },
     isVeryHardDifficultyWuFang() : boolean {
       return isDifficultyLevelExecutiveOfficer(this.navigationState.bot, DifficultyLevel.VERY_HARD, ExecutiveOfficer.WU_FANG, this.state)
+    },
+    hasDamElevationRedOutlineCriteria() : boolean {
+      return this.criteriaCard.placingCriteriaDamElevation.includes(PlacingCriteriaDamElevation.RED_OUTLINE_SPACE)
     }
   },
   methods: {

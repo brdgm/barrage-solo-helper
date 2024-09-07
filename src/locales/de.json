@@ -114,11 +114,11 @@
   },
   "gameEnd": {
     "title": "Spielende",
-    "objectiveTile": "Erhaltet SP für die Erfüllung des Zielplättchens.",
-    "resourcesLeft": "Erhaltet SP für die restlichen Ressourcen in eurem persönlichen Vorrat.",
+    "objectiveTile": "Erhaltet SP für die Erfüllung des <b>Zielplättchens</b>.",
+    "resourcesLeft": "Erhaltet SP für die <b>restlichen Ressourcen</b> in eurem persönlichen Vorrat.",
     "resourcesLeftExplanation": "Ermittelt die Anzahl eurer restlichen Bagger, Betonmischer und Hydro. Für je 5 Ressourcen erhaltet ihr 1 SP. Ressourcen auf eurer Bauscheibe zählen nicht.",
-    "damWater": "Erhaltet 1 SP für jede Wassereinheit hinter euren Staumauern.",
-    "privateBuildingTiles": "Erhaltet SP für die von euch aktivierten privaten Gebäudeplättchen.",
+    "damWater": "Erhaltet 1 SP für jede <b>Wassereinheit hinter euren Staumauern</b>.",
+    "privateBuildingTiles": "Erhaltet SP für die von euch aktivierten <b>privaten Gebäudeplättchen</b>.",
     "winner": "Wer von euch jetzt die meisten Siegpunkte hat, gewinnt das Spiel.",
     "tiebreaker": "Bei einem Gleichstand gewinnt von den beteiligten Spielern, wer in der letzten Runde am meisten Energie produziert hat."
   },
@@ -210,7 +210,7 @@
         "damReachable": "Der Automa führt diese Aktion nur durch, wenn mindestens 1 der platzierten Wassereinheiten zu 1 seiner Staumauern gelangen würde <i>(prüfe, ob dies zutrifft, wenn das Wasser sofort fließen würde, selbst wenn die Wassereinheit nicht sofort fließt)</i>.",
         "damCapacity": "Die Staumauer muss noch genug Kapazität haben, um die Wassereinheit auch stauen zu können. Wenn die erste Wassereinheit zu einer eigenen Staumauer gelangen kann, die zweite aber nicht, dann platziert der Automa nur 1 Wassereinheit.",
         "engineerPlacement": "Der Automa platziert 1 Arbeiter auf dem Managementplan.",
-        "tiebreaker": "Der Automa führt die Aktion so aus, dass möglichst viele Wassereinheiten zu seinen Staumauern gelangen. Wenn es dafür mehrere verschiedene Möglichkeiten gibt, nutze die Quellen-Kriterien zur Entscheidung."
+        "tiebreaker": "Der Automa führt die Aktion so aus, dass möglichst viele Wassereinheiten zu seinen Staumauern gelangen. Wenn es dafür mehrere verschiedene Möglichkeiten gibt, nutze die angezeigten Kriterien zur Entscheidung, auf welche Quelle(n) die Wassereinheit(en) gelegt werden. Prüfe die Buchstaben einer nach dem anderen <i>(Reihenfolge der Quellen siehe unten)</i> und platziere die Einheiten auf der ersten möglichen Quelle."
       },
       "contract-office": {
         "intro": "Der Automa entfernt die offenen Verträge der abgebildeten Farbe aus dem Spiel. Danach rückt er seinen Energiemarker 2 Felder vor.",
@@ -269,7 +269,8 @@
         "most-water-drops": "Ein Bauplatz, auf dem die Staumauer aktuell am meisten Wasser erhalten würde.<br/>Bei Gleichstand:",
         "owned-powerhouse": "Ein Bauplatz verbunden mit einem eigenen Turbinenhaus.",
         "red-outline-space": "Ein Bauplatz mit rotem Rand.",
-        "upstream-powerhouse": "Ein Bauplatz, der ohne Staumauern dazwischen unterhalb eines Turbinenhauses liegt."
+        "upstream-powerhouse": "Ein Bauplatz, der ohne Staumauern dazwischen unterhalb eines Turbinenhauses liegt.",
+        "tiebreakerReadLinedSpace": "Bei einem Gleichstand zwischen einem freien Bauplatz und einem rot umrandeten wählt Automa den freien Bauplatz."
       },
       "conduit": {
         "most-powerful": "Ein Bauplatz mit dem höchsten noch verfügbaren Produktionswert.",
@@ -291,8 +292,7 @@
       }
     },
     "headwater": {
-      "title": "Quellen",
-      "criteria": "Wenn es mehrere verschiedene Möglichkeiten gibt, Wassereinheiten auf Quellen zu platzieren, nutze diese Kriterien zur Entscheidung. Prüfe die Buchstaben einer nach dem anderen und platziere die Einheiten auf der ersten möglichen Quelle."
+      "title": "Quellen"
     },
     "difficultyLevel": {
       "easy": {

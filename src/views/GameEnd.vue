@@ -3,6 +3,9 @@
 
   <ul class="mt-3">
     <li v-html="t('gameEnd.objectiveTile')"></li>
+    <ul>
+      <li class="small" v-html="t('rules.general.objectiveTileScoring')"></li>
+    </ul>
     <li v-html="t('gameEnd.resourcesLeft')"></li>
     <ul>
       <li class="small" v-html="t('gameEnd.resourcesLeftExplanation')"></li>
