@@ -51,7 +51,7 @@ export default class RouteCalculator {
    * Get route to next action ins same bot turn.
    */
   public getNextActionRouteTo(workerUsedPreviousAction? : number) : string {
-    return RouteCalculator.routeTo({round:this.round, turn:this.turn, turnOrderIndex:this.turn, action:(this.action ?? 0) + 1,
+    return RouteCalculator.routeTo({round:this.round, turn:this.turn, turnOrderIndex:this.turnOrderIndex, action:(this.action ?? 0) + 1,
         workerUsedPreviousAction:workerUsedPreviousAction ?? this.workerUsedPreviousAction, bot:this.bot})
   }
 
