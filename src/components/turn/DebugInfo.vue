@@ -68,16 +68,16 @@ export default defineComponent({
     }
   },
   methods: {
-    getBotPreviousTurns(currentBot: number) : {round: number, turn: number, bot: number, actionCard?: string, criteriaCard?: string,
+    getBotPreviousTurns(currentBot: number) : {round: number, turn: number, bot: number,
+          actionCard?: string, criteriaCard?: string,
           action?: Action, workerUsed?: number}[] {
       const { round, turn, bot } = this.navigationState
-      const turns = getPreviousTurns({state: this.state, round, turn, bot})
-      return turns
+      return getPreviousTurns({state: this.state, round, turn, bot})
           .filter(turnData => turnData.bot == currentBot)
           .map(turnData => {
             const actionCard = Cards.get(turnData.actionCard ?? '')
-            const botActions = new BotActions(actionCard, round, turnData.bot ?? 0, this.state)
-            return {round: turnData.round, turn: turnData.turn, bot: turnData.bot ?? 0,
+            const botActions = new BotActions(actionCard, round, currentBot, this.state)
+            return {round: turnData.round, turn: turnData.turn, bot: currentBot,
                 actionCard: turnData.actionCard, criteriaCard: turnData.criteriaCard,
                 action: botActions.items[turnData.action ?? 0]?.action, workerUsed: turnData.workerUsed}
           })
@@ -92,5 +92,8 @@ export default defineComponent({
 }
 p.debug, ul.debug {
   margin: 0;
+}
+td {
+  vertical-align: top;
 }
 </style>
