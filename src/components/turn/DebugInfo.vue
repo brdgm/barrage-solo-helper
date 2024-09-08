@@ -6,12 +6,20 @@
       <b>actionCard</b>: {{actionCard}}<br/>
       <b>criteriaCard</b>: {{criteriaCard}}<br/>
     </p>
-    <p v-if="navigationState.turn > 1" class="debug fw-bold">Previous turns:</p>
-    <ul v-if="navigationState.turn > 1" class="debug">
-      <li v-for="turn in getPreviousTurns().toReversed()" :key="turn.turn">
-        Turn {{turn.turn}}: {{turn.action}} - {{turn.workerUsed}} worker (action: {{turn.actionCard}}, criteria: {{turn.criteriaCard}})
-      </li>
-    </ul>
+    <table class="debug">
+      <tr>
+        <th v-for="bot of navigationState.botCount" :key="bot">Automa {{bot}}</th>
+      </tr>
+      <tr>
+        <td v-for="bot of navigationState.botCount" :key="bot">
+          <ul v-if="navigationState.turn > 1">
+            <li v-for="turn in getBotPreviousTurns(bot).toReversed()" :key="turn.turn">
+              {{turn.turn}}: {{turn.action}} - {{turn.workerUsed}}w (act: {{turn.actionCard}}, crit: {{turn.criteriaCard}})
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -22,6 +30,7 @@ import { useI18n } from 'vue-i18n'
 import { useStateStore } from '@/store/state'
 import CardDeck from '@/services/CardDeck'
 import Action from '@/services/enum/Action'
+import getPreviousTurns from '@/util/getPreviousTurns'
 import Cards from '@/services/Cards'
 import BotActions from '@/services/BotActions'
 
@@ -57,19 +66,18 @@ export default defineComponent({
     }
   },
   methods: {
-    getPreviousTurns() : {round: number, turn: number, actionCard?: string, criteriaCard?: string,
+    getBotPreviousTurns(currentBot: number) : {round: number, turn: number, bot: number, actionCard?: string, criteriaCard?: string,
           action?: Action, workerUsed?: number}[] {
-      const currentRound = this.state.rounds.find(round => round.round == this.navigationState.round)
-      if (currentRound) {
-        return currentRound.turns.filter(turn => turn.turn < this.navigationState.turn && turn.bot == this.navigationState.bot
-            && turn.actionCard != undefined && turn.criteriaCard != undefined && turn.action != undefined)
+      const { round, turn, bot } = this.navigationState
+      const turns = getPreviousTurns({state: this.state, round, turn, bot})
+      return turns
+          .filter(turn => turn.bot == currentBot)
           .map(turn => {
             const actionCard = Cards.get(turn.actionCard ?? '')
-            const botActions = new BotActions(actionCard, this.navigationState.round, this.navigationState.bot, this.state)
-            return {round: turn.round, turn: turn.turn, actionCard: turn.actionCard, criteriaCard: turn.criteriaCard,
+            const botActions = new BotActions(actionCard, round, turn.bot ?? 0, this.state)
+            return {round: turn.round, turn: turn.turn, bot: turn.bot ?? 0, actionCard: turn.actionCard, criteriaCard: turn.criteriaCard,
                 action: botActions.items[turn.action ?? 0]?.action, workerUsed: turn.workerUsed}
           })
-      }
       return []
     }
   }
