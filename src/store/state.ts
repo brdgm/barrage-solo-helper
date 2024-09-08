@@ -43,7 +43,8 @@ export const useStateStore = defineStore(`${name}.state`, {
       if (!round) {
         throw new Error(`Round ${turn.round} not found.`)
       }
-      round.turns = round.turns.filter(item => (item.turn < turn.turn) || (item.player != turn.player) || (item.bot != turn.bot))
+      round.turns = round.turns.filter(item => (item.turn < turn.turn)
+          || ((item.turn == turn.turn) && (item.player != turn.player) || (item.bot != turn.bot)))
       round.turns.push(turn)
     },
     getPlayerOrder(round: number) : PlayerOrder[] {
