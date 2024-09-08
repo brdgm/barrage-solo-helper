@@ -49,7 +49,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'TurnBotActionWorker',
     component: TurnBot
   },
-  // backward compatibility end
   {
     path: '/round/:round/start',
     name: 'RoundStart',
