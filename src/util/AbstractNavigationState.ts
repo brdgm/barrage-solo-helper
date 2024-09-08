@@ -11,6 +11,7 @@ export default abstract class AbstractNavigationState {
   readonly botCount : number
   readonly round : number
   readonly turn : number
+  readonly turnOrderIndex : number
   readonly botInfos : BotInfo[]
 
   constructor(route: RouteLocation, state: State) {    
@@ -21,6 +22,7 @@ export default abstract class AbstractNavigationState {
 
     this.round = getIntRouteParam(route, 'round')
     this.turn = getIntRouteParam(route, 'turn')
+    this.turnOrderIndex = getIntRouteParam(route, 'turnOrderIndex')
     this.botInfos = this.getBotInfos(route, state)
   }
 
