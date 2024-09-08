@@ -19,7 +19,7 @@
   <button class="btn btn-danger btn-lg mt-4 me-2" @click="notPossible()" v-if="!isBankAction">
     {{t('turnBot.notPossible')}}
   </button>
-
+{{workerUsed}}
   <DebugInfo :navigationState="navigationState"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
@@ -73,7 +73,7 @@ export default defineComponent({
   methods: {
     next() : void {
       const workerUsedTotal = this.workerUsed + (this.navigationState.workerUsedPreviousAction ?? 0)
-      const workerLeft = this.navigationState.workerCount - workerUsedTotal
+      const workerLeft = this.navigationState.workerCount - this.workerUsed  // workerCount is already reduced by workerUsedPreviousAction
       const passed = workerLeft <= 0 ? true : undefined
       if (this.nextAction && !passed) {
         this.$router.push(this.routeCalculator.getNextActionRouteTo(this.workerUsed))
