@@ -72,13 +72,13 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      if (this.nextAction) {
-        this.$router.push(this.routeCalculator.getNextActionRouteTo(this.workerUsed))
-        return
-      }
       const workerUsedTotal = this.workerUsed + (this.navigationState.workerUsedPreviousAction ?? 0)
       const workerLeft = this.navigationState.workerCount - workerUsedTotal
       const passed = workerLeft <= 0 ? true : undefined
+      if (this.nextAction && !passed) {
+        this.$router.push(this.routeCalculator.getNextActionRouteTo(this.workerUsed))
+        return
+      }
       this.state.storeTurn({
         round:this.round,
         turn:this.turn,
