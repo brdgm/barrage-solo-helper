@@ -19,7 +19,7 @@
   <button class="btn btn-danger btn-lg mt-4 me-2" @click="notPossible()" v-if="!isBankAction">
     {{t('turnBot.notPossible')}}
   </button>
-{{workerUsed}}
+
   <DebugInfo :navigationState="navigationState"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
