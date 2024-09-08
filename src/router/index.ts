@@ -30,25 +30,26 @@ const routes: Array<RouteRecordRaw> = [
     component: SetupBot
   },
   {
-    path: '/round/:round/turn/:turn/player/:player',
+    path: '/round/:round/turn/:turn/:turnOrderIndex?/player/:player',
     name: 'TurnPlayer',
     component: TurnPlayer
   },
   {
-    path: '/round/:round/turn/:turn/bot/:bot',
+    path: '/round/:round/turn/:turn/:turnOrderIndex?/bot/:bot',
     name: 'TurnBot',
     component: TurnBot
   },
   {
-    path: '/round/:round/turn/:turn/bot/:bot/action/:action',
+    path: '/round/:round/turn/:turn/:turnOrderIndex?/bot/:bot/action/:action',
     name: 'TurnBotAction',
     component: TurnBot
   },
   {
-    path: '/round/:round/turn/:turn/bot/:bot/action/:action/worker/:worker',
+    path: '/round/:round/turn/:turn/:turnOrderIndex?/bot/:bot/action/:action/worker/:worker',
     name: 'TurnBotActionWorker',
     component: TurnBot
   },
+  // backward compatibility end
   {
     path: '/round/:round/start',
     name: 'RoundStart',

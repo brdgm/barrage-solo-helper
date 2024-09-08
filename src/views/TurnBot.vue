@@ -19,7 +19,7 @@
   <button class="btn btn-danger btn-lg mt-4 me-2" @click="notPossible()" v-if="!isBankAction">
     {{t('turnBot.notPossible')}}
   </button>
-
+{{workerUsed}}
   <DebugInfo :navigationState="navigationState"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" endGameButtonType="abortGame"/>
@@ -54,8 +54,8 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new BotNavigationState(route, state)
-    const { botCount, round, turn, action, workerUsedPreviousAction, bot, playerColor} = navigationState
-    const routeCalculator = new RouteCalculator({round, turn, action, workerUsedPreviousAction, bot})
+    const { botCount, round, turn, turnOrderIndex, action, workerUsedPreviousAction, bot, playerColor} = navigationState
+    const routeCalculator = new RouteCalculator({round, turn, turnOrderIndex, action, workerUsedPreviousAction, bot})
 
     const workerUsed = ref(navigationState.actionItem?.workerCount ?? 0)
     const nextAction = ref(navigationState.actionItem?.nextAction ?? false)
@@ -72,16 +72,17 @@ export default defineComponent({
   },
   methods: {
     next() : void {
-      if (this.nextAction) {
+      const workerUsedTotal = this.workerUsed + (this.navigationState.workerUsedPreviousAction ?? 0)
+      const workerLeft = this.navigationState.workerCount - this.workerUsed  // workerCount is already reduced by workerUsedPreviousAction
+      const passed = workerLeft <= 0 ? true : undefined
+      if (this.nextAction && !passed) {
         this.$router.push(this.routeCalculator.getNextActionRouteTo(this.workerUsed))
         return
       }
-      const workerUsedTotal = this.workerUsed + (this.navigationState.workerUsedPreviousAction ?? 0)
-      const workerLeft = this.navigationState.workerCount - workerUsedTotal
-      const passed = workerLeft <= 0 ? true : undefined
       this.state.storeTurn({
         round:this.round,
         turn:this.turn,
+        turnOrderIndex:this.navigationState.turnOrderIndex,
         bot:this.bot,
         cardDeck: this.navigationState.cardDeck.toPersistence(),
         workerUsed: workerUsedTotal,
