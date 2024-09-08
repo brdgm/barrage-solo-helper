@@ -54,8 +54,8 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new BotNavigationState(route, state)
-    const { botCount, round, turn, action, workerUsedPreviousAction, bot, playerColor} = navigationState
-    const routeCalculator = new RouteCalculator({round, turn, action, workerUsedPreviousAction, bot})
+    const { botCount, round, turn, turnOrderIndex, action, workerUsedPreviousAction, bot, playerColor} = navigationState
+    const routeCalculator = new RouteCalculator({round, turn, turnOrderIndex, action, workerUsedPreviousAction, bot})
 
     const workerUsed = ref(navigationState.actionItem?.workerCount ?? 0)
     const nextAction = ref(navigationState.actionItem?.nextAction ?? false)
@@ -82,6 +82,7 @@ export default defineComponent({
       this.state.storeTurn({
         round:this.round,
         turn:this.turn,
+        turnOrderIndex:this.navigationState.turnOrderIndex,
         bot:this.bot,
         cardDeck: this.navigationState.cardDeck.toPersistence(),
         workerUsed: workerUsedTotal,

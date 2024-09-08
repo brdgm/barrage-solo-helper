@@ -5,12 +5,11 @@ export default function (params?: MockTurnParams) : Turn {
   return {
     round: params?.round ?? 1,
     turn: params?.turn ?? 1,
+    turnOrderIndex: params?.turnOrderIndex ?? 0,
     player: params?.player,
     bot: params?.bot,
-    botData: {
-      cardDeck: params?.cardDeck ?? CardDeck.new().toPersistence(),
-      remainingWorkers: params?.remainingWorkers ?? 0
-    },
+    cardDeck: params?.cardDeck ?? CardDeck.new().toPersistence(),
+    workerUsed: params?.workerUsed ?? 0,
     passed: params?.passed
   }
 }
@@ -18,9 +17,10 @@ export default function (params?: MockTurnParams) : Turn {
 export interface MockTurnParams {
   round? : number
   turn? : number
+  turnOrderIndex? : number
   player?: number
   bot?: number
   cardDeck?: CardDeckPersistence
-  remainingWorkers?: number
+  workerUsed?: number
   passed?: boolean
 }

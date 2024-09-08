@@ -16,6 +16,7 @@ export default function getTurnOrder(state: State, currentRound: number, current
 
   let invalidTurn = false
   for (let turn=1; turn<=currentTurn+1; turn++) {
+    let turnOrderIndex = 0
     playerOrder.forEach(player => {
       const hasPassed = turns.find(item => item.turn<turn
             && item.player==player.player && item.bot==player.bot && item.passed) != undefined
@@ -25,10 +26,12 @@ export default function getTurnOrder(state: State, currentRound: number, current
           invalidTurn = true
         }
         if (player.player) {
-          steps.push({round:round.round, turn, player:player.player})
+          steps.push({round:round.round, turn, turnOrderIndex, player:player.player})
+          turnOrderIndex++
         }
         else if (player.bot) {
-          steps.push({round:round.round, turn, bot:player.bot})
+          steps.push({round:round.round, turn, turnOrderIndex, bot:player.bot})
+          turnOrderIndex++
         }
       }
     })
@@ -44,6 +47,7 @@ export default function getTurnOrder(state: State, currentRound: number, current
 export interface TurnOrder {
   readonly round: number
   readonly turn: number
+  readonly turnOrderIndex: number
   readonly player?: number
   readonly bot?: number
 }

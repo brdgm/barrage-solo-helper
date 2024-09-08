@@ -66,8 +66,8 @@ export default defineComponent({
     const state = useStateStore()
 
     const navigationState = new PlayerNavigationState(route, state)
-    const { playerCount, round, turn, player, playerColor } = navigationState
-    const routeCalculator = new RouteCalculator({round, turn, player})
+    const { playerCount, round, turn, turnOrderIndex, player, playerColor } = navigationState
+    const routeCalculator = new RouteCalculator({round, turn, turnOrderIndex, player})
 
     return { t, state, playerCount, round, turn, player, playerColor, routeCalculator, navigationState }
   },
@@ -90,6 +90,7 @@ export default defineComponent({
       this.state.storeTurn({
         round:this.round,
         turn:this.turn,
+        turnOrderIndex:this.navigationState.turnOrderIndex,
         player:this.player,
         passed: passed ? true : undefined
       })
