@@ -7,18 +7,20 @@
       <b>criteriaCard</b>: {{criteriaCard}}<br/>
     </p>
     <table class="debug">
-      <tr>
-        <th v-for="bot of navigationState.botCount" :key="bot">Automa {{bot}}</th>
-      </tr>
-      <tr>
-        <td v-for="bot of navigationState.botCount" :key="bot">
-          <ul v-if="navigationState.turn > 1">
-            <li v-for="turn in getBotPreviousTurns(bot).toReversed()" :key="turn.turn">
-              {{turn.turn}}: {{turn.action}} - {{turn.workerUsed}}w (act: {{turn.actionCard}}, crit: {{turn.criteriaCard}})
-            </li>
-          </ul>
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <th v-for="bot of navigationState.botCount" :key="bot">Automa {{bot}}</th>
+        </tr>
+        <tr>
+          <td v-for="bot of navigationState.botCount" :key="bot">
+            <ul v-if="navigationState.turn > 1">
+              <li v-for="turn in getBotPreviousTurns(bot).toReversed()" :key="turn.turn">
+                {{turn.turn}}: {{turn.action}} - {{turn.workerUsed}}w (act: {{turn.actionCard}}, crit: {{turn.criteriaCard}})
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -78,7 +80,6 @@ export default defineComponent({
             return {round: turn.round, turn: turn.turn, bot: turn.bot ?? 0, actionCard: turn.actionCard, criteriaCard: turn.criteriaCard,
                 action: botActions.items[turn.action ?? 0]?.action, workerUsed: turn.workerUsed}
           })
-      return []
     }
   }
 })
