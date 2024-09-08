@@ -6,14 +6,14 @@
       <b>actionCard</b>: {{actionCard}}<br/>
       <b>criteriaCard</b>: {{criteriaCard}}<br/>
     </p>
-    <table class="debug">
+    <table class="debug" v-if="navigationState.turn > 1">
       <tbody>
         <tr>
           <th v-for="bot of navigationState.botCount" :key="bot">Automa {{bot}}</th>
         </tr>
         <tr>
           <td v-for="bot of navigationState.botCount" :key="bot">
-            <ul v-if="navigationState.turn > 1">
+            <ul>
               <li v-for="turn in getBotPreviousTurns(bot).toReversed()" :key="turn.turn">
                 {{turn.turn}}: {{turn.action}} - {{turn.workerUsed}}w (act: {{turn.actionCard}}, crit: {{turn.criteriaCard}})
               </li>
@@ -73,12 +73,13 @@ export default defineComponent({
       const { round, turn, bot } = this.navigationState
       const turns = getPreviousTurns({state: this.state, round, turn, bot})
       return turns
-          .filter(turn => turn.bot == currentBot)
-          .map(turn => {
-            const actionCard = Cards.get(turn.actionCard ?? '')
-            const botActions = new BotActions(actionCard, round, turn.bot ?? 0, this.state)
-            return {round: turn.round, turn: turn.turn, bot: turn.bot ?? 0, actionCard: turn.actionCard, criteriaCard: turn.criteriaCard,
-                action: botActions.items[turn.action ?? 0]?.action, workerUsed: turn.workerUsed}
+          .filter(turnData => turnData.bot == currentBot)
+          .map(turnData => {
+            const actionCard = Cards.get(turnData.actionCard ?? '')
+            const botActions = new BotActions(actionCard, round, turnData.bot ?? 0, this.state)
+            return {round: turnData.round, turn: turnData.turn, bot: turnData.bot ?? 0,
+                actionCard: turnData.actionCard, criteriaCard: turnData.criteriaCard,
+                action: botActions.items[turnData.action ?? 0]?.action, workerUsed: turnData.workerUsed}
           })
     }
   }
