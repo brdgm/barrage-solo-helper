@@ -54,9 +54,9 @@ export const useStateStore = defineStore(`${name}.state`, {
 })
 
 export interface State {
-  language: string,
-  baseFontSize: number,
-  setup: Setup,
+  language: string
+  baseFontSize: number
+  setup: Setup
   rounds: Round[]
 }
 export interface Setup {
