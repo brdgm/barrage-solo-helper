@@ -128,7 +128,7 @@ export default defineComponent({
         playerOrder,
         turns: []
       })
-      // start first turn (skip income in first round)
+      // start first round
       this.$router.push('/round/1/start')
     }
   }
