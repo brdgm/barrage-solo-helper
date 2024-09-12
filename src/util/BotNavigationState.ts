@@ -7,6 +7,7 @@ import getPreviousTurns from './getPreviousTurns'
 import getIntRouteParam from '@brdgm/brdgm-commons/src/util/router/getIntRouteParam'
 import BotActions from '@/services/BotActions'
 import { ActionItem } from '@/services/Card'
+import { MAX_TURN } from '@/util/getTurnOrder'
 
 export default class BotNavigationState extends AbstractNavigationState {
 
@@ -26,7 +27,7 @@ export default class BotNavigationState extends AbstractNavigationState {
     this.workerUsedPreviousAction = this.getIntRouteParamIfPresent(route, 'worker')
     this.playerColor = this.playerColors[this.bot - 1] || PlayerColor.BLACK
     this.workerCount = this.botInfos.find(info => info.bot == this.bot)?.workerCount ?? 0
-    this.cardDeck = this.getCardDeck(state)
+    this.cardDeck = getCardDeck(state, this.round, this.turn, this.bot)
 
     // draw next card for bot
     const actionCard = this.cardDeck.draw()
@@ -34,18 +35,21 @@ export default class BotNavigationState extends AbstractNavigationState {
     this.actionItem = this.botActions.get(this.action)
   }
 
-  getCardDeck(state : State) : CardDeck {
-    const previousTurns = getPreviousTurns({state, round:this.round, turn:this.turn, bot:this.bot})
-    for (let i=previousTurns.length-1; i>=0; i--) {
-      const turn = previousTurns[i]
-      if (turn.cardDeck) {
-        return CardDeck.fromPersistence(turn.cardDeck)
-      }
-    }
-    if (state.setup.initialCardDeck) {
-      return CardDeck.fromPersistence(state.setup.initialCardDeck)
-    }
-    return CardDeck.new()
-  }
+}
 
+function getCardDeck(state:State, round:number, turn:number, bot:number) : CardDeck {
+  const previousTurns = getPreviousTurns({state, round, turn, bot})
+  for (let i=previousTurns.length-1; i>=0; i--) {
+    const turn = previousTurns[i]
+    if (turn.cardDeck) {
+      return CardDeck.fromPersistence(turn.cardDeck)
+    }
+  }
+  if (round > 1) {
+    return getCardDeck(state, round-1, MAX_TURN, bot)
+  }
+  if (state.setup.initialCardDeck) {
+    return CardDeck.fromPersistence(state.setup.initialCardDeck)
+  }
+  return CardDeck.new()
 }
