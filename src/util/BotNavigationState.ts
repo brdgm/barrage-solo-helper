@@ -40,9 +40,9 @@ export default class BotNavigationState extends AbstractNavigationState {
 function getCardDeck(state:State, round:number, turn:number, bot:number) : CardDeck {
   const previousTurns = getPreviousTurns({state, round, turn, bot})
   for (let i=previousTurns.length-1; i>=0; i--) {
-    const turn = previousTurns[i]
-    if (turn.cardDeck) {
-      return CardDeck.fromPersistence(turn.cardDeck)
+    const previousTurn = previousTurns[i]
+    if (previousTurn.cardDeck) {
+      return CardDeck.fromPersistence(previousTurn.cardDeck)
     }
   }
   if (round > 1) {
