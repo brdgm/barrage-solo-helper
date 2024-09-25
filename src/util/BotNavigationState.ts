@@ -46,7 +46,7 @@ function getCardDeck(state:State, round:number, turn:number, bot:number) : CardD
     }
   }
   if (round > 1) {
-    return getCardDeck(state, round-1, MAX_TURN, bot)
+    return getCardDeck(state, round-1, MAX_TURN-1, bot)
   }
   if (state.setup.initialCardDeck) {
     return CardDeck.fromPersistence(state.setup.initialCardDeck)

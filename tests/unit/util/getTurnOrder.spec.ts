@@ -6,8 +6,8 @@ import mockState from '../helper/mockState'
 describe('util/getTurnOrder', () => {
   it('round1-turn2', () => {
     const state = mockState({playerCount:1, botCount:2, rounds: [
-      mockRound({round:1, playerOrder:[{player:1},{bot:1},{bot:2}]})]}
-    )
+      mockRound({round:1, playerOrder:[{player:1},{bot:1},{bot:2}]})
+    ]})
     expect(getTurnOrder(state, 1, 2)).to.eql([
       {round:1, turn:1, turnOrderIndex: 0, player:1},
       {round:1, turn:1, turnOrderIndex: 1, bot:1},

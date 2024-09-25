@@ -1,4 +1,3 @@
-import CardDeck from '@/services/CardDeck'
 import { CardDeckPersistence, Turn } from '@/store/state'
 
 export default function (params?: MockTurnParams) : Turn {
@@ -8,8 +7,8 @@ export default function (params?: MockTurnParams) : Turn {
     turnOrderIndex: params?.turnOrderIndex ?? 0,
     player: params?.player,
     bot: params?.bot,
-    cardDeck: params?.cardDeck ?? CardDeck.new().toPersistence(),
-    workerUsed: params?.workerUsed ?? 0,
+    cardDeck: params?.cardDeck,
+    workerUsed: params?.workerUsed,
     passed: params?.passed
   }
 }
