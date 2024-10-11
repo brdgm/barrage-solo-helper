@@ -1,0 +1,399 @@
+{
+  "gameTitle": "Barrage",
+  "home": {
+    "title": "Barrage Solo Helper",
+    "play1": "Gioca <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Barrage</b></a> contro un Automa, l'avversario artificiale.",
+    "play2": "Questa applicazione sostituisce il mazzo di carte Automa e ti guida attraverso le regole di gioco e dell'Automa. Supporta tutti i livelli di difficoltà, le abilità speciali delle compagnie e la maggior parte degli ufficiali esecutivi. Puoi giocare contro un massimo di tre giocatori Automa.",
+    "feedback": "Discussioni e Feedback:"
+  },
+  "setup": {
+    "title": "Imposta Gioco",
+    "expansions": {
+      "title": "Espansioni",
+      "leeghwater-project": "The Leeghwater Project",
+      "far-companies": "Far Companies",
+      "five-player": "Espansione 5 Giocatori",
+      "executive-officer-promo": "Promo Ufficiali Esecutivi (Sottogruppo)"
+    },
+    "players": {
+      "title": "Giocatore",
+      "playerCount": "Giocatori Umani",
+      "playerCountItem": "{count} Giocatore | {count} Giocatori",
+      "playerColor": "Colore Giocatore | Colore Giocatore {index}",
+      "botCount": "Automa",
+      "botCountItem": "{count} Automa | {count} Automi",
+      "botColor": "Colore Automa | Colore Automa {index}"
+    },
+    "difficultyLevel": {
+      "title": "Livello di Difficoltà",
+      "easy": "Facile",
+      "hard": "Difficile"
+    }
+  },
+  "setupBot": {
+    "title": "Imposta Automa",
+    "corporation": {
+      "title": "Compagnia"
+    },
+    "executiveOfficer": {
+      "title": "Ufficiale Esecutivo"
+    },
+    "setup": {
+      "title": "Impostazioni",
+      "playerPieces": "Imposta l'Automa con la plancia compagnia scelta e tutti i componenti di gioco.",
+      "noExecutiveOfficer": "Non assegnare ufficiali esecutivi all'Automa.",
+      "noStartingContract": "Non assegnare contratti iniziali all'Automa.",
+      "victoryPoints": "L'Automa inizia la partita con 16 Punti Vittoria.",
+      "playerOrder": "Ordine di gioco iniziale:"
+    },
+    "validCorporation": "Seleziona una compagnia per l'Automa.",
+    "validCorporationExecutiveOfficer": "Seleziona una compagnia e un ufficiale esecutivo per l'Automa."
+  },
+  "turnPlayer": {
+    "title": "Giocatore | Giocatore {player}",
+    "takeTurn": "Effettua il tuo turno.",
+    "pass": {
+      "title": "Passa",
+      "confirm": "Passare e uscire dalla fase azione?"
+    }
+  },
+  "turnBot": {
+    "title": "Automa | Automa {bot}",
+    "done": "Ingegnere posizionato | Ingegneri posizionati",
+    "notPossible": "Non possibile",
+    "criteria": "Criteri",
+    "structurePlacement": {
+      "damElevation": "Diga/Elevazione",
+      "conduit": "Condotta",
+      "powerhouse": "Centrale"
+    },
+    "placeEngineers": {
+      "title": "Posiziona Ingegneri",
+      "button": "Posiziona Ingegneri: {count}",
+      "intro": "Di default, si utilizza il numero di ingegneri indicato per l'azione. Ma in modalità Alta Tensione o Sovraccarico, il numero effettivo di ingegneri da usare può variare a causa delle tessere Tecnologia Avanzata o dei poteri speciali degli ufficiali esecutivi.",
+      "workerUsed": "{count} Ingegnere | {count} Ingegneri",
+      "nextAction": "Esegui un'altra azione"
+    }
+  },
+  "roundStart": {
+    "title": "Round {round}",
+    "income": {
+      "title": "Rendita",
+      "activeIncome": "Tutti i giocatori ricevono le rendite attive sulle proprie  plance Compagnia."
+    },
+    "headstreams": {
+      "title": "Sorgenti",
+      "placeWaterDrops": "Posiziona le Gocce d'Acqua sulle Tessere Sorgente secondo il numero indicato sulla tessera per il round attuale."
+    }
+  },
+  "roundEnd": {
+    "title": "Fine del Round {round}",
+    "waterFlow": {
+      "title": "Acqua",
+      "flowDown": "Tutte le Gocce presenti sulle Tessere Sorgente iniziano a scorrere lungo i percorsi naturali, seguendo fiumi e bacini."
+    },
+    "scoring": {
+      "title": "Punteggio",
+      "firstSecondPlayer": "Il primo giocatore sul Tracciato Energia guadagna 6 Punti Vittoria; il secondo guadagna 2 Punti Vittoria",
+      "gainCredits": "Ottieni Crediti (Punti Vittoria per l'Automa) secondo la posizione sul Tracciato Energia.",
+      "bonusTile": "Ottieni Punti Vittoria grazie alla Tessera Bonus del round attuale, scarta la tessera Bonus."
+    },
+    "determinePlayerOrder": {
+      "title": "Aggiorna l'Ordine di Turno",
+      "currentItems": "Ordine di Turno Attuale",
+      "newItems": "Nuovo Ordine di Turno",
+      "newItemsSelect": "Determina il nuovo ordine di turno."
+    },
+    "cleanUp": {
+      "title": "Pulizia",
+      "resetEnergyMarkers": "Reimposta i segnalini Energia allo spazio 0 del Tracciato Energia.",
+      "takeBackEngineers": "Riprendi tutti gli ingegneri.",
+      "discardTechnologyTiles": "Scarta e rimpiazza le tessere Tecnologia Avanzata.",
+      "discardExternalWorkTiles": "Scarta e rimpiazza le tessere Lavoro Esterno."
+    }
+  },
+  "gameEnd": {
+    "title": "Fine della Partita",
+    "objectiveTile": "Ottieni Punti Vittoria in base alla <b>Tessera Obiettivo</b>.",
+    "resourcesLeft": "Ottieni Punti Vittoria per le <b>risorse</b> rimaste disponibili nella riserva.",
+    "resourcesLeftExplanation": "Somma le risorse (Escavatori, Betoniere, Crediti) insieme. Ottieni 1 Punto Vittoria ogni 5 unità di qualsiasi tipo. Le risorse ancora sulla Ruota di Costruzione non vengono conteggiate.",
+    "damWater": "Ottieni 1 Punto Vittoria per ogni <b>Goccia d'Acqua trattenuta dalle tue Dighe</b>.",
+    "privateBuildingTiles": "Ottieni Punti Vittoria per le tessere <b>Edificio Privato</b> attivate.",
+    "winner": "Il giocatore con più Punti Vittoria vince.",
+    "tiebreaker": "In caso di parità, vince il giocatore che ha prodotto più Unità di Energia durante l'ultimo round."
+  },
+  "sideBar": {
+    "round": "Round {round}",
+    "turn": "Turno {turn}",
+    "workers": "{count} Ingegneri",
+    "pass": "(passato)"
+  },
+  "difficultyLevel": {
+    "1": "Facile - \"Basso Voltaggio\"",
+    "2": "Medio",
+    "3": "Difficile - \"Alto Voltaggio\"",
+    "4": "Molto Difficile - \"Sovraccarico\""
+  },
+  "corporation": {
+    "usa": "USA",
+    "germany": "Germania",
+    "italy": "Italia",
+    "france": "Francia",
+    "netherlands": "Olanda"
+  },
+  "executiveOfficer": {
+    "wilhelm-adler": "Wilhelm Adler",
+    "graziano-del-monte": "Graziano del Monte",
+    "viktor-fiesler": "Viktor Fiesler",
+    "jill-mcdowell": "Jill McDowell",
+    "solomon-p-jordan": "Solomon P. Jordan",
+    "anton-krylov": "Anton Krylov",
+    "mahiri-sekibo": "Mahiri Sekibo",
+    "simone-luciani": "Simone Luciani",
+    "tommaso-battista": "Tommaso Battista",
+    "leslie-spencer": "Leslie Spencer",
+    "margot-fouche": "Margot Fouché",
+    "elon-audia": "Elon Audia",
+    "gennaro-grasso": "Gennaro Grasso",
+    "wu-fang": "Wu Fang",
+    "dr-octavius": "Dr. Octavius",
+    "amir-zahir": "Amir Zahir",
+    "franz-de-lasse": "Franz de Lasse"
+  },
+  "actionItem": {
+    "production": "Produzione",
+    "water-management": "Gestione Acqua",
+    "contract-office": "Ufficio Contratti",
+    "construction": "Costruzione",
+    "workshop": "Manutenzione",
+    "machinery-shop": "Acquisti",
+    "patent-office": "Ufficio Tecnologie",
+    "external-work": "Lavoro Esterno",
+    "bank": "Banca"
+  },
+  "constructionType": {
+    "dam": "Base",
+    "elevation": "Elevazione",
+    "conduit": "Condotta",
+    "powerhouse": "Centrale"
+  },
+  "rules": {
+    "general": {
+      "title": "Regolamento Automa",
+      "intro": "Alcune delle regole del gioco base sono state modificate per i giocatori Automa:",
+      "noCredits": "<b>L’Automa non usa Crediti.</b> Ogni volta che l’Automa ottiene o paga dei Crediti, esso paga o ottiene un numero equivalente di Punti Vittoria <i>(se l’Automa vuole costruire una struttura in corrispondenza di un’icona bordata di rosso, dovrà pagare 3 PV).</i> I PV dell’Automa possono scendere sotto lo zero.",
+      "noCompanyAbility": "<b>L’Automa non usa nemmeno l’abilità speciale della Compagnia,</b> che si attiva con la costruzione della terza Centrale. Invece, l’Automa può usare i bonus di produzione attivati con la costruzione della seconda e della quarta Centrale.",
+      "noExecutiveOfficers": "<b>L’Automa non usa gli Ufficiali Esecutivi.</b>",
+      "doesNotTakeContractTiles": "<b>L’Automa non pesca i Contratti.</b> L’Automa soddisfa direttamente i Contratti disponibili all’interno dell’Ufficio Contratti automaticamente.",
+      "advancedTechnologyTiles": "<b>L’Automa può acquistare tessere Tecnologia Avanzata</b>, ma può utilizzare unicamente gli effetti basici <i>(ovvero di costruzione di una struttura)</i> senza utilizzare il rispettivo effetto speciale. Quando l'Automa ottiene una tessera e ci sono più tessere idonee disponibili, l'Automa prenderà la tessera di livello più alto.",
+      "machineryTypeWild": "If Automa receives a <b>wild Machinery</b>, it takes the type of Machinery of which it has less available <i>(i.e. out of the Construction Wheel)</i>. In case of tie, Automa takes 1 Excavator.",
+      "objectiveTileScoring": "Se l’Automa ha il maggior numero di elementi richiesti dalle <b>tessere Obiettivo</b> ottiene 20 PV; se è in seconda posizione, ottiene 15 PV; se è terzo ottiene 10 PV.",
+      "building": "Automa will never use the <b>Private Building special action</b>. However, when a Private Building has been activated by an Automa, the corresponding action space on the left <i>(the cheaper one)</i> will no longer be available for any other player for the rest of the game.",
+      "engineerPlacement": {
+        "title": "Piazzamento Ingegneri",
+        "constructionSpaces": "<b>Spazi Azione di Costruzione dell’Automa</b> - A differenza dei giocatori umani, quando un Automa effettua un’azione di costruzione, esso può piazzare il numero di Ingegneri indicato nella App all’interno della plancia Compagnia, indipendentemente dal numero di spazi azione disponibili. Non ci sono limiti nel numero di strutture che l’Automa può costruire all’interno di un singolo round.",
+        "managementSpaces": "<b>Spazi Azione occupati dall’Automa</b> - A differenza dei giocatori umani, quando l’Automa effettua un’azione di gestione, esso può piazzare, nella rispettiva sezione, il numero di Ingegneri indicato nella App,  indipendentemente dal numero di spazi azione disponibili in quel momento. Gli Ingegneri indicati dall’azione Automa devono essere piazzati sempre in corrispondenza del primo spazio azione libero <i>(ovvero senza Ingegneri)</i> nella rispettiva sezione della plancia Azioni, della plancia Patent Office o della plancia Azioni Aggiuntive, dall’alto verso il basso della colonna di sinistra e, poi, dall’alto verso il basso della colonna di destra, ignorando il numero di Ingegneri richiesto per riempire lo spazio azione. Tenete presente che lo spazio azione occupato non definisce l’azione effettivamente svolta dall’Automa in quel turno; ciò è, invece, definito dall’icona illustrata sulla tessera Automa. <b>Se non dovessero esserci spazi disponibili nella relativa sezione, e l’Automa fosse in grado di eseguire l’azione indicata sulla tessera Automa, semplicemente, può  piazzare gli Ingegneri richiesti accanto agli spazi azione di quella sezione.</b>",
+        "fivePlayerMap": "<b>5-Player Expansion:</b>: In a 5-player game, Automa players will place Engineers on the Extra Action Board action spaces, with the following new rules.",
+        "fivePlayerWorkhopEtc": "Automa will place Engineers <b>on the left</b> side after a Workshop/Machinery Shop/Water Management/Contract Office action, if all the action spaces on the left of the corresponding area of the main Management Board are already occupied. It will place Engineers <b>on the right side</b> after a Workshop/Machinery Shop/Water Management/Contract Office action, if all the action spaces on the right of the corresponding area of the main Management Board are already occupied.",
+        "fivePlayerProduction": "Automa will place Engineers <b>on the left</b> side after a production action, if the first 3 top-most action spaces on the left of the Turbine Station are already occupied. It will place Engineers <b>on the right</b> side after a production action, if the first 3 top-most action spaces on the right of the Turbine Station are already occupied."
+      }
+    },
+    "actionItem": {
+      "production": {
+        "intro": "L’Automa produce Energia utilizzando il proprio sistema di produzione più efficace a disposizione, solo quando siano soddisfatte le seguenti condizioni:",
+        "productionSystemReady": "<bSistema di Produzione pronto</b> - Vi è almeno una connessione di strutture <i>(ovvero ucentrale dell’Automa connessa ad una diga dello stesso Automa o a nessuna)</i>  che permetta all’Automa di produrre.",
+        "energyTrack": "<b>Tracciato Energia</b> -  L’Automa non ha ancora raggiunto la sezione corrispondente al round in corso sul Tracciato Energia <i>(che gli consenta di ottenere la ricompensa piena della tessera Bonus)</i> OPPURE l’Automa non è il primo sul Tracciato Energia <i>(almeno una delle due condizioni)</i>.",
+        "contractRequirement": "<b>Requisito del Contratto</b> - La massima quantità di energia potenzialmente producibile <i>(incluso un eventuale bonus o malus indicato dall’azione Automa)</i> è pari o superiore alla quantità di energia richiesta da almeno un Contratto disponibile del tipo <i>(verde, giallo o rosso)</i> indicato dall’azione Automa.",
+        "produceEnergy": "<b>L’Automa produce Energia utilizzando il proprio miglior sistema produttivo disponibile</b> <i>(ovvero quello in grado di produrre la maggior quantità di Energia)</i> <b>e applicando il bonus o malus indicato dall’azione Automa.</b> <i>(e, eventualmente, il bonus attivato sulla plancia Compagnia)</i>. Muovete le Gocce d’Acqua e aggiornate il Tracciato Energia normalmente.",
+        "fulfillContract": "Quindi, <b> l’Automa, in base all’energia prodotta, soddisfa immediatamente il Contratto dal valore più alto disponibile</b>  all’interno dell’Ufficio Contratti, non solo tra quelli del tipo indicato dall’azione Automa <i>(in caso di parità, tra il Contratto piazzato nello spazio a destra)</i>  e riceve la ricompensa corrispondente. Il Contratto soddisfatto viene scartato e rimpiazzato da uno nuovo. L’Automa può soddisfare i Contratti Nazionali come un giocatore umano <i>(in caso di parità, si fa riferimento al Contratto più a destra)</i>.",
+        "multipleOptions": "If there are multiple options to fulfill the contract with the same highest value, Automa uses water from a neutral dam first. If there are still multiple options, check the „Conduit“ location criteria."
+      },
+      "water-management": {
+        "intro": "L’Automa piazza il numero di Gocce d’Acqua indicato su una o più tessere Sorgente, secondo le regole del gioco base.",
+        "damReachable": "L’Automa eseguirà questa azione solo se almeno una delle Gocce d’Acqua piazzate potrà raggiungere <i>(immediatamente o nella prossima Fase Acqua, considerando lo stato attuale della mappa)</i> una o più delle proprie Dighe.",
+        "damCapacity": "La Diga <i>(o le Dighe)</i> deve avere abbastanza capacità residua per immagazzinare le Gocce d'Acqua; (eventuali Gocce d’Acqua eccedenti la capacità non verranno mai piazzate.",
+        "engineerPlacement": "Se almeno una Goccia d’Acqua è stata piazzata, l’Automa deve piazzare un proprio Ingegnere all’interno della sezione Gestione dell’Acqua.",
+        "tiebreaker": "L’Automa cercherà sempre di piazzare il maggior numero di Gocce d’Acqua. Se ci sono 2 o più Sorgenti idonee, usa il criterio di spareggio indicato relativo ai bacini come mostrato di seguito.  Se la prima lettera fa riferimento ad una Sorgente idonea, piazzate lì le Gocce d’Acqua, altrimenti sulla seconda e così via.",
+        "fivePlayerMap": "<b>5-Player Map:</b> If you must place Water Drops on a Headstrem and there is a tie between two or more Headstreams, use the following rule instead: Look at the first letter on the Criteria tile (on the right-most column): if it is not a tied Headstream, choose the first tied Heastream on the right of the indicated one (after X go back to A)."
+      },
+      "contract-office": {
+        "intro": "L’Automa rimuove immediatamente dall’Ufficio Contratti i Contratti indicati. Quindi, sposta il suo indicatore ordine di turno di 2 posizioni sul Tracciato Energia.",
+        "engineerPlacement": "Piazzate 1 Ingegnere nell’Ufficio Contratti.",
+        "newContractTiles": "Quindi, piazzate 2 nuovi Contratti negli spazi vuoti, prendendoli dalla rispettiva pila."
+      },
+      "construction": {
+        "intro": "L’Automa può costruire la struttura indicata dall’azione se sono soddisfatte tutte le seguenti condizioni:",
+        "structureAvailable": "<b>Strutture Disponibili</b> -  L’Automa ha indicati sulla sua plancia Compagnia i pezzi di strutture disponbibili.",
+        "technologyTileAvailable": "<b>Tessere Tecnologia Dispobili</b> - L’Automa dispone almeno di una tessera Tecnologia <i>(base o avanzata)</i> che gli permetta di costruire la struttura indicata.",
+        "machineriesAvailable": "<b>Macchinari Disponibili</b> -  L’Automa possiede il numero minimo richiesto di Macchinari <i>(Escavatori e Betoniere)</i> per la costruzione della struttura illustrata <i>(ovvero una Base da costruire in Montagna, 5 Escavatori richiesti o una Condotta di valore 3 o più, almeno 6 Escavatori, e così via).</i>.",
+        "buildingSpaceAvailable": "<b>Esiste almeno uno spazio disponibile sulla Mappa per costruire le strutture indicate.",
+        "buildStructure": "Qualora tutte le condizioni precedenti dovessero essere verificate, l’Automa potrà costruire la struttura indicato dalla tessera Automa, piazzando gli Ingegneri sulla sua plancia Compagnia e usando la sua Ruota di Costruzione normalmente <i>(ricordate che l’Automa non segue le regole standard degli spazi azione di costruzione)</i>.",
+        "oneSpace": "Nel caso in cui dovesse esserci un solo spazio sulla Mappa su cui poter piazzare la struttura, l’Automa sarebbe costretto ad utilizzare quello spazio.",
+        "multipleSpaces": "Se dovessero esserci più spazi utilizzabili, dovrete seguire le regole descritte in “Procedura di Piazzamento delle Strutture” <i>(clicca sul criterio indicato)</i>.",
+        "income": "Come un giocatore umano, se un Automa dovesse scoprire una rendita sulla sua plancia Compagnia, egli riceverebbe immediatamente quella rendita.",
+        "building": {
+          "up": "<b>Edifici:</b> L’Automa costruirà l’edificio collegato al primo Edificio Privato disponibile <i>(dall’alto verso il basso)</i> per il quale egli abbia a disposizione i Macchinari necessari.",
+          "down": "<b>Edifici:</b> Con questo simbolo l’Automa costruirà un edificio connesso al primo Edificio Privato disponibile <i>(dal basso verso l’alto)</i> per il quale egli abbia a disposizione i Macchinari necessari."
+        }
+      },
+      "workshop": {
+        "intro": "L’Automa fa ruotare la sua Ruota di Costruzione del numero di segmenti indicato, solamente se la ruota non è completamente vuota.",
+        "technologyTiles": "Se la Ruota di Costruzione dell’ Automa di turno contiene Macchinari e/o tessere Tecnologia, effettuate l’azione.",
+        "engineerPlacement": "L’Automa deve piazzare il numero di Ingegneri indicato dall' App all’interno del settore azione manutenzione e pagare il numero di PV indicati sull’azione. Come al solito, l’Automa deve recuperare immediatamente ogni Macchinario e/o tessera Tecnologia che vengano estratti da un segmento di entrata della ruota, dopo ogni singola rotazione."
+      },
+      "machinery-shop": {
+        "intro": " L’Automa deve pagare il numero indicato di PV per poter ottenere il numero di Macchinari indicato.",
+        "engineerPlacement": "Piazzate il numero di Ingegneri indicato nel primo spazio dell’azione acquisti disponibile e pagate il numero di PV indicato sulla tessera Azione per ottenere i Macchinari indicati sulla tessera Azione."
+      },
+      "patent-office": {
+        "intro": "L’Automa paga 2 PV per ottenere la tessera Tecnologia del tipo indicato <i>(o una tessera Tecnologia Avanzata jolly)</i>, se disponibile all’interno del Patent Office.",
+        "engineerPlacement": "L’Automa piazza 1 Ingegnere all’interno dello spazio azione Patent Office e paga 2 PV invece di 2 Ingegneri e 5 PV.",
+        "multipleTiles": "Nel caso in cui ci fossero due tessere della stessa struttura disponibili, l’Automa utilizzerà quella di livello maggiore.",
+        "noneAvailable": "Se non dovessero essere disponibili né la tessera Tecnologia indicata né la tessera Tecnologia jolly, l’Automa non può effettuare l’azione."
+      },
+      "external-work": {
+        "intro": "L’Automa risolverà un Lavoro Esterno disponibile.",
+        "enoughMachineries": "Verificate che l’Automa abbia abbastanza Macchinari per completare almeno un Lavoro Esterno disponibile. Potendo soddisfare più di un Lavoro Esterno, l’Automa può scegliere quale soddisfare, tenendo conto dell’ordine della lista di opzioni offerte dalla tessera Automa: il numero si riferisce all’ordine di posizione all’interno della plancia Azioni.",
+        "engineerPlacement": "L’Automa piazza il numero indicato di Ingegneri nello spazio azione corrispsondente, e scarta il numero di Macchinari richiesto.",
+        "particularEffect": "<b>Effetto particolare:</b>  Se l’Automa deve soddisfare un Contratto come effetto di un Lavoro Esterno, deve soddisfare il più alto Contratto Privato disponibile all’interno dell’Ufficio Contratti <i>(in caso di pareggio, quello a destra; se l’effetto consente di soddisfare un Contratto di valore 4, soddisfare quello più alto tra quelli da 4 o di valore inferiore).</i>."
+      },
+      "bank": {
+        "intro": "L’Automa ottiene 1 PV, piazzando 1 Ingegnere nella Banca."
+      }
+    },
+    "structurePlacement": {
+      "intro": "Se ci sono a disposizione più posizioni idonee al piazzamento della struttura che l’Automa sta costruendo, seguite questa procedura in modo da stabilire quale, tra le posizioni utili, sia quella da scegliere:",
+      "thirdStructure": "<b>La terza struttura di un sistema</b>:  Prima di tutto, se esiste un solo potenziale sistema <i>(ovvero un gruppo composto da una Diga, neutrale o di proprietà, una Condotta e una Centrale di proprietà)</i> che può essere completata piazzando la struttura, la posizione che completa il sistema sarà quella scelta.",
+      "location": "Posizione <b>{location}</b> o numero superiore.",
+      "locationDescription": "Parti da questa posizione e procedi in avanti seguendo l'ordine dei bacini fino alla prima posizione idonea. Se arrivi alla fine delle posizioni, ricomincia il controllo dalla prima posizione e procedi in avanti fino alla prima posizione idonea. Quando cerchi ulteriori spazi di costruzione per i condotti, controlla prima lo spazio a sinistra (A), poi quello a destra (B).",
+      "fivePlayerMap": "<b>Mappa 5-Giocatori</b>: Anche se tutti i bacini più a destra non hanno un numero di riferimento, devi includerli nella lista di controllo.",
+      "locationRestriction": "Alcune azioni indicano una particolare restrizione per la struttura da costruire (ad es. una Base nelle montagne): questa restrizione si applica a qualsiasi ulteriore criterio di spareggio riportato di seguito.",
+      "damElevation": {
+        "downstream-dam": "Una Diga collegata (attraverso un collegamento di una Condotta) ad un bacino sottostante con una propria Diga <b>OPPURE</b> Una Diga non collegata (attraverso un collegamento di una Condotta) ad un bacino sottostante con una Diga avversaria.",
+        "most-powerful-conduit": "Una Diga collegata alla Condotta più potente costruita (propria o avversaria).<br/><b>Spareggio: propria Condotta.</b>",
+        "most-water-drops": "Una Diga in grado di ricevere il maggior numero di Gocce d’Acqua nello stato attuale della Mappa.<br/><b>Spareggio: </b>",
+        "owned-powerhouse": "Una Diga collegata ad una propria Centrale.",
+        "red-outline-space": "Uno spazio di costruzione con un costo addizionale.",
+        "upstream-powerhouse": "Una Diga collegata naturalmente (attraverso fiumi e bacini privi di altre Dighe) ad una Centrale a monte di essa.",
+        "tiebreakerReadLinedSpace": "Se c'è un pareggio tra uno spazio di costruzione libero e uno spazio con contorno rosso, l'Automa sceglie lo spazio di costruzione libero."
+      },
+      "conduit": {
+        "most-powerful": "La Condotta più potente tra quelle disponibili.",
+        "opponent-neutral-owned-dam": "Una Condotta collegata ad una Diga propria / neutrale / avversaria.<br/><b>Spareggio: propria, neutrale, avversaria.</b>",
+        "opponent-owned-powerhouse": "Una Condotta collegata ad una Centrale propria / avversaria.<br/><b>Spareggio: propria, avversaria.</b>",
+        "owned-neutral-opponent-dam": "Una Condotta collegata ad una Diga avversaria / neutrale / propria.<br/><b>Spareggio: avversaria, neutrale, propria</b>",
+        "owned-opponent-powerhouse": "Una Condotta collegata ad una Centrale avversaria / propria.<br/><b>Spareggio: avversaria, propria.</b>",
+        "second-most-powerful": "La seconda Condotta più potente tra quelle disponibili, se presente <b>OPPURE</b> Quella più potente."
+      },
+      "powerhouse": {
+        "feeding-owned-dam": "Una Centrale che scarica acqua in una propria Diga (attraverso bacini senza altre Dighe) <b>OPPURE</b> Una Centrale che non scarica direttamente (attraverso bacini) in una Diga avversaria.",
+        "hills-basin-5": "Una Centrale nel bacino indicato in Collina <b>5</b> (seguite la Mappa di riferimento)",
+        "hills-basin-6": "Una Centrale nel bacino indicato in Collina <b>5</b> (seguite la Mappa di riferimento).",
+        "hills-basin-7": "Una Centrale nel bacino indicato in Collina <b>7</b> (seguite la Mappa di riferimento).",
+        "most-powerful-conduit": "Una Centrale collegata alla Condotta più potente già costruita (propria o avversaria).<br/><b>Spareggio: propria Condotta.</b>",
+        "not-feeding-opponent-dam": "Una Centrale che non scarica direttamente (attraverso bacini) in una Diga avversaria <b>OPPURE</b> Una Centrale che scarica acqua in una propria Diga (attraverso bacini senza altre Dighe).",
+        "owned-dam": "Una Centrale collegata ad una Diga propria.",
+        "plains": "Una Centrale in Pianura."
+      }
+    },
+    "headwater": {
+      "title": "Headwater"
+    },
+    "difficultyLevel": {
+      "easy": {
+        "noIncome": "<b>Basso Voltaggio:</b> I giocatori Automa non ricevono mai rendite dalle loro plance Compagnia.",
+        "noProductionBonus": "<b>Low Voltage:</b> I giocatori Automa non possono utilizzare i bonus di produzione (attivati dalla costruzione di Centrali)."
+      },
+      "hard": {
+        "companyAbilities": "<b>Alto Voltaggio:</b> I giocatori Automa possono usare l'abilità speciale della loro plancia Compagnia, attivata con la costruzione della terza Centrale.",
+        "advancedTechnologyTiles": "<b>Alto Voltaggio:</b> I giocatori Automa possono usare gli effetti speciali delle tessere Tecnologia Avanzata usate, seguendo alcune regole specifiche qui riportate. Se l’Automa possiede più tessere relative alla stessa struttura (incluse le tessere Jolly), usa sempre quella di livello più alto. In caso di parità, l’Automa predilige la tessera relativa ad una struttura specifica, prima di utilizzare una tessera Jolly.",
+        "advancedTechnology": {
+          "conduit-level2": {
+            "title": "Condotta Livello 2",
+            "description": "In caso di spareggio tra le possibili posizioni in cui costruire una Condotta, l’Automa sceglie sempre una Condotta di valore 3 o superiore."
+          },
+          "powerhouse-level2": {
+            "title": "Centrale Livello 2",
+            "description": "L’Automa attiva la produzione disponibile più efficiente."
+          },
+          "building-level1": {
+            "title": "Edificio Livello 1",
+            "description": "Al posto dell’effetto speciale indicato (ovvero l’attivazione dell’Edificio Privato connesso), l’Automa ottiene immediatamente i PV collegati all’Edificio Privato."
+          },
+          "building-level2": {
+            "title": "Edificio Livello 2",
+            "description": "L’Automa usa solamente la tipologia di Macchinario di cui possiede la quantità inferiore all’interno della sua riserva. In caso di pareggio, l’Automa usa solamente gli Escavatori."
+          },
+          "joker-level1": {
+            "title": "Una a tua scelta Livello 1",
+            "description": "Se costruisce una Base, dopo aver controllato i criteri per la Procedura di Piazzamento delle Strutture, l’Automa sceglierà uno spazio di costruzione che abbia un bordo costo addizionale."
+          },
+          "joker-level2": {
+            "title": "Una a tua scelta Livello 2",
+            "description": "L’Automa utilizzerà tutti i Macchinari del tipo richiesto dalla  costruzione della struttura, ancora a sua disposizione, prima di passare all’altro tipo di Macchinari."
+          }
+        },
+        "corporation": {
+          "usa": "<b>Alto Voltaggio/USA e terza Centrale costruita:</b> Quando esegue un’azione di gestione dell’Acqua, in caso di spareggio tra le Sorgenti diponibili, l’Automa sceglierà quella che gli permetterà di ottenere più movimenti sul Tracciato Energia.",
+          "germany": "<b>Alto Voltaggio/Germania e terza Centrale costruita:</b> La seconda produzione, se disponibile, è sempre la più produttiva tra quelle utilizzabili.",
+          "france": "<b>Alto Voltaggio/Francia e terza Centrale costruita:</b> La seconda produzione, se disponibile, è sempre la più produttiva tra quelle utilizzabili.",
+          "netherlands": "<b>Alto Voltaggio/Olanda e terza Centrale costruita:</b> La Goccia d’Acqua viene piazzata sulla Diga connessa con il sistema più produttivo <i>(eccetto quella appena usata)</i>. Nel caso in cui non ci sia una Diga che sia parte di un sistema produttivo completo o ce ne siano più di una, fate riferimento alla prima colonna della tessera Criteri per stabilire quale Diga utilizzare."
+        }
+      },
+      "veryHard": {
+        "executiveOfficers": "<b>Sovraccarico:</b> I giocatori Automa ricevono una tessera Ufficiale Esecutivo durante la fase di preparazione e utilizzano l’abilità corrispondente durante la partita.",
+        "executiveOfficer": {
+          "wilhelm-adler": "<b>Sovraccarico/Wilhelm Adler:</b> Quando controlla i criteri di posizionamento della Diga, <b>le Dighe in Montagna</b> (e secondariamente in Collina) <b>sono sempre preferibili</b> tra quelle disponibili.",
+          "graziano-del-monte": "<b>Sovraccarico/Graziano del Monte:</b> Quando controlla l’azione di costruzione delle strutture, se l’Automa può costruire una Elevazione (quindi c’è una Diga che è possibile elevare utilizzando i Macchinari e le tessere Tecnologia disponibili), <b>l’Automa effettuerà sempre un’azione di costruzione di una Elevazione ignorando le strutture indicate all’interno delle tessere Automa</b>.",
+          "jill-mcdowell": {
+            "constructConduit": "<b>Sovraccarico/Jill McDowell:</b> Dovendo costruire una Condotta, in caso di spareggio, l’Automa predilige l’uso delle Betoniere al posto degli Escavatori.",
+            "machineryShop": "<b>Sovraccarico/Jill McDowell:</b> Quando deve scegliere i Macchinari da acquistare, invece, l’Automa <b>predilige sempre le Betoniere</b>."
+          },
+          "solomon-p-jordan": "<b>Sovraccarico/Solomon P. Jordan:</b> <b>L’Automa utilizzerà solamente 3 PV invece di un Macchinario, non di più</b> (utilizzare Macchinari - se disponibili - sarà sempre preferibile a spendere PV). Ricordate questa abilità quando dovrete controllare la disponibilità di Macchinari per poter effettuare un’azione di costruzione.",
+          "anton-krylov": "<b>Sovraccarico/Anton Krylov:</b> <b>La tessera Tecnologia Speciale è sempre usata dopo le tessere Tecnologia Base e Avanzata</b>. Quando viene usata, la tessera copierà sempre la tessera Tecnologia di livello più alto (quindi in ordine: 3, 2, 1, base). In caso di spareggio, l’Automa predilige una tessera struttura specifica, prima di usare una tessera Jolly",
+          "mahiri-sekibo": "<b>Sovraccarico/Mahiri Sekibo:</b> L’Automa non usa questa abilità speciale. D’altra parte, <b>i giocatori umani devono effettuare la loro prima azione durante ogni round come se fossero giocatori Automa</b>. Pescate una nuova tessera Automa e fate riferimento a quella per ‘decidere’ quale azione effettuare.",
+          "simone-luciani": "<b>Sovraccarico/Simone Luciani:</b> Quando effettua una produzione, <b>l’Automa soddisfa il più alto numero possibile di Contratti</b>, invece di scegliere quello con il valore più alto tra i disponibili. In caso di spareggio, si sceglie il Contratto con il valore più alto (quindi con Contratti di valore 2, 3, 6, 6, 9 e 10 disponibili, con una produzione di 9 Unità Energia, saranno soddisfatti i Contratti di valore 3 e 6. Come sempre, in caso di parità viene scelto il Contratto a destra. Nella stessa situazione, con una produzione di 12 Unità Energia, i Contratti soddisfatti sono quelli di valore 2, 3 e 6 a destra). Se è disponibile un Contratto Nazionale, questi dovrà sempre essere scelto (eventualmente combinato a uno o più Contratti Privati).",
+          "tommaso-battista": "<b>Sovraccarico/Tommaso Battista:</b> <b>Se un’azione elencata all’interno della tessera Azioni che fa terminare il turno</b> (quindi non l’azione nella cornice tratteggiata) <b>richiede 1 solo Ingegnere, l’Automa utilizzerà l’“Architetto”</b> (se disponibile) e, al termine dell’azione, comincerà immediatamente un secondo turno, utilizzando una nuova tessera Azioni.",
+          "leslie-spencer": "<b>Sovraccarico/Leslie Spencer:</b> Se la tessera Tecnologia Speciale è disponibile quando l’Automa sta controllando la possibilità di eseguire un’azione di costruzione, verificate se è possibile eseguire un’azione Lavoro Esterno utilizzando la tessera Tecnologia Speciale come azione di costruzione che richieda 1 Ingegnere: se è possibile, <b>eseguite l’azione di “costruzione” del Lavoro Esterno ({externalWorkTiles}), ignorando la struttura indicata dalla tessera Automa</b>. Altrimenti risolvete l’azione di costruzione come di consueto.",
+          "margot-fouche": "<b>Sovraccarico/Margot Fouché:</b> L’Automa non usa questa abilità speciale. Tuttavia, quando l’Automa sta controllando la possibilità di eseguire un’azione di costruzione, se è in grado di costruire un Edificio (ovvero se c’è un Edificio Privato che l’Automa è in grado di costruire con i Macchinari e le tessere Tecnologia necessarie a sua disposizione), <b>l’Automa costruirà sempre un Edificio ({buildingSearchDirection}), ignorando la struttura indicata sulla tessera Automa</b>. L’azione di costruzione dell’Edificio richiede 1 Ingegnere.",
+          "elon-audia": "<b>Sovraccarico/Elon Audia:</b> When building or performing an External Work action, Automa will always prefer to use Excavators and Concrete Mixer before using its Excamixers.",
+          "gennaro-grasso": "<b>Sovraccarico/Gennaro Grasso:</b> Automa doesn't use the extra Construction space of Gennaro Grasso. The first construction of each round always costs 1 less engineer (put the used Engineer in the XO extra Construction space as a reminder: in case of the construction of a Private Building just put 1 Credit on the Construction space as a reminder). ",
+          "wu-fang": {
+            "production": "<b>Sovraccarico/Wu Fang:</b> Before checking which action (or actions) to perform from the Automa tile, the Automa player must verify if it controls a number of Water Drops equal (or higher) to the energy needed to fulfill a contract depicted in the production action. If that's true, as its turn action, it will place one of its Engineers on its XO special action space and produce an amount of Energy Units equal to the Water Drops it controls; then, it will fulfill the best possible contract (in case of a tie, the rightmost one).",
+            "construction": "<b>Sovraccarico/Wu Fang:</b> Before checking if and which structure to build, if the Automa has the right technology tile and required machineries, it will preferably build a Dam Base (or, as second choice, a Dam Elevation) rather than the structure depicted on the Automa tile."
+          },
+          "dr-octavius": "<b>Sovraccarico/Dr. Octavius:</b> When checking the amount of producible Energy, the Automa will consider the best possible production considering all possible Water Drops sources. Moreover, when selecting where to place a Dam Base, it will prefer, between the current eligible positions, one connected (by a built or unbuilt Conduit) to one of its Powerhouses.",
+          "amir-zahir": "<b>Sovraccarico/Amir Zahir:</b> Whenever the Automa places Water Drop on the Headstreams, they always flow immediately. When the Automa is supposed to place Water Drops that should flow immediately on the Headstreams, the Automa will try to place them in its Dams. The first choice will be a Dam that is part of a complete Dam-Conduit-Powerhouse system (in case of multiple options, the system having the Conduit with the highest value). The seconds choice will be any of its Dams. In case of a tie between multiple options, the Automa follows the location of the Dam criteria.",
+          "franz-de-lasse": "<b>Sovraccarico/Franz de Lasse:</b> The Automa always chooses to fulfill the available Contracts with the lowest value (in case of a tie, it would be the Contract on the right)."
+        }
+      }
+    }
+  },
+ "notfound": {
+    "title": "Non Trovato"
+  },
+  "action": {
+    "playGame": "Gioca",
+    "startGame": "Inizia Partita",
+    "next": "Avanti",
+    "nextRound": "Prossimo Round",
+    "abortGame": "Interrompi Partita",
+    "abortGameConfirm": "Interrompere la partita in corso - sei sicuro?",
+    "endGame": "Termina Partita",
+    "endGameConfirm": "Terminare questa partita e tornare alla schermata principale - sei sicuro?",
+    "cancel": "Annulla",
+    "backToHome": "Torna alla Home",
+    "back": "Indietro",
+    "close": "Chiudi",
+    "ok": "OK",
+    "pass": "Passa"
+  },
+  "footer": {
+    "credits": "Crediti"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "Aggiorna Applicazione",
+    "notice": "L'applicazione è stata aggiornata - vuoi ricaricare per usare l'ultima versione?"
+
+  }
+}
