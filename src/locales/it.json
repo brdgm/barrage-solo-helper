@@ -186,9 +186,9 @@
       "noExecutiveOfficers": "<b>L’Automa non usa gli Ufficiali Esecutivi.</b>",
       "doesNotTakeContractTiles": "<b>L’Automa non pesca i Contratti.</b> L’Automa soddisfa direttamente i Contratti disponibili all’interno dell’Ufficio Contratti automaticamente.",
       "advancedTechnologyTiles": "<b>L’Automa può acquistare tessere Tecnologia Avanzata</b>, ma può utilizzare unicamente gli effetti basici <i>(ovvero di costruzione di una struttura)</i> senza utilizzare il rispettivo effetto speciale. Quando l'Automa ottiene una tessera e ci sono più tessere idonee disponibili, l'Automa prenderà la tessera di livello più alto.",
-      "machineryTypeWild": "If Automa receives a <b>wild Machinery</b>, it takes the type of Machinery of which it has less available <i>(i.e. out of the Construction Wheel)</i>. In case of tie, Automa takes 1 Excavator.",
+      "machineryTypeWild": "L’Automa ottiene il Macchinario di cui ha al momento minor disponibilità <i>(fuori dalla Ruota di Costruzione)</i>. In caso di pareggio ottiene 1 Escavatore.",
       "objectiveTileScoring": "Se l’Automa ha il maggior numero di elementi richiesti dalle <b>tessere Obiettivo</b> ottiene 20 PV; se è in seconda posizione, ottiene 15 PV; se è terzo ottiene 10 PV.",
-      "building": "Automa will never use the <b>Private Building special action</b>. However, when a Private Building has been activated by an Automa, the corresponding action space on the left <i>(the cheaper one)</i> will no longer be available for any other player for the rest of the game.",
+      "building": "L'Automa non utilizzerà mai l'<b>azione speciale dell'Edificio Privato</b>. Tuttavia, quando un Edificio Privato è stato attivato da un Automa, lo spazio azione corrispondente sulla sinistra <i>(quello più economico)</i> non sarà più disponibile per nessun altro giocatore per il resto della partita.",
       "engineerPlacement": {
         "title": "Piazzamento Ingegneri",
         "constructionSpaces": "<b>Spazi Azione di Costruzione dell’Automa</b> - A differenza dei giocatori umani, quando un Automa effettua un’azione di costruzione, esso può piazzare il numero di Ingegneri indicato nella App all’interno della plancia Compagnia, indipendentemente dal numero di spazi azione disponibili. Non ci sono limiti nel numero di strutture che l’Automa può costruire all’interno di un singolo round.",
@@ -345,6 +345,7 @@
         "executiveOfficer": {
           "wilhelm-adler": "<b>Sovraccarico/Wilhelm Adler:</b> Quando controlla i criteri di posizionamento della Diga, <b>le Dighe in Montagna</b> (e secondariamente in Collina) <b>sono sempre preferibili</b> tra quelle disponibili.",
           "graziano-del-monte": "<b>Sovraccarico/Graziano del Monte:</b> Quando controlla l’azione di costruzione delle strutture, se l’Automa può costruire una Elevazione (quindi c’è una Diga che è possibile elevare utilizzando i Macchinari e le tessere Tecnologia disponibili), <b>l’Automa effettuerà sempre un’azione di costruzione di una Elevazione ignorando le strutture indicate all’interno delle tessere Automa</b>.",
+          "viktor-fiesler": "<b>Overpowered/Viktor Fiesler:</b> Se l’Automa effettua un’azione di produzione usando una Condotta di valore 1 o 2, <b>egli produrrà utilizzando 1 sola Goccia d’Acqua</b>."
           "jill-mcdowell": {
             "constructConduit": "<b>Sovraccarico/Jill McDowell:</b> Dovendo costruire una Condotta, in caso di spareggio, l’Automa predilige l’uso delle Betoniere al posto degli Escavatori.",
             "machineryShop": "<b>Sovraccarico/Jill McDowell:</b> Quando deve scegliere i Macchinari da acquistare, invece, l’Automa <b>predilige sempre le Betoniere</b>."
