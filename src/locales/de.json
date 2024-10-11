@@ -27,8 +27,7 @@
     "difficultyLevel": {
       "title": "Schwierigkeitsgrad",
       "easy": "Leicht",
-      "hard": "Schwer",
-      "bot": "Automa {bot}"
+      "hard": "Schwer"
     }
   },
   "setupBot": {
