@@ -345,7 +345,7 @@
         "executiveOfficer": {
           "wilhelm-adler": "<b>Sovraccarico/Wilhelm Adler:</b> Quando controlla i criteri di posizionamento della Diga, <b>le Dighe in Montagna</b> (e secondariamente in Collina) <b>sono sempre preferibili</b> tra quelle disponibili.",
           "graziano-del-monte": "<b>Sovraccarico/Graziano del Monte:</b> Quando controlla l’azione di costruzione delle strutture, se l’Automa può costruire una Elevazione (quindi c’è una Diga che è possibile elevare utilizzando i Macchinari e le tessere Tecnologia disponibili), <b>l’Automa effettuerà sempre un’azione di costruzione di una Elevazione ignorando le strutture indicate all’interno delle tessere Automa</b>.",
-          "viktor-fiesler": "<b>Overpowered/Viktor Fiesler:</b> Se l’Automa effettua un’azione di produzione usando una Condotta di valore 1 o 2, <b>egli produrrà utilizzando 1 sola Goccia d’Acqua</b>."
+          "viktor-fiesler": "<b>Sovraccarico/Viktor Fiesler:</b> Se l’Automa effettua un’azione di produzione usando una Condotta di valore 1 o 2, <b>egli produrrà utilizzando 1 sola Goccia d’Acqua</b>.",
           "jill-mcdowell": {
             "constructConduit": "<b>Sovraccarico/Jill McDowell:</b> Dovendo costruire una Condotta, in caso di spareggio, l’Automa predilige l’uso delle Betoniere al posto degli Escavatori.",
             "machineryShop": "<b>Sovraccarico/Jill McDowell:</b> Quando deve scegliere i Macchinari da acquistare, invece, l’Automa <b>predilige sempre le Betoniere</b>."
@@ -395,6 +395,5 @@
   "serviceWorkerUpdatedRefresh": {
     "title": "Aggiorna Applicazione",
     "notice": "L'applicazione è stata aggiornata - vuoi ricaricare per usare l'ultima versione?"
-
   }
 }
