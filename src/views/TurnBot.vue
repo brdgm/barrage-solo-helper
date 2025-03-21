@@ -13,7 +13,7 @@
       :navigationState="navigationState"
       @workerPlaced="workerPlaced"/>
 
-  <button class="btn btn-success btn-lg mt-4 me-2" @click="next()">
+  <button class="btn btn-success btn-lg mt-4 me-2" @click="next()" data-testid="doneButton">
     {{t('turnBot.done', navigationState.actionItem?.workerCount ?? 0)}}
   </button>
   <button class="btn btn-danger btn-lg mt-4 me-2" @click="notPossible()" v-if="!isBankAction">
