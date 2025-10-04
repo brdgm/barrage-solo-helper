@@ -1,6 +1,6 @@
 import { CardDeckPersistence, Turn } from '@/store/state'
 
-export default function (params?: MockTurnParams) : Turn {
+export default function mockTurn(params?: MockTurnParams) : Turn {
   return {
     round: params?.round ?? 1,
     turn: params?.turn ?? 1,
