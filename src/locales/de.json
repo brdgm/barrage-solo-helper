@@ -18,7 +18,7 @@
     "players": {
       "title": "Spieler",
       "playerCount": "Menschliche Spieler",
-      "playerCountItem": "{count} Spieler",
+      "playerCountItem": "{count} Spieler | {count} Spieler",
       "playerColor": "Spieler-Farbe | Spieler {index} Farbe",
       "botCount": "Automa",
       "botCountItem": "{count} Automa | {count} Automas",
@@ -71,7 +71,7 @@
       "title": "Platziere Arbeiter",
       "button": "Platziere Arbeiter: {count}",
       "intro": "Grundsätzlich wird die für die Aktion angegebene Anzahl von Arbeitern eingesetzt. Im Starkstrom- oder Hochspannung-Modus kann es aber durch fortgeschrittene Technologieplättchen oder Chefingenieure zu Abweichungen kommen.",
-      "workerUsed": "{count} Arbeiter",
+      "workerUsed": "{count} Arbeiter | {count} Arbeiter",
       "nextAction": "Führe eine weitere Aktion aus"
     }
   },

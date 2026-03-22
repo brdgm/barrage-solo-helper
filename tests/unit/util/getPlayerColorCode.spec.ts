@@ -5,8 +5,8 @@ import getPlayerColorCode from '@/util/getPlayerColorCode'
 
 describe('util/getPlayerColorCode', () => {
   it('getPlayerColorCode', () => {
-    getAllEnumValues(PlayerColor).forEach(playerColor => {  
+    for (const playerColor of getAllEnumValues(PlayerColor)) {
       expect(getPlayerColorCode(playerColor)).not.undefined
-    })
+    }
   })
 })
