@@ -3,7 +3,7 @@
   "home": {
     "title": "Wasserkraft Solo Helper",
     "play1": "Spiele <a href='https://boardgamegeek.com/boardgame/251247/barrage' target='_blank' rel='noopener'><b>Wasserkraft</b></a> gegen Automa, die künstliche Gegenspielerin.",
-    "play2": "Diese Applikation ersetzt das Automa-Kartendeck und führt dich durch das Spiel und das Automa-Regelwerk. Alle Schwierigkeitsgrade werden unterstützt, die Spezialfähigkeiten der Unternehmens und die der meisten Chefingenieure. Es kann gegen bis zu drei Automas gespielt werden.",
+    "play2": "Diese Applikation ersetzt das Automa-Kartendeck und führt dich durch das Spiel und das Automa-Regelwerk. Alle Schwierigkeitsgrade werden unterstützt, die Spezialfähigkeiten der Unternehmen und die der meisten Chefingenieure. Es kann gegen bis zu drei Automas gespielt werden.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {
@@ -214,7 +214,7 @@
         "damCapacity": "Die Staumauer muss noch genug Kapazität haben, um die Wassereinheit auch stauen zu können. Wenn die erste Wassereinheit zu einer eigenen Staumauer gelangen kann, die zweite aber nicht, dann platziert der Automa nur 1 Wassereinheit.",
         "engineerPlacement": "Der Automa platziert 1 Arbeiter auf dem Managementplan.",
         "tiebreaker": "Der Automa führt die Aktion so aus, dass möglichst viele Wassereinheiten zu seinen Staumauern gelangen. Wenn es dafür mehrere verschiedene Möglichkeiten gibt, nutze die angezeigten Kriterien zur Entscheidung, auf welche Quelle(n) die Wassereinheit(en) gelegt werden. Prüfe die Buchstaben einer nach dem anderen <i>(Reihenfolge der Quellen siehe unten)</i> und platziere die Einheiten auf der ersten möglichen Quelle.",
-        "fivePlayerMap": "<b>5-Spieler-Karte:</b> Wenn du bei der Platzierung von Wassertropfen einen Gleichstand hast, nutze anstelledessen die folgende Regel: Prüfe, ob du die Wassereinheit(en) auf das Quellenplättchen legen kannst, dass dem obersten Buchstaben auf der rechten Seite des Kriterienplättchens entspricht. Wenn nicht, gehe nach rechts weiter zum nächsten Plättchen und nach dem X zum A und von dort aus weiter nach rechts."
+        "fivePlayerMap": "<b>5-Spieler-Karte:</b> Wenn du bei der Platzierung von Wassertropfen einen Gleichstand hast, nutze stattdessen die folgende Regel: Prüfe, ob du die Wassereinheit(en) auf das Quellenplättchen legen kannst, das dem obersten Buchstaben auf der rechten Seite des Kriterienplättchens entspricht. Wenn nicht, gehe nach rechts weiter zum nächsten Plättchen und nach dem X zum A und von dort aus weiter nach rechts."
       },
       "contract-office": {
         "intro": "Der Automa entfernt die offenen Verträge der abgebildeten Farbe aus dem Spiel. Danach rückt er seinen Energiemarker 2 Felder vor.",
@@ -262,7 +262,7 @@
       }
     },
     "structurePlacement": {
-      "intro": "Prüfe diese Kriterien einer nach der anderen um den Bauplatz zu finden:",
+      "intro": "Prüfe diese Kriterien eines nach dem anderen, um den Bauplatz zu finden:",
       "thirdStructure": "<b>Drittes Bauteil eines Systems</b>: Gibt es 1 System, bestehend aus Staumauer, Rohrwerk und Turbinenhaus, welches durch den Bau dieses Bauteils vervollständigt würde, so dass der Automa damit Energie produzieren könnte <i>(egal ob zur Zeit Wassereinheiten vorhanden sind oder nicht)</i>, so baut der Automa dort, wo dieses System vervollständigt würde.",
       "location": "Bauplatz <b>{location}</b> oder höhere Zahl.",
       "locationDescription": "Baue hier falls möglich. Anderenfalls gehe die weiteren Bauplätze in aufsteigender Reihenfolge der Zahlen durch. Falls du bei der höchsten Zahl ankommst ohne einen Bauplatz gefunden zu haben, fange bei der niedrigsten Zahl erneut an. Bei den Rohrwerken prüfe bei allen folgenden Bauplätzen immer zuerst den linken Platz im Tal (A) und dann den rechten Platz (B).",
